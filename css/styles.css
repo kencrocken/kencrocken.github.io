@@ -40,9 +40,18 @@ header{
   font-family: 'Open Sans Condensed', sans-serif;
   text-shadow: 2px 2px 3px rgba(0,0,0,.9);
   height: 500px;
-  padding: 150px 0 0 0;
+}
+.masthead {
+   padding: 150px 0 0 0;
+}
+nav {
+  text-align: left;
+  padding-top: 10px;
+}
 
-
+nav .social {
+  padding:20px 0 0 0;
+  text-align: right;
 }
 
 .background-image{
@@ -103,7 +112,11 @@ header{
 .twitter a{
   color: rgba(64,153,255,.4);
 }
-.linkedin a:hover, .googleplus a:hover, .twitter a:hover{
+
+.github a{
+  color: rgba(100,100,100,.4);
+}
+.linkedin a:hover, .googleplus a:hover, .twitter a:hover, .github a:hover{
   text-shadow: 2px 2px 3px rgba(0,0,0,.9);
 }
 .linkedin a:hover{
@@ -115,6 +128,11 @@ header{
 .twitter a:hover{
   color: rgba(64,153,255,1);
 }
+
+.github a:hover{
+    color: rgba(100,100,100,1);
+}
+
 section {
   border-top: 7px solid #000;
   margin: 0 auto;
@@ -191,7 +209,12 @@ footer {
 
 
 
-/*--Responsive Styles--*/
+/*--Responsive Styles--*/ 
+@media (max-width: 768px){
+  .navbar-text{
+    display: none;
+  }
+}
 @media (max-width: 650px) {
   h1 {
     text-align: center;

@@ -188,7 +188,11 @@ a:visited { color: #205caa; }
   text-align: center;
 }
 
-.post-content { margin: 0 0 30px; }
+.post-content { 
+  margin: 0 0 30px; 
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
 
 .post-content > * { margin: 20px 0; }
 
