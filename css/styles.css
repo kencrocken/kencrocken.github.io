@@ -76,6 +76,9 @@ header{
   color: #ccc;
 }
 /*--Social Icon Styles--*/
+.social {
+  padding-top: 5px;
+}
 .social li{
   display: inline;
   padding: 0 5px;
@@ -113,7 +116,6 @@ header{
   color: rgba(64,153,255,1);
 }
 section {
-  padding-bottom: 100px;
   border-top: 7px solid #000;
   margin: 0 auto;
 }
@@ -125,6 +127,12 @@ img {
 }
 
 /*--Main Body--*/
+.landing-list {
+  text-align: center;
+}
+.landing-list li{
+  padding: 0 15px;
+}
 article{
   color: white;
 }
@@ -146,6 +154,9 @@ article{
 .beer{
   color: #FFFF33;
 }
+.modal-content{
+  color: #000;
+}
 article p{
   font-size: 18px;
   line-height: 28px;
@@ -158,6 +169,27 @@ footer{
 .top{
   font-size: 32px;
 }
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+
+}
+
+
 
 /*--Responsive Styles--*/
 @media (max-width: 650px) {

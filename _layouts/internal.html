@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+    <body>
+
+    {% include header.html %}
+
+    <div class="container">
+
+      {{ content }}
+
+    </div>
+
+    {% include footer.html %}
+
+  <script>
+    $("a[href='#top']").click(function() {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
+    });
+  </script>
+  <script>
+      window.scrollReveal = new scrollReveal();
+  </script>
+
+    </body>
+</html>
