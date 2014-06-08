@@ -1,10 +1,13 @@
 ---
 layout: internal
-title: About
+title: A Little Something About Me
+date:  Anything else you want to know, just ask
 permalink: /about/
 ---
 
 <div class="container">
+  <ul class = "list-inline landing-list">
+    <li class="scroll-down"><i class = "fa fa-level-down"></i></li>
   <div class="row">
     <article class="col-md-8 col-md-offset-2">
       <ul data-scroll-reveal class = "list-inline landing-list">
