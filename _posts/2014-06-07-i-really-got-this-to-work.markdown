@@ -10,6 +10,6 @@ I just started from scratch again today, and to my surprise it really didn't tak
 
 Of course, I think the ease of which I was able to navigate comes from not only putting in sometime with Jekyll, but also I have been taking backend web development course at General Assembly.  Those dudes have really been helpful and its cleared a lot up.
 
-So, I tip my hat to the instructors of the BEWD_DC[0].  Good show, fellas!
+So, I tip my hat to the instructors of the BEWD_DC_1.  Good show, fellas!
 
 I'm not sure if they really wanted to unleash my random thoughts onto the world, but they'll just have to deal. 
