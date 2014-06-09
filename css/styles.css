@@ -183,7 +183,7 @@ article p{
 }
 .post-content img {
   border:none;
-  
+  border-radius: 0;
 }
 /*--Footer Styles--*/
 footer{
