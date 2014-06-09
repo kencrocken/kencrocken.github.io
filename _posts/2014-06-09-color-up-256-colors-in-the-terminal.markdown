@@ -8,11 +8,6 @@ For the BEWD, we had to write a terminal program - I wrote a little script that 
 
 It was looking a bit dull - so I decided to add some color.
 
-
-
-
-
-
 ![metrocommand screenshot]({{ site.url }}/images/metrocommand.png){: .img-responsive }
 
 Unfortunately, there was no orange for the Orange line.  It took some googling, but eventually - I found it ...  [Using ANSI Color Codes to Colorize Your Bash Prompt on Linux](http://bitmote.com/index.php?post/2012/11/19/Using-ANSI-Color-Codes-to-Colorize-Your-Bash-Prompt-on-Linux).
