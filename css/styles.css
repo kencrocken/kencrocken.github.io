@@ -185,6 +185,7 @@ article p{
   border:none;
   border-radius: 0;
   max-width: 100%;
+  padding: 0;
 }
 /*--Footer Styles--*/
 footer{
