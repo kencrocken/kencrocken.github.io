@@ -36,7 +36,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("./data/senders.csv", type, function(error, data) {
+d3.csv("http://kencrocken.github.io/data/senders.csv", type, function(error, data) {
   x.domain(data.map(function(d) { return d.senders; }));
   y.domain([0, d3.max(data, function(d) { return d.Freq; })]);
 
