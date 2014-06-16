@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ site.description }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/styles.css" | prepend: site.baseurl }}">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet" type="text/css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="{{ "/javascripts/scrollReveal.min.js" | prepend: site.baseurl }}"></script>
+
+
+<style>
+
+.bar {
+  fill: black;
+}
+
+.bar:hover{
+  fill: firebrick;
+}
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+</style>
+
+<body>
+</head>
+  <body>
+    <header>
+      <div class="background-image">
+        <div class="background-overlay"></div>
+      </div>
+
+      <nav>
+        <div class = "container-fluid">
+          <div class = "row">
+            <div class = "col-sm-5">
+              <h3><a href = "/">{{ site.title}}</a><small> {{ site.description }}</h3>
+            </div>
+            <div class = "col-sm-6">
+              <ul class="social">
+                <li class="linkedin"><a href="http://www.linkedin.com/pub/kenneth-crocken/17/914/aaa"><i class="fa fa-linkedin-square"></i></a></li>
+                <li class="googleplus"><a href="http://plus.google.com/104867203056603798573"><i class="fa fa-google-plus-square"></a></i></li>
+                <li class="twitter"><a href="http://twitter.com/kencrocken"><i class="fa fa-twitter-square"></i></a></li>
+                <li class="github"><a href="http://github.com/kencrocken"><i class="fa fa-github"></i></a></li>
+              </ul>
+            </div>
+        </div>
+      </nav>
+
+      <div class="post-header">
+        <h1>D3 PROJECTS</h1>
+        <h2>Adventures in Data Driven Documents</h2>
+      </div>
+      <div class="post-header">
+        <h1>{{ page.title }}</h1>
+        <p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+      </div>
+    </header>
+    <section>
+    <div class = "container">
+
+      {{ content }}
+
+    </div>
+    </section>
+    {% include footer.html %}
+
+  <script>
+    $("a[href='#top']").click(function() {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
+    });
+  </script>
+  <script>
+      window.scrollReveal = new scrollReveal();
+  </script>
+
+    </body>
+</html>
