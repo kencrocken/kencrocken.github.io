@@ -4,10 +4,10 @@ title:  "My Gmail and D3 Histogram"
 date:   2014-06-16
 ---
 <script src="http://d3js.org/d3.v3.min.js"></script>
-<p>Ok, so this whole thing needs to get cleaned up -- I know, I know.</p>
+<h5>Ok, so this whole thing needs to get cleaned up -- I know, I know.</h5>
 <script>
 
-var margin = {top: 20, right: 20, bottom: 250, left: 40},
+var margin = {top: 20, right: 20, bottom: 250, left: 85},
     width = 960 - margin.left - margin.right,
     height = 700 - margin.top - margin.bottom;
 
