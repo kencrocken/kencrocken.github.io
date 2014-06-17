@@ -3,7 +3,7 @@ layout: d3
 title:  "My Gmail and D3 Histogram"
 date:   2014-06-16
 ---
-<iframe src="https://gist.githubusercontent.com/kencrocken/5db5021ff08118e0f4c9/raw/9a298bd625ae2968ebf0d52c5796c26ca11f44dd/d3_histogram.html" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+<iframe src="http://gist.githubusercontent.com/kencrocken/5db5021ff08118e0f4c9/raw/9a298bd625ae2968ebf0d52c5796c26ca11f44dd/d3_histogram.html" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 <!-- <script src="http://d3js.org/d3.v3.min.js"></script>
 <h5>Ok, so this whole thing needs to get cleaned up -- I know, I know.</h5>
 <script>
