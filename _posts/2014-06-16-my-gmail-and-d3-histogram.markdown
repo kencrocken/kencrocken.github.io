@@ -3,7 +3,7 @@ layout: d3
 title:  "My Gmail and D3 Histogram"
 date:   2014-06-16
 ---
-<iframe src="http://kencrocken.github.io/data/d3_histo.html" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+<iframe src="http://kencrocken.github.io/data/d3_histo.html" width="200" height="200" scrolling="no"></iframe>
 <!-- <script src="http://d3js.org/d3.v3.min.js"></script>
 <h5>Ok, so this whole thing needs to get cleaned up -- I know, I know.</h5>
 <script>
