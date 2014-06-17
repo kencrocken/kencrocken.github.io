@@ -95,6 +95,13 @@ d3.csv("senders.csv", type, function(error, data) {
       .attr("height", function(d) { return height - y(d.Freq); })
       // .style("fill", function(d) { return "rgb(0, 0, " + (d.Freq) + ")"; });
       .style("fill", function(d) { return color(d.Freq); });
+
+  svg.append("text")
+        .attr("class", "histogram-title")
+        .attr("y", height - 200)
+        .attr("x", width)
+        .attr("text-anchor", "end")
+        .text("May Top Senders to My Gmail");
  
 });
  
