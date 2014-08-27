@@ -2,9 +2,9 @@
 layout: default
 ---
 
-<!-- <div class="home">
+ <div class="home">
 
-  <h1>Posts</h1>
+<!--  <h1>Posts</h1>
 
   <ul class="posts">
     {% for post in site.posts %}
@@ -21,15 +21,34 @@ layout: default
 
 
   <div class = "row">
-    <div class = "col-md-6 col-md-offset-4">
+    <div class = "col-md-5 col-md-offset-4">
       <br>
-      <ul>
+      <table style="width:350px" class = "posts">
+        <tr>
+          <th colspan = "2"><h3>Posts</h3></th>
+        </tr>
         {% for post in site.posts %}
-          <li>
-            <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          </li>
+        <tr>
+          <td class = "post-date">{{ post.date | date: "%b %-d, %Y" }}</td>
+          <td><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td> 
+        </tr>
         {% endfor %}
+      </table>
+    <!-- </div> -->
+    <!-- <div class = "col-md-4"> -->
+      <br>
+      <h3>Current Projects</h3>
+      <ul class = "projects">
+
+          <li>
+            <a href = "https://github.com/kencrocken/emailysis">Emailysis</a>
+          </li>
+          <li>
+            <a href = "https://github.com/kencrocken/BEWD-DC-1-HW/tree/master/ken_crocken/midterm">MetroCommand</a>
+          </li>
+          <li>
+            <a href = "http://www.mydevsite.biz">Kagyu Drupgyu Chodzong</a>
+          </li>
       </ul>
     </div>
   </div>
