@@ -192,11 +192,15 @@ article p{
 }
 /*--Footer Styles--*/
 footer{
-  text-align: center;
+    text-align: center;
   color: rgba(255,255,255,.1);
 }
 .top{
   font-size: 32px;
+}
+
+.umbrella {
+
 }
 
 /* Sticky footer styles

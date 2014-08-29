@@ -1,5 +1,10 @@
 <!-- Footer with the link back to top and umbrella icon -->
   <footer data-scroll-reveal>
+    <div class = "container">
       <p class="top"><a href="#top"><i class="fa fa-chevron-circle-up"></a></i></p>
-      <p><i class="fa fa-umbrella"></i></p>
+      <small>&copy {{ site.time | date: "%Y" }} <a href="mailto: {{ site.email }}">Kenneth E. Crocken</a>. 
+      
+      <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p></small>
+      <p class = "umbrella"><i class="fa fa-umbrella"></i></p>
+    </div>
   </footer>
