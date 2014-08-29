@@ -1,6 +1,6 @@
 ---
 tags: ['']
-title: "BEWD is over. Front End Skills with Beer"
+title: "Front End Skills with Beer"
 category: ''
 description: null
 layout: post
