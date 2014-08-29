@@ -150,11 +150,19 @@ a:visited { color: #205caa; }
 
 .posts li { margin-bottom: 7px; }
 
+.home h2 {
+  font-weight: 300;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-top: 0;
+}
+
 .home h3 {
   font-weight: 300;
   letter-spacing: -1px;
   line-height: 1;
-  color: #919191;
+  color: #ff9933;
+  margin-top: 0;
 }
 
 .posts .post-link {
