@@ -40,6 +40,7 @@ header{
   font-family: 'Open Sans Condensed', sans-serif;
   text-shadow: 2px 2px 3px rgba(0,0,0,.9);
   height: 500px;
+
 }
 .masthead {
    padding: 150px 0 0 0;
@@ -66,10 +67,10 @@ nav .social {
   background-size: cover;
   /*filter: blur(5px);*/
 
-  -webkit-filter: blur(7px);
-  -moz-filter: blur(7px);
-  -o-filter: blur(7px);
-  -ms-filter: blur(7px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
   z-index: -2;
 }
 .background-overlay{
@@ -136,8 +137,8 @@ nav .social {
 }
 
 section {
-  border-top: 7px solid #000;
-  margin: 0 auto;
+  border-top: 3px solid #000;
+  margin: 1px auto 0 auto;
 }
 img {
   border-radius: 50%;
@@ -153,8 +154,8 @@ img {
   margin-top: 20px;
   font-weight: 300;
 }
-.landing-list li{
-  /*padding: 0 15px;*/
+.landing-list li h4{
+  font-weight: 400;
 }
 article{
   color: white;

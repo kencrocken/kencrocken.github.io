@@ -36,7 +36,14 @@
     </div>
 
     {% include footer.html %}
-
+  <script src="{{ "/javascripts/reportcard/js/reportcard.js" | prepend: site.baseurl }}"></script>
+  <script>
+$('.report-card.treehouse').reportCard({
+    userName: 'kennethcrocken',
+    site: 'treehouse',
+    badgesAmount: 7
+});
+</script>
   <script>
     $("a[href='#top']").click(function() {
       $("html, body").animate({ scrollTop: 0 }, "slow");
