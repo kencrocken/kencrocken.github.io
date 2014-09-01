@@ -140,6 +140,7 @@ section {
   border-top: 3px solid #000;
   margin: 1px auto 0 auto;
 }
+
 img {
   border-radius: 50%;
   display: block;
@@ -147,6 +148,9 @@ img {
   border: 5px solid #000;
 }
 
+img[alt=Murray] { 
+  margin: -150px auto 0 auto;
+}
 /*--Main Body--*/
 .landing-list {
   /*text-align: center;*/
@@ -193,12 +197,13 @@ article p{
 }
 
 input.formname, input.formemail, textarea.formmsg, input.button {
+  margin: 2px 0;
   padding: 8px;
   font-size: 1.05em;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   border: solid 1px #777;
-  text-indent: 18px;
+  text-indent: 10px;
   background-color: transparent;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
@@ -232,6 +237,7 @@ input.button:hover {
 
 input.button:focus {
   background-color: #FF0000;  
+  outline: none;
 }
 
 /*--Footer Styles--*/

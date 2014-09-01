@@ -59,10 +59,11 @@
       </ul>
       <div class = "row">
         <div class = "col-sm-9 col-sm-offset-2">
-          <form method="POST" action="//forms.brace.io/kcrocken@gmail.com">
+          <form method="POST" action="//forms.brace.io/{{ site.email }}">
             <input type="text" class = "formname" name="name" placeholder = "Your name.">
             <input type="email" class = "formemail" name="_replyto" placeholder = "Your email.">
             <textarea type="text" class = "formmsg" name="message" rows="3" placeholder = "What ya want to know?"></textarea>
+            <input type="hidden" name="_next" value="//kencrocken.github.io/thanks/">
             <input type="submit" class = "button" value="Send">
           </form>
         </div>
