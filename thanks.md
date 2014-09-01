@@ -16,7 +16,7 @@ permalink: /thanks/
     <div class = "col-sm-5 col-sm-offset-5">
       {% include posts.html %}
       <br />
-      <a href="{{ site.baseurl }}">Back to Home</a>
+      <a href="{{ site.url }}">Back to Home</a>
     </div>
   </div>
 </div>
