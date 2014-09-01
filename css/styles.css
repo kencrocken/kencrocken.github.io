@@ -207,6 +207,7 @@ input.formname, input.formemail, textarea.formmsg, input.button {
   background-color: transparent;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
+  color: #fff;
 }
 
 textarea.formmsg {
@@ -215,8 +216,8 @@ textarea.formmsg {
 }
 
 input.formemail:focus, input.formname:focus, textarea.formmsg:focus{
-  border: solid 1px #111;
-  background-color: #efefef;
+  border: solid 1px #777;
+  background-color: #323430;
   outline: none;
 }
 
