@@ -154,7 +154,7 @@ img[alt=Murray] {
 /*--Main Body--*/
 .landing-list {
   /*text-align: center;*/
-  color: #fff;
+  color: #eee;
   margin-top: 20px;
   font-weight: 300;
 }
@@ -209,7 +209,9 @@ input.formname, input.formemail, textarea.formmsg, input.button {
   font-weight: 300;
   color: #fff;
 }
-
+input.formname, input.formemail {
+  /*width: 49%;*/
+}
 textarea.formmsg {
   margin: 2px 0;
   width: 100%;
