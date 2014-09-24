@@ -11,7 +11,7 @@ I thought it would be pretty cool if I could just ```rake tweet``` and my last p
 
 I used the [Twitter Gem](https://github.com/sferik/twitter) and [Google_Url_Shortener Gem](https://github.com/joshnesbitt/google_url_shortener).
 
-I created an env.rb file and required it in the Rakefile.  
+I created an env.rb file, required it in the Rakefile, and put all the keys and tokens there.   
 I added the env.rb file to ```.gitignore```, no need for my keys and tokens to be floating around.
 
 Here is the rake command:
