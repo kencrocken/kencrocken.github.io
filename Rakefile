@@ -2,6 +2,10 @@ require "rubygems"
 require 'rake'
 require 'yaml'
 require 'time'
+require 'twitter'
+require 'google_url_shortener'
+
+require File.join(File.dirname(__FILE__), 'env')
 
 SOURCE = "."
 CONFIG = {
@@ -41,3 +45,47 @@ task :post do
     post.puts "---"
   end
 end # task :post
+
+desc "Begin server and watch for changes"
+task :s do
+  puts "Starting ..."
+  system "jekyll serve -w"
+end
+
+desc "Tweet last post"
+task :tweet do
+
+  posts = []
+  Dir.foreach('./_posts') do |post|
+    next if post == '.' || post =='..'
+    posts << post
+  end
+  last_post_file = posts.reverse[0].gsub(/.markdown/,'')
+  last_post_split = last_post_file.split('-',4)
+  slug = last_post_split.join('/')
+  slug = "http://kencrocken.github.io/#{slug}"
+  post_title = last_post_split[3].gsub(/[-]/,' ')
+  post_title = post_title.gsub(/\w+/) {|word| word.capitalize}
+  puts post_title
+  puts slug
+
+  Google::UrlShortener::Base.api_key = "#{API_KEY}"
+  url = Google::UrlShortener::Url.new(:long_url => "#{slug}")
+  short_url = url.shorten!
+  puts short_url
+
+  # client = Twitter::REST::Client.new do |config|
+  #   config.consumer_key        = "#{CONSUMER_KEY}"
+  #   config.consumer_secret     = "#{CONSUMER_SECRET}"
+  #   config.access_token        = "#{ACCESS_TOKEN}"
+  #   config.access_token_secret = "#{ACCESS_TOKEN_SECRET}"
+  # end
+
+  # client.update("#{post_title} #{short_url}")
+end
+
+
+
+
+
+
