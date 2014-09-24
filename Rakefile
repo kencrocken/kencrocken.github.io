@@ -74,14 +74,14 @@ task :tweet do
   short_url = url.shorten!
   puts short_url
 
-  # client = Twitter::REST::Client.new do |config|
-  #   config.consumer_key        = "#{CONSUMER_KEY}"
-  #   config.consumer_secret     = "#{CONSUMER_SECRET}"
-  #   config.access_token        = "#{ACCESS_TOKEN}"
-  #   config.access_token_secret = "#{ACCESS_TOKEN_SECRET}"
-  # end
+  client = Twitter::REST::Client.new do |config|
+    config.consumer_key        = "#{CONSUMER_KEY}"
+    config.consumer_secret     = "#{CONSUMER_SECRET}"
+    config.access_token        = "#{ACCESS_TOKEN}"
+    config.access_token_secret = "#{ACCESS_TOKEN_SECRET}"
+  end
 
-  # client.update("#{post_title} #{short_url}")
+  client.update("#{post_title} #{short_url}")
 end
 
 
