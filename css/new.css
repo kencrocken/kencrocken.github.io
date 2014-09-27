@@ -853,7 +853,8 @@ article.type-system-slab {
     display: inline-block;
     margin-bottom: 3px;
     font-weight: 300;
-    font-size: 1em; }
+    font-size: 1em;
+    color: #657b83; }
 
 .posts li {
   margin-bottom: 7px; }
