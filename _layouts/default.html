@@ -3,41 +3,41 @@
 
   {% include head.html %}
 
-    <body>
+  <body>
 
-    <header>
-
-      <div class="background-image">
-        <div class="background-overlay"></div>
-      </div>
-      <div class = "masthead">
-      <h1>Ken Crocken</h1>
-      <h2>Recovering Attorney | Digital Humanist</h2>
-      <ul class="contact">
-        <li><i class="fa fa-globe"></i> <a href="http://goo.gl/maps/hM6yB">Laurel, Maryland</a></li>
-        <li><i class="fa fa-phone"></i> <a href="tel:+1 (443) 802-7145">(443) 802-7145</a></li>
-        <li><i class="fa fa-envelope"></i> <a href="mailto:kcrocken@gmail.com">kcrocken@gmail.com</a></li>
-      </ul>
-      <ul class="social">
-        <li class="linkedin"><a href="http://www.linkedin.com/pub/kenneth-crocken/17/914/aaa"><i class="fa fa-linkedin-square"></i></a></li>
-        <li class="googleplus"><a href="http://plus.google.com/104867203056603798573"><i class="fa fa-google-plus-square"></a></i></li>
-        <li class="twitter"><a href="http://twitter.com/kencrocken"><i class="fa fa-twitter-square"></i></a></li>
-        <li class="github"><a href="http://github.com/kencrocken"><i class="fa fa-github"></i></a></li>
-      </ul>
+    <div class="line-behind-text">
+      <img src="http://www.gravatar.com/avatar/83fb4a35e52381397d9c07d9e25b4c05?s=75" />
     </div>
+    <header>
+      <section class = "masthead">
+        <div class ="brand">
+          <h1>KENNETH E. CROCKEN</h1>
+          <h6>{{ site.description }}</h6>
+          <p>Web Development / Attorney</p>
+
+        </div>
+        <div class = "address-block">
+          <ul class="contact">
+            <li><i class = "fa fa-envelope fa-lg"></i> <a href="mailto:kcrocken@gmail.com">kcrocken@gmail.com</a></li>
+            <li><i class = "fa fa-phone fa-lg"></i> <a href="tel:+1 (443) 802-7145">(443) 802-7145</a></li>
+            <li><i class = "fa fa-map-marker fa-lg"></i> <a href="http://goo.gl/maps/hM6yB">Laurel, Maryland</a></li>
+          </ul>
+          <ul class="social">
+            <li class="linkedin"><a href="http://www.linkedin.com/pub/kenneth-crocken/17/914/aaa"><i class="fa fa-linkedin-square"></i></a></li>
+            <li class="googleplus"><a href="http://plus.google.com/104867203056603798573"><i class="fa fa-google-plus-square"></a></i></li>
+            <li class="twitter"><a href="http://twitter.com/kencrocken"><i class="fa fa-twitter-square"></i></a></li>
+            <li class="github"><a href="http://github.com/kencrocken"><i class="fa fa-github"></i></a></li>
+          </ul>
+        </div>
+      </section>
+
 
     </header>
-    <section>
-      <img src="http://www.gravatar.com/avatar/83fb4a35e52381397d9c07d9e25b4c05?s=200" />
-    </section>
 
-    <div class = "container">
-      {{ content }}
-    </div>
+    {{ content }}
 
     {% include footer.html %}
-
-  <script>
+<script>
     $("a[href='#top']").click(function() {
       $("html, body").animate({ scrollTop: 0 }, "slow");
       return false;
@@ -47,5 +47,5 @@
       window.scrollReveal = new scrollReveal();
   </script>
 
-    </body>
+  </body>
 </html>

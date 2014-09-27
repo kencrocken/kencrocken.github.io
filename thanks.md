@@ -1,24 +1,23 @@
 ---
-layout: internal
+layout: default
 title: Thanks for your Email!
-date: Message received loud and clear
+description: You're Awesome!
 permalink: /thanks/
 --- 
-![Murray](http://fillmurray.com/g/300/300 "You're Awesome!")
-
-<div class = "text-center">
-  <h1>You're Awesome</h1>
-</div>
-
-<div class = "home">
-  <br />
-  <div class = "row">
-    <div class = "col-sm-5 col-sm-offset-5">
-      {% include posts.html %}
-      <br />
-      <a href="{{ site.url }}">Back to Home</a>
-    </div>
+<div class = "thanks">
+  <div class = "container">
+    <article class="type-system-slab">
+      <p class="type">{% if page.meta %} • {{ page.meta }}{% endif %} <a href="/">Home</a></p>
+      <h1>{{ page.title }}</h1>
+      <img src="http://fillmurray.com/g/300/300" alt="Murray">
+      <h2>{{ page.description }}</h2>
+    </article>
   </div>
 </div>
 
+<div class = "home">
+
+  {% include posts.html %}
+
+</div>
 

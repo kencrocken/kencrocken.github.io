@@ -1,14 +1,11 @@
 ---
 layout: post
 title: "Rake Tweet"
-description: ""
+description: "I thought it would be pretty cool if I could just <code>$rake tweet</code> and my last post would be tweeted.  Below is the solution I came up with."
 category: 
 tags: []
 comments: true
 ---
-
-##Tweet This!
-I thought it would be pretty cool if I could just ```rake tweet``` and my last post would be tweeted.  Below is the solution I came up with.
 
 I used the [Twitter Gem](https://github.com/sferik/twitter) and [Google_Url_Shortener Gem](https://github.com/joshnesbitt/google_url_shortener).
 

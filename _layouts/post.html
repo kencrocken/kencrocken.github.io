@@ -1,20 +1,16 @@
 ---
-layout: internal
+layout: default
 ---
-<div class="post">
-
-<!--   <div class="post-header">
+<div class = "container">
+  <article class="type-system-slab">
+    <p class="type">{% if page.meta %} • {{ page.meta }}{% endif %} <a href="/">Home</a></p>
     <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </div> -->
-<div class = "row">
-  <div class = "col-md-8 col-md-offset-2">
-    <article class="post-content">
-      {{ content }}
-    </article>
-  </div>
-</div>
-
+    <h2>{{ page.description }}</h2>
+    <p class="date">{{ page.date | date: "%b %-d, %Y" }}</p>
+        {{ content }}
+    <hr>
+    <p class="author">{% if page.author %} • {{ page.author }}{% endif %} <a href="/">Home</a></p>
+  </article>
 </div>
 
 {% include comments.html %}

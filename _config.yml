@@ -5,6 +5,7 @@ description: "A forty year old frood, who hasn't forgotten his towel."
 baseurl: ""
 url: "http://kencrocken.github.io"
 
+excerpt_separator: <!--more-->
 # Build settings
 markdown: kramdown
 permalink: pretty
