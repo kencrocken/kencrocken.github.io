@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 
 <head>
 
@@ -9,18 +7,55 @@
   <meta name="description" content="{{ site.description }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}"> -->
   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-  <link rel="stylesheet" href="{{ "/css/styles.css" | prepend: site.baseurl }}">
-
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <!-- <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}"> -->
+  <!-- <link rel="stylesheet" href="{{ "/css/styles.css" | prepend: site.baseurl }}"> -->
+  <link rel="stylesheet" href="{{ "/css/new.css" | prepend: site.baseurl }}">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
   <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet" type="text/css">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+  <script src="{{ "/javascripts/jquery.min.js" | prepend: site.baseurl }}"></script>
+  <script src="{{ "/javascripts/bootstrap.min.js" | prepend: site.baseurl }}"></script>
   <script src="{{ "/javascripts/scrollReveal.min.js" | prepend: site.baseurl }}"></script>
+  <script>
+  // $(document).ready(function(){
+  //   $('#rocket').click(function(){
+  //     $('#rocket-content').toggle();
+  //   });
+  //   $('#gavel').click(function(){
+  //     $('#gavel-content').toggle();
+  //   });
+  //   $('#code').click(function(){
+  //     $('#code-content').toggle();
+  //   });
+  //   $('#beer').click(function(){
+  //     $('#beer-content').toggle();
+  //   });
+  // });
+  </script>
 
+<script type="text/javascript">
+
+$(document).ready(function(){
+         $('.contents  #gavel-content, #code-content, #beer-content').hide(); // hide div's on load using parent class as a starting point 
+         $('.contents #rocket-content').show();  
+         $('#about-me-menu a').click(function() {  // on the anchor clicks that are inside div with id=nav
+            var $div = $('.contents div').eq($(this).index('#about-me-menu a'));
+            var $menu_item = $('#about-me-menu a').eq($(this).index('.contents div'));  // get the relevant div
+            $div.show();  // show the relevant div
+            $('.contents div').not($div).hide();  // hide all but the relevant div
+        });
+    });
+</script>
+<script type="text/javascript">
+// $(document).ready(function() {
+//   $("#about-me-menu a").click(function () {
+//     $(this).addClass('active');
+//   });
+// });
+</script>
 
 <style>
 
@@ -51,27 +86,35 @@
 <body>
 </head>
   <body>
-    <header>
-      <div class="background-image">
-        <div class="background-overlay"></div>
-      </div>
 
-      <nav>
-        <div class = "container-fluid">
-          <div class = "row">
-            <div class = "col-sm-5">
-              <h3><a href = "/">{{ site.title}}</a><small> {{ site.description }}</h3>
-            </div>
-            <div class = "col-sm-6">
-              <ul class="social">
-                <li class="linkedin"><a href="http://www.linkedin.com/pub/kenneth-crocken/17/914/aaa"><i class="fa fa-linkedin-square"></i></a></li>
-                <li class="googleplus"><a href="http://plus.google.com/104867203056603798573"><i class="fa fa-google-plus-square"></a></i></li>
-                <li class="twitter"><a href="http://twitter.com/kencrocken"><i class="fa fa-twitter-square"></i></a></li>
-                <li class="github"><a href="http://github.com/kencrocken"><i class="fa fa-github"></i></a></li>
-              </ul>
-            </div>
+    <div class="line-behind-text">
+      <img src="http://www.gravatar.com/avatar/83fb4a35e52381397d9c07d9e25b4c05?s=75" />
+    </div>
+    <header>
+      <section class = "masthead">
+        <div class ="brand">
+          <h1>KENNETH E. CROCKEN</h1>
+          <h6>{{ site.description }}</h6>
+          <p>Web Development / Attorney</p>
+
         </div>
-      </nav>
+        <div class = "address-block">
+          <ul class="contact">
+            <li><i class = "fa fa-envelope fa-lg"></i> <a href="mailto:kcrocken@gmail.com">kcrocken@gmail.com</a></li>
+            <li><i class = "fa fa-phone fa-lg"></i> <a href="tel:+1 (443) 802-7145">(443) 802-7145</a></li>
+            <li><i class = "fa fa-map-marker fa-lg"></i> <a href="http://goo.gl/maps/hM6yB">Laurel, Maryland</a></li>
+          </ul>
+          <ul class="social">
+            <li class="linkedin"><a href="http://www.linkedin.com/pub/kenneth-crocken/17/914/aaa"><i class="fa fa-linkedin-square"></i></a></li>
+            <li class="googleplus"><a href="http://plus.google.com/104867203056603798573"><i class="fa fa-google-plus-square"></a></i></li>
+            <li class="twitter"><a href="http://twitter.com/kencrocken"><i class="fa fa-twitter-square"></i></a></li>
+            <li class="github"><a href="http://github.com/kencrocken"><i class="fa fa-github"></i></a></li>
+          </ul>
+        </div>
+      </section>
+
+
+    </header>
 
       <div class="post-header">
         <h1>D3 PROJECTS</h1>
