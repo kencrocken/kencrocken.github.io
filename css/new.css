@@ -572,6 +572,7 @@ ul {
     font-family: 'Open Sans Condensed', sans-serif;
     margin: 0; }
   .masthead .brand {
+    padding: 0 0 0 5px;
     float: left;
     display: block;
     margin-right: 2.35765%;
@@ -583,7 +584,8 @@ ul {
         float: left;
         display: block;
         margin-right: 2.35765%;
-        width: 100%; }
+        width: 100%;
+        padding: 0 0 0 5px; }
         .masthead .brand:last-child {
           margin-right: 0; } }
   .masthead .address-block {
@@ -717,7 +719,7 @@ article {
 .contents {
   max-width: 800px;
   margin: 0 auto;
-  padding: 15px 0; }
+  padding: 15px 5px; }
   .contents h2 {
     text-align: center; }
 
@@ -737,7 +739,8 @@ article.type-system-slab {
   max-width: 650px;
   margin-left: auto;
   margin-right: auto;
-  text-align: left; }
+  text-align: left;
+  padding: 0 5px; }
   article.type-system-slab:after {
     content: "";
     display: table;
@@ -836,7 +839,8 @@ article.type-system-slab {
 .posts {
   color: #919191;
   max-width: 500px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 0 5px; }
   .posts .post-date {
     display: inline-block;
     color: #919191;
@@ -855,12 +859,18 @@ article.type-system-slab {
     font-weight: 300;
     font-size: 1em;
     color: #657b83; }
+  @media screen and (max-width: 650px) {
+    .posts {
+      padding: 0 5px; } }
 
 .posts li {
   margin-bottom: 7px; }
 
 .projects {
   margin: 5px 0 15px 150px; }
+  @media screen and (max-width: 650px) {
+    .projects {
+      margin: 5px 5px 15px 5px; } }
 
 .post-content img {
   border: none;
@@ -942,7 +952,7 @@ article.type-system-slab {
 .contact-form {
   max-width: 500px;
   margin: 10px auto 0 auto;
-  padding-bottom: 10px; }
+  padding: 0 5px 10px 5px; }
 
 input.formname, input.formemail, textarea.formmsg, input.button {
   margin: 2px 0;

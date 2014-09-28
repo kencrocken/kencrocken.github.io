@@ -124,9 +124,11 @@ header {
       margin: 0;
    }
   .brand {
+    padding: 0 0 0 5px;
     @include span-columns(6);
     @include media (max-width $break-small){
       @include span-columns(12);
+      padding: 0 0 0 5px;
     }
   }
   .address-block {
@@ -308,11 +310,12 @@ article{
     }
   }
 }
+
 .contents {
   max-width: 800px;
   // height: 175px;
   margin: 0 auto;
-  padding: 15px 0;
+  padding: 15px 5px;
   h2 {
     text-align: center;
   }
@@ -350,7 +353,7 @@ article.type-system-slab {
   margin-right: auto;
   @include clearfix;
   text-align: left;
-
+  padding:0 5px;
   .type {
     border-bottom: 1px solid;
     display: inline-block;
@@ -484,6 +487,7 @@ article.type-system-slab {
   color: #919191;
   max-width: 500px;
   margin: 0 auto;
+  padding: 0 5px;
   .post-date {
     display: inline-block;
     color: #919191;
@@ -505,6 +509,9 @@ article.type-system-slab {
     font-size: 1em;
     color: $primary-text-color;
   }
+  @include media(max-width $break-small){
+    padding:0 5px;
+  }
 }
 
 .posts li { margin-bottom: 7px; }
@@ -521,6 +528,9 @@ article.type-system-slab {
 
 .projects {
   margin: 5px 0 15px 150px;
+  @include media(max-width $break-small){
+    margin: 5px 5px 15px 5px;
+  }
 }
 .post-content { 
   img {
@@ -607,7 +617,7 @@ article.type-system-slab {
 .contact-form {
   max-width: 500px;
   margin:10px auto 0 auto;
-  padding-bottom: 10px;
+  padding: 0 5px 10px 5px;
 }
 input.formname, input.formemail, textarea.formmsg, input.button {
   margin: 2px 0;
