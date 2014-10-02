@@ -39,12 +39,12 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
-         $('.contents  #gavel-content, #code-content, #beer-content').hide(); // hide div's on load using parent class as a starting point 
+         $('.contents  .show').hide(); // hide div's on load using parent class as a starting point 
          $('.contents #rocket-content').show();  
          $('#about-me-menu a').click(function() {  // on the anchor clicks that are inside div with id=nav
             var $div = $('.contents div').eq($(this).index('#about-me-menu a'));
             var $menu_item = $('#about-me-menu a').eq($(this).index('.contents div'));  // get the relevant div
-            $div.show();  // show the relevant div
+            $div.show("slow");  // show the relevant div
             $('.contents div').not($div).hide();  // hide all but the relevant div
         });
     });

@@ -1,9 +1,13 @@
 
 /* Syntax highlighting styles */
 /* ----------------------------------------------------------*/
+$code-background: #eee8d5;
+$comments: #586e75;
 
-.highlight  { background: #ffffff;}
-.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight  { background: $code-background;
+              border: none;
+              margin: 0 5px;}
+.highlight .c { color: $comments; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { font-weight: bold } /* Keyword */
 .highlight .o { font-weight: bold } /* Operator */
