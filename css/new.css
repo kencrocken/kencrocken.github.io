@@ -230,8 +230,7 @@ input[type="submit"] {
 /* ----------------------------------------------------------*/
 .highlight {
   background: #eee8d5;
-  border: none;
-  margin: 0 5px; }
+  border: none; }
 
 .highlight .c {
   color: #586e75;
@@ -696,41 +695,39 @@ article {
   font-size: 28px; }
   .about-me li {
     display: inline; }
-  .about-me a {
+  .about-me a .active {
+    opacity: 1; }
+  .about-me a .rocket {
+    color: #268bd2; }
+  .about-me a .gavel {
+    color: #dc322f; }
+  .about-me a .code {
+    color: #859900; }
+  .about-me a .beer {
+    color: #b58900; }
+  .about-me a .rocket, .about-me a .gavel, .about-me a .code, .about-me a .beer {
     transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
+    text-align: center;
+    padding: 0 1px;
     opacity: 0.4; }
-    .about-me a.active {
+    .about-me a .rocket:hover, .about-me a .gavel:hover, .about-me a .code:hover, .about-me a .beer:hover {
       opacity: 1; }
-    .about-me a:hover {
-      opacity: 1; }
-    .about-me a .rocket, .about-me a .gavel, .about-me a .code, .about-me a .beer {
-      text-align: center;
-      padding: 0 3px; }
-    .about-me a .rocket {
-      color: #268bd2; }
-    .about-me a .gavel {
-      color: #dc322f; }
-    .about-me a .code {
-      color: #859900; }
-    .about-me a .beer {
-      color: #b58900; }
 
 .contents {
   max-width: 800px;
-  min-height: 275px;
+  min-height: 200px;
   margin: 0 auto;
   padding: 15px 5px; }
   .contents h2 {
+    font-size: 2.8em;
     text-align: center; }
   .contents p {
     font-family: "Open Sans", sans-serif;
-    font-size: 1.1em;
-    font-weight: 300;
-    line-height: 1.6em;
-    letter-spacing: 1px; }
+    font-size: 1em;
+    font-weight: 300; }
 
 #rocket-content h2 {
   color: #268bd2; }
@@ -743,6 +740,11 @@ article {
 
 #beer-content h2 {
   color: #b58900; }
+
+.tab-panel {
+  display: none; }
+  .tab-panel .active {
+    display: block; }
 
 article.type-system-slab {
   max-width: 650px;
@@ -765,9 +767,9 @@ article.type-system-slab {
     text-align: left;
     text-transform: uppercase; }
   article.type-system-slab h1 {
-    font-family: "Roboto Slab", serif;
+    font-family: 'Open Sans Condensed', sans-serif;
     font-size: 1.6em;
-    font-weight: 400;
+    font-weight: 300;
     margin-bottom: .1em; }
     @media screen and (min-width: 40em) {
       article.type-system-slab h1 {

@@ -281,18 +281,9 @@ article{
   font-size: 28px;
   li { display: inline; }
   a {
-
-    @include transition_all_ease (0.5s);
-    opacity: 0.4;
-    &.active { opacity: 1;}
-    &:hover {
-      opacity: 1;
-    }
-    .rocket, .gavel, .code, .beer{
-      text-align: center;
-      padding: 0 3px;
-
-    }
+      .active {
+        opacity: 1;
+      }
     .rocket{
       color: rgb(38, 139, 210);
     }
@@ -308,6 +299,16 @@ article{
     .beer {
       color: rgb(181, 137, 0);
     }
+    .rocket, .gavel, .code, .beer{
+      @include transition_all_ease (0.5s);      
+      text-align: center;
+      padding: 0 1px;
+      opacity: 0.4;
+      &:hover {
+        opacity: 1;
+      }
+
+    }
   }
 }
 
@@ -315,18 +316,17 @@ article{
   $sans-serif: 'Open Sans', sans-serif;
   $serif: 'Roboto Slab', serif;
   max-width: 800px;
-  min-height: 275px;
+  min-height: 200px;
   margin: 0 auto;
   padding: 15px 5px;
   h2 {
+    font-size:2.8em;
     text-align: center;
   }
   p {
     font-family: $sans-serif;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 300;
-    line-height: 1.6em;
-    letter-spacing: 1px;
   }
 }
 
@@ -353,6 +353,12 @@ article{
   }
 }
 
+.tab-panel {
+  display: none; 
+  .active {
+    display: block;
+  }
+}
 
 article.type-system-slab {
   $sans-serif: 'Open Sans', sans-serif;
@@ -376,9 +382,9 @@ article.type-system-slab {
   }
 
   h1 {
-    font-family: $serif;
+    font-family: 'Open Sans Condensed', sans-serif;
     font-size: 1.6em;
-    font-weight: 400;
+    font-weight: 300;
     margin-bottom: .1em;
 
     @include media($medium-screen) {

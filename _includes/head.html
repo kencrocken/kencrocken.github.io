@@ -19,41 +19,50 @@
   <script src="{{ "/javascripts/jquery.min.js" | prepend: site.baseurl }}"></script>
   <script src="{{ "/javascripts/bootstrap.min.js" | prepend: site.baseurl }}"></script>
   <script src="{{ "/javascripts/scrollReveal.min.js" | prepend: site.baseurl }}"></script>
-  <script>
-  // $(document).ready(function(){
-  //   $('#rocket').click(function(){
-  //     $('#rocket-content').toggle();
-  //   });
-  //   $('#gavel').click(function(){
-  //     $('#gavel-content').toggle();
-  //   });
-  //   $('#code').click(function(){
-  //     $('#code-content').toggle();
-  //   });
-  //   $('#beer').click(function(){
-  //     $('#beer-content').toggle();
+  
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+   $('.contents  .show').hide(); // hide div's on load using parent class as a starting point 
+   $('.contents #rocket-content').show();  
+   $('.about-me a').click(function(e) {  // on the anchor clicks
+      var $div = $('.contents div').eq($(this).index('#about-me-menu a'));
+      var $link = $(this).find('i');
+
+      e.preventDefault();
+      $('.about-me a i').not($link).removeClass('active');
+      $('.contents div').not($div).fadeOut(275);  // hide all but the relevant div
+      $('.contents div').removeClass('active');
+
+      $div.delay(300).fadeIn(400,"linear");
+      $div.addClass('active');
+      $link.addClass('active');
+  });
+});
+  // $('.about-me').each(function(){
+
+  //   var $this = $(this);
+  //   var $tab  = $this.find('li.active');
+  //   var $link = $tab.find('a');
+  //   var $panel = $($link.attr('href')); 
+
+  //   $this.on('click', '.tab-control', function(e){
+  //     e.preventDefault();
+  //     var $link = $(this);
+  //     var id = this.hash;
+
+  //     if (id && !$link.is('.active')) {
+  //       $panel.removeClass('active');
+  //       $tab.removeClass('active');
+
+  //       $panel = $($id).addClass('active');
+  //       $tab = $link.parent().addClass('active');
+  //     }
+  //     $panel.not('.active').hide();
   //   });
   // });
-  </script>
 
-<script type="text/javascript">
+</script>
 
-$(document).ready(function(){
-         $('.contents  .show').hide(); // hide div's on load using parent class as a starting point 
-         $('.contents #rocket-content').show();  
-         $('#about-me-menu a').click(function() {  // on the anchor clicks that are inside div with id=nav
-            var $div = $('.contents div').eq($(this).index('#about-me-menu a'));
-            var $menu_item = $('#about-me-menu a').eq($(this).index('.contents div'));  // get the relevant div
-            $div.show("slow");  // show the relevant div
-            $('.contents div').not($div).hide();  // hide all but the relevant div
-        });
-    });
-</script>
-<script type="text/javascript">
-// $(document).ready(function() {
-//   $("#about-me-menu a").click(function () {
-//     $(this).addClass('active');
-//   });
-// });
-</script>
 </head>
