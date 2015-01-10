@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+  
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A forty year old frood, who hasn't forgotten his towel.">
+  <link rel="canonical" href="http://kencrocken.github.io/2014/08/28/new-project:-beer-search/">
+  <title>Front End Skills with Beer</title>
+  <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
+    <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+  <!-- // <script src="/javascripts/scrollReveal.min.js"></script> -->  
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.contents>div:not(:first)').hide(); // hide div's on load using parent class as a starting point 
+    // $('.contents #rocket-content').show();  
+
+    $('.about-me a').click(function(e) {  // on the anchor clicks
+        var $div = $('.contents div').eq($(this).index('#about-me-menu a'));
+        var $link = $(this).find('i');
+
+        e.preventDefault();
+        $('.about-me a i').not($link).removeClass('active');
+        $('.contents div').not($div).fadeOut(275);  // hide all but the relevant div
+        $('.contents div').removeClass('active');
+
+        $div.delay(300).fadeIn(400,"linear");
+        $div.addClass('active');
+        $link.addClass('active');
+    });
+});
+</script>
+
+
+
+</head>
+
+
+<body>
+
+  <div class="line-behind-text">
+    <img src="http://www.gravatar.com/avatar/83fb4a35e52381397d9c07d9e25b4c05?s=75" />
+  </div>
+  <header>
+    <section class = "masthead">
+      <div class ="brand">
+        <h1>KENNETH E. CROCKEN</h1>
+        <h6>A forty year old frood, who hasn't forgotten his towel.</h6>
+        <p>Web Development</p>
+
+      </div>
+      <div class = "address-block">
+        <ul class="contact">
+          <li><i class = "fa fa-envelope fa-lg"></i> 
+              <a href="mailto:kcrocken@gmail.com">kcrocken@gmail.com</a></li>
+          <li><i class = "fa fa-phone fa-lg"></i> 
+              <a href="tel:+1 (443) 802-7145">(443) 802-7145</a></li>
+          <li><i class = "fa fa-map-marker fa-lg"></i> 
+              <a href="http://goo.gl/maps/hM6yB">Laurel, Maryland</a></li>
+        </ul>
+        <ul class="social">
+          <li class="linkedin"><a href="http://www.linkedin.com/pub/kenneth-crocken/17/914/aaa"><i class="fa fa-linkedin-square"></i></a></li>
+          <li class="googleplus"><a href="http://plus.google.com/104867203056603798573"><i class="fa fa-google-plus-square"></a></i></li>
+          <li class="twitter"><a href="http://twitter.com/kencrocken"><i class="fa fa-twitter-square"></i></a></li>
+          <li class="github"><a href="http://github.com/kencrocken"><i class="fa fa-github"></i></a></li>
+        </ul>
+      </div>
+    </section>
+
+
+  </header>
+
+  <div class = "container">
+  <article class="type-system-slab">
+    <p class="type"> <a href="/">Home</a></p>
+    <h1>Front End Skills with Beer</h1>
+    <h2></h2>
+    <p class="date">Aug 28, 2014</p>
+        <p>So, my back end web development class at GA is over.</p>
+
+<p>I learned a lot, and it was a really good experience. All in all, it really helped me get along in this trip to become a web developer. But, I find myself asking again, now what?</p>
+
+<p>I need the front-end skills, this won’t go to the next level unless I can show some full-stack knowledge.</p>
+
+<p>In the book store the other day, I found a rag “Code”, looks like just some glorified advert for a framework, but inside was a cool little app, written in Ruby (I know that) and Sinatra (I know that too) - it searches for beer using <a href="http://www.brewerydb.com">BreweryDB</a>.  SOLD!</p>
+
+<p>The app is bare bones enough and fairly straight forward that I think I can use this as a springboard to play with some front end technologies.</p>
+
+<p>Right now, I have it deployed to Heroku, <a href="http://murmuring-falls-8083.herokuapp.com/">here</a>. Now, just need to think of some ways to spruce things up.</p>
+
+    <hr>
+    <p class="author"> <a href="/">Home</a></p>
+  </article>
+</div>
+
+
+
+  <!-- Footer with the link back to top and umbrella icon -->
+
+<footer>
+    <div class = "container">
+          <p class="top" data-sr="enter bottom and scale up 20% over 2s"><a href="#top"><i class="fa fa-chevron-circle-up"></a></i></p>
+          <small>&copy 2015 <a href="mailto: kcrocken@gmail.com">Kenneth E. Crocken</a>. 
+
+          <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></small>
+          <p class = "umbrella"><i class="fa fa-umbrella"></i></p>
+
+    </div>  
+</footer>
+
+
+  <script src="/js/vendor.js"></script>
+<script src="/js/main.js"></script>
+    
+</body>
+</html>

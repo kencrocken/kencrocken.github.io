@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+  
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A forty year old frood, who hasn't forgotten his towel.">
+  <link rel="canonical" href="http://kencrocken.github.io/2014/06/14/ruby-r-and-my-gmail/">
+  <title>Ruby, R and My GMail</title>
+  <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
+    <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+  <!-- // <script src="/javascripts/scrollReveal.min.js"></script> -->  
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.contents>div:not(:first)').hide(); // hide div's on load using parent class as a starting point 
+    // $('.contents #rocket-content').show();  
+
+    $('.about-me a').click(function(e) {  // on the anchor clicks
+        var $div = $('.contents div').eq($(this).index('#about-me-menu a'));
+        var $link = $(this).find('i');
+
+        e.preventDefault();
+        $('.about-me a i').not($link).removeClass('active');
+        $('.contents div').not($div).fadeOut(275);  // hide all but the relevant div
+        $('.contents div').removeClass('active');
+
+        $div.delay(300).fadeIn(400,"linear");
+        $div.addClass('active');
+        $link.addClass('active');
+    });
+});
+</script>
+
+
+
+</head>
+
+
+<body>
+
+  <div class="line-behind-text">
+    <img src="http://www.gravatar.com/avatar/83fb4a35e52381397d9c07d9e25b4c05?s=75" />
+  </div>
+  <header>
+    <section class = "masthead">
+      <div class ="brand">
+        <h1>KENNETH E. CROCKEN</h1>
+        <h6>A forty year old frood, who hasn't forgotten his towel.</h6>
+        <p>Web Development</p>
+
+      </div>
+      <div class = "address-block">
+        <ul class="contact">
+          <li><i class = "fa fa-envelope fa-lg"></i> 
+              <a href="mailto:kcrocken@gmail.com">kcrocken@gmail.com</a></li>
+          <li><i class = "fa fa-phone fa-lg"></i> 
+              <a href="tel:+1 (443) 802-7145">(443) 802-7145</a></li>
+          <li><i class = "fa fa-map-marker fa-lg"></i> 
+              <a href="http://goo.gl/maps/hM6yB">Laurel, Maryland</a></li>
+        </ul>
+        <ul class="social">
+          <li class="linkedin"><a href="http://www.linkedin.com/pub/kenneth-crocken/17/914/aaa"><i class="fa fa-linkedin-square"></i></a></li>
+          <li class="googleplus"><a href="http://plus.google.com/104867203056603798573"><i class="fa fa-google-plus-square"></a></i></li>
+          <li class="twitter"><a href="http://twitter.com/kencrocken"><i class="fa fa-twitter-square"></i></a></li>
+          <li class="github"><a href="http://github.com/kencrocken"><i class="fa fa-github"></i></a></li>
+        </ul>
+      </div>
+    </section>
+
+
+  </header>
+
+  <div class = "container">
+  <article class="type-system-slab">
+    <p class="type"> <a href="/">Home</a></p>
+    <h1>Ruby, R and My GMail</h1>
+    <h2></h2>
+    <p class="date">Jun 14, 2014</p>
+        <p>For the Back End class at GA, we have to submit a final project.  One thing that is near and dear is E-Discovery.  I didn’t realize that you needed a law degree and license to read emails, but it appears that you do - and it pays.  So, when the final project was brought up, I thought I could develop some basic assessment tools - an app that will help assess the size of the email data collected and the contents of the data collected.  I’m in the Data Science classes at Coursera too, so I thought I could plot some info and subset in R.  Pretty cool right?  Ruby &amp; R!</p>
+
+<p>I wasn’t sure where to start with the Ruby script, so I turned to my old pal Google and we started to chat about Ruby script and email, when finally Google mentioned Sau Cheong Chang and the book Exploring Everyday Things, part of which deals with examining email with Ruby and R – bingo!</p>
+
+<p>The Ruby script below, is pretty much from the book - I didn’t change too much up.  It basically reads my Gmail account and spits out a CSV file.  For my final project, things will have to be different, but this is a start.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="s1">&#39;csv&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;mail&#39;</span>
+
+<span class="no">EMAILS</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="no">USER</span> <span class="o">=</span> <span class="s1">&#39;kcrocken&#39;</span>
+<span class="no">PASS</span> <span class="o">=</span> <span class="s1">&#39;youdontgetmypassword&#39;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">write_row</span><span class="p">(</span><span class="n">mail</span><span class="p">,</span> <span class="n">csv</span><span class="p">)</span>
+  <span class="n">email_data</span> <span class="o">=</span> <span class="o">[]</span>
+  <span class="n">email_data</span> <span class="o">&lt;&lt;</span> <span class="n">mail</span><span class="o">.</span><span class="n">from</span>
+  <span class="n">email_data</span> <span class="o">&lt;&lt;</span> <span class="n">mail</span><span class="o">.</span><span class="n">to</span>
+  <span class="n">email_data</span> <span class="o">&lt;&lt;</span> <span class="n">mail</span><span class="o">.</span><span class="n">date</span>
+  <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">email_data</span>
+<span class="k">end</span>
+
+<span class="no">Mail</span><span class="o">.</span><span class="n">defaults</span> <span class="k">do</span>
+  <span class="n">retriever_method</span> <span class="ss">:imap</span><span class="p">,</span> <span class="ss">:address</span> <span class="o">=&gt;</span> <span class="s2">&quot;imap.gmail.com&quot;</span><span class="p">,</span>
+                          <span class="ss">:port</span>       <span class="o">=&gt;</span> <span class="mi">993</span><span class="p">,</span>
+                          <span class="ss">:user_name</span>  <span class="o">=&gt;</span> <span class="no">USER</span><span class="p">,</span>
+                          <span class="ss">:password</span>   <span class="o">=&gt;</span> <span class="no">PASS</span><span class="p">,</span>
+                          <span class="ss">:enable_ssl</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+<span class="k">end</span>
+
+<span class="n">gmail</span> <span class="o">=</span> <span class="p">{</span><span class="ss">inbox</span><span class="p">:</span> <span class="s1">&#39;INBOX&#39;</span><span class="p">,</span> <span class="ss">sent</span><span class="p">:</span> <span class="s1">&#39;[Gmail]/Sent Mail&#39;</span><span class="p">}</span>
+<span class="n">gmail</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">name</span><span class="p">,</span> <span class="n">mailbox</span><span class="o">|</span>
+  <span class="n">emails</span> <span class="o">=</span> <span class="no">Mail</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:mailbox</span> <span class="o">=&gt;</span> <span class="n">mailbox</span><span class="p">,</span> 
+                     <span class="ss">:what</span> <span class="o">=&gt;</span> <span class="ss">:last</span><span class="p">,</span> 
+                     <span class="ss">:count</span> <span class="o">=&gt;</span> <span class="no">EMAILS</span><span class="p">,</span> 
+                     <span class="ss">:order</span> <span class="o">=&gt;</span> <span class="ss">:dsc</span><span class="p">)</span>
+
+  <span class="no">CSV</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">_gmail.csv&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">csv</span><span class="o">|</span>
+    <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="sx">%w(from to date)</span>
+    <span class="n">emails</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">mail</span><span class="o">|</span>
+      <span class="k">begin</span> 
+        <span class="n">write_row</span> <span class="n">mail</span><span class="p">,</span> <span class="n">csv</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2"> : </span><span class="si">#{</span><span class="n">mail</span><span class="o">.</span><span class="n">from</span><span class="si">}</span><span class="s2"> to </span><span class="si">#{</span><span class="n">mail</span><span class="o">.</span><span class="n">to</span><span class="si">}</span><span class="s2"> with subject: </span><span class="si">#{</span><span class="n">mail</span><span class="o">.</span><span class="n">date</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="k">rescue</span>
+        <span class="nb">puts</span> <span class="s2">&quot;Cannot write this mail -&gt; </span><span class="si">#{</span><span class="n">mail</span><span class="o">.</span><span class="n">from</span><span class="si">}</span><span class="s2"> to </span><span class="si">#{</span><span class="n">mail</span><span class="o">.</span><span class="n">to</span><span class="si">}</span><span class="s2"> with subject: </span><span class="si">#{</span><span class="n">mail</span><span class="o">.</span><span class="n">subject</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></div>
+
+<p>Chang also provides an R script to plot the data, I changed it up a little to suit my needs.  I found that the time frames for my inbox and sent mail is a bit different, not surprising since I get a lot more mail than I send out.  So I had to adjust the R script to account for the differing times.  Eventually, I just subsetted the data to May and then merged the data with “NA” where appropriate.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span> <span class="c1">## Initialize the GGPlot library</span>
+
+<span class="c1"># Read in our data from the Ruby script</span>
+<span class="n">inbox_data</span> <span class="o">&lt;-</span> <span class="n">read</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;./data/inbox_gmail.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="no">TRUE</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">sent_data</span> <span class="o">&lt;-</span> <span class="n">read</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;./data/sent_gmail.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="no">TRUE</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get our inbox data to where we need it, a data frame of </span>
+<span class="c1"># the number of emails for each day of May</span>
+<span class="n">inbox_data</span><span class="vg">$date</span> <span class="o">&lt;-</span> <span class="n">as</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="n">inbox_data</span><span class="vg">$date</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;%Y-%m-%d&quot;</span><span class="p">)</span>  <span class="c1">## Convert the date column to date data type</span>
+
+<span class="c1"># Subset the inbox data to just emails received in May</span>
+<span class="n">email_inbox</span> <span class="o">&lt;-</span> <span class="n">subset</span><span class="p">(</span><span class="n">inbox_data</span><span class="p">,</span> <span class="n">inbox_data</span><span class="vg">$date</span> <span class="o">&gt;=</span> <span class="s2">&quot;2014-05-01&quot;</span> <span class="o">&amp;</span> <span class="n">inbox_data</span><span class="vg">$date</span> <span class="o">&lt;=</span> <span class="s2">&quot;2014-05-30&quot;</span><span class="p">)</span>
+
+<span class="n">dates</span> <span class="o">&lt;-</span> <span class="n">email_inbox</span><span class="vg">$date</span> <span class="c1">## get just the dates</span>
+<span class="n">elements</span> <span class="o">&lt;-</span> <span class="nb">format</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="s1">&#39;%d&#39;</span><span class="p">)</span> <span class="c1">## get just the day</span>
+<span class="n">inbox_count</span> <span class="o">&lt;-</span> <span class="n">as</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">table</span><span class="p">(</span><span class="n">elements</span><span class="p">))</span> <span class="c1">## table that up</span>
+<span class="n">colnames</span><span class="p">(</span><span class="n">inbox_count</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;days&quot;</span><span class="p">,</span> <span class="s2">&quot;inbox&quot;</span><span class="p">)</span> <span class="c1">## rename the columns - &#39;days&#39; will be how we merge</span>
+
+<span class="c1"># This is to get a count of the senders - similar to the dates.</span>
+<span class="n">senders</span> <span class="o">&lt;-</span> <span class="n">as</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">email_inbox</span><span class="vg">$from</span><span class="p">)</span>
+<span class="n">senders_count</span> <span class="o">&lt;-</span> <span class="n">as</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">table</span><span class="p">(</span><span class="n">senders</span><span class="p">))</span>
+<span class="n">senders_count</span> <span class="o">&lt;-</span> <span class="n">senders_count</span><span class="o">[</span> <span class="n">order</span><span class="p">(</span><span class="n">senders_count</span><span class="o">[</span><span class="p">,</span><span class="mi">2</span><span class="o">]</span><span class="p">),</span><span class="o">]</span>
+<span class="n">senders_count</span> <span class="o">&lt;-</span> <span class="n">subset</span><span class="p">(</span><span class="n">senders_count</span><span class="p">,</span> <span class="n">senders_count</span><span class="vg">$Freq</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># For the Sent data, its the same process as with the inbox box data</span>
+<span class="n">sent_data</span><span class="vg">$date</span> <span class="o">&lt;-</span> <span class="n">as</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="n">sent_data</span><span class="vg">$date</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;%Y-%m-%d&quot;</span><span class="p">)</span>
+<span class="n">email_sent</span> <span class="o">&lt;-</span> <span class="n">subset</span><span class="p">(</span><span class="n">sent_data</span><span class="p">,</span> <span class="n">sent_data</span><span class="vg">$date</span> <span class="o">&gt;=</span> <span class="s2">&quot;2014-05-01&quot;</span> <span class="o">&amp;</span> <span class="n">sent_data</span><span class="vg">$date</span> <span class="o">&lt;=</span> <span class="s2">&quot;2014-05-30&quot;</span><span class="p">)</span>
+<span class="n">dates</span> <span class="o">&lt;-</span> <span class="n">email_sent</span><span class="vg">$date</span>
+<span class="n">elements</span> <span class="o">&lt;-</span> <span class="nb">format</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="s1">&#39;%d&#39;</span><span class="p">)</span>
+<span class="n">sent_count</span> <span class="o">&lt;-</span> <span class="n">as</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">table</span><span class="p">(</span><span class="n">elements</span><span class="p">))</span>
+<span class="n">colnames</span><span class="p">(</span><span class="n">sent_count</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;days&quot;</span><span class="p">,</span> <span class="s2">&quot;sent&quot;</span><span class="p">)</span>
+
+<span class="c1"># Merge the inbox and sent counts into a data frame</span>
+<span class="c1"># the merge is keyed on &#39;days&#39;.  I sent significantly less emails than I received</span>
+<span class="c1"># so I filled in any empty data in the sent_count with &#39;NA&#39;</span>
+<span class="n">email</span> <span class="o">&lt;-</span> <span class="n">merge</span><span class="p">(</span><span class="n">inbox_count</span><span class="p">,</span> <span class="n">sent_count</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;days&quot;</span><span class="p">,</span> <span class="n">all</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="no">TRUE</span><span class="p">)</span>
+
+<span class="c1"># --- Initialize the PNG graphic device to save the plot to an image file</span>
+<span class="n">png</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;./data/figure/email.png&quot;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">480</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">480</span><span class="p">)</span>
+
+<span class="c1"># --- Start the plot by calling out the data set to be used - &#39;email&#39;</span>
+<span class="n">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">email</span><span class="p">)</span> <span class="o">+</span> 
+    <span class="c1"># --- sets our legends, have to set both or two legends are displayed ... weird.</span>
+    <span class="n">scale_shape_manual</span><span class="p">(</span><span class="nb">name</span> <span class="o">=</span> <span class="s2">&quot;Mailbox&quot;</span><span class="p">,</span> 
+                       <span class="n">values</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> 
+    
+    <span class="n">scale_colour_manual</span><span class="p">(</span><span class="nb">name</span> <span class="o">=</span> <span class="s2">&quot;Mailbox&quot;</span><span class="p">,</span> 
+                        <span class="n">values</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;black&#39;</span><span class="p">))</span> <span class="o">+</span>
+    <span class="c1"># --- plot our points and lines</span>
+    <span class="n">geom_point</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">days</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">inbox</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="s1">&#39;inbox&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;inbox&quot;</span><span class="p">))</span> <span class="o">+</span>
+    <span class="n">geom_smooth</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">days</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">inbox</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="s1">&#39;inbox&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;inbox&#39;</span><span class="p">,</span> <span class="n">group</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span>
+    <span class="n">geom_point</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">days</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">sent</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="s1">&#39;sent&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;sent&quot;</span><span class="p">))</span> <span class="o">+</span>
+    <span class="n">geom_smooth</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">days</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">sent</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="s1">&#39;sent&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;sent&#39;</span><span class="p">,</span> <span class="n">group</span> <span class="o">=</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span>
+    <span class="c1"># --- Label the plot</span>
+    <span class="n">labs</span> <span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;May Gmail&quot;</span><span class="p">,</span> 
+          <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;Number of Emails&#39;</span><span class="p">,</span> 
+          <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Days&#39;</span><span class="p">)</span> 
+    
+<span class="n">dev</span><span class="o">.</span><span class="n">off</span><span class="p">()</span> <span class="c1">## turn the device off</span>
+<span class="n">png</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;./data/figure/senders.png&quot;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">480</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">480</span><span class="p">)</span>
+<span class="n">m</span> <span class="o">&lt;-</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">senders_count</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">senders</span><span class="p">,</span> <span class="n">weight</span> <span class="o">=</span> <span class="no">Freq</span><span class="p">))</span>
+<span class="n">m</span> <span class="o">+</span> <span class="n">geom_histogram</span><span class="p">((</span><span class="n">aes</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="o">.</span><span class="n">.count</span><span class="o">.</span><span class="n">.</span><span class="p">)))</span> <span class="o">+</span>
+    <span class="n">scale_fill_gradient</span><span class="p">(</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="n">low</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span> <span class="o">+</span>
+    <span class="n">theme</span><span class="p">(</span><span class="n">axis</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">hjust</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">angle</span> <span class="o">=</span> <span class="mi">90</span><span class="p">))</span>
+<span class="n">dev</span><span class="o">.</span><span class="n">off</span><span class="p">()</span></code></pre></div>
+
+<p>Below are the plots rendered from the R script - as you can see I get a whole lot more email than I send.
+<img src="http://kencrocken.github.io/images/email.png" alt="my gmail" class="img-responsive" /></p>
+
+<p>Where does all that email come from? </p>
+
+<p><img src="http://kencrocken.github.io/images/senders.png" alt="the senders" class="img-responsive" /></p>
+
+<p>Pretty cool, if I do say so myself - a ton of fun cranking this out.  Some emails were changed outside of the above script to protect the innovent.  Though in the end I think I will use the D3 javascript library to visualize the data rather than plots from R - I still think R may play a role, we gots to ensure that data is clean!</p>
+
+    <hr>
+    <p class="author"> <a href="/">Home</a></p>
+  </article>
+</div>
+
+
+
+  <!-- Footer with the link back to top and umbrella icon -->
+
+<footer>
+    <div class = "container">
+          <p class="top" data-sr="enter bottom and scale up 20% over 2s"><a href="#top"><i class="fa fa-chevron-circle-up"></a></i></p>
+          <small>&copy 2015 <a href="mailto: kcrocken@gmail.com">Kenneth E. Crocken</a>. 
+
+          <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></small>
+          <p class = "umbrella"><i class="fa fa-umbrella"></i></p>
+
+    </div>  
+</footer>
+
+
+  <script src="/js/vendor.js"></script>
+<script src="/js/main.js"></script>
+    
+</body>
+</html>

@@ -7,62 +7,36 @@
   <meta name="description" content="{{ site.description }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <!-- <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}"> -->
-  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
     <!-- Custom CSS -->
-  <!-- <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}"> -->
-  <!-- <link rel="stylesheet" href="{{ "/css/styles.css" | prepend: site.baseurl }}"> -->
-  <link rel="stylesheet" href="{{ "/css/new.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
   <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
-  <script src="{{ "/javascripts/jquery.min.js" | prepend: site.baseurl }}"></script>
-  <script src="{{ "/javascripts/bootstrap.min.js" | prepend: site.baseurl }}"></script>
-  <script src="{{ "/javascripts/scrollReveal.min.js" | prepend: site.baseurl }}"></script>
-  
+  <!-- // <script src="{{ "/javascripts/scrollReveal.min.js" | prepend: site.baseurl }}"></script> -->  
+
+
 <script type="text/javascript">
+$(document).ready(function(){
+    $('.contents>div:not(:first)').hide(); // hide div's on load using parent class as a starting point 
+    // $('.contents #rocket-content').show();  
 
-$(document).ready(function() {
+    $('.about-me a').click(function(e) {  // on the anchor clicks
+        var $div = $('.contents div').eq($(this).index('#about-me-menu a'));
+        var $link = $(this).find('i');
 
-   $('.contents  .show').hide(); // hide div's on load using parent class as a starting point 
-   $('.contents #rocket-content').show();  
-   $('.about-me a').click(function(e) {  // on the anchor clicks
-      var $div = $('.contents div').eq($(this).index('#about-me-menu a'));
-      var $link = $(this).find('i');
+        e.preventDefault();
+        $('.about-me a i').not($link).removeClass('active');
+        $('.contents div').not($div).fadeOut(275);  // hide all but the relevant div
+        $('.contents div').removeClass('active');
 
-      e.preventDefault();
-      $('.about-me a i').not($link).removeClass('active');
-      $('.contents div').not($div).fadeOut(275);  // hide all but the relevant div
-      $('.contents div').removeClass('active');
-
-      $div.delay(300).fadeIn(400,"linear");
-      $div.addClass('active');
-      $link.addClass('active');
-  });
+        $div.delay(300).fadeIn(400,"linear");
+        $div.addClass('active');
+        $link.addClass('active');
+    });
 });
-  // $('.about-me').each(function(){
-
-  //   var $this = $(this);
-  //   var $tab  = $this.find('li.active');
-  //   var $link = $tab.find('a');
-  //   var $panel = $($link.attr('href')); 
-
-  //   $this.on('click', '.tab-control', function(e){
-  //     e.preventDefault();
-  //     var $link = $(this);
-  //     var id = this.hash;
-
-  //     if (id && !$link.is('.active')) {
-  //       $panel.removeClass('active');
-  //       $tab.removeClass('active');
-
-  //       $panel = $($id).addClass('active');
-  //       $tab = $link.parent().addClass('active');
-  //     }
-  //     $panel.not('.active').hide();
-  //   });
-  // });
-
 </script>
+
+
 
 </head>

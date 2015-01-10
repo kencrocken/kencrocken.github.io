@@ -1,0 +1,1 @@
+$(function(){function n(){$("a[href='#top']").on("click",function(){return $("html, body").animate({scrollTop:0},"slow"),!1})}n()}),window.sr=new scrollReveal;

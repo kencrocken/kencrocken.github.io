@@ -9,3 +9,18 @@ excerpt_separator: <!--more-->
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+exclude: [
+  "node_modules",
+  "bower_components",
+  "sass",
+  "scripts",
+  "images",
+  "gulpfile.js",
+  "package.json",
+  "Rakefile",
+  "env.rb",
+  "bower.json",
+  "reporter.js"
+  ]
+

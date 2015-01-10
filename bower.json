@@ -1,0 +1,23 @@
+{
+  "name": "kencrocken.github.io",
+  "version": "0.0.1",
+  "homepage": "http://kencrocken.githun.io",
+  "authors": [
+    "Ken Crocken <kcrocken@gmail.com>"
+  ],
+  "main": "/css/new.css",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "fontawesome": "~4.2.0",
+    "bourbon": "4.0.2",
+    "neat": "1.7.1"
+  }
+}
