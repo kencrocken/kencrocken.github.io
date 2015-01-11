@@ -1,3 +1,4 @@
+_site
 env.rb
 *.sass-cache
 node_modules/

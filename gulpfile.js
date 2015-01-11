@@ -44,26 +44,22 @@ gulp.task('sass', function () {
 // UGLIFY
 gulp.task('js', function() {
   // main app js file
-  gulp.src('./scripts/main.js')
+  gulp.src(['./scripts/main.js', './scripts/app.js'])
   .pipe(jshint('.jshintrc'))
   .pipe(jshint.reporter('default'))
   .pipe(concat("main.js"))
-  .pipe(uglify()
-                .on("error", notify.onError(function (error) {
-                 return "Error: " + error.message;
-             })))
+
   .pipe(gulp.dest('./js'))
 
   // create 1 vendor.js file from all vendor plugin code
     gulp.src([
         './bower_components/jquery/dist/jquery.js',  
-        './bower_components/scrollReveal.js/dist/*.js'
+        './bower_components/scrollReveal.js/dist/*.js',
+        './bower_components/angular/angular.js',
+        './bower_components/angular-resource/angular-resource.js'        
         ])
     .pipe(concat("vendor.js"))
-    .pipe(uglify()
-                .on("error", notify.onError(function (error) {
-                 return "Error: " + error.message;
-             })))
+
     .pipe(gulp.dest('./js'))
     .pipe( notify({ message: "Javascript is now ugly!"}));
 });
@@ -112,8 +108,13 @@ gulp.task('browser-sync', function(){
         //proxy the jekyll server
         proxy: "http://localhost:4000",
         //long delay needed to allow jekyll-build to complete
-        reloadDelay: 5000
+        reloadDelay: 6000
     });
+});
+
+// BUILD
+gulp.task('build', ['sass', 'js', 'icons', 'images', 'icons'],function(){
+    gulp.start('jekyll-build');
 });
 
 // CLEAN
@@ -144,7 +145,6 @@ gulp.task('watch', function() {
 
 // DEFAULT
 gulp.task('default', ['clean'], function() {
-    gulp.start('sass', 'js', 'icons', 'images');
-    gulp.start('jekyll-build');
+    gulp.start('build');
     gulp.start('browser-sync', 'watch');
 });
