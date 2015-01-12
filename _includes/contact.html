@@ -13,11 +13,11 @@
       <input type="text" name="_gotcha" ng-model="message._gotcha" style="display:none" />
       <textarea type="text" class = "formmsg" name="text" rows="3" placeholder = "What ya want to know?" ng-model="message.text"></textarea>
       <button type="submit" class="button">Submit</button>
+      <div ng-show="contactMe.name.$invalid && submitted" class="help-block invalid">
+        <p>Can I at least get your name?</p>
+      </div>
     </form>
-    <div ng-show="contactMe.name.$invalid && submitted" class="help-block invalid">
-      <img src="http://fillmurray.com/g/100/100" alt="Murray">
-      <p>Can I at least get your name?</p>
-    </div>
+
     <div ng-show="submittedValid" class="help-block valid">
       <img src="http://fillmurray.com/g/300/300" alt="Murray">
       <h3>Youre're Awesome</h3>

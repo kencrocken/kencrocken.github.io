@@ -16,7 +16,7 @@ $break-small: 650px;
   -moz-transition: all $seconds ease;
   -o-transition: all $seconds ease;  
 }
-
+ 
 /*--Global Styles--*/
 body {
   font-family: 'Open Sans', sans-serif;
@@ -529,7 +529,7 @@ article.type-system-slab {
 .projects {
   width: 655px;
   margin: 0 auto;
-  padding-top: 15px;
+  padding-top: 35px;
   padding-bottom: 15px;
       text-align: center;
   li {
@@ -678,10 +678,12 @@ input.formemail:focus, input.formname:focus, textarea.formmsg:focus{
   text-indent: 0;
   @include transition_all_ease(0.5s);
   &:hover {
-    background-color: #CC0000;    
+    background-color: #FF0000;   
+    color: lightgray; 
+    font-weight: 400;
   }
   &:focus {
-    background-color: #FF0000;  
+    // background-color: #FF0000;  
     outline: none;    
   }
 }
@@ -691,16 +693,31 @@ input.formemail:focus, input.formname:focus, textarea.formmsg:focus{
     border-radius: 50%;
     border: 1px solid black;
   }
+  p {
+    font-size: 15px;
+    font-weight: 100;
+    // text-align: center;
+    color: red;
+  }
 }
 
-.invalid img {
-    float: right;
+.invalid {
+  padding-top: 5px;
+  img {
+    float: left;
+  }
+}
 
+.valid { text-align: center;}
+
+// The Animations
+.invalid img {
+    
     // transform: scale(0.33);
-    animation: fadein 2s;
-    -moz-animation: fadein 2s; /* Firefox */
-    -webkit-animation: fadein 2s; /* Safari and Chrome */
-    -o-animation: fadein 2s; /* Opera */
+    animation: fadein 1s;
+    -moz-animation: fadein 1s; /* Firefox */
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+    -o-animation: fadein 1s; /* Opera */
 }
 @keyframes fadein {
     from {
@@ -739,13 +756,13 @@ input.formemail:focus, input.formname:focus, textarea.formmsg:focus{
         transform: scale(1);
     }
 }
-.valid { text-align: center;}
+
 .valid img {
     // transform: scale(0.33);
-    animation: fadein 2s;
-    -moz-animation: fadein 2s; /* Firefox */
-    -webkit-animation: fadein 2s; /* Safari and Chrome */
-    -o-animation: fadein 2s; /* Opera */
+    animation: fadein 1s;
+    -moz-animation: fadein 1s; /* Firefox */
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+    -o-animation: fadein 1s; /* Opera */
 }
 @keyframes fadein {
     from {
