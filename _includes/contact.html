@@ -8,8 +8,10 @@
       <div ng-class="{ 'has-error' : contactMe.name.$invalid && submitted }" class="form-group">
         <input type="text" class = "formname" name="name" placeholder = "Your name." ng-model="message.name" required>
       </div>
-      <input type="email" class = "formemail" name="_replyto" placeholder = "Your email." ng-model="message.reply_to">
-      <textarea type="text" class = "formmsg" name="message" rows="3" placeholder = "What ya want to know?" ng-model="message.text"></textarea>
+      <input type="email" class = "formemail" name="_replyto" placeholder = "Your email." ng-model="message._replyto">
+      <input type="hidden" name="_next" ng-model="message._next" value="" />
+      <input type="text" name="_gotcha" ng-model="message._gotcha" style="display:none" />
+      <textarea type="text" class = "formmsg" name="text" rows="3" placeholder = "What ya want to know?" ng-model="message.text"></textarea>
       <button type="submit" class="button">Submit</button>
     </form>
     <div ng-show="contactMe.name.$invalid && submitted" class="help-block invalid">
