@@ -48,7 +48,7 @@ a {
     color: darken(#dc322f, 20%);
     text-decoration: none;
   }
-  &:active {
+  &:active, &:focus {
     color: #dc322f;
   }
 }
