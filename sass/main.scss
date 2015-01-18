@@ -41,7 +41,7 @@ h2 {
   margin: 0px 0 21px 0;
 }
 
-a {
+a, a:active {
   @include transition_all_ease(0.3s);
   color: #dc322f;
   &:hover {
