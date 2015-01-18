@@ -122,15 +122,3 @@ mySite.controller('aboutCtrl', function($scope) {
     };
 
 })
-mySite.directive('mytabs', function(){
-  return {
-    restrict: 'E',
-    replace: true,
-    transclude: true,
-    scope: {
-      active: '=',
-      link: '&'
-    },
-    template: '<a ng-click="active = $id; link({param: param});" class="select-show" ng-class="{active: $id === active}" ng-transclude></a>'
-  }
-})
