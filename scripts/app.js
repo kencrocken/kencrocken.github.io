@@ -1,8 +1,7 @@
-var mySite = angular.module('mySite', ['ngResource']);
+var mySite = angular.module('mySite', ['ngAnimate']);
 
-mySite.controller('contactCtrl', function($scope, $http, $resource) {
+mySite.controller('contactCtrl', function($scope, $http) {
     $http.defaults.useXDomain = true;
-    // $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
     $scope.message = {};
     $scope.submitForm = function(isValid, message) {
         $scope.submitted = true;
@@ -13,7 +12,6 @@ mySite.controller('contactCtrl', function($scope, $http, $resource) {
             $http.post( '//formspree.io/kcrocken@gmail.com', $scope.message, {
                 params:  $scope.message,
                 headers: {
-                    // "Access-Control-Allow-Origin": "http://localhost:3000",
                     "Content-Type": "application/x-www-form-urlencoded"
                 },
                 transformRequest: function(obj) {

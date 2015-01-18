@@ -1,42 +1,44 @@
-<div class="line-behind-text">
-  <div id="about-me-menu">
-    <ul class="about-me">
-      <li class="tab-control">
-        <a href="#rocket-content" class="rocket "><i class="fa fa-rocket rocket active"></i></a>
-      </li>
-      <li class="tab-control">
-        <a href="#gavel-content" class="gavel" ><i class="fa fa-gavel gavel"></i></a>
-      </li> 
-      <li class="tab-control">
-        <a href="#code-content" class="code"><i class="fa fa-code code"></i></a>
-      </li> 
-      <li class="tab-control">
-        <a href="#beer-content" class="beer"><i class="fa fa-beer beer"></i></a>
-      </li> 
-    </ul>
+<div id="about-me" ng-controller="aboutCtrl">
+  <div class="line-behind-text">
+    <div id="about-me-menu">
+      <ul class="about-me">
+        <li class="tab-control" ng-class="class">
+          <a ng-click="link('rocket')" ng-class="{active: checkContent('rocket')}"><i class="fa fa-rocket"></i></a>
+        </li>
+        <li class="tab-control">
+          <a ng-click="link('gavel')" ng-class="{active: checkContent('gavel')}"><i class="fa fa-gavel"></i></a>
+        </li> 
+        <li class="tab-control">
+          <a ng-click="link('code')" ng-class="{active: checkContent('code')}"><i class="fa fa-code"></i></a>
+        </li> 
+        <li class="tab-control">
+          <a ng-click="link('beer')"  ng-class="{active: checkContent('beer')}"><i class="fa fa-beer"></i></a>
+        </li> 
+      </ul>
+    </div> 
   </div>
 
-</div>
-<div class = "container">
-  <div class = "contents">
-    <div id="rocket-content" class="tab-panel">
-      <h2>To what comes next!</h2>
-      <p>What makes us tick? So, philosophy ... How people interact and communicate is what fascinated me, especially in light of this emerging technology, this new thing 'the Internet.'  So, law school came next.</p>
-    </div>
+  <div class = "container">
+    <div class = "contents">
+      <div class="animate-show rocket" ng-show="checkContent('rocket')">
+        <h2>To what comes next!</h2>
+        <p>What makes us tick? So, philosophy ... How people interact and communicate is what fascinated me, especially in light of this emerging technology, this new thing 'the Internet.'  So, law school came next.</p>
+      </div>
 
-    <div id = "gavel-content" class="tab-panel">
-      <h2>Original intent.</h2>
-      <p>It was about banner ads, click trails and personally identifiable information - but forsm some trademark work, this was the crowning acheivement of my techxs law career.  Soon, the dot coms went dot bust and it was litigation and trial work </p>
-    </div>
+      <div class="animate-show gavel" ng-show="checkContent('gavel')">
+        <h2>Original intent.</h2>
+        <p>It was about banner ads, click trails and personally identifiable information - but forsm some trademark work, this was the crowning acheivement of my techxs law career.  Soon, the dot coms went dot bust and it was litigation and trial work </p>
+      </div>
 
-    <div id = "code-content" class="tab-panel">
-      <h2>The language of the future.</h2>
-      <p>I told this to someone and they told me I should learn a language, not a bad idea.  Someone once said code is the new law.</p>
-    </div>
+      <div class="animate-show code" ng-show="checkContent('code')">
+        <h2>The language of the future.</h2>
+        <p>I told this to someone and they told me I should learn a language, not a bad idea.  Someone once said code is the new law.</p>
+      </div>
 
-    <div id = "beer-content" class="tab-panel">
-      <h2>I'm not a beer snob.</h2> 
-      <p>If the above doesn't make any sense, have a couple beers. I had a Chimay Triple recently - very good; if given the choice, I would probably grab a Fat Tire - its still a belgian - but I won't say no to a cold Miller Lite.  Everything has a time and place.  I guess this is why autumn seasonals are not made year round.</p>
+      <div class="animate-show beer" ng-show="checkContent('beer')">
+        <h2>I'm not a beer snob.</h2> 
+        <p>If the above doesn't make any sense, have a couple beers. I had a Chimay Triple recently - very good; if given the choice, I would probably grab a Fat Tire - its still a belgian - but I won't say no to a cold Miller Lite.  Everything has a time and place.  I guess this is why autumn seasonals are not made year round.</p>
+      </div>
     </div>
   </div>
 </div>

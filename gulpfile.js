@@ -18,11 +18,12 @@ var gulp         = require('gulp'),
 var format = ['./images/**/*.png','./images/**/*.jpg','./images/**/*.gif','./images/**/*.jpeg'],
     reload = browserSync.reload;
 
+
 // SASS
 gulp.task('sass', function () {
   gulp.src('./sass/**/*.scss')
     .pipe(sass({
-             style: 'compressed',
+             style: 'expanded',
              loadPath: [
                  './sass',
                  './bower_components/bourbon/dist',
@@ -44,7 +45,7 @@ gulp.task('sass', function () {
 // UGLIFY
 gulp.task('js', function() {
   // main app js file
-  gulp.src(['./scripts/main.js', './scripts/app.js'])
+  gulp.src(['./scripts/**/*.js' ])
   .pipe(jshint('.jshintrc'))
   .pipe(jshint.reporter('default'))
   .pipe(concat("main.js"))
@@ -56,7 +57,7 @@ gulp.task('js', function() {
         './bower_components/jquery/dist/jquery.js',  
         './bower_components/scrollReveal.js/dist/*.js',
         './bower_components/angular/angular.js',
-        './bower_components/angular-resource/angular-resource.js'        
+        './bower_components/angular-animate/angular-animate.js'        
         ])
     .pipe(concat("vendor.js"))
 
@@ -122,8 +123,6 @@ gulp.task('clean', function(cb) {
     del(['./css/fonts', './css/main.css', './js', './img'], cb)
 });
 
-// gulp.task('default', ['clean', 'sass', 'js', 'icons', 'images']);
-
 // BUILD and RELOAD
 gulp.task('site-reload', ['jekyll-build'], function(){
     gulp.start(reload);
@@ -141,6 +140,9 @@ gulp.task('watch', function() {
   // Watch image files
     gulp.watch('./images/**/*', ['images', 'site-reload']);
 
+    gulp.watch('./_includes/**/*', ['site-reload']);
+
+    gulp.watch('./_layouts/**/*', ['site-reload']);
 });
 
 // DEFAULT
