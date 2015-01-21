@@ -16,7 +16,8 @@
   <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
   <!-- // <script src="/javascripts/scrollReveal.min.js"></script> -->  
-
+  <script src="//use.typekit.net/gxr4kwk.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
 </head>
 <body ng-app="mySite">
 
@@ -28,18 +29,18 @@
       <div class ="brand">
         <h1>KENNETH E. CROCKEN</h1>
         <h6>A forty year old frood, who hasn't forgotten his towel.</h6>
-        <p>Web Development</p>
+        <p class="small-heading">Web Development</p>
 
       </div>
       <div class = "address-block">
-        <ul class="contact">
+        <!-- <ul class="contact">
           <li><i class = "fa fa-envelope fa-lg"></i> 
               <a href="mailto:kcrocken@gmail.com">kcrocken@gmail.com</a></li>
           <li><i class = "fa fa-phone fa-lg"></i> 
               <a href="tel:+1 (443) 802-7145">(443) 802-7145</a></li>
           <li><i class = "fa fa-map-marker fa-lg"></i> 
               <a href="http://goo.gl/maps/hM6yB">Laurel, Maryland</a></li>
-        </ul>
+        </ul> -->
         <ul class="social">
           <li class="linkedin"><a href="http://www.linkedin.com/pub/kenneth-crocken/17/914/aaa"><i class="fa fa-linkedin-square"></i></a></li>
           <li class="googleplus"><a href="http://plus.google.com/104867203056603798573"><i class="fa fa-google-plus-square"></a></i></li>
@@ -76,22 +77,22 @@
 
   <div class = "container">
     <div class = "contents">
-      <div class="animate-show rocket" ng-show="checkContent('rocket')">
+      <div class="animate-show rocket" class="ng-cloak" ng-show="checkContent('rocket')">
         <h2>To what comes next!</h2>
         <p>What makes us tick? So, philosophy ... How people interact and communicate is what fascinated me, especially in light of this emerging technology, this new thing 'the Internet.'  So, law school came next.</p>
       </div>
 
-      <div class="animate-show gavel" ng-show="checkContent('gavel')">
+      <div class="animate-show gavel" class="ng-cloak" ng-show="checkContent('gavel')">
         <h2>Original intent.</h2>
         <p>It was about banner ads, click trails and personally identifiable information - but forsm some trademark work, this was the crowning acheivement of my techxs law career.  Soon, the dot coms went dot bust and it was litigation and trial work </p>
       </div>
 
-      <div class="animate-show code" ng-show="checkContent('code')">
+      <div class="animate-show code" class="ng-cloak" ng-show="checkContent('code')">
         <h2>The language of the future.</h2>
         <p>I told this to someone and they told me I should learn a language, not a bad idea.  Someone once said code is the new law.</p>
       </div>
 
-      <div class="animate-show beer" ng-show="checkContent('beer')">
+      <div class="animate-show beer" class="ng-cloak" ng-show="checkContent('beer')">
         <h2>I'm not a beer snob.</h2> 
         <p>If the above doesn't make any sense, have a couple beers. I had a Chimay Triple recently - very good; if given the choice, I would probably grab a Fat Tire - its still a belgian - but I won't say no to a cold Miller Lite.  Everything has a time and place.  I guess this is why autumn seasonals are not made year round.</p>
       </div>
@@ -178,7 +179,7 @@
   <h3>any questions? just ask!</h3>
 </div>
 <div class = "container">
-  <div class = "contact-form" ng-controller="contactCtrl">
+  <div class = "contact-form" class="ng-cloak" ng-controller="contactCtrl">
 
     <form name="contactMe" ng-submit="submitForm(contactMe.$valid, message)" ng-show="!submittedValid" novalidate>
       <div ng-class="{ 'has-error' : contactMe.name.$invalid && submitted }" class="form-group">
@@ -196,7 +197,7 @@
 
     <div ng-show="submittedValid" class="help-block valid">
       <img src="http://fillmurray.com/g/300/300" alt="Murray">
-      <h3>Youre're Awesome</h3>
+      <h3>You're Awesome</h3>
     </div>
 
 
@@ -209,14 +210,14 @@
   <!-- Footer with the link back to top and umbrella icon -->
 
 <footer>
-    <div class = "container">
+<div class = "container">    
           <p class="top" data-sr="enter bottom and scale up 20% over 2s"><a href="#top"><i class="fa fa-chevron-circle-up"></a></i></p>
           <small>&copy 2015 <a href="mailto: kcrocken@gmail.com">Kenneth E. Crocken</a>. 
 
           <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></small>
           <p class = "umbrella"><i class="fa fa-umbrella"></i></p>
 
-    </div>  
+</div>      
 </footer>
 
 

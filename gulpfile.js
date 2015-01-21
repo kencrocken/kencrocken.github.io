@@ -15,7 +15,7 @@ var gulp         = require('gulp'),
     del          = require('del'),
     browserSync  = require('browser-sync');
 
-var format = ['./images/**/*.png','./images/**/*.jpg','./images/**/*.gif','./images/**/*.jpeg'],
+var format = ['./img/**/*.png','./img/**/*.jpg','./img/**/*.gif','./img/**/*.jpeg'],
     reload = browserSync.reload;
 
 
@@ -83,7 +83,7 @@ gulp.task('images', function(cb) {
       .on("error", notify.onError(function (error) {
                  return "Error: " + error.message;
         }))) 
-    .pipe(gulp.dest('./img')).on('end', cb).on('error', cb)
+    .pipe(gulp.dest('./images')).on('end', cb).on('error', cb)
     .pipe(notify({ message: 'Images task complete' }));
 });
 
@@ -95,9 +95,9 @@ gulp.task('jekyll-build', function() {
 });
 
 // BROKEN TASK DO NOT USE Start a `jekyll build --watch` task
-gulp.task('jekyll-watch', function() {
-    require('child_process').spawn('jekyll', ['build', '--watch', '--config=_config.yml'], {stdio: 'inherit'});
-});
+// gulp.task('jekyll-watch', function() {
+//     require('child_process').spawn('jekyll', ['build', '--watch', '--config=_config.yml'], {stdio: 'inherit'});
+// });
 
 gulp.task('jekyll-serve', function() {
     require('child_process').spawn('jekyll', ['serve', '--config=_config.yml'], {stdio: 'inherit'});
@@ -109,7 +109,7 @@ gulp.task('browser-sync', function(){
         //proxy the jekyll server
         proxy: "http://localhost:4000",
         //long delay needed to allow jekyll-build to complete
-        reloadDelay: 6000
+        reloadDelay: 8000
     });
 });
 
@@ -120,7 +120,7 @@ gulp.task('build', ['sass', 'js', 'icons', 'images', 'icons'],function(){
 
 // CLEAN
 gulp.task('clean', function(cb) {
-    del(['./css/fonts', './css/main.css', './js', './img'], cb)
+    del(['./css/main.css', './js', './images'], cb)
 });
 
 // BUILD and RELOAD

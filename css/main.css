@@ -2768,6 +2768,10 @@ body {
   color: #657b83;
 }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 h1, h2, h3, h4, h4, h5, h6 {
   font-family: "freight-sans-pro";
   font-weight: 300;
@@ -3080,7 +3084,7 @@ nav .social {
   color: #000;
   max-width: 650px;
   min-height: 215px;
-  margin: 5% auto 0% auto;
+  margin: 1.55% auto 0% auto;
 }
 .contents h2 {
   font-size: 2.8em;

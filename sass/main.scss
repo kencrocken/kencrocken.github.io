@@ -30,6 +30,9 @@ body {
   background: $background-color;
   color: $primary-text-color;
 }
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
 h1, h2, h3, h4, h4, h5, h6 {
   font-family: $primary-font;
   font-weight: 300;
@@ -344,7 +347,7 @@ nav {
   color: #000;
   max-width: 650px;
   min-height: 215px;
-  margin: 5% auto 0% auto;
+  margin: 1.55% auto 0% auto;
   h2 {
     font-size:2.8em;
     text-align: center;
