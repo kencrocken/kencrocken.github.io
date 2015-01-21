@@ -10,6 +10,12 @@ $primary-text-color: #657b83;
 $break-large: 1100px;
 $break-small: 650px;
 
+$primary-font: 'freight-sans-pro';
+$heading-font: 'freight-micro-pro';
+
+$modular-scale-ratio: $golden;
+$modular-scale-base: 1em;
+
 @mixin transition_all_ease($seconds){
   transition: all $seconds ease;
   -webkit-transition: all $seconds ease;
@@ -19,13 +25,13 @@ $break-small: 650px;
  
 /*--Global Styles--*/
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $primary-font;
   margin: 0 auto;
   background: $background-color;
   color: $primary-text-color;
 }
 h1, h2, h3, h4, h4, h5, h6 {
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: $primary-font;
   font-weight: 300;
 }
 
@@ -40,7 +46,10 @@ h2 {
 
   margin: 0px 0 21px 0;
 }
-
+h6 {
+  font-size: em(14);
+  font-weight: 100;
+}
 a {
   @include transition_all_ease(0.3s);
   color: #dc322f;
@@ -52,7 +61,12 @@ a {
     color: #dc322f;
   }
 }
-
+p {
+  font-size: em(19);
+  line-height: em(29);
+  font-weight: 100;
+  color: darken($primary-text-color, 15%);
+}
 ul {
   list-style: none;
   padding: 0;
@@ -132,15 +146,15 @@ header {
     padding: 0 0 0 5px;
   }
 }
-
 .masthead {
   // text-align: center;
   @include outer-container;
   p {      
       color: #cb4b16;
       text-transform: uppercase;
-      font-family: 'Open Sans Condensed', sans-serif;
+      font-family: $primary-font;
       margin: 0;
+      font-size: em(12); 
    }
   .brand {
     padding: 0 0 0 5px;
@@ -149,6 +163,10 @@ header {
       @include span-columns(12);
       padding: 0 0 0 5px;
       text-align: center;
+    }
+    h1 {
+      font-size: 1.8em;
+      letter-spacing: -2px;
     }
   }
   .address-block {
@@ -273,7 +291,7 @@ nav {
 .linkedin, .googleplus, .twitter, .github{ 
   a {
     &:hover {
-      text-shadow: 1px 1px 1px rgba(0,0,0,.9);
+      // text-shadow: 1px 1px 1px rgba(0,0,0,.9);
     }
   }
 }
@@ -321,24 +339,25 @@ nav {
 
 .contents {
   position: relative;
-  $sans-serif: 'Open Sans', sans-serif;
-  $serif: 'Roboto Slab', serif;
+  $sans-serif: $primary-font;
+  $serif: $heading-font;
   color: #000;
-  max-width: 800px;
-  min-height: 200px;
-  margin: 0 auto;
-  padding: 15px 5px;
+  max-width: 650px;
+  min-height: 215px;
+  margin: 5% auto 0% auto;
   h2 {
     font-size:2.8em;
     text-align: center;
   }
   p {
-    font-family: $sans-serif;
-    font-size: 1em;
-    font-weight: 300;
+    line-height: em(28);
+    @include media(max-width $break-small){
+      line-height: inherit;
+    }
   }
   @include media(max-width $break-small){
-    min-height:265px;
+    // min-height:265px;
+    margin: 2% auto -7% auto;
   }
 }
 
@@ -372,8 +391,8 @@ nav {
 }
 
 article.type-system-slab {
-  $sans-serif: 'Open Sans', sans-serif;
-  $serif: 'Roboto Slab', serif;
+  $sans-serif: $primary-font;
+  $serif: $heading-font;
   max-width: 650px;
   margin-left: auto;
   margin-right: auto;
@@ -393,18 +412,19 @@ article.type-system-slab {
   }
 
   h1 {
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: $heading-font;
     font-size: 2.4em;
     font-weight: 300;
     margin-bottom: .1em;
-
+    text-align: center;
+    letter-spacing: -2px;
     @include media($medium-screen) {
       font-size: 2.4em;
     }
   }
 
   h2 {
-    font-family: 'Open Sans Condensed', $sans-serif;
+    font-family: $primary-font;
     font-size: 1.4em;
     font-weight: 400;
     line-height: 1.5em;
@@ -423,7 +443,7 @@ article.type-system-slab {
     border-radius: 3px;
   }
   code {
-    white-space: pre;
+    white-space: pre-wrap;
     background: #eee8d5;
     // border: 1px solid #073642;
     border-radius: $base-border-radius * 1.5;
@@ -436,7 +456,7 @@ article.type-system-slab {
 
   h3 {
    font-family: $serif;
-   font-size: 1em;
+   font-size: em(21);
    font-weight: 600;
    text-transform: uppercase;
    line-height: 1.4em;
@@ -449,25 +469,26 @@ article.type-system-slab {
   }
 
   p.date {
-    color: transparentize($base-font-color, .6);
+    color: lighten($base-font-color, .1);
     font-family: $serif;
-    font-size: .8em;
-    margin-bottom: 1em;
+    font-size: em(14);
+    margin-bottom: 2em;
+    text-align: center;
   }
 
-  p {
-    font-family: $serif;
-    font-weight: 300;
-    letter-spacing: 1;
-    margin-bottom: 1.5em;
+  // p {
+  //   font-family: $sans-serif;
+  //   font-weight: 100;
+  //   font-size: em(21);
+  //   margin-bottom: 1.5em;
 
-    span {
-      font-family: $sans-serif;
-      font-weight: 600;
-      font-size: .8em;
-      text-transform: uppercase;
-    }
-  }
+  //   span {
+  //     font-family: $sans-serif;
+  //     font-weight: 600;
+  //     font-size: .8em;
+  //     text-transform: uppercase;
+  //   }
+  // }
 
   a.read-more {
     display: inline-block;
@@ -493,6 +514,10 @@ article.type-system-slab {
   p.author {
     font-family: $serif;
   }
+  blockquote p {
+    font-size: em(14);
+    line-height: em(24);
+  }
 }
 
 
@@ -503,15 +528,14 @@ article.type-system-slab {
 .home {
   h1 { margin-bottom: 25px; }
   h2 {
-    font-weight: 300;
-    letter-spacing: -1px;
-    line-height: 1;
+    font-weight: 100;
+    letter-spacing: -3px;
     margin-top: 0;
+    margin-bottom: 7px;
   }
   h3 {
     font-weight: 300;
     letter-spacing: -1px;
-    line-height: 1;
     color: #ff9933;
     margin-top: 0;
   }
@@ -597,7 +621,7 @@ article.type-system-slab {
     letter-spacing: -1.75px;
     line-height: 1;
     font-weight: 300;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: $primary-font;
     text-shadow: 2px 2px 3px rgba(0,0,0,.9);
   }
   .meta {
@@ -616,7 +640,7 @@ article.type-system-slab {
 .post-content h6 {
   line-height: 1;
   font-weight: 300;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: $primary-font;
   margin: 40px 0 20px;
   color: $primary-text-color;
 }
@@ -675,7 +699,7 @@ input.formname, input.formemail, textarea.formmsg, .button {
   border: solid 1px #777;
   text-indent: 10px;
   background-color: transparent;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $primary-font;
   font-weight: 300;
   color: #323430;
 }
@@ -689,7 +713,7 @@ input.formname, input.formemail, textarea.formmsg, .button {
     border: solid 1px red;
     text-indent: 10px;
     background-color: lighten(#323430, 70%);
-    font-family: 'Open Sans', sans-serif;
+    font-family: $primary-font;
     font-weight: 300;
     color: #000;
   }
@@ -717,8 +741,8 @@ input.formemail:focus, input.formname:focus, textarea.formmsg:focus{
   @include transition_all_ease(0.5s);
   &:hover {
     background-color: #FF0000;   
-    color: lightgray; 
-    font-weight: 400;
+    color: black; 
+    font-weight: 300;
   }
   &:focus {
     // background-color: #FF0000;  
@@ -848,7 +872,13 @@ footer{
     padding-top: 10px;
   .top {
     font-size: 32px;
-  }  
+  }
+  .rss-subscribe {
+    opacity: 1;
+  }
+  .umbrella {
+    opacity: 0.1;
+  }
 }
 
 
@@ -860,14 +890,14 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 175px;
+  margin-bottom: 225px;
 }
 footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 175px;
+  height: 225px;
 }
 
 .animate-show {

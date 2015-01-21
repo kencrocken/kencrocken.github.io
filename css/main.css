@@ -2762,14 +2762,14 @@ input[type="submit"] {
 /* Literal.Number.Integer.Long */
 /*--Global Styles--*/
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "freight-sans-pro";
   margin: 0 auto;
   background: #fdf6e3;
   color: #657b83;
 }
 
 h1, h2, h3, h4, h4, h5, h6 {
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "freight-sans-pro";
   font-weight: 300;
 }
 
@@ -2783,6 +2783,11 @@ h2 {
   margin: 0px 0 21px 0;
 }
 
+h6 {
+  font-size: 0.875em;
+  font-weight: 100;
+}
+
 a {
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
@@ -2793,6 +2798,16 @@ a {
 a:hover {
   color: #8d1a18;
   text-decoration: none;
+}
+a:active, a:focus {
+  color: #dc322f;
+}
+
+p {
+  font-size: 1.1875em;
+  line-height: 1.8125em;
+  font-weight: 100;
+  color: #445258;
 }
 
 ul {
@@ -2869,8 +2884,9 @@ ul {
 .masthead p {
   color: #cb4b16;
   text-transform: uppercase;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "freight-sans-pro";
   margin: 0;
+  font-size: 0.75em;
 }
 .masthead .brand {
   padding: 0 0 0 5px;
@@ -2894,6 +2910,10 @@ ul {
   .masthead .brand:last-child {
     margin-right: 0;
   }
+}
+.masthead .brand h1 {
+  font-size: 1.8em;
+  letter-spacing: -2px;
 }
 .masthead .address-block {
   float: left;
@@ -3011,10 +3031,6 @@ nav .social {
   color: #646464;
 }
 
-.linkedin a:hover, .googleplus a:hover, .twitter a:hover, .github a:hover {
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
-}
-
 /*--Main Body--*/
 .about-me {
   font-size: 28px;
@@ -3062,23 +3078,25 @@ nav .social {
 .contents {
   position: relative;
   color: #000;
-  max-width: 800px;
-  min-height: 200px;
-  margin: 0 auto;
-  padding: 15px 5px;
+  max-width: 650px;
+  min-height: 215px;
+  margin: 5% auto 0% auto;
 }
 .contents h2 {
   font-size: 2.8em;
   text-align: center;
 }
 .contents p {
-  font-family: "Open Sans", sans-serif;
-  font-size: 1em;
-  font-weight: 300;
+  line-height: 1.75em;
+}
+@media screen and (max-width: 650px) {
+  .contents p {
+    line-height: inherit;
+  }
 }
 @media screen and (max-width: 650px) {
   .contents {
-    min-height: 265px;
+    margin: 2% auto -7% auto;
   }
 }
 
@@ -3120,7 +3138,7 @@ article.type-system-slab:after {
 article.type-system-slab .type {
   border-bottom: 1px solid;
   display: inline-block;
-  font-family: "Open Sans", sans-serif;
+  font-family: "freight-sans-pro";
   font-size: .7em;
   font-weight: 600;
   margin-bottom: 2em;
@@ -3129,10 +3147,12 @@ article.type-system-slab .type {
   text-transform: uppercase;
 }
 article.type-system-slab h1 {
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "freight-micro-pro";
   font-size: 2.4em;
   font-weight: 300;
   margin-bottom: .1em;
+  text-align: center;
+  letter-spacing: -2px;
 }
 @media screen and (min-width: 40em) {
   article.type-system-slab h1 {
@@ -3140,7 +3160,7 @@ article.type-system-slab h1 {
   }
 }
 article.type-system-slab h2 {
-  font-family: "Open Sans Condensed", "Open Sans", sans-serif;
+  font-family: "freight-sans-pro";
   font-size: 1.4em;
   font-weight: 400;
   line-height: 1.5em;
@@ -3158,7 +3178,7 @@ article.type-system-slab pre.terminal {
   border-radius: 3px;
 }
 article.type-system-slab code {
-  white-space: pre;
+  white-space: pre-wrap;
   background: #eee8d5;
   border-radius: 4.5px;
   padding: 3px 0;
@@ -3167,8 +3187,8 @@ article.type-system-slab code {
   font-style: normal;
 }
 article.type-system-slab h3 {
-  font-family: "Roboto Slab", serif;
-  font-size: 1em;
+  font-family: "freight-micro-pro";
+  font-size: 1.3125em;
   font-weight: 600;
   text-transform: uppercase;
   line-height: 1.4em;
@@ -3179,26 +3199,15 @@ article.type-system-slab ol {
   padding-left: 20px;
 }
 article.type-system-slab p.date {
-  color: rgba(51, 51, 51, 0.4);
-  font-family: "Roboto Slab", serif;
-  font-size: .8em;
-  margin-bottom: 1em;
-}
-article.type-system-slab p {
-  font-family: "Roboto Slab", serif;
-  font-weight: 300;
-  letter-spacing: 1;
-  margin-bottom: 1.5em;
-}
-article.type-system-slab p span {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 600;
-  font-size: .8em;
-  text-transform: uppercase;
+  color: #333333;
+  font-family: "freight-micro-pro";
+  font-size: 0.875em;
+  margin-bottom: 2em;
+  text-align: center;
 }
 article.type-system-slab a.read-more {
   display: inline-block;
-  font-family: "Roboto Slab", serif;
+  font-family: "freight-micro-pro";
   font-weight: 700;
   font-size: .8em;
   text-transform: uppercase;
@@ -3215,7 +3224,11 @@ article.type-system-slab hr {
   width: 3em;
 }
 article.type-system-slab p.author {
-  font-family: "Roboto Slab", serif;
+  font-family: "freight-micro-pro";
+}
+article.type-system-slab blockquote p {
+  font-size: 0.875em;
+  line-height: 1.5em;
 }
 
 /* Home styles */
@@ -3224,15 +3237,14 @@ article.type-system-slab p.author {
   margin-bottom: 25px;
 }
 .home h2 {
-  font-weight: 300;
-  letter-spacing: -1px;
-  line-height: 1;
+  font-weight: 100;
+  letter-spacing: -3px;
   margin-top: 0;
+  margin-bottom: 7px;
 }
 .home h3 {
   font-weight: 300;
   letter-spacing: -1px;
-  line-height: 1;
   color: #ff9933;
   margin-top: 0;
 }
@@ -3313,7 +3325,7 @@ article.type-system-slab p.author {
   letter-spacing: -1.75px;
   line-height: 1;
   font-weight: 300;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "freight-sans-pro";
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
 }
 .post-header .meta {
@@ -3331,7 +3343,7 @@ article.type-system-slab p.author {
 .post-content h6 {
   line-height: 1;
   font-weight: 300;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "freight-sans-pro";
   margin: 40px 0 20px;
   color: #657b83;
 }
@@ -3398,7 +3410,7 @@ input.formname, input.formemail, textarea.formmsg, .button {
   border: solid 1px #777;
   text-indent: 10px;
   background-color: transparent;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "freight-sans-pro";
   font-weight: 300;
   color: #323430;
 }
@@ -3412,7 +3424,7 @@ input.formname, input.formemail, textarea.formmsg, .button {
   border: solid 1px red;
   text-indent: 10px;
   background-color: #e5e6e3;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "freight-sans-pro";
   font-weight: 300;
   color: #000;
 }
@@ -3443,8 +3455,8 @@ input.formemail:focus, input.formname:focus, textarea.formmsg:focus {
 }
 .button:hover {
   background-color: #FF0000;
-  color: lightgray;
-  font-weight: 400;
+  color: black;
+  font-weight: 300;
 }
 .button:focus {
   outline: none;
@@ -3547,6 +3559,12 @@ footer {
 footer .top {
   font-size: 32px;
 }
+footer .rss-subscribe {
+  opacity: 1;
+}
+footer .umbrella {
+  opacity: 0.1;
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -3557,7 +3575,7 @@ html {
 
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 175px;
+  margin-bottom: 225px;
 }
 
 footer {
@@ -3565,7 +3583,7 @@ footer {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 175px;
+  height: 225px;
 }
 
 .animate-show {
