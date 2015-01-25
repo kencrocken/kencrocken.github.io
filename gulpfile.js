@@ -56,6 +56,7 @@ gulp.task('js', function() {
     gulp.src([
         './bower_components/jquery/dist/jquery.js',  
         './bower_components/scrollReveal.js/dist/*.js',
+        './bower_components/underscore/underscore.js',
         './bower_components/angular/angular.js',
         './bower_components/angular-animate/angular-animate.js'        
         ])
