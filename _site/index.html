@@ -55,7 +55,7 @@
 
   <div class = "home">
 
-    <!-- <div id="about-me" ng-controller="aboutCtrl">
+    <!-- <div id="about-me" ng-controller="aboutCtrl" ng-view>
   <div class="line-behind-text">
     <div id="about-me-menu">
       <ul class="about-me">
@@ -77,29 +77,29 @@
 
   <div class = "container">
     <div class = "contents">
-      <div class="animate-show rocket" class="ng-cloak" ng-show="checkContent('rocket')">
+      <div class="animate-show element-animation rocket" class="ng-cloak" ng-show="checkContent('rocket')">
         <h2>To what comes next!</h2>
-        <p>What makes us tick? So, philosophy ... How people interact and communicate is what fascinated me, especially in light of this emerging technology, this new thing 'the Internet.'  So, law school came next.</p>
+        <p>How people interact and communicate is what fascinated me</p>
       </div>
 
       <div class="animate-show gavel" class="ng-cloak" ng-show="checkContent('gavel')">
         <h2>Original intent.</h2>
-        <p>It was about banner ads, click trails and personally identifiable information - but forsm some trademark work, this was the crowning acheivement of my techxs law career.  Soon, the dot coms went dot bust and it was litigation and trial work </p>
+        <p>Soon, the dot coms went dot bust and it was litigation and trial work</p>
       </div>
 
       <div class="animate-show code" class="ng-cloak" ng-show="checkContent('code')">
         <h2>The language of the future.</h2>
-        <p>I told this to someone and they told me I should learn a language, not a bad idea.  Someone once said code is the new law.</p>
+        <p>I told this to someone and they told me I should learn a language, not a bad idea. </p>
       </div>
 
       <div class="animate-show beer" class="ng-cloak" ng-show="checkContent('beer')">
         <h2>I'm not a beer snob.</h2> 
-        <p>If the above doesn't make any sense, have a couple beers. I had a Chimay Triple recently - very good; if given the choice, I would probably grab a Fat Tire - its still a belgian - but I won't say no to a cold Miller Lite.  Everything has a time and place.  I guess this is why autumn seasonals are not made year round.</p>
+        <p>If the above doesn't make any sense, have a couple beers. </p>
       </div>
     </div>
   </div>
 </div> -->
-
+    
     <div class="line-behind-text">
   <h3>journal</h3>
 </div>
@@ -175,6 +175,16 @@
   </ul>
 </div>  
 
+    <div class="container">
+    
+    <div class="treehouse" ng-controller="treehouseCtrl">
+        <ul class="treehouse-badge">  
+            <li ng-repeat="badge in badges" class="icon"><img src="{{badge.icon}}" alt="{{badge.name}}"/></li>
+        </ul>
+    </div>
+      
+</div>
+    
     <div class="line-behind-text">
   <h3>any questions? just ask!</h3>
 </div>
@@ -203,26 +213,24 @@
 
   </div>
 
-</div>
+</div> 
 
 </div>
 
   <!-- Footer with the link back to top and umbrella icon -->
 
 <footer>
-<div class = "container">    
-          <p class="top" data-sr="enter bottom and scale up 20% over 2s"><a href="#top"><i class="fa fa-chevron-circle-up"></a></i></p>
-          <small>&copy 2015 <a href="mailto: kcrocken@gmail.com">Kenneth E. Crocken</a>. 
-
-          <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></small>
-          <p class = "umbrella"><i class="fa fa-umbrella"></i></p>
-
-</div>      
+    <div class = "container">    
+        <p class="top" data-sr="enter bottom and scale up 20% over 2s"><a href="#top"><i class="fa fa-chevron-circle-up"></a></i></p>
+        <small>&copy 2015 <a href="mailto: kcrocken@gmail.com">Kenneth E. Crocken</a>. 
+        <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></small>
+        <p class = "umbrella"><i class="fa fa-umbrella"></i></p>
+    </div>      
 </footer>
 
 
-  <script src="/js/vendor.js"></script>
-<script src="/js/main.js"></script>
+  <script src="./js/vendor.js"></script>
+<script src="./js/main.js"></script>
     
 </body>
 </html>
