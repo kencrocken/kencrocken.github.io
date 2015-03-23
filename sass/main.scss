@@ -4,6 +4,9 @@
 @import "font-awesome";
 @import "highlight/highlight";
 
+.post > .highlight .lineno { color: #ccc; display:inline-block; padding: 0 5px; border-right:1px solid #ccc; }
+.post > .highlight pre code { display: block; white-space: pre; overflow-x: auto; word-wrap: normal; }
+
 $background-color: #fdf6e3;
 $primary-text-color: #657b83;
 
@@ -30,9 +33,11 @@ body {
   background: $background-color;
   color: $primary-text-color;
 }
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
+
 h1, h2, h3, h4, h4, h5, h6 {
   font-family: $primary-font;
   font-weight: 300;
@@ -437,25 +442,6 @@ article.type-system-slab {
       font-size: 1.3em;
     }
   }
-  pre.terminal {
-    border: 1px solid #000;
-    background-color: #333;
-    color: #FFF;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-  }
-  code {
-    white-space: pre-wrap;
-    background: #eee8d5;
-    // border: 1px solid #073642;
-    border-radius: $base-border-radius * 1.5;
-    padding: 3px 0;
-    margin: 0 3px;
-    font-size: 0.9em;
-    font-style: normal;
-
-  }
 
   h3 {
    font-family: $serif;
@@ -522,7 +508,6 @@ article.type-system-slab {
     line-height: em(24);
   }
 }
-
 
 
 /* Home styles */

@@ -59,25 +59,9 @@ $(function(){
       });
   }
   scrollToTop();
-
-
-    // $('.contents>div:not(:first)').hide(); // hide div's on load using parent class as a starting point 
-    // // $('.contents #rocket-content').show();  
-
-    // $('.about-me a').click(function(e) {  // on the anchor clicks
-    //     var $div = $('.contents div').eq($(this).index('#about-me-menu a'));
-    //     var $link = $(this).find('i');
-
-    //     e.preventDefault();
-    //     $('.about-me a i').not($link).removeClass('active');
-    //     $('.contents div').not($div).fadeOut(275);  // hide all but the relevant div
-    //     $('.contents div').removeClass('active');
-
-    //     $div.delay(300).fadeIn(400,"linear");
-    //     $div.addClass('active');
-    //     $link.addClass('active');
-    // });
 });
+
+// scrollReveal CONFIG
 var config = {
 
   enter:    'bottom',

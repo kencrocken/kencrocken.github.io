@@ -9,7 +9,7 @@ I wasn't sure where to start with the Ruby script, so I turned to my old pal Goo
 
 The Ruby script below, is pretty much from the book - I didn't change too much up.  It basically reads my Gmail account and spits out a CSV file.  For my final project, things will have to be different, but this is a start.
 
-{% highlight ruby %}
+{% highlight ruby linenos %}
 
 require 'csv'
 require 'mail'
@@ -59,7 +59,7 @@ end
 
 Chang also provides an R script to plot the data, I changed it up a little to suit my needs.  I found that the time frames for my inbox and sent mail is a bit different, not surprising since I get a lot more mail than I send out.  So I had to adjust the R script to account for the differing times.  Eventually, I just subsetted the data to May and then merged the data with "NA" where appropriate.
 
-{% highlight ruby %}
+{% highlight ruby linenos %}
 
 library(ggplot2) ## Initialize the GGPlot library
 

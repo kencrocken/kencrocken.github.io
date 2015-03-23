@@ -1,17 +1,16 @@
+// npm install gulp-util gulp-ruby-sass gulp-autoprefixer gulp-jshint gulp-uglify gulp-image-optimization gulp-rename gulp-concat gulp-notify imagemin-pngquant del browser-sync --save-dev
+
 var gulp         = require('gulp'),
     gutil        = require('gulp-util'),
     sass         = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     jshint       = require('gulp-jshint'),
     uglify       = require('gulp-uglify'),
-    // imagemin     = require('gulp-imagemin'),
-    imageop      = require('gulp-image-optimization');
+    imageop      = require('gulp-image-optimization'),
+    pngquant     = require('imagemin-pngquant'),
     rename       = require('gulp-rename'),
     concat       = require('gulp-concat'),
     notify       = require('gulp-notify'),
-    // cache        = require('gulp-cache'),
-    // livereload   = require('gulp-livereload'),
-    pngquant     = require('imagemin-pngquant'),
     del          = require('del'),
     browserSync  = require('browser-sync');
 
@@ -23,7 +22,7 @@ var format = ['./img/**/*.png','./img/**/*.jpg','./img/**/*.gif','./img/**/*.jpe
 gulp.task('sass', function () {
   gulp.src('./sass/**/*.scss')
     .pipe(sass({
-             style: 'expanded',
+             style: 'nested',
              loadPath: [
                  './sass',
                  './bower_components/bourbon/dist',
@@ -34,8 +33,9 @@ gulp.task('sass', function () {
             .on("error", notify.onError(function (error) {
                  return "Error: " + error.message;
              }))) 
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    // .pipe(autoprefixer('last 2 version', 'safari 5', 'ios 6', 'android 4'))
     .pipe(gulp.dest('./css'))
+    .pipe(reload({stream: true}));
     .pipe(notify({
       message: "You just got super Sassy!"
     }));;
@@ -109,7 +109,7 @@ gulp.task('browser-sync', function(){
         //proxy the jekyll server
         proxy: "http://localhost:4000",
         //long delay needed to allow jekyll-build to complete
-        reloadDelay: 8000
+        reloadDelay: 10000
     });
 });
 

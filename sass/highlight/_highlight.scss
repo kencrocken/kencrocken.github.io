@@ -4,9 +4,28 @@
 $code-background: #eee8d5;
 $comments: #586e75;
 
-.highlight  { background: $code-background;
-              border: none;
-            }
+.highlight  { 
+    background: $code-background;
+    border: 1px soild #aaa;
+    border-radius: $base-border-radius * 1.5;
+    padding: 10px;
+    pre {
+        code {
+            display: block;
+            white-space: pre;
+            overflow-x: auto; 
+            word-wrap: normal;
+            font-size: 1.2em;
+            font-style: normal;
+        }
+    }
+    .lineno { 
+        color: #ccc; 
+        display:inline-block; 
+        padding: 0 5px; 
+        border-right:1px solid #ccc; }
+}
+
 .highlight .c { color: $comments; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { font-weight: bold } /* Keyword */

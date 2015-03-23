@@ -74,35 +74,35 @@
 </blockquote>
 
 <blockquote>
-  <p>The best way to understand is to try it out. Run the command: </p>
+  <p>The best way to understand is to try it out. Run the command:</p>
 </blockquote>
 
-<div class="highlight"><pre><code class="bash"><span class="nb">echo</span> -e <span class="s2">&quot;testing \033[38;5;196;48;5;21mCOLOR1\033[38;5;208;48;5;159mCOLOR2\033[m&quot;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> -e <span class="s2">&quot;testing \033[38;5;196;48;5;21mCOLOR1\033[38;5;208;48;5;159mCOLOR2\033[m&quot;</span></code></pre></div>
 
 <p>Here is the script for the reference table:</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c">#!/bin/bash</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/bash</span>
 <span class="c">#</span>
 <span class="c"># generates an 8 bit color table (256 colors) for reference,</span>
 <span class="c"># using the ANSI CSI+SGR \033[48;5;${val}m for background and</span>
 <span class="c"># \033[38;5;${val}m for text (see &quot;ANSI Code&quot; on Wikipedia)</span>
 <span class="c">#</span>
 <span class="nb">echo</span> -en <span class="s2">&quot;\n   +  &quot;</span>
-<span class="k">for </span>i in <span class="o">{</span>0..35<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
-<span class="k">  </span><span class="nb">printf</span> <span class="s2">&quot;%2b &quot;</span> <span class="nv">$i</span>
+<span class="k">for</span> i in <span class="o">{</span>0..35<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+  <span class="nb">printf</span> <span class="s2">&quot;%2b &quot;</span> <span class="nv">$i</span>
 <span class="k">done</span>
 
 <span class="nb">printf</span> <span class="s2">&quot;\n\n %3b  &quot;</span> 0
-<span class="k">for </span>i in <span class="o">{</span>0..15<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
-<span class="k">  </span><span class="nb">echo</span> -en <span class="s2">&quot;\033[48;5;${i}m  \033[m &quot;</span>
+<span class="k">for</span> i in <span class="o">{</span>0..15<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+  <span class="nb">echo</span> -en <span class="s2">&quot;\033[48;5;${i}m  \033[m &quot;</span>
 <span class="k">done</span>
 
-<span class="k">for </span>i in <span class="o">{</span>0..6<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
-<span class="k">  </span><span class="nb">let</span> <span class="s2">&quot;i = i*36 +16&quot;</span>
+<span class="k">for</span> i in <span class="o">{</span>0..6<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+  <span class="nb">let</span> <span class="s2">&quot;i = i*36 +16&quot;</span>
   <span class="nb">printf</span> <span class="s2">&quot;\n\n %3b  &quot;</span> <span class="nv">$i</span>
   
-  <span class="k">for </span>j in <span class="o">{</span>0..35<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
-<span class="k">    </span><span class="nb">let</span> <span class="s2">&quot;val = i+j&quot;</span>
+  <span class="k">for</span> j in <span class="o">{</span>0..35<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nb">let</span> <span class="s2">&quot;val = i+j&quot;</span>
     <span class="nb">echo</span> -en <span class="s2">&quot;\033[48;5;${val}m  \033[m &quot;</span>
   <span class="k">done</span>
 <span class="k">done</span>
@@ -110,7 +110,7 @@
 <span class="nb">echo</span> -e <span class="s2">&quot;\n&quot;</span></code></pre></div>
 
     <hr>
-    <p class="author"> <a href="/">Home</a></p>
+    <p class="author"> </p>
   </article>
 </div>
 

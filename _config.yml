@@ -10,6 +10,7 @@ excerpt_separator: <!--more-->
 # Build settings
 markdown: kramdown
 permalink: pretty
+highlighter: pygments
 # destination: dest
 
 exclude: [

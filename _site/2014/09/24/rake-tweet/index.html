@@ -66,60 +66,60 @@ I added the env.rb file to <code>.gitignore</code>, no need for my keys and toke
 
 <p>Here is the rake command:</p>
 
-<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="s1">&#39;rubygems&#39;</span>
-<span class="nb">require</span> <span class="s1">&#39;rake&#39;</span>
-<span class="nb">require</span> <span class="s1">&#39;yaml&#39;</span>
-<span class="nb">require</span> <span class="s1">&#39;twitter&#39;</span>
-<span class="nb">require</span> <span class="s1">&#39;google_url_shortener&#39;</span>
-
-<span class="nb">require</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp">__FILE__</span><span class="p">),</span> <span class="s1">&#39;env&#39;</span><span class="p">)</span>
-
-<span class="n">desc</span> <span class="s2">&quot;Tweet last post&quot;</span>
-<span class="n">task</span> <span class="ss">:tweet</span> <span class="k">do</span>
-
-  <span class="c1">### Open an empty array and loop through the files in my _posts directory, </span>
-  <span class="c1">### and storing the posts in an array.</span>
-  <span class="n">posts</span> <span class="o">=</span> <span class="o">[]</span>
-  <span class="no">Dir</span><span class="o">.</span><span class="n">foreach</span><span class="p">(</span><span class="s1">&#39;./_posts&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
-    <span class="k">next</span> <span class="k">if</span> <span class="n">post</span> <span class="o">==</span> <span class="s1">&#39;.&#39;</span> <span class="o">||</span> <span class="n">post</span> <span class="o">==</span><span class="s1">&#39;..&#39;</span>
-    <span class="n">posts</span> <span class="o">&lt;&lt;</span> <span class="n">post</span>
-  <span class="k">end</span>
-
-  <span class="c1">### I reverse the array and then grab the first file.</span>
-  <span class="c1">### I remove the extension - preparing to build the link.</span>
-  <span class="n">last_post_file</span> <span class="o">=</span> <span class="n">posts</span><span class="o">.</span><span class="n">reverse</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/.markdown/</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-  <span class="n">last_post_split</span> <span class="o">=</span> <span class="n">last_post_file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-  <span class="n">slug</span> <span class="o">=</span> <span class="n">last_post_split</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-  <span class="n">slug</span> <span class="o">=</span> <span class="s2">&quot;http://kencrocken.github.io/</span><span class="si">#{</span><span class="n">slug</span><span class="si">}</span><span class="s2">&quot;</span>
-  <span class="n">post_title</span> <span class="o">=</span> <span class="n">last_post_split</span><span class="o">[</span><span class="mi">3</span><span class="o">].</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/[-]/</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-  <span class="n">post_title</span> <span class="o">=</span> <span class="n">post_title</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/\w+/</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">word</span><span class="o">|</span> <span class="n">word</span><span class="o">.</span><span class="n">capitalize</span><span class="p">}</span>
-
-  <span class="c1">### Just so I know things are working I put the post title and slug strings.</span>
-  <span class="nb">puts</span> <span class="n">post_title</span>
-  <span class="nb">puts</span> <span class="n">slug</span>
-
-  <span class="c1">### I call the Url Shortener and pass it the api_key</span>
-  <span class="no">Google</span><span class="o">::</span><span class="no">UrlShortener</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">API_KEY</span><span class="si">}</span><span class="s2">&quot;</span>
-  <span class="n">url</span> <span class="o">=</span> <span class="no">Google</span><span class="o">::</span><span class="no">UrlShortener</span><span class="o">::</span><span class="no">Url</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:long_url</span> <span class="o">=&gt;</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">slug</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-  <span class="n">short_url</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">shorten!</span>
-
-  <span class="c1">### Just want to make sure things are working.</span>
-  <span class="nb">puts</span> <span class="n">short_url</span>
-
-  <span class="c1">### I call the Twitter gem and pass the configuration block.</span>
-  <span class="n">client</span> <span class="o">=</span> <span class="no">Twitter</span><span class="o">::</span><span class="no">REST</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">consumer_key</span>        <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">CONSUMER_KEY</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">consumer_secret</span>     <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">CONSUMER_SECRET</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">access_token</span>        <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">ACCESS_TOKEN</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">access_token_secret</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">ACCESS_TOKEN_SECRET</span><span class="si">}</span><span class="s2">&quot;</span>
-  <span class="k">end</span>
-
-  <span class="c1">### Finally the post title and the short url are tweeted.</span>
-  <span class="n">client</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">post_title</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">short_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">end</span></code></pre></div>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="lineno"> 1</span> <span class="nb">require</span> <span class="s1">&#39;rubygems&#39;</span>
+<span class="lineno"> 2</span> <span class="nb">require</span> <span class="s1">&#39;rake&#39;</span>
+<span class="lineno"> 3</span> <span class="nb">require</span> <span class="s1">&#39;yaml&#39;</span>
+<span class="lineno"> 4</span> <span class="nb">require</span> <span class="s1">&#39;twitter&#39;</span>
+<span class="lineno"> 5</span> <span class="nb">require</span> <span class="s1">&#39;google_url_shortener&#39;</span>
+<span class="lineno"> 6</span> 
+<span class="lineno"> 7</span> <span class="nb">require</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp">__FILE__</span><span class="p">),</span> <span class="s1">&#39;env&#39;</span><span class="p">)</span>
+<span class="lineno"> 8</span> 
+<span class="lineno"> 9</span> <span class="n">desc</span> <span class="s2">&quot;Tweet last post&quot;</span>
+<span class="lineno">10</span> <span class="n">task</span> <span class="ss">:tweet</span> <span class="k">do</span>
+<span class="lineno">11</span> 
+<span class="lineno">12</span>   <span class="c1">### Open an empty array and loop through the files in my _posts directory, </span>
+<span class="lineno">13</span>   <span class="c1">### and storing the posts in an array.</span>
+<span class="lineno">14</span>   <span class="n">posts</span> <span class="o">=</span> <span class="o">[]</span>
+<span class="lineno">15</span>   <span class="no">Dir</span><span class="o">.</span><span class="n">foreach</span><span class="p">(</span><span class="s1">&#39;./_posts&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
+<span class="lineno">16</span>     <span class="k">next</span> <span class="k">if</span> <span class="n">post</span> <span class="o">==</span> <span class="s1">&#39;.&#39;</span> <span class="o">||</span> <span class="n">post</span> <span class="o">==</span><span class="s1">&#39;..&#39;</span>
+<span class="lineno">17</span>     <span class="n">posts</span> <span class="o">&lt;&lt;</span> <span class="n">post</span>
+<span class="lineno">18</span>   <span class="k">end</span>
+<span class="lineno">19</span> 
+<span class="lineno">20</span>   <span class="c1">### I reverse the array and then grab the first file.</span>
+<span class="lineno">21</span>   <span class="c1">### I remove the extension - preparing to build the link.</span>
+<span class="lineno">22</span>   <span class="n">last_post_file</span> <span class="o">=</span> <span class="n">posts</span><span class="o">.</span><span class="n">reverse</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/.markdown/</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="lineno">23</span>   <span class="n">last_post_split</span> <span class="o">=</span> <span class="n">last_post_file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="lineno">24</span>   <span class="n">slug</span> <span class="o">=</span> <span class="n">last_post_split</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="lineno">25</span>   <span class="n">slug</span> <span class="o">=</span> <span class="s2">&quot;http://kencrocken.github.io/</span><span class="si">#{</span><span class="n">slug</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="lineno">26</span>   <span class="n">post_title</span> <span class="o">=</span> <span class="n">last_post_split</span><span class="o">[</span><span class="mi">3</span><span class="o">].</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/[-]/</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="lineno">27</span>   <span class="n">post_title</span> <span class="o">=</span> <span class="n">post_title</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/\w+/</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">word</span><span class="o">|</span> <span class="n">word</span><span class="o">.</span><span class="n">capitalize</span><span class="p">}</span>
+<span class="lineno">28</span> 
+<span class="lineno">29</span>   <span class="c1">### Just so I know things are working I put the post title and slug strings.</span>
+<span class="lineno">30</span>   <span class="nb">puts</span> <span class="n">post_title</span>
+<span class="lineno">31</span>   <span class="nb">puts</span> <span class="n">slug</span>
+<span class="lineno">32</span> 
+<span class="lineno">33</span>   <span class="c1">### I call the Url Shortener and pass it the api_key</span>
+<span class="lineno">34</span>   <span class="no">Google</span><span class="o">::</span><span class="no">UrlShortener</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">API_KEY</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="lineno">35</span>   <span class="n">url</span> <span class="o">=</span> <span class="no">Google</span><span class="o">::</span><span class="no">UrlShortener</span><span class="o">::</span><span class="no">Url</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:long_url</span> <span class="o">=&gt;</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">slug</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="lineno">36</span>   <span class="n">short_url</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">shorten!</span>
+<span class="lineno">37</span> 
+<span class="lineno">38</span>   <span class="c1">### Just want to make sure things are working.</span>
+<span class="lineno">39</span>   <span class="nb">puts</span> <span class="n">short_url</span>
+<span class="lineno">40</span> 
+<span class="lineno">41</span>   <span class="c1">### I call the Twitter gem and pass the configuration block.</span>
+<span class="lineno">42</span>   <span class="n">client</span> <span class="o">=</span> <span class="no">Twitter</span><span class="o">::</span><span class="no">REST</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+<span class="lineno">43</span>     <span class="n">config</span><span class="o">.</span><span class="n">consumer_key</span>        <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">CONSUMER_KEY</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="lineno">44</span>     <span class="n">config</span><span class="o">.</span><span class="n">consumer_secret</span>     <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">CONSUMER_SECRET</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="lineno">45</span>     <span class="n">config</span><span class="o">.</span><span class="n">access_token</span>        <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">ACCESS_TOKEN</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="lineno">46</span>     <span class="n">config</span><span class="o">.</span><span class="n">access_token_secret</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">ACCESS_TOKEN_SECRET</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="lineno">47</span>   <span class="k">end</span>
+<span class="lineno">48</span> 
+<span class="lineno">49</span>   <span class="c1">### Finally the post title and the short url are tweeted.</span>
+<span class="lineno">50</span>   <span class="n">client</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">post_title</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">short_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="lineno">51</span> <span class="k">end</span></code></pre></div>
 
     <hr>
-    <p class="author"> <a href="/">Home</a></p>
+    <p class="author"> </p>
   </article>
 </div>
 
