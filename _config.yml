@@ -2,10 +2,10 @@
 title: kencrocken.github.io
 email: kcrocken@gmail.com
 description: "A forty year old frood, who hasn't forgotten his towel."
-# baseurl: ""
+# baseurl: "/"
 url: "http://kencrocken.github.io"
 
-excerpt_separator: <!--more-->
+excerpt_separator: "<!--more-->"
 
 # Build settings
 markdown: kramdown
@@ -28,3 +28,11 @@ exclude: [
   "reporter.js"
   ]
 
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: "default"
+      author: "Ken Crocken"

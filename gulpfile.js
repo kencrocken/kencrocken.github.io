@@ -115,7 +115,7 @@ gulp.task('browser-sync', function(){
 });
 
 // BUILD
-gulp.task('build', ['sass', 'js', 'icons', 'images', 'icons'],function(){
+gulp.task('build', ['sass', 'js', 'icons', 'images'],function(){
     gulp.start('jekyll-build');
 });
 
@@ -151,3 +151,5 @@ gulp.task('default', ['clean'], function() {
     gulp.start('build');
     gulp.start('browser-sync', 'watch');
 });
+
+
