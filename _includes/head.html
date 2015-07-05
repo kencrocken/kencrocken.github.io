@@ -1,0 +1,48 @@
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ site.description }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+    <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+ 
+  <script src="//use.typekit.net/gxr4kwk.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <script type="application/ld+json">
+    { 
+      "@context" : "http://schema.org",
+      "@type"    : "Person",
+      "name"     : "Ken Crocken",
+      "jobTitle" : "Web Developer", 
+      "email"    : "kcrocken@gmail.com",
+      "image"    : "https://en.gravatar.com/userimage/19578587/8ea0fc15b00e1efadcc9b5f55dbce65d.jpg",
+      "url"      : "http://kencrocken.github.io",
+      "sameAs"   : 
+        [ 
+          "http://www.twitter.com/kencrocken", 
+          "http://github.com/kencrocken", 
+          "http://www.linkedin.com/pub/kenneth-crocken/17/914/aaa", 
+          "http://plus.google.com/104867203056603798573" 
+        ]
+    }
+  </script>
+
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-61795324-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</head>

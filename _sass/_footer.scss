@@ -1,0 +1,58 @@
+/*--Footer Styles--*/
+
+/* Sticky footer
+-------------------------------------------------- */
+// html, body {
+//   height: 100%;
+// }
+// .wrapper {
+
+//   min-height: 100%;
+//   /* Margin bottom by footer height */
+//   margin: 0 auto -155px;
+// }
+// footer, .push {
+//   /* Set the fixed height of the footer here */
+//   height: 155px;
+// }
+// html {
+//   position: relative;
+//   min-height: 100%;
+// }
+// body {
+//   /* Margin bottom by footer height */
+//   margin-bottom: -155px;
+// }
+// footer {
+//   position: absolute;
+//   bottom: 0;
+//   width: 100%;
+//   /* Set the fixed height of the footer here */
+//   height: 155px;
+// }
+/* End Sticky footer
+-------------------------------------------------- */
+
+footer{
+    box-sizing: border-box;
+    width: 100%;
+    background: #eee8d5;
+    text-align: center;
+    color: $primary-text-color;
+    padding-top: 10px;
+    p { margin: 0; }
+    .line-behind-text {
+        background-color: $background-color;
+    }
+  .top {
+    font-size: 32px;
+  }
+  .rss-subscribe {
+    opacity: 1;
+  }
+  .umbrella {
+    opacity: 0.1;
+    margin: 5px 0 0 0; 
+  }
+}
+

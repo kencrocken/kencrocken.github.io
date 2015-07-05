@@ -1,0 +1,40 @@
+<article data-sr class = "contents" id="about">
+    <h3>More About Me</h3>
+    <section data-sr class="about">
+        <div class = "about-icon">
+            <i class="fa fa-coffee"></i>
+        </div>
+        <div class="about-text">
+            <h4>Lawyer by training - Web Developer by profession</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat eros eros, id pulvinar diam rhoncus sed. Vivamus vel diam sagittis, tempor risus ut, aliquet dolor. Curabitur vel eros posuere, vehicula est sit amet, auctor orci. Quisque tincidunt cursus malesuada.</p>
+        </div>
+    </section>
+    <section data-sr class="about">
+        <div class="about-text">
+            <h4>Lorem ipsum dolor sit amet</h4>
+            <p>Consectetur adipiscing elit. Nulla consequat eros eros, id pulvinar diam rhoncus sed. Vivamus vel diam sagittis, tempor risus ut, aliquet dolor. Curabitur vel eros posuere, vehicula est sit amet, auctor orci. Quisque tincidunt cursus malesuada.</p>
+        </div>
+        <div class = "about-icon">
+            <i class="fa fa-rocket"></i>
+        </div>
+    </section>
+</article>
+
+<!-- <section class = "contents">
+    <ul class="post-list" id="posts">
+    {% for post in site.posts %}
+        <li>
+            <h2>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            </h2>
+            <p>
+                {% if post.description %}
+                    {{ post.description | strip_html }} 
+                {% else %} 
+                    {{ post.content | strip_html | truncatewords:30 }}
+                {% endif %}
+            </p>
+        </li>
+    {% endfor %}
+    </ul>
+</section> -->

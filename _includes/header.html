@@ -1,0 +1,34 @@
+{% assign my = site.data.me['Ken'] %}
+
+
+<header>
+    <div class="line-behind-text">
+    {% for image in my.image %}
+        <img src="{{ image.link }}{% if image.size %}?s={{ image.large }}{% endif %}" />
+    {% endfor %}
+    </div>
+    <section class = "masthead">
+        <div class ="brand">
+            <h1>{{ my.name }}</h1>
+            <h6>{{ my.description }}</h6>
+        </div>
+        <div class = "address-block">
+<!--       <ul class="contact">
+                <li><i class = "fa fa-envelope fa-lg"></i> <a href="mailto:kcrocken@gmail.com">kcrocken@gmail.com</a></li>
+                <li><i class = "fa fa-phone fa-lg"></i> <a href="tel:+1 (443) 802-7145">(443) 802-7145</a></li>
+                <li><i class = "fa fa-map-marker fa-lg"></i> <a href="http://goo.gl/maps/hM6yB">Laurel, Maryland</a></li>
+            </ul> -->
+            <ul class="social">
+                <li class="github"><a href="http://github.com/{{ my.github }}"><i class="fa fa-github-square"></i></a></li>
+                <li class="linkedin"><a href="http://www.linkedin.com/pub/{{ my.linkedin }}"><i class="fa fa-linkedin-square"></i></a></li>
+<!--                 <li class="googleplus"><a href="http://plus.google.com/{{ my.google }}"><i class="fa fa-google-plus-square"></a></i></li> -->
+                <li class="twitter"><a href="http://twitter.com/{{ my.twitter }}"><i class="fa fa-twitter-square"></i></a></li>
+
+            </ul>
+        </div>
+    </section>
+</header>
+
+<!-- {% include nav.html %} -->
+
+<!-- {% include sub-nav.html %} -->

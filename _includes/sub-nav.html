@@ -1,0 +1,16 @@
+<section headroom tolerance='5' offset='425' classes="{top:'top', notTop:'not-top', pinned:'fade-in-down',unpinned:'fade-out-up',initial:'headroom'}" class="sub-header">
+    <div class="container">
+        <div class="my-image">
+            {% for image in my.image %}
+                <img src="{{ image.link }}{% if image.size %}?s={{ image.small }}{% endif %}" />
+            {% endfor %}
+        </div>
+        <div class="sub-mast">
+            <h1>{{ my.nickname }}</h1>
+        </div>
+        <div class="mobile-menu"><a ng-click="toggleMenu()"><i class="fa fa-bars"></i></a></div>
+        <div ng-class="{show: mobileMenu}">
+            {% include nav.html %}
+        </div>
+    </div>
+</section>

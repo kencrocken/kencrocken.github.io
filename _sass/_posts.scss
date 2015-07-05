@@ -1,0 +1,28 @@
+.post-list {
+    li {
+        padding-bottom: em(15);
+    }
+    p {
+        font-size: 1em;
+        color: lightslategray;
+        line-height: em(20);
+        padding-top: em(3);
+    }
+    h2 {
+        font-size:em(19);
+        margin-bottom: 0;
+        font-weight: 600;
+        a { opacity: 0.6; &:hover { color: #dc322f; opacity: 1; }}
+        .post-meta {
+            color: lightslategray;
+            font-size: em(12);
+            font-weight: 600;
+            opacity: 0.7;
+            padding-left: em(10);
+        }
+    }
+    @include media(max-width $break-small){
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+}

@@ -1,0 +1,33 @@
+title: kencrocken.github.io
+email: kcrocken@gmail.com
+description: "Father, Husband, Friend, Web Developer — A forty year old frood, who hasn't forgotten his towel."
+baseurl: ""
+url: "http://kencrocken.github.io"
+
+excerpt_separator: "<!--more-->"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# destination: dest
+
+exclude: [
+  "node_modules",
+  "bower_components",
+  "gulpfile.js",
+  "package.json",
+  "Rakefile",
+  "env.rb",
+  "bower.json",
+  "reporter.js"
+  ]
+
+# defaults:
+#   -
+#     scope:
+#       path: "" # an empty string here means all files in the project
+#       type: "posts" # previously `post` in Jekyll 2.2.
+#     values:
+#       layout: "default"
+#       author: "Ken Crocken"
