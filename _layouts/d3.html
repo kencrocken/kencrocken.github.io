@@ -1,0 +1,124 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+  <meta name="description" content="{{ site.description }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <!-- <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}"> -->
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ "/css/new.css" | prepend: site.baseurl }}">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+   $('.contents  .show').hide(); // hide div's on load using parent class as a starting point 
+   $('.contents #rocket-content').show();  
+   $('.about-me a').click(function(e) {  // on the anchor clicks
+      var $div = $('.contents div').eq($(this).index('#about-me-menu a'));
+      var $link = $(this).find('i');
+
+      e.preventDefault();
+      $('.about-me a i').not($link).removeClass('active');
+      $('.contents div').not($div).fadeOut(275);  // hide all but the relevant div
+      $('.contents div').removeClass('active');
+
+      $div.delay(300).fadeIn(400,"linear");
+      $div.addClass('active');
+      $link.addClass('active');
+  });
+});
+</script>
+
+<style>
+
+.bar {
+  fill: black;
+}
+
+.bar:hover{
+  fill: firebrick;
+}
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+</style>
+
+</head>
+  <body>
+
+    <div class="line-behind-text">
+      <img src="http://www.gravatar.com/avatar/83fb4a35e52381397d9c07d9e25b4c05?s=75" />
+    </div>
+    <header>
+      <section class = "masthead">
+        <div class ="brand">
+          <h1>KENNETH E. CROCKEN</h1>
+          <h6>{{ site.description }}</h6>
+          <p>Web Development / Attorney</p>
+
+        </div>
+        <div class = "address-block">
+          <ul class="contact">
+            <li><i class = "fa fa-envelope fa-lg"></i> <a href="mailto:kcrocken@gmail.com">kcrocken@gmail.com</a></li>
+            <li><i class = "fa fa-phone fa-lg"></i> <a href="tel:+1 (443) 802-7145">(443) 802-7145</a></li>
+            <li><i class = "fa fa-map-marker fa-lg"></i> <a href="http://goo.gl/maps/hM6yB">Laurel, Maryland</a></li>
+          </ul>
+          <ul class="social">
+            <li class="linkedin"><a href="http://www.linkedin.com/pub/kenneth-crocken/17/914/aaa"><i class="fa fa-linkedin-square"></i></a></li>
+            <li class="googleplus"><a href="http://plus.google.com/104867203056603798573"><i class="fa fa-google-plus-square"></a></i></li>
+            <li class="twitter"><a href="http://twitter.com/kencrocken"><i class="fa fa-twitter-square"></i></a></li>
+            <li class="github"><a href="http://github.com/kencrocken"><i class="fa fa-github"></i></a></li>
+          </ul>
+        </div>
+      </section>
+
+
+    </header>
+
+  <div class = "container">
+    <article class="type-system-slab">
+      <p class="type">{% if page.meta %} • {{ page.meta }}{% endif %} <a href="/">Home</a></p>
+      <h1>D3 PROJECTS</h1>
+      <h2>Adventures in Data Driven Documents</h2>
+              <h1>{{ page.title }}</h1>
+      <p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+
+ 
+          {{ content }}
+          
+
+    </article>
+  </div>
+        
+        
+
+    {% include footer.html %}
+    {% include scripts.html %}
+    </body>
+</html>
