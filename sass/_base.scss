@@ -54,9 +54,9 @@ h6 {
 }
 a {
   @include transition_all_ease(0.3s);
-  color: #dc322f;
+  color: lighten(tomato, 10%);
   &:hover {
-    color: darken(#dc322f, 20%);
+    color: tomato;
     text-decoration: none;
   }
   &:active, &:focus {
