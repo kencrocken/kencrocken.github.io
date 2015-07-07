@@ -1,23 +1,40 @@
+{% assign my = site.data.me['Ken'] %}
+
 <article data-sr class = "contents" id="about">
-    <h3>More About Me</h3>
+    
     <section data-sr class="about">
         <div class = "about-icon">
-            <i class="fa fa-coffee"></i>
+            <h3>About Me</h3>
+            <!-- <i class="fa fa-coffee"></i> -->
+            {% for image in my.image %}
+                <img src="{{ image.link }}{% if image.size %}?s={{ image.large }}{% endif %}" />
+            {% endfor %}
         </div>
         <div class="about-text">
             <h4>Lawyer by training - Web Developer by profession</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat eros eros, id pulvinar diam rhoncus sed. Vivamus vel diam sagittis, tempor risus ut, aliquet dolor. Curabitur vel eros posuere, vehicula est sit amet, auctor orci. Quisque tincidunt cursus malesuada.</p>
+            <p>But we can talk more about that over coffee.</p>
+            <p>I am a full-stack web developer with a passion for creating websites and apps from the ground up. With additional interests in design, user experience and accesibility.</p>
+            <ul class="skills-list">
+                <li class="skills-list-item">HTML/CSS/JavaScript
+                    <span class="background-animation"></span>
+                </li>
+                <li class="skills-list-item">WordPress & DjangoCMS
+                    <span class="background-animation"></span>
+                </li>
+                <li class="skills-list-item">Ruby/Python
+                    <span class="background-animation"></span>
+                </li>
         </div>
     </section>
-    <section data-sr class="about">
+<!--     <section data-sr class="about">
         <div class="about-text">
-            <h4>Lorem ipsum dolor sit amet</h4>
-            <p>Consectetur adipiscing elit. Nulla consequat eros eros, id pulvinar diam rhoncus sed. Vivamus vel diam sagittis, tempor risus ut, aliquet dolor. Curabitur vel eros posuere, vehicula est sit amet, auctor orci. Quisque tincidunt cursus malesuada.</p>
+            <h4>Your project to the next level</h4>
+            <p>I develop well-designed, responsive, multi-device websites that will provide your next project with a professional look, interact beautifully and adhere to modern standards.</p>
         </div>
         <div class = "about-icon">
             <i class="fa fa-rocket"></i>
         </div>
-    </section>
+    </section> -->
 </article>
 
 <!-- <section class = "contents">

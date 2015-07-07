@@ -1,26 +1,37 @@
-<div class = "container">
-  <div class = "contact-wrap" >
-    <div class = "contact-form" class="ng-cloak" id="contacts" ng-controller="contactCtrl" >
-      <h3>any questions? just ask!</h3>
-      <form name="contactMe" ng-submit="submitForm(contactMe.$valid, message)" ng-show="!submittedValid" novalidate>
-        <div ng-class="{ 'has-error' : contactMe.name.$invalid && submitted }" class="form-group">
-          <input type="text" class = "formname" name="name" placeholder = "Your name." ng-model="message.name" required>
-        </div>
-        <input type="email" class = "formemail" name="_replyto" placeholder = "Your email." ng-model="message._replyto">
-        <input type="hidden" name="_next" ng-model="message._next" value="" />
-        <input type="text" name="_gotcha" ng-model="message._gotcha" style="display:none" />
-        <textarea type="text" class = "formmsg" name="text" rows="3" placeholder = "What ya want to know?" ng-model="message.text"></textarea>
-        <button type="submit" class="button">Submit</button>
-        <div ng-show="contactMe.name.$invalid && submitted" class="help-block invalid">
-          <p>Can I at least get your name?</p>
-        </div>
-      </form>
+{% assign my = site.data.me['Ken'] %}
 
-      <div ng-show="submittedValid" class="help-block valid">
-        <img src="http://fillmurray.com/g/300/300" alt="Murray">
-        <h3>You're Awesome!</h3>
-        <h4>Consider it answered.</h4>
-      </div>
-    </div>
-  </div>
-</div>
+<article class = "contents" id="contact">
+    <section class = "contact-wrap" >
+        <div class = "contact-info">
+            <h3>Contact</h3>
+            <ul class="contact">
+                <li class="contact-info-item"><i class = "fa fa-envelope fa-lg fa-fw"></i> <a href="mailto:{{ site.email }}">{{ site.email }}</a><span class="contact-info-item-background"></span></li>
+                <li class="contact-info-item"><i class = "fa fa-phone fa-lg fa-fw"></i> <a href="tel:+1 (443) 802-7145">(443) 802-7145</a><span class="contact-info-item-background"></span></li>
+                <li class="contact-info-item"><i class = "fa fa-map-marker fa-lg fa-fw"></i> <a href="http://goo.gl/maps/hM6yB">Laurel, Maryland</a><span class="contact-info-item-background"></span></li>
+            </ul>
+        </div>
+        <div class = "contact-form" class="ng-cloak" id="contacts" ng-controller="contactCtrl" >
+            
+            <form name="contactMe" ng-submit="submitForm(contactMe.$valid, message)" ng-show="!submittedValid" novalidate>
+                <div ng-class="{ 'has-error' : contactMe.name.$invalid && submitted }" class="form-group">
+                    <input type="text" class = "formname" name="name" placeholder = "Your name." ng-model="message.name" required>
+                </div>
+                <input type="email" class = "formemail" name="_replyto" placeholder = "Your email." ng-model="message._replyto">
+                <input type="hidden" name="_next" ng-model="message._next" value="" />
+                <input type="text" name="_gotcha" ng-model="message._gotcha" style="display:none" />
+                <textarea type="text" class = "formmsg" name="text" rows="3" placeholder = "What ya want to know?" ng-model="message.text"></textarea>
+                <button type="submit" class="button">Submit</button>
+                <div ng-show="contactMe.name.$invalid && submitted" class="help-block invalid">
+                    <p>Can I at least get your name?</p>
+                </div>
+            </form>
+
+            <div ng-show="submittedValid" class="help-block valid">
+                <img src="http://fillmurray.com/g/300/300" alt="Murray">
+                <h3>You're Awesome!</h3>
+                <h4>Consider it answered.</h4>
+            </div>
+        </div>
+        
+    </section>
+</article>

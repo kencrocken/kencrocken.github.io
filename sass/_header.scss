@@ -1,0 +1,436 @@
+/*--Header Image Animation Mixin--*/
+
+@mixin animation--Header($length){
+    @include animation(headerFadeIn #{$length}s cubic-bezier(0.18, 0.89, 0.32, 1.28));
+    @include animation-iteration-count(1);
+    @include animation-fill-mode(forwards);  
+}
+
+@include keyframes(headerFadeIn){
+    0% {
+        opacity: 0;
+        @include transform(translateY(-200%));
+    }
+    100% {
+        opacity: 1;
+        @include transform(translateY(0%));
+    }
+}
+/*--Floating Menu Animation Mixin--*/
+
+@mixin animation--social($length, $delay){
+    @include animation(socialFadeIn #{$length}s ease-in-out);
+    @include animation-iteration-count(1);
+    @include animation-fill-mode(forwards);  
+    @include animation-delay(#{$delay}s);
+}
+
+@include keyframes(socialFadeIn){
+    0% {
+        opacity: 0;
+        @include transform(translateY(30px));
+    }
+    100% {
+        opacity: 1;
+        @include transform(translateY(0));
+    }
+}
+
+/*--Floating Menu Animation Mixin--*/
+@mixin animation--bounce($length) {
+    @include animation(bounce #{$length}s ease-in-out);
+    @include animation-iteration-count(infinite);
+    @include animation-fill-mode(forwards);
+}
+
+@include keyframes(bounce) {
+    0%, 20%, 50%, 80%, 100% {
+    @include transform(translateY(0));
+  }
+    40% {
+    @include transform(translateY(-30px));
+  }
+    60% {
+    @include transform(translateY(-15px));
+  }
+}
+
+/*--Floating Menu Animation Mixin--*/
+
+@mixin animation--subHeader($direction,$length) {
+    @include animation(#{$direction} #{$length}s ease-in-out);
+    @include animation-iteration-count(1);
+    @include animation-fill-mode(forwards);
+}
+
+@include keyframes(fadeInDown) {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(0, -100%, 0));
+    }
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+
+@include keyframes(fadeOutUp) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        @include transform(translate3d(0, -100%, 0));
+    }
+}
+
+/*--Header Styles--*/
+
+header {
+    position: relative;
+    height: 100vh;
+    background-color: #eee8d5;
+    border-bottom: 1px solid #93a1a1;
+    // &.headroom {
+    //     @include transition_all_ease(0.2s);
+    // }
+    // &.headroom--top {
+    //     // @include animation--Header(1);
+    //     .line-behind-text {
+    //         img{
+    //             @include animation--Header(2);
+    //         }
+    //     }
+    // }
+    // &.headroom--not-top {
+    //     transform: translateY(-100%);
+    //     opacity: 0;
+    // }
+    // @include animation--Header(1);
+    .line-behind-text {
+        display: block;
+        min-height: 100vh;
+        img { 
+            // top: 75px;
+            // display: none;
+            @include animation--Header(2);
+            @include media (max-width $break-small){
+                height: 175px;
+                width: 175px;
+            }
+            &::before {
+                background-color: rgba(255,255,255,.5);
+            }
+        }
+    }
+}
+.masthead {
+    @include outer-container;
+    @include animation--Header(1);
+    padding: 144px 0;
+    // position: absolute;
+    // top: 10%;
+    // left: 50%;
+    // right: 50%;
+    // transform: translateX(-50%);
+    width: 100%;
+    p {      
+        color: #cb4b16;
+        text-transform: uppercase;
+        font-family: $primary-font;
+        margin: 0;
+        font-size: em(12); 
+    }
+    .brand {
+        padding: 0 0 0 5px;
+        text-align: center;
+        @include span-columns(12);
+        h1 {
+            font-size: 3em;
+            font-weight: 600;
+            color: tomato;
+            padding:0;
+            line-height:1;
+        }
+        h4 {
+            margin: 0;
+            text-transform: uppercase;
+        }
+        @include media (max-width $break-small){
+            h1 {
+                font-size: 2.2em;
+            }
+        }
+    }
+    .address-block {
+        @include span-columns(12);
+        display:inline;
+        padding: 5px 5px 0;
+        text-align: center;
+    }
+}
+
+/*--Social Icon Styles--*/
+.social {
+    padding-bottom: 25px;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    // @include transform(translateX(-25%));
+    li {
+        display: inline-block;
+        opacity: 0;
+        font-size: 28px;
+        text-align: center;
+        i {
+            
+        }
+        & {
+
+
+                @for $i from 1 through 5 {
+                    &:nth-child(#{$i}) {
+                        @include animation--social(0.5, $i/10);
+                    }
+                }
+
+        }
+        &:first-child {
+            a { margin-left: 0; }
+        } 
+        &:last-child {
+            a { margin-right: 0; }
+        }   
+    }
+    a {
+        @include transition_all_ease(0.7s);
+        display: inline-block;
+        cursor: pointer;
+        margin: 15px 30px;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        color: #fff;
+        line-height: 83px;
+        -webkit-transition: box-shadow 0.2s;
+        -moz-transition: box-shadow 0.2s;
+        transition: box-shadow 0.2s;
+        &:after {
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            content: '';
+            -webkit-box-sizing: content-box; 
+            -moz-box-sizing: content-box; 
+            box-sizing: content-box;
+            top: 0;
+            left: 0;
+            padding: 0;
+            box-shadow: 0 0 0 3px beige;
+            -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+            -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        &:hover {
+            box-shadow: 0 0 0 10px rgba(255,255,255,1);
+            color: #fff;
+        }
+        &:hover:after {
+            -webkit-transform: scale(0.85);
+            -moz-transform: scale(0.85);
+            -ms-transform: scale(0.85);
+            transform: scale(0.85);
+            opacity: 0.5;
+        }
+        // &:first-child {
+        //     margin-left: 0;
+        // }
+        // &:last-child {
+        //     margin-right: 0;
+        // }
+    }
+    @include media (max-width $break-small) {
+        li {
+            margin: 0 5px;
+        }
+        a {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+.linkedin { 
+    a{
+        // color: rgba(0,123,182,.4);
+        color: darken(#e3fdf6, 15%);
+        &:hover {
+            // color: rgba(0,123,182,1);
+            color: darken(#e3fdf6, 25%);
+            text-shadow: none;
+        }
+    }
+}
+
+.googleplus {
+    a{
+        // color: rgba(211,72,54,.4);
+        &:hover {
+            text-shadow: none;
+            // color: rgba(211,72,54,1);
+        }
+    }
+} 
+
+.twitter {
+    a{
+        // color: rgba(64,153,255,.4);
+        color: darken(#E3FDE9,15%);
+        &:hover {
+            text-shadow: none;
+            // color: rgba(64,153,255,1);
+            color: darken(#E3FDE9,25%);
+        }
+    }
+}
+
+.github { 
+    a{
+        // color: rgba(100,100,100,.4);
+        color: darken(#ede3fd, 10%);
+        &:hover { 
+            text-shadow: none;
+            // color: rgba(100,100,100,1); 
+            color: darken(#ede3fd, 25%);
+        }
+    }
+}
+
+.linkedin, .googleplus, .twitter, .github{ 
+    a {
+        background-color: rgba(0,0,0,0.1);
+        &:hover {
+            // text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+        }
+    }
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    .scroll-down-icon {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -18.5px;
+        // @include transform(translateX(-50%));
+        color: white;
+        font-size: 37px;
+        cursor: pointer;
+        @include animation--bounce(2);
+        a {
+            color: white;
+            opacity: 0.7;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        @include media (max-width $break-small){
+            // left: 45.7%;
+        }
+    }
+}
+
+/*--Floating Menu Styles--*/
+
+.sub-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(238, 232, 213, 0.95);
+    padding: 5px 7px 0;
+    border-bottom: 1px solid #93a1a1;
+    z-index: 1;
+    opacity: 0;
+    .my-image {
+        @include span-columns(1);
+        width: 55px;
+        height: 55px;
+        img { border-radius: 50%; }
+        @include media(max-width $break-small) {
+            width: 55px;
+            height: 55px;
+            box-sizing: border-box;
+        }
+    }
+    .sub-mast {
+        @include span-columns(5);
+        h1 { 
+            font-weight: 600; 
+            line-height: 50px;
+        }
+        @include media(max-width $break-small) {
+            @include span-columns(6);
+            h1 {
+                font-size: em(26);
+                line-height: 50px;
+            }
+        }
+    }
+    .mobile-menu {
+        display: none;
+        @include media(max-width $break-small) {
+            float: right;
+            display:block;
+            text-align: right;
+            padding-right: 7px;
+            font-size: 25px;
+            padding-top: 15px;
+        }
+    }
+    #nav-menu {
+        line-height: 65px;
+        padding: 0;
+        float: right;
+        overflow: hidden;
+        @include transition_all_ease(0.4s);
+        @include media(max-width $break-small){
+            clear: both;
+            float: none;
+            padding-bottom: 10px;
+            max-height: 0;
+        }
+    }
+    .show {
+        #nav-menu {
+            max-height: 100px;
+        }
+    }
+
+    &.headroom {
+        @include transition_all_ease(0.2s);
+        opacity: 0;
+    }
+    &.not-top.fade-out-up{
+        // @include animation--subHeader(fadeOutUp,0.2);
+    }
+    &.not-top{
+        @include animation--subHeader(fadeInDown,0.2);
+    }
+    &.top {
+        @include animation--subHeader(fadeOutUp,0.2);
+    } 
+    @include media(max-width $break-small){
+        padding-left: 7px;
+    }
+}

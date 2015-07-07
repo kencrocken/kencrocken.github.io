@@ -1,0 +1,31 @@
+nav {
+    // padding: 0 0 175px;
+    text-align: left;
+    padding-top: 10px;
+    .nav-menu {
+        text-align: center;
+        li { 
+            display: inline; 
+            cursor: pointer;
+            padding: 0 15px;
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+        a {
+            opacity: 0.4;
+            font-size: em(18);
+            font-weight: 600;
+            &:hover{
+                opacity: 1;
+                color: #dc322f;
+            }
+            &.active {
+                opacity: 1;
+            }  
+        }
+    }
+}

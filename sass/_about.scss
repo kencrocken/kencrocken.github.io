@@ -1,0 +1,106 @@
+@mixin animation--skills($length){
+    @include animation(skillsList #{$length}s ease-in-out);
+    @include animation-iteration-count(1);
+    @include animation-fill-mode(forwards);  
+    @include animation-delay(0.7s);
+}
+
+@include keyframes(skillsList){
+    0% {
+        color: black;
+        width: 0%;
+    }
+    100% {
+        color: white;
+        width: 90%;
+    }
+}
+
+#about {
+    padding: 100px 0;
+    min-height: 100vh;
+    .about {
+        max-width: 650px;
+        padding: 15px 7px;
+        overflow: hidden;
+        @include outer-container();
+        .about-icon {
+            @include span-columns(12);
+            text-align: center;
+            color: cadetblue;
+            font-size: 175px;
+            line-height: 125px;
+            h3 {
+                
+                font-size: 48px;
+                line-height: 48px;
+                color: #959CB0;
+                text-align: center;
+                margin-bottom: 25px;
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+            img {
+                border-radius: 5%;
+                height: 185px;
+                display: none;
+            }
+            @include media (min-width $break-small){
+                @include span-columns(4);
+                h3 { 
+                    text-align: left;
+                    font-size: 42px;
+                    line-height: 30px;
+                    margin-bottom: 20px;
+
+                }
+                img { display: block; }
+            }
+
+        }
+        .about-text{
+            @include span-columns(12);
+            border-left: 3px solid tomato;
+            padding-left: 15px;
+            min-height: 300px;
+            h4 {
+                font-weight: 600;
+                font-size: em(19);
+                margin: 0;
+                color: #657b83;
+                text-align: left;
+            }
+            p { margin-top: 15px; line-height: 1.2em; font-size: 1em; }
+            @include media (min-width $break-small){
+                @include span-columns(8);
+                border-left: 2px solid tomato;
+                h4 { text-align: center; }
+            }
+            .skills-list {
+                padding-top: 15px;
+                &-item {
+                    position: relative;
+                    width: 100%;
+                    margin: 10px 0 0;
+                    height: 28px;
+                    line-height: 28px;
+                    font-weight: 600;
+                    color: white;
+                    .background-animation {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background: tomato;
+                        right: 0;
+                        bottom: 0;
+                        margin-left: -15px;
+                        z-index: -1;
+                    }
+                    &:first-child {
+                        // @include animation--skills(0.6);
+                    }
+                }
+            }
+        }
+    }
+}
