@@ -134,6 +134,9 @@ header {
     // right: 50%;
     // transform: translateX(-50%);
     width: 100%;
+    @include media(max-width $break-small){
+        padding: 144px 0 61px;
+    }
     p {      
         color: #cb4b16;
         text-transform: uppercase;
