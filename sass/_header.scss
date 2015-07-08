@@ -196,7 +196,7 @@ header {
 
                 @for $i from 1 through 5 {
                     &:nth-child(#{$i}) {
-                        @include animation--social(0.5, $i/10);
+                        @include animation--social(0.8, $i+0.00001/10);
                     }
                 }
 
@@ -273,11 +273,11 @@ header {
 
 .linkedin { 
     a{
-        // color: rgba(0,123,182,.4);
-        color: darken(#e3fdf6, 15%);
+        color: rgba(0,123,182,.4);
+        // color: darken(#e3fdf6, 15%);
         &:hover {
-            // color: rgba(0,123,182,1);
-            color: darken(#e3fdf6, 25%);
+            color: rgba(0,123,182,1);
+            // color: darken(#e3fdf6, 25%);
             text-shadow: none;
         }
     }
@@ -285,34 +285,34 @@ header {
 
 .googleplus {
     a{
-        // color: rgba(211,72,54,.4);
+        color: rgba(211,72,54,.4);
         &:hover {
             text-shadow: none;
-            // color: rgba(211,72,54,1);
+            color: rgba(211,72,54,1);
         }
     }
 } 
 
 .twitter {
     a{
-        // color: rgba(64,153,255,.4);
-        color: darken(#E3FDE9,15%);
+        color: rgba(64,153,255,.4);
+        // color: darken(#E3FDE9,15%);
         &:hover {
             text-shadow: none;
-            // color: rgba(64,153,255,1);
-            color: darken(#E3FDE9,25%);
+            color: rgba(64,153,255,1);
+            // color: darken(#E3FDE9,25%);
         }
     }
 }
 
 .github { 
     a{
-        // color: rgba(100,100,100,.4);
-        color: darken(#ede3fd, 10%);
+        color: rgba(100,100,100,.4);
+        // color: darken(#ede3fd, 10%);
         &:hover { 
             text-shadow: none;
-            // color: rgba(100,100,100,1); 
-            color: darken(#ede3fd, 25%);
+            color: rgba(100,100,100,1); 
+            // color: darken(#ede3fd, 25%);
         }
     }
 }

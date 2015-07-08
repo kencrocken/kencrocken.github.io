@@ -1,6 +1,9 @@
 #contact {
-    min-height: 100vh;
-    padding: 100px 0;
+    min-height: 50vh;
+    padding: 50px 0;
+    @include media (max-width $break-small) {
+        min-height: 100vh;
+    }
 }
 .contact-wrap {
     position: relative;
