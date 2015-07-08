@@ -118,17 +118,9 @@ input.formname, input.formemail, textarea.formmsg, .button {
 }
 .has-error {
     input.formname, input.formemail {
-        margin: 2px 0;
-        padding: 8px;
-        font-size: 1.05em;
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        border: solid 1px red;
-        text-indent: 10px;
-        background-color: lighten(#323430, 70%);
-        font-family: $primary-font;
-        font-weight: 300;
-        color: #000;
+
+        border-bottom: solid 5px tomato;
+
     }
 }
 
@@ -176,9 +168,9 @@ input.formemail:focus, input.formname:focus, textarea.formmsg:focus{
     }
     p {
         font-size: 15px;
-        font-weight: 100;
+        font-weight: 600;
         // text-align: center;
-        color: red;
+        color: tomato;
     }
 }
 
