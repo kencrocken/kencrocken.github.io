@@ -1,5 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC|Roboto+Slab:300,700,100,400);
+
+$roboto: 'Roboto Slab', serif;
+$pica: 'IM Fell DW Pica SC', serif;
 // Typography
-$base-font-family: $helvetica;
+$base-font-family: $roboto;
 $heading-font-family: $base-font-family;
 
 // Font Sizes

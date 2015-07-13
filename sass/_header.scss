@@ -150,14 +150,17 @@ header {
         @include span-columns(12);
         h1 {
             font-size: 3em;
-            font-weight: 600;
+            font-weight: 700;
             color: tomato;
-            padding:0;
             line-height:1;
+            padding: 15px 0;
         }
         h4 {
+            font-family: "freight-sans-pro";
             margin: 0;
             text-transform: uppercase;
+            font-weight: 100;
+            // color: black;
         }
         @include media (max-width $break-small){
             h1 {
@@ -196,7 +199,7 @@ header {
 
                 @for $i from 1 through 5 {
                     &:nth-child(#{$i}) {
-                        @include animation--social(0.8, $i+0.00001/10);
+                        @include animation--social(0.8, $i/10);
                     }
                 }
 
@@ -398,7 +401,7 @@ header {
             text-align: right;
             padding-right: 7px;
             font-size: 25px;
-            padding-top: 15px;
+            padding-top: 12px;
         }
     }
     #nav-menu {
