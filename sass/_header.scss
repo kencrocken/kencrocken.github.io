@@ -183,37 +183,41 @@ header {
 }
 
 #gears {
+    height: 150px;
+    width: 150px;
     display: block;
     margin: 0 auto;
     opacity: .5;
     .green {
         fill: green;
-        &:hover {
-            @include animation--spin(4);
-        }
     }
     .blue { 
         fill: blue; 
-        &:hover {
-            @include animation--reverse_spin(2.6);
-        }
     }
     .red { 
         fill: red;
-        &:hover {
-            @include animation--reverse_spin(2.3);
-        } 
     }
 
     > path:last-child {
         fill: yellow;
         opacity: 1;
+    }
+
+    .green, .blue, .red, > path:last-child {
         transform-origin: 50% 50%;
     }
 
-    .green, .blue, .red {
-        transform-origin: 50% 50%;
-        &:hover ~ path:last-child { 
+    &:hover {
+        .blue {
+            @include animation--reverse_spin(2.6);
+        }
+        .red {
+            @include animation--reverse_spin(2.3);
+        }
+        .green {
+            @include animation--spin(4);
+        }
+        > path:last-child {
             @include animation--lightning(4); 
         }
     }
@@ -223,13 +227,13 @@ header {
 .masthead {
     @include outer-container;
     @include animation--Header(1);
-    padding: 65px 0 10px;
+    padding: 65px 0 50px;
     // position: absolute;
     // top: 10%;
     // left: 50%;
     // right: 50%;
     // transform: translateX(-50%);
-    width: 100%;
+    max-width: 659px;
     @include media(max-width $break-small){
         padding: 45px 0 10px;
     }
@@ -240,16 +244,16 @@ header {
         margin: 0;
         font-size: em(12); 
     }
+
     .brand {
         padding: 0 5px;
         text-align: center;
         @include span-columns(12);
         h1 {
-            font-size: 65px;
-            font-weight: 700;
+            font-size: 72px;
             color: #335a9a;
-            padding: 15px 0 0;
-            font-family: $baron;
+            padding: 15px 0 0 10px ;
+            font-family: "Baron Neue Black";
         }
         h4 {
             background-color: tomato;
@@ -258,19 +262,22 @@ header {
             margin: 0;
             font-size: 25px;
             line-height: 50px;
-            // color: black;
+            padding: 0 0 0 10px
         }
         @include media (max-width $break-small){
+            @include span-columns(12);
+            text-align: center;
             h1 {
                 font-size: 2.2em;
             }
         }
     }
-    .address-block {
+    .logo {
         @include span-columns(12);
-        display:inline;
-        padding: 0 5px 25px;
-        text-align: center;
+        padding-bottom: 25px;
+        @include media (max-width $break-small){
+            @include span-columns(12);
+        }
     }
 }
 
@@ -313,7 +320,7 @@ header {
         @include transition_all_ease(0.7s);
         display: inline-block;
         cursor: pointer;
-        margin: 15px 30px;
+        margin: 15px 0;
         width: 90px;
         height: 90px;
         border-radius: 50%;
@@ -338,7 +345,7 @@ header {
             top: 0;
             left: 0;
             padding: 0;
-            box-shadow: 0 0 0 3px beige;
+            // box-shadow: 0 0 0 3px beige;
             -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
             -moz-transition: -moz-transform 0.2s, opacity 0.2s;
             transition: transform 0.2s, opacity 0.2s;
@@ -420,7 +427,7 @@ header {
 
 .linkedin, .googleplus, .twitter, .github{ 
     a {
-        background-color: rgba(0,0,0,0.1);
+        // background-color: rgba(0,0,0,0.1);
         &:hover {
             // text-shadow: 1px 1px 1px rgba(0,0,0,.2);
         }
@@ -486,7 +493,7 @@ header {
         @include media(max-width $break-small) {
             @include span-columns(6);
             h1 {
-                font-size: em(26);
+                font-size: em(21);
                 line-height: 50px;
             }
         }
