@@ -19,6 +19,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^1.0.5",
     "gulp-sourcemaps": "^1.5.2",
+    "gulp-svg-symbols": "^0.3.1",
+    "gulp-svgmin": "^1.2.0",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.4",
     "imagemin-pngquant": "^4.1.0"

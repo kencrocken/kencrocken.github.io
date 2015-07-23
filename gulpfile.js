@@ -9,6 +9,8 @@ var gulp         = require('gulp'),
     uglify       = require('gulp-uglify'),
     imageop      = require('gulp-image-optimization'),
     pngquant     = require('imagemin-pngquant'),
+    svgmin       = require('gulp-svgmin'),
+    svgSymbols   = require('gulp-svg-symbols'),
     rename       = require('gulp-rename'),
     concat       = require('gulp-concat'),
     notify       = require('gulp-notify'),
@@ -98,6 +100,24 @@ gulp.task('images', function(cb) {
         }))) 
     .pipe(gulp.dest('./images')).on('end', cb).on('error', cb)
     .pipe(notify({ message: 'Images task complete' }));
+});
+
+// SVG SPRITES
+gulp.task('sprites', function () {
+  return gulp.src('./svg/**/*.svg')
+    .pipe(svgmin({
+            plugins: [{
+                cleanupIDs: false
+            }]
+        }))
+    .pipe(svgSymbols({
+      templates: ['default-svg']
+    })
+        .on("error", notify.onError(function (error) {
+                console.log(error);
+                 return "Error: " + error.message;
+         })))
+    .pipe(gulp.dest('./_includes'));
 });
 
 // JEKYLL
