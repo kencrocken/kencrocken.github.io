@@ -1,6 +1,6 @@
 {% assign my = site.data.me['Ken'] %}
 
-<article data-sr  class = "contents" id="contact">
+<article id="contact">
     <section class = "contact-wrap" >
         <div class = "contact-info">
             <h3>Contact</h3>
@@ -11,7 +11,7 @@
             </ul>
         </div>
         <div class = "contact-form" class="ng-cloak" id="contacts" ng-controller="contactCtrl" >
-            
+            <p class="accent">Let's get that coffee.</p>
             <form name="contactMe" ng-submit="submitForm(contactMe.$valid, message)" ng-show="!submittedValid" novalidate>
                 <div ng-class="{ 'has-error' : contactMe.name.$invalid && submitted }" class="form-group">
                     <input type="text" class = "formname" name="name" placeholder = "Your name." ng-model="message.name" required>
@@ -29,7 +29,7 @@
             <div ng-show="submittedValid" class="help-block valid">
                 <img src="http://fillmurray.com/g/300/300" alt="Murray">
                 <h3>You're Awesome!</h3>
-                <h4>Consider it answered.</h4>
+                <h4>Get back to you soon.</h4>
             </div>
         </div>
         

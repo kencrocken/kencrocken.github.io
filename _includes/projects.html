@@ -1,19 +1,19 @@
-<div class="line-behind-text">
-  <h3>projects</h3>
-</div>
-<div class = "container">
-  <ul class = "projects">
-      <li>
-        <h4><a href = "https://github.com/kencrocken/emailysis">Emailysis</a></h4>
-      </li>
-      <li>
-        <h4><a href = "https://github.com/kencrocken/BEWD-DC-1-HW/tree/master/ken_crocken/midterm">MetroCommand</a></h4>
-      </li>
-      <li>
-        <h4><a href = "http://www.mydevsite.biz">Themes</a></h4>
-      </li>
-      <li>
-        <h4><a href = "http://murmuring-falls-8083.herokuapp.com/">Beer Search</a></h4>
-      </li>
-  </ul>
-</div>
+{% assign my = site.data.me['Ken'] %}
+
+<article id="projects">
+    <section class = "project-heading">
+        <h3>Projects</h3>
+    </section>
+    <section class="project-descriptions">
+        <ul class="projects-list">
+            <li class="projects-list-item">
+                <a href = "https://kencrocken.github.io/dcmetro" target="_blank"><i class="fa fa-train"></i></a>
+                <h4><a href = "https://kencrocken.github.io/dcmetro" target="_blank">DCMetro</a></h4>
+            </li>
+            <li class="projects-list-item">
+                <a href = "https://tranquil-ridge-7616.herokuapp.com/" target="_blank"><span class="beer-icon icon-uniE600"></span></a>
+                <h4><a href = "https://tranquil-ridge-7616.herokuapp.com/" target="_blank">Beer Search</a></h4>
+            </li>
+        </ul>
+    </section>
+</article>

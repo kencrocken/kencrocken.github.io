@@ -38,7 +38,8 @@ gulp.task('sass', function () {
             loadPath: [
                 './bower_components/fontawesome/scss',
                 './bower_components/bourbon/dist',
-                './bower_components/neat/app/assets/stylesheets'
+                './bower_components/neat/app/assets/stylesheets',
+                './bower_components/onepage-scroll'
             ]
 
         })
@@ -59,6 +60,7 @@ gulp.task('sass', function () {
         }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('css/'))
+        .pipe(browserSync.stream());
 });
 
 // Concat vendor scripts
@@ -69,7 +71,8 @@ gulp.task('js', function() {
         './bower_components/jquery/dist/jquery.js',  
         './bower_components/scrollReveal.js/dist/*.js',
         './bower_components/underscore/underscore.js',
-        './bower_components/headroom.js/dist/headroom.js',  
+        './bower_components/headroom.js/dist/headroom.js',
+        './bower_components/onepage-scroll/jquery.onepage-scroll.js',    
         './bower_components/angular/angular.js',
         './bower_components/angular-scroll/angular-scroll.js',
         './bower_components/ngSmoothScroll/angular-smooth-scroll.js',
@@ -171,9 +174,11 @@ gulp.task('site-reload', ['jekyll-build'], function(){
 gulp.task('watch', function() {
 
     // Watch Sass files
-    gulp.watch('./sass/**/*',['sass','site-reload']);
+    gulp.watch('./sass/**/*',['sass']);
+    gulp.watch('./css/**/*', ['jekyll-build'], reload);
     // Watch JS files
-    gulp.watch('./scripts/**/*', ['js','site-reload'])
+    gulp.watch('./scripts/**/*', ['js']);
+    gulp.watch('./scripts/**/*.coffee', ['jekyll-build'], reload);
     // Watch _site files
     gulp.watch(jekyllFiles, ['site-reload']);
     // gulp.watch('./_site/**/*', ['site-reload']);

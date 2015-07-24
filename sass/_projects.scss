@@ -1,0 +1,50 @@
+#projects {
+    @include outer-container;
+    padding: 0 7px;
+    text-align: center;
+    .project-heading {
+        @include span-columns(12);
+        padding: 50px 0px 0;
+        border-left: 3px solid $tomato; 
+        h3 { margin-bottom: 0; }
+        @include media (min-width $break-small){
+            @include span-columns(8);
+            @include shift(4);
+            text-align: left;
+            border-left: none;
+            border-right: 3px solid $tomato;
+        }
+    }
+    .project-descriptions {
+        @include span-columns(12);
+        border-left: 3px solid tomato;
+        .projects-list {
+            .projects-list-item {
+                i {
+                    font-size: 42px;
+                    color: white;
+                    background-color: cornflowerblue;
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 50%;
+                    border: 5px solid white;
+                    line-height: 60px;
+                    text-align: center;
+                }
+                h4 { margin-top: 5px; }
+                &:last-child {
+                    h4 { margin-top: 10px; }
+                }
+                
+            }
+        }
+        @include media (min-width $break-small){
+            @include span-columns(8);
+            @include shift(4);
+            text-align: left;
+            border-left: none;
+            border-right: 3px solid $tomato;
+        }
+    }
+}
+

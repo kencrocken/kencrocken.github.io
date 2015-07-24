@@ -16,6 +16,7 @@ h6 {
   font-family: $heading-font-family;
   line-height: $heading-line-height;
   margin: 0 0 $small-spacing;
+  color: #335a9a;
 }
 
 h1 {
@@ -27,7 +28,7 @@ h2 {
 }
 
 h3 {
-  font-size: $h3-font-size;
+  font-size: 40px;
 }
 
 h4 {
@@ -49,7 +50,7 @@ p {
 a {
   color: $action-color;
   text-decoration: none;
-  transition: color 0.1s linear;
+  transition: color 0.3s linear;
 
   &:active,
   &:focus,
@@ -75,4 +76,10 @@ img,
 picture {
   margin: 0;
   max-width: 100%;
+}
+
+.accent {
+  font-family: $accent-family;
+  letter-spacing: 1px;
+  font-size: 18px !important;
 }

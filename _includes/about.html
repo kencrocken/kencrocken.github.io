@@ -1,44 +1,28 @@
-<div id="about-me" ng-controller="aboutCtrl" ng-view>
-  <div class="line-behind-text">
-    <div id="about-me-menu">
-      <ul class="about-me">
-        <li class="tab-control" ng-class="class">
-          <a ng-click="link('rocket')" ng-class="{active: checkContent('rocket')}"><i class="fa fa-rocket"></i></a>
-        </li>
-        <li class="tab-control">
-          <a ng-click="link('gavel')" ng-class="{active: checkContent('gavel')}"><i class="fa fa-gavel"></i></a>
-        </li> 
-        <li class="tab-control">
-          <a ng-click="link('code')" ng-class="{active: checkContent('code')}"><i class="fa fa-code"></i></a>
-        </li> 
-        <li class="tab-control">
-          <a ng-click="link('beer')"  ng-class="{active: checkContent('beer')}"><i class="fa fa-beer"></i></a>
-        </li> 
-      </ul>
-    </div> 
-  </div>
+{% assign my = site.data.me['Ken'] %}
 
-  <div class = "container">
-    <div class = "contents">
-      <div class="animate-show element-animation rocket" class="ng-cloak" ng-show="checkContent('rocket')">
-        <h2>To what comes next!</h2>
-        <p>How people interact and communicate is what fascinated me</p>
-      </div>
-
-      <div class="animate-show gavel" class="ng-cloak" ng-show="checkContent('gavel')">
-        <h2>Original intent.</h2>
-        <p>Soon, the dot coms went dot bust and it was litigation and trial work</p>
-      </div>
-
-      <div class="animate-show code" class="ng-cloak" ng-show="checkContent('code')">
-        <h2>The language of the future.</h2>
-        <p>I told this to someone and they told me I should learn a language, not a bad idea. </p>
-      </div>
-
-      <div class="animate-show beer" class="ng-cloak" ng-show="checkContent('beer')">
-        <h2>I'm not a beer snob.</h2> 
-        <p>If the above doesn't make any sense, have a couple beers. </p>
-      </div>
-    </div>
-  </div>
-</div>
+<article id="about">
+  <section class="about">
+	<div class = "about-icon">
+		<h3>AbOut</h3>
+		{% for image in my.image %}
+			<img src="{{ image.link }}{% if image.size %}?s={{ image.large }}{% endif %}" />
+		{% endfor %}
+	</div>
+	<div class="about-text">
+		<h4>Lawyer by training - Web Developer by profession</h4>
+		<p class="accent">But we can talk more about that over coffee.</p>
+		<p>I am a full-stack web developer with a passion for creating websites and apps from the ground up. With additional interests in design, user experience and accesibility.</p>
+		<ul class="skills-list">
+			<li class="skills-list-item">HTML/CSS/JavaScript
+				<span class="background-animation"></span>
+			</li>
+			<li class="skills-list-item">WordPress & DjangoCMS
+				<span class="background-animation"></span>
+			</li>
+			<li class="skills-list-item">Ruby/Python
+				<span class="background-animation"></span>
+			</li>
+		</ul>
+	</div>
+  </section>
+</article>
