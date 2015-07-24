@@ -7,7 +7,7 @@ nav {
         li { 
             display: inline; 
             cursor: pointer;
-            padding: 0 5px;
+            padding: 0px 5px;
             &:first-child {
                 padding-left: 0;
             }
@@ -17,7 +17,7 @@ nav {
         }
         a {
             opacity: 0.4;
-            font-size: em(18);
+            font-size: em(16);
             font-weight: 600;
             font-family: $baron;
             &:hover{

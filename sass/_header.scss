@@ -250,7 +250,7 @@ header {
     // transform: translateX(-50%);
     max-width: 659px;
     @include media(max-width $break-small){
-        padding: 45px 0 10px;
+        padding: 20px 0 10px;
     }
     p {      
         color: #cb4b16;
