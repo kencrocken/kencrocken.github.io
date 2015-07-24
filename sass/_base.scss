@@ -177,19 +177,19 @@ ul {
   position: relative;
   $sans-serif: $primary-font;
   $serif: $heading-font;
-  color: #000;
+  // color: #000;
   max-width: 650px;
   min-height: 165px;
   margin: 1.55% auto 0% auto;
   h2 {
     font-size:em(21);
   }
-  p {
-    line-height: em(28);
-    @include media(max-width $break-small){
-      line-height: inherit;
-    }
-  }
+  // p {
+  //   line-height: em(28);
+  //   @include media(max-width $break-small){
+  //     line-height: inherit;
+  //   }
+  // }
   @include media(max-width $break-small){
     // min-height:265px;
     margin: 2% auto -7% auto;
