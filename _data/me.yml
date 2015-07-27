@@ -16,9 +16,9 @@ Ken:
             accent: "But we can talk more about that over coffee."
             content: "A full-stack web developer with a passion for creating websites and apps from the ground up. With additional interests in design, user experience and accesibility."
             skills:
-                - "HTML/CSS/JavaScript"
+                - "HTML - CSS - JavaScript"
                 - "WordPress & DjangoCMS"
-                - "Ruby/Python"
+                - "Ruby - Python"
 
     resume:
         -   name: "Freelancer"
