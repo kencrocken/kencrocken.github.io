@@ -9,20 +9,18 @@
 		{% endfor %}
 	</div>
 	<div class="about-text">
-		<h4>Lawyer by training - Web Developer by profession</h4>
-		<p class="accent">But we can talk more about that over coffee.</p>
-		<p>I am a full-stack web developer with a passion for creating websites and apps from the ground up. With additional interests in design, user experience and accesibility.</p>
-		<ul class="skills-list">
-			<li class="skills-list-item">HTML/CSS/JavaScript
-				<span class="background-animation"></span>
-			</li>
-			<li class="skills-list-item">WordPress & DjangoCMS
-				<span class="background-animation"></span>
-			</li>
-			<li class="skills-list-item">Ruby/Python
-				<span class="background-animation"></span>
-			</li>
-		</ul>
+		{% for about in my.about %}
+			<h4>{{ about.tag }}</h4>
+			<p class="accent">{{ about.accent }}</p>
+			<p>{{ about.content }}</p>
+			<ul class="skills-list">
+				{% for skill in about.skills %}
+					<li class="skills-list-item">{{ skill }}
+						<span class="background-animation"></span>
+					</li>
+				{% endfor %}
+			</ul>
+		{% endfor %}
 	</div>
   </section>
 </article>

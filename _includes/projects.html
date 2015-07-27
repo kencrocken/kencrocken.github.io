@@ -2,18 +2,18 @@
 
 <article id="projects">
     <section class = "project-heading">
-        <h3>Projects</h3>
+        <h3>PrOjects</h3>
     </section>
     <section class="project-descriptions">
         <ul class="projects-list">
-            <li class="projects-list-item">
-                <a href = "https://kencrocken.github.io/dcmetro" target="_blank"><i class="fa fa-train"></i></a>
-                <h4><a href = "https://kencrocken.github.io/dcmetro" target="_blank">DCMetro</a></h4>
-            </li>
-            <li class="projects-list-item">
-                <a href = "https://tranquil-ridge-7616.herokuapp.com/" target="_blank"><span class="beer-icon icon-uniE600"></span></a>
-                <h4><a href = "https://tranquil-ridge-7616.herokuapp.com/" target="_blank">Beer Search</a></h4>
-            </li>
+            {% for project in my.projects %}
+                <li class="projects-list-item">
+                    <a href = "{{ project.link }}" target="_blank">    
+                    {{ project.icon }}
+                    </a>
+                    <h4><a href = {{ project.link }}  target="_blank">{{ project.name }}</a></h4>
+                </li>
+            {% endfor %}
         </ul>
     </section>
 </article>

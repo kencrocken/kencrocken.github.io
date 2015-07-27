@@ -1,5 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC|Roboto+Slab:300,700,100,400);
+// @import url(http://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC|Roboto+Slab:300,700,100,400);
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
+// @import url(http://fonts.googleapis.com/css?family=Arimo);
 
 @font-face {
 font-family: 'Baron Neue Black';
@@ -9,28 +10,28 @@ src: url('./font/Baron Neue Black.woff') format('woff');
 }
 
 
-@font-face {
-font-family: 'Baron Neue';
-font-style: normal;
-font-weight: normal;
-src: url('./font/Baron Neue.woff') format('woff');
-}
+// @font-face {
+// font-family: 'Baron Neue';
+// font-style: normal;
+// font-weight: normal;
+// src: url('./font/Baron Neue.woff') format('woff');
+// }
 
 
-@font-face {
-font-family: 'Baron Neue Black Italic';
-font-style: normal;
-font-weight: normal;
-src: url('./font/Baron Neue Black Italic.woff') format('woff');
-}
+// @font-face {
+// font-family: 'Baron Neue Black Italic';
+// font-style: normal;
+// font-weight: normal;
+// src: url('./font/Baron Neue Black Italic.woff') format('woff');
+// }
 
 
-@font-face {
-font-family: 'Baron Neue Bold Italic';
-font-style: normal;
-font-weight: normal;
-src: url('./font/Baron Neue Bold Italic.woff') format('woff');
-}
+// @font-face {
+// font-family: 'Baron Neue Bold Italic';
+// font-style: normal;
+// font-weight: normal;
+// src: url('./font/Baron Neue Bold Italic.woff') format('woff');
+// }
 
 
 @font-face {
@@ -40,77 +41,107 @@ font-weight: normal;
 src: url('./font/baron_neue_bold.woff') format('woff');
 }
 
+// @font-face {
+//     font-family: 'quicksandbold';
+//     src: url('./font/quicksand-bold-webfont.eot');
+//     src: url('./font/quicksand-bold-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('./font/quicksand-bold-webfont.woff2') format('woff2'),
+//          url('./font/quicksand-bold-webfont.woff') format('woff'),
+//          url('./font/quicksand-bold-webfont.ttf') format('truetype'),
+//          url('./font/./font/quicksand-bold-webfont.svg#quicksandbold') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+
+// }
+// @font-face {
+//     font-family: 'quicksanditalic';
+//     src: url('./font/quicksand-italic-webfont.eot');
+//     src: url('./font/quicksand-italic-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('./font/quicksand-italic-webfont.woff2') format('woff2'),
+//          url('./font/quicksand-italic-webfont.woff') format('woff'),
+//          url('./font/quicksand-italic-webfont.ttf') format('truetype'),
+//          url('./font/quicksand-italic-webfont.svg#quicksanditalic') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+
+// }
+// @font-face {
+//     font-family: 'quicksandlight';
+//     src: url('./font/quicksand-light-webfont.eot');
+//     src: url('./font/quicksand-light-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('./font/quicksand-light-webfont.woff2') format('woff2'),
+//          url('./font/quicksand-light-webfont.woff') format('woff'),
+//          url('./font/quicksand-light-webfont.ttf') format('truetype'),
+//          url('./font/quicksand-light-webfont.svg#quicksandlight') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+
+// }
+// @font-face {
+//     font-family: 'quicksandregular';
+//     src: url('./font/quicksand-regular-webfont.eot');
+//     src: url('./font/quicksand-regular-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('./font/quicksand-regular-webfont.woff2') format('woff2'),
+//          url('./font/quicksand-regular-webfont.woff') format('woff'),
+//          url('./font/quicksand-regular-webfont.ttf') format('truetype'),
+//          url('./font/quicksand-regular-webfont.svg#quicksandregular') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'merriweatherlight';
+//     src: url('./font/merriweather-light-webfont.eot');
+//     src: url('./font/merriweather-light-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('./font/merriweather-light-webfont.woff2') format('woff2'),
+//          url('./font/merriweather-light-webfont.woff') format('woff'),
+//          url('./font/merriweather-light-webfont.ttf') format('truetype'),
+//          url('./font/merriweather-light-webfont.svg#merriweatherlight') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'merriweatherregular';
+//     src: url('./font/merriweather-regular-webfont.eot');
+//     src: url('./font/merriweather-regular-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('./font/merriweather-regular-webfont.woff2') format('woff2'),
+//          url('./font/merriweather-regular-webfont.woff') format('woff'),
+//          url('./font/merriweather-regular-webfont.ttf') format('truetype'),
+//          url('./font/merriweather-regular-webfont.svg#merriweatherregular') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
 @font-face {
-    font-family: 'quicksandbold';
-    src: url('./font/quicksand-bold-webfont.eot');
-    src: url('./font/quicksand-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('./font/quicksand-bold-webfont.woff2') format('woff2'),
-         url('./font/quicksand-bold-webfont.woff') format('woff'),
-         url('./font/quicksand-bold-webfont.ttf') format('truetype'),
-         url('./font/./font/quicksand-bold-webfont.svg#quicksandbold') format('svg');
+    font-family: 'eurofurence_lightregular';
+    src: url('./font/eurof35-webfont.eot');
+    src: url('./font/eurof35-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./font/eurof35-webfont.woff2') format('woff2'),
+         url('./font/eurof35-webfont.woff') format('woff'),
+         url('./font/eurof35-webfont.ttf') format('truetype'),
+         url('./font/eurof35-webfont.svg#eurofurence_lightregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
+
+
+
+
 @font-face {
-    font-family: 'quicksanditalic';
-    src: url('./font/quicksand-italic-webfont.eot');
-    src: url('./font/quicksand-italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('./font/quicksand-italic-webfont.woff2') format('woff2'),
-         url('./font/quicksand-italic-webfont.woff') format('woff'),
-         url('./font/quicksand-italic-webfont.ttf') format('truetype'),
-         url('./font/quicksand-italic-webfont.svg#quicksanditalic') format('svg');
+    font-family: 'eurofurence_regular';
+    src: url('./font/eurof55-webfont.eot');
+    src: url('./font/eurof55-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./font/eurof55-webfont.woff2') format('woff2'),
+         url('./font/eurof55-webfont.woff') format('woff'),
+         url('./font/eurof55-webfont.ttf') format('truetype'),
+         url('./font/eurof55-webfont.svg#eurofurence_regular') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
-@font-face {
-    font-family: 'quicksandlight';
-    src: url('./font/quicksand-light-webfont.eot');
-    src: url('./font/quicksand-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('./font/quicksand-light-webfont.woff2') format('woff2'),
-         url('./font/quicksand-light-webfont.woff') format('woff'),
-         url('./font/quicksand-light-webfont.ttf') format('truetype'),
-         url('./font/quicksand-light-webfont.svg#quicksandlight') format('svg');
-    font-weight: normal;
-    font-style: normal;
 
-}
-@font-face {
-    font-family: 'quicksandregular';
-    src: url('./font/quicksand-regular-webfont.eot');
-    src: url('./font/quicksand-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('./font/quicksand-regular-webfont.woff2') format('woff2'),
-         url('./font/quicksand-regular-webfont.woff') format('woff'),
-         url('./font/quicksand-regular-webfont.ttf') format('truetype'),
-         url('./font/quicksand-regular-webfont.svg#quicksandregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'merriweatherlight';
-    src: url('./font/merriweather-light-webfont.eot');
-    src: url('./font/merriweather-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('./font/merriweather-light-webfont.woff2') format('woff2'),
-         url('./font/merriweather-light-webfont.woff') format('woff'),
-         url('./font/merriweather-light-webfont.ttf') format('truetype'),
-         url('./font/merriweather-light-webfont.svg#merriweatherlight') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'merriweatherregular';
-    src: url('./font/merriweather-regular-webfont.eot');
-    src: url('./font/merriweather-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('./font/merriweather-regular-webfont.woff2') format('woff2'),
-         url('./font/merriweather-regular-webfont.woff') format('woff'),
-         url('./font/merriweather-regular-webfont.ttf') format('truetype'),
-         url('./font/merriweather-regular-webfont.svg#merriweatherregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 
 @font-face {
   font-family: 'icomoon';

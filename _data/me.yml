@@ -10,3 +10,49 @@ Ken:
     google: 104867203056603798573
     twitter: kencrocken
     github: kencrocken
+
+    about:
+        -   tag: "Lawyer by training - Web Developer by profession"
+            accent: "But we can talk more about that over coffee."
+            content: "A full-stack web developer with a passion for creating websites and apps from the ground up. With additional interests in design, user experience and accesibility."
+            skills:
+                - "HTML/CSS/JavaScript"
+                - "WordPress & DjangoCMS"
+                - "Ruby/Python"
+
+    resume:
+        -   name: "Freelancer"
+            date: "July 2015 to Present"
+            description: "Web Development"
+
+        -   name: "BTS Software Solutions"
+            date: "November 2014 to July 2015"
+            description: "Front End Developer"
+
+    projects: 
+
+        -   name: "DCMetro"
+            link: https://kencrocken.github.io/dcmetro
+            icon: <i class="fa fa-train"></i>
+
+        -   name: "Beer Search"
+            link: https://tranquil-ridge-7616.herokuapp.com/
+            icon: <span class="beer-icon icon-uniE600"></span>
+
+    contact:
+
+            email:
+                address: kcrocken@gmail.com
+                icon: <i class = "fa fa-envelope fa-lg fa-fw"></i> 
+
+            telephone:
+                number: (443) 802-7145
+                icon: <i class = "fa fa-phone fa-lg fa-fw"></i>
+
+            location:
+                place: "Laurel, Maryland"
+                icon: <i class = "fa fa-map-marker fa-lg fa-fw"></i>
+                link: http://goo.gl/maps/hM6yB
+
+
+
