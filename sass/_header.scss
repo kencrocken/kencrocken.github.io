@@ -557,8 +557,15 @@ header {
     }
     &.top {
         @include animation--subHeader(fadeOutUp,0.2);
+    }
+    &.blog {
+        opacity: 1;
+        transition: box-shadow 0.2s;
     } 
     @include media(max-width $break-small){
         padding-left: 7px;
     }
+}
+.top-bar-scrolled {
+    box-shadow: 0 6px 4px -4px rgba(0,0,0,.3);
 }

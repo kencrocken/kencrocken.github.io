@@ -9,29 +9,21 @@ $ ->
 
   scrollToTop()
   
-
+  # VH Fix for mobile
   $header = $('header')
   $h = window.innerHeight
   $header.css('min-height', $h)
     
   return  
-# onepage-scroll Config
-# $('.wrapper').onepage_scroll
-#   sectionContainer: 'article'
-#   easing: 'linear'
-#   animationTime: 600
-#   pagination: true
-#   updateURL: false
-#   # beforeMove: (index) ->
-#   # afterMove: (index) ->
-#   loop: false
-#   keyboard: true
-#   responsiveFallback: false
-#   direction: 'vertical'
-  
-# $('.scroll-down-icon').on 'click', ->
-#   $('.wrapper').moveTo(2)
-#   return
+
+tb = $('.sub-header.blog')
+tbs = 'top-bar-scrolled'
+$(window).scroll ->
+  if $(this).scrollTop()
+    tb.addClass tbs
+  else
+    tb.removeClass tbs
+  return
 
 # scrollReveal CONFIG
 scrollRevealConfig = 
