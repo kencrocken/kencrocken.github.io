@@ -51,8 +51,9 @@ h2 {
   margin: 0px 0 21px 0;
 }
 h6 {
-  font-size: em(14);
-  font-weight: 100;
+  font-size: em(16);
+  font-family: $primary-font;
+  color: $primary-text-color;
 }
 a {
   // @include transition_all_ease(0.3s);
