@@ -1,26 +1,26 @@
 {% assign my = site.data.me['Ken'] %}
+{% assign image = my.image %}
+{% assign about = my.about%}
 
 <article id="about">
   <section class="about">
 	<div class = "about-icon">
 		<h3>AbOut</h3>
-		{% for image in my.image %}
-			<img src="{{ image.link }}{% if image.size %}?s={{ image.large }}{% endif %}" />
-		{% endfor %}
+		<img src="{{ image.link }}{% if image.size %}?s={{ image.large }}{% endif %}" />
 	</div>
 	<div class="about-text">
-		{% for about in my.about %}
-			<h4>{{ about.tag }}</h4>
-			<p class="accent">{{ about.accent }}</p>
-			<p>{{ about.content }}</p>
-			<ul class="skills-list">
-				{% for skill in about.skills %}
-					<li class="skills-list-item">{{ skill }}
-						<span class="background-animation"></span>
-					</li>
-				{% endfor %}
-			</ul>
-		{% endfor %}
+
+		<h4>{{ about.tag }}</h4>
+		<p class="accent">{{ about.accent }}</p>
+		<p>{{ about.content }}</p>
+		<ul class="skills-list">
+			{% for skill in about.skills %}
+				<li class="skills-list-item">{{ skill }}
+					<span class="background-animation"></span>
+				</li>
+			{% endfor %}
+		</ul>
+
 	</div>
   </section>
 </article>

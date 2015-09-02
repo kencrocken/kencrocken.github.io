@@ -1,23 +1,10 @@
-.highlight { 
-  background-color: #efefef;
-  padding: 7px 7px 7px 10px;
-  border: 1px solid #ddd;
-  margin: 20px 0 20px 0;
-  overflow: hidden;
-}
-
-code {
-  font-family: $inconsolata, 'Bitstream Vera Sans Mono','Courier', monospace;
-  .lineno { color: #ccc; display:inline-block; padding: 0 5px; border-right:1px solid #ccc; }
-}
-
 .highlight .hll { background-color: #a39e9b }
 .highlight  { background: #e7e9db; color: #2f1e2e }
 .highlight .c { color: #8d8687 } /* Comment */
 .highlight .err { color: #ef6155 } /* Error */
 .highlight .k { color: #815ba4 } /* Keyword */
 .highlight .l { color: #f99b15 } /* Literal */
-.highlight .n { color: #4C6A9B } /* Name */
+.highlight .n { color: #2f1e2e } /* Name */
 .highlight .o { color: #5bc4bf } /* Operator */
 .highlight .p { color: #2f1e2e } /* Punctuation */
 .highlight .cm { color: #8d8687 } /* Comment.Multiline */

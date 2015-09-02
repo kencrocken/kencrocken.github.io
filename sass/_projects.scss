@@ -31,8 +31,23 @@
                     border: 5px solid white;
                     line-height: 60px;
                     text-align: center;
+                    &.train {
+                        background-color: cornflowerblue;
+                    }
+                    &.moon {
+                        background-color: #38495a;
+                        border: 5px solid #1B2735;
+                    }
                 }
+
                 h4 { margin-top: 5px; }
+                &:nth-child(2){
+                    a{  
+                        display: block;
+                        padding-bottom: 5px;
+                        .beer-icon { display: inline-block; }
+                    }
+                }
                 &:last-child {
                     h4 { margin-top: 10px; }
                 }

@@ -1,5 +1,5 @@
-.post > .highlight .linenos { color: #ccc; display:inline-block; padding: 0 5px; border-right:1px solid #ccc; }
-.post > .highlight pre code { display: block; white-space: pre; padding: 0 5px; overflow-x: auto; word-wrap: normal; }
+
+// .post > .highlight pre code { display: block; white-space: pre; padding: 0 5px; overflow-x: auto; word-wrap: normal; }
 
 $background-color: #fdf6e3;
 $primary-text-color: #657b83;
@@ -67,7 +67,9 @@ a {
   //   color: #dc322f;
   // }
 }
+
 p { margin-top: 15px; line-height: em(22); font-size: em(19); }
+
 ul {
   list-style: none;
   padding: 0;
