@@ -17,8 +17,8 @@ Ken:
         content: "A full-stack web developer with a passion for creating websites and apps from the ground up. With additional interests in design, user experience and accessibility."
         skills:
             - "HTML - CSS - JavaScript"
-            - "WordPress & DjangoCMS"
-            - "Ruby - Python"
+            - "WordPress - DjangoCMS - Drupal"
+            - "Ruby - Python - PHP"
 
     resume:
         -   name: "RepEquity"
