@@ -21,8 +21,12 @@ Ken:
             - "Ruby - Python"
 
     resume:
+        -   name: "RepEquity"
+            date: "September 2015 to Present"
+            description: "Web Development"
+            
         -   name: "Freelancer"
-            date: "July 2015 to Present"
+            date: "July 2015 to August 2015"
             description: "Web Development"
 
         -   name: "BTS Software Solutions"
