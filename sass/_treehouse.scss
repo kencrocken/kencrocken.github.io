@@ -30,6 +30,24 @@ $color-box: (
   11: #FF71A0
 );
 
+@for $i from 0 through 11 {
+  .title-letter-#{$i} {
+    animation: title_animation_#{$i} 5s linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  @include keyframes(title_animation_#{$i}){
+    0% {color: map-get($color-box, $i);}
+    @for $x from 1 through 11{
+      @if (100/11)*$x < 92 {
+        #{(100/11)*$x}% { color: map-get($color-box, random(11)-1); }
+      } @else {
+        100% {color: map-get($color-box, random(11)-1);}
+      }
+    }
+  }
+}
+
 @for $i from 1 through 100 {
   .box-#{$i} {
     animation: color_change_#{$i} 5s linear;
@@ -39,12 +57,15 @@ $color-box: (
     width: 10px;
     float: left;
   }
-  @keyframes color_change_#{$i} {
+  @include keyframes(color_change_#{$i}) {
     0% {background-color: map-get($color-box, $i);}
     @for $x from 1 through 11{
-      #{(100/11)*$x}% { background-color: map-get($color-box, random(11)-1); }
+      @if (100/11)*$x < 92 {
+        #{(100/11)*$x}% { background-color: map-get($color-box, random(11)-1); }
+      } @else {
+        100% {background-color: map-get($color-box, random(11)-1);}
+      }
     }
-
   }
 }
 .timeline li timeline-badge {
@@ -106,14 +127,17 @@ $color-box: (
     // box-shadow: none;
   }
 }
+
 section.container.treehouse-mast {
     position: fixed;
-    left: 0;
-    right: 0;
+    top: 0;
+    left: 5%;
+    right: 5%;
     z-index: 999;
+    padding-top: 100px;
     text-align: center;
-    @include linear-gradient(transparent 0%, #FDF6E3 20%, #FDF6E3 80%, transparent 100%);
-    // background: #FDF6E3;
+    // @include linear-gradient(to top,transparent 0%, #FDF6E3 20%);
+    background: #FDF6E3;
 }
 $color-wrap: 70px;
 .loading {

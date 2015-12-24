@@ -16,7 +16,7 @@ $ ->
     
   return  
 
-tb = $('.sub-header.blog')
+tb = $('.container.treehouse-mast')
 tbs = 'top-bar-scrolled'
 $(window).scroll ->
   if $(this).scrollTop()

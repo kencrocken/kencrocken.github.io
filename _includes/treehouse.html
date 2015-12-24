@@ -3,11 +3,12 @@
             <!-- <div class="color-wrap">
                 <div ng-repeat="color in [] | range:50" class="box-{{ color }}"></div>
             </div> -->
-    <h1> <!-- {{ treehouse.myTreehouse}}
-        <span ng-repeat="letter in treehouse.myTreehouse" class="title-letter-{{ $index }}">
+    <h1> 
+        <!-- {{ treehouse.myTreehouse}} -->
+        <span ng-repeat="letter in treehouse.myTreehouse track by $index" class="title-letter-{{ $index }}">
             {{ letter }}
-        </span> -->
-        My Treehouse
+        </span>
+        <!-- My Treehouse -->
     </h1>
     <div ng-if="treehouse.loaded">
         <p >A member since {{ treehouse.membershipDates.joinDate | date:longDate }}, that's {{ treehouse.membershipDates.memberLength | number:1 }} days - how time flies.</p>
@@ -28,7 +29,7 @@
                 <p>{{badge.date | date }}</p>
             </timeline-panel>
         </timeline-event>
-  </timeline>
+    </timeline>
 
     <div class="treehouse" id="treehouse-badges" ng-if="!treehouse.loaded" style="height:100vh;">
         <div class="loading">
