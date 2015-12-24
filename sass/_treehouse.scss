@@ -35,6 +35,10 @@ $color-box: (
     animation: title_animation_#{$i} 5s linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    font-size: 28px;
+    @include media(480px){
+      font-size: 42px;
+    }
   }
   @include keyframes(title_animation_#{$i}){
     0% {color: map-get($color-box, $i);}
@@ -132,14 +136,19 @@ $color-box: (
 section.container.treehouse-mast {
     position: fixed;
     top: 0;
-    left: 5%;
-    right: 5%;
+    left: 0;
+    right: 0;
     z-index: 999;
     // padding-top: 100px;
     text-align: center;
     // @include linear-gradient(to top,transparent 0%, #FDF6E3 20%);
     background: #FDF6E3;
     @include transition(all .2s linear);
+    padding: 0 1%;
+    @include media(768px){
+      left: 5%;
+      right: 5%;
+    }
     .banner {
       padding-top: 5px;
       h2 { 
