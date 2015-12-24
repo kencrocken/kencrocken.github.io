@@ -39,9 +39,9 @@ gulp.task('sass', function () {
                 './bower_components/fontawesome/scss',
                 './bower_components/bourbon/dist',
                 './bower_components/neat/app/assets/stylesheets',
-                './bower_components/onepage-scroll'
+                './bower_components/onepage-scroll',
+                './bower_components/angular-timeline/dist'
             ]
-
         })
         .on("error", notify.onError(function (error) {
                  return "Error: " + error.message;
@@ -65,15 +65,20 @@ gulp.task('js', function() {
 
   // create 1 vendor.js file from all vendor plugin code
     gulp.src([
+
         './bower_components/jquery/dist/jquery.js',  
         './bower_components/scrollReveal.js/dist/*.js',
         './bower_components/underscore/underscore.js',
         './bower_components/headroom.js/dist/headroom.js',
         './bower_components/onepage-scroll/jquery.onepage-scroll.js',    
-        './bower_components/angular/angular.js',
+        './bower_components/angular/angular.min.js',
+        './bower_components/angular-ui-router/release/angular-ui-router.min.js',
+        './bower_components/angular-resource/angular-resource.min.js',
         './bower_components/angular-scroll/angular-scroll.js',
-        './bower_components/ngSmoothScroll/angular-smooth-scroll.js',
-        './bower_components/headroom.js/dist/angular.headroom.js',      
+        './bower_components/ngSmoothScroll/angular-smooth-scroll.min.js',
+        './bower_components/headroom.js/dist/angular.headroom.js',
+        './bower_components/angular-timeline/dist/angular-timeline.js'
+
         ])
     .pipe(concat("vendor.js"))
     .pipe(gulp.dest('./scripts'))

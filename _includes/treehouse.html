@@ -1,9 +1,43 @@
-<div data-sr class="container">
-    {% raw %}
-    <div class="treehouse" id="treehouse-badges" ng-controller="treehouseCtrl">
-        <ul class="treehouse-badge">  
-            <li ng-repeat="badge in badges" class="icon ng-cloak"><img src="{{badge.icon}}" alt="{{badge.name}}" /></li>
-        </ul>
+{% raw %}
+<section class="container treehouse-mast">
+            <!-- <div class="color-wrap">
+                <div ng-repeat="color in [] | range:50" class="box-{{ color }}"></div>
+            </div> -->
+    <h1> <!-- {{ treehouse.myTreehouse}}
+        <span ng-repeat="letter in treehouse.myTreehouse" class="title-letter-{{ $index }}">
+            {{ letter }}
+        </span> -->
+        My Treehouse
+    </h1>
+    <div ng-if="treehouse.loaded">
+        <p >A member since {{ treehouse.membershipDates.joinDate | date:longDate }}, that's {{ treehouse.membershipDates.memberLength | number:1 }} days - how time flies.</p>
+        <h2>Total Points: {{ treehouse.points[0].points}}</h2>
+        <p ng-init="totalClasses = treehouse.points.length - 1">I have taken courses in {{ totalClasses }} areas including {{ treehouse.points[treehouse.random()].category}}</p>
     </div>
-    {% endraw %}  
-</div>
+</section>
+<section class="container timeline-wrap">
+    <timeline>
+        <timeline-event ng-repeat="badge in treehouse.badges">
+            <timeline-badge class="{{badge.name}}">
+                <img  data-sr src="{{badge.icon}}" alt="{{badge.name}}" />
+            </timeline-badge>
+            <timeline-panel class="{{event.badgeClass}}" >
+                <timeline-heading>
+                    <h4 data-sr>{{badge.name}}</h4>
+                </timeline-heading>
+                <p>{{badge.date | date }}</p>
+            </timeline-panel>
+        </timeline-event>
+  </timeline>
+
+    <div class="treehouse" id="treehouse-badges" ng-if="!treehouse.loaded" style="height:100vh;">
+        <div class="loading">
+            <div class="color-wrap">
+                <div ng-repeat="color in [] | range:50" class="box-{{ color }}"></div>
+            </div>
+            <h2>Loading</h2>
+        </div>
+        
+    </div>
+</section>
+{% endraw %} 

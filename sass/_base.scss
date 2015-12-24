@@ -77,7 +77,13 @@ ul {
 
 .container {
   @include outer-container;
+}
 
+#post {
+  margin: 0 12px;
+  @include media(768px) {
+    margin: 0;
+  }
 }
 
 .line-behind-text {
