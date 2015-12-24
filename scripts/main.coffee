@@ -16,13 +16,18 @@ $ ->
     
   return  
 
-tb = $('.container.treehouse-mast')
+tb = $('.sub-header.blog')
+tc = $('.container.treehouse-mast')
 tbs = 'top-bar-scrolled'
 $(window).scroll ->
   if $(this).scrollTop()
-    tb.addClass tbs
+    if tb.is(":visible")
+      tb.addClass tbs
+    if tc.is(":visible")
+      tc.addClass tbs
   else
     tb.removeClass tbs
+    tc.removeClass tbs
   return
 
 # scrollReveal CONFIG

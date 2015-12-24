@@ -114,7 +114,8 @@ $color-box: (
 .container {
   &.timeline-wrap {
     position: relative;
-    top: 200px;
+    top: 300px;
+    margin-bottom: 129px;
   }
 }
 .timeline {
@@ -134,10 +135,29 @@ section.container.treehouse-mast {
     left: 5%;
     right: 5%;
     z-index: 999;
-    padding-top: 100px;
+    // padding-top: 100px;
     text-align: center;
     // @include linear-gradient(to top,transparent 0%, #FDF6E3 20%);
     background: #FDF6E3;
+    @include transition(all .2s linear);
+    .banner {
+      padding-top: 5px;
+      h2 { 
+        float: left; 
+        padding-top: 25px;
+      }
+      
+      img { 
+        float: right;
+        border-radius: 50%;
+      }
+      &:after {
+        content: '';
+        height: 0;
+        display: block;
+        clear: both;
+      }
+    }
 }
 $color-wrap: 70px;
 .loading {

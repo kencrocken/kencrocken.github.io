@@ -3,6 +3,10 @@
             <!-- <div class="color-wrap">
                 <div ng-repeat="color in [] | range:50" class="box-{{ color }}"></div>
             </div> -->
+    <div class="banner">
+        <h2>{{ treehouse.profile.name }}</h2>
+        <img ng-src="http://www.gravatar.com/avatar/{{treehouse.profile.gravatar}}" />
+    </div>
     <h1> 
         <!-- {{ treehouse.myTreehouse}} -->
         <span ng-repeat="letter in treehouse.myTreehouse track by $index" class="title-letter-{{ $index }}">

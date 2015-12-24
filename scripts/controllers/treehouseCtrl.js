@@ -26,7 +26,7 @@ mySite.controller('treehouseCtrl', function($scope, TreehouseProfileService){
 
         //Populate badges array
         _.each(response.badges, function(badge){
-            vm.badges.push({
+            return vm.badges.push({
                 name   : badge['name'],
                 icon   : badge['icon_url'],
                 date   : badge['earned_date'],
