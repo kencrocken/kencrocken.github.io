@@ -1,0 +1,82 @@
+@import 'bourbon/bourbon';
+@import 'base/grid-settings';
+@import 'neat/neat';
+@import 'base/base';
+
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+$pacifico: 'Pacifico', cursive;
+
+$images: "../images/snow15.svg", "../images/snow144.svg", "../images/snow185.svg";
+
+html, body {
+  height: 100%; width: 100%;
+  overflow: hidden;
+}
+
+body {
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+}
+
+.title {
+    h1 {
+        font-size: 48px;
+        height: 80px;
+        font-family: $pacifico;
+        text-align: center;
+        background: linear-gradient(#fff, red);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        // text-shadow: 0px 10px 100px rgba(212, 36, 38, .7);;
+    }
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    @include transform(translateY -50%);
+}
+@for $i from 1 through 3 {
+     .snow-wrap-#{$i} {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+    }
+       
+}
+
+
+@for $i from 1 through 500 {
+    .star-#{$i} {
+        background: url(nth($images, random(3))) no-repeat center center;
+        animation: animStar 45s linear infinite;
+        background-size: contain;
+        height: 40px;
+        width: 40px; 
+        position: absolute;
+        display: block;
+        top: random(2000)/2*-1+px; // maybe we don't need such big numbers for vertical position
+        left: random(2000)/2+px; 
+    }
+}
+
+.snow-wrap-2 {
+    div[class^="star-"] {
+        animation: animStar 60s linear infinite;
+        height: 20px;
+        width: 20px;
+    }
+}
+
+.snow-wrap-3 {
+    div[class^="star-"] {
+        animation: animStar 120s linear infinite;
+        height: 13px;
+        width: 13px;
+    }
+}
+
+@include keyframes(animStar) {
+    0% {transform: translateY(0px);}
+    100% {transform: translateY(2000px);}
+}

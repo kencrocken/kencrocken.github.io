@@ -1,0 +1,5775 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+button, input[type="button"], input[type="reset"], input[type="submit"],
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  background-color: #477dca;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1em;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap; }
+  button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus,
+  button:hover,
+  button:focus {
+    background-color: #2c5999;
+    color: #fff; }
+  button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled,
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5; }
+
+fieldset {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  margin: 0 0 0.75em;
+  padding: 1.5em; }
+
+input,
+label,
+select {
+  display: block;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em; }
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.375em; }
+  label.required::after {
+    content: "*"; }
+  label abbr {
+    display: none; }
+
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea,
+select[multiple=multiple],
+textarea {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  padding: 0.5em;
+  transition: border-color;
+  width: 100%; }
+  input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, textarea:hover,
+  select[multiple=multiple]:hover,
+  textarea:hover {
+    border-color: #c4c4c4; }
+  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus,
+  select[multiple=multiple]:focus,
+  textarea:focus {
+    border-color: #477dca;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(55, 112, 192, 0.7);
+    outline: none; }
+
+textarea {
+  resize: vertical; }
+
+input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: 0.375em; }
+
+input[type="file"] {
+  padding-bottom: 0.75em;
+  width: 100%; }
+
+select {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+  width: auto; }
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+dl {
+  margin-bottom: 0.75em; }
+  dl dt {
+    font-weight: bold;
+    margin-top: 0.75em; }
+  dl dd {
+    margin: 0; }
+
+table {
+  -webkit-font-feature-settings: "kern", "liga", "tnum";
+  -moz-font-feature-settings: "kern", "liga", "tnum";
+  -ms-font-feature-settings: "kern", "liga", "tnum";
+  font-feature-settings: "kern", "liga", "tnum";
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%; }
+
+th {
+  border-bottom: 1px solid #b7b7b7;
+  font-weight: 600;
+  padding: 0.75em 0;
+  text-align: left; }
+
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 0.75em 0; }
+
+tr,
+td,
+th {
+  vertical-align: middle; }
+
+body {
+  -webkit-font-feature-settings: "kern", "liga", "pnum";
+  -moz-font-feature-settings: "kern", "liga", "pnum";
+  -ms-font-feature-settings: "kern", "liga", "pnum";
+  font-feature-settings: "kern", "liga", "pnum";
+  -webkit-font-smoothing: antialiased;
+  color: #333;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  line-height: 1.5; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+  margin: 0 0 0.75em; }
+
+p {
+  margin: 0 0 0.75em; }
+
+a {
+  color: #477dca;
+  text-decoration: none;
+  transition: color 0.1s linear; }
+  a:active, a:focus, a:hover {
+    color: #2c5999; }
+  a:active, a:focus {
+    outline: none; }
+
+hr {
+  border-bottom: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: 1.5em 0; }
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+
+body {
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%); }
+
+.title {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY -50%;
+  -moz-transform: translateY -50%;
+  -ms-transform: translateY -50%;
+  -o-transform: translateY -50%;
+  transform: translateY -50%; }
+  .title h1 {
+    font-size: 48px;
+    height: 80px;
+    font-family: "Pacifico", cursive;
+    text-align: center;
+    background: linear-gradient(#fff, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+
+.snow-wrap-1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.snow-wrap-2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.snow-wrap-3 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.star-1 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -687.5px;
+  left: 230px; }
+
+.star-2 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -531.5px;
+  left: 22.5px; }
+
+.star-3 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -364px;
+  left: 139px; }
+
+.star-4 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -268.5px;
+  left: 354px; }
+
+.star-5 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -382px;
+  left: 4px; }
+
+.star-6 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -424px;
+  left: 901.5px; }
+
+.star-7 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -937px;
+  left: 278px; }
+
+.star-8 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -70.5px;
+  left: 464.5px; }
+
+.star-9 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -180.5px;
+  left: 569px; }
+
+.star-10 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -164.5px;
+  left: 356.5px; }
+
+.star-11 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -356.5px;
+  left: 715.5px; }
+
+.star-12 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -412.5px;
+  left: 446px; }
+
+.star-13 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -902.5px;
+  left: 725px; }
+
+.star-14 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -453.5px;
+  left: 525.5px; }
+
+.star-15 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -805.5px;
+  left: 129px; }
+
+.star-16 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -66.5px;
+  left: 405.5px; }
+
+.star-17 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -959px;
+  left: 15.5px; }
+
+.star-18 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -977.5px;
+  left: 684.5px; }
+
+.star-19 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -246px;
+  left: 505px; }
+
+.star-20 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -35px;
+  left: 398.5px; }
+
+.star-21 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -645px;
+  left: 143px; }
+
+.star-22 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -594.5px;
+  left: 706px; }
+
+.star-23 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -272.5px;
+  left: 359px; }
+
+.star-24 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -106px;
+  left: 793.5px; }
+
+.star-25 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -527.5px;
+  left: 469.5px; }
+
+.star-26 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -210.5px;
+  left: 33.5px; }
+
+.star-27 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -397.5px;
+  left: 811.5px; }
+
+.star-28 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -53px;
+  left: 596px; }
+
+.star-29 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -678.5px;
+  left: 501px; }
+
+.star-30 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -539px;
+  left: 308px; }
+
+.star-31 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -829.5px;
+  left: 104.5px; }
+
+.star-32 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -510px;
+  left: 606.5px; }
+
+.star-33 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -919.5px;
+  left: 564.5px; }
+
+.star-34 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -632px;
+  left: 355.5px; }
+
+.star-35 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -272px;
+  left: 549.5px; }
+
+.star-36 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -921px;
+  left: 62.5px; }
+
+.star-37 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -940.5px;
+  left: 219px; }
+
+.star-38 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -939px;
+  left: 38px; }
+
+.star-39 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -493.5px;
+  left: 97.5px; }
+
+.star-40 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -782px;
+  left: 898px; }
+
+.star-41 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -959.5px;
+  left: 346px; }
+
+.star-42 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -373px;
+  left: 505px; }
+
+.star-43 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -118.5px;
+  left: 429.5px; }
+
+.star-44 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -514px;
+  left: 754px; }
+
+.star-45 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -943.5px;
+  left: 905px; }
+
+.star-46 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -861.5px;
+  left: 940.5px; }
+
+.star-47 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -984px;
+  left: 363.5px; }
+
+.star-48 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -667.5px;
+  left: 383.5px; }
+
+.star-49 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -363px;
+  left: 329px; }
+
+.star-50 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -169.5px;
+  left: 462.5px; }
+
+.star-51 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -918px;
+  left: 493px; }
+
+.star-52 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -112px;
+  left: 591px; }
+
+.star-53 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -538px;
+  left: 393.5px; }
+
+.star-54 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -101.5px;
+  left: 922.5px; }
+
+.star-55 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -915px;
+  left: 744px; }
+
+.star-56 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -870.5px;
+  left: 386.5px; }
+
+.star-57 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -840.5px;
+  left: 188.5px; }
+
+.star-58 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -709.5px;
+  left: 465px; }
+
+.star-59 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -168.5px;
+  left: 789px; }
+
+.star-60 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -923px;
+  left: 568px; }
+
+.star-61 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -823px;
+  left: 879px; }
+
+.star-62 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -476.5px;
+  left: 947.5px; }
+
+.star-63 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -541.5px;
+  left: 885px; }
+
+.star-64 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -148.5px;
+  left: 732px; }
+
+.star-65 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -939.5px;
+  left: 880.5px; }
+
+.star-66 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -90.5px;
+  left: 72.5px; }
+
+.star-67 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -338.5px;
+  left: 913px; }
+
+.star-68 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -565px;
+  left: 440px; }
+
+.star-69 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -258.5px;
+  left: 712.5px; }
+
+.star-70 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -180px;
+  left: 771px; }
+
+.star-71 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -465px;
+  left: 844.5px; }
+
+.star-72 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -980px;
+  left: 46.5px; }
+
+.star-73 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -840px;
+  left: 141px; }
+
+.star-74 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -508.5px;
+  left: 440.5px; }
+
+.star-75 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -842px;
+  left: 358px; }
+
+.star-76 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -258.5px;
+  left: 521.5px; }
+
+.star-77 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -546px;
+  left: 986px; }
+
+.star-78 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -812.5px;
+  left: 154px; }
+
+.star-79 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -669px;
+  left: 265px; }
+
+.star-80 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -914px;
+  left: 248.5px; }
+
+.star-81 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -9.5px;
+  left: 342.5px; }
+
+.star-82 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -660.5px;
+  left: 412px; }
+
+.star-83 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -509.5px;
+  left: 272.5px; }
+
+.star-84 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -856.5px;
+  left: 832.5px; }
+
+.star-85 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -306px;
+  left: 714px; }
+
+.star-86 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -691.5px;
+  left: 753px; }
+
+.star-87 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -449.5px;
+  left: 163.5px; }
+
+.star-88 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -49px;
+  left: 237.5px; }
+
+.star-89 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -829px;
+  left: 227.5px; }
+
+.star-90 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -304px;
+  left: 379.5px; }
+
+.star-91 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -227.5px;
+  left: 507.5px; }
+
+.star-92 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -624px;
+  left: 462px; }
+
+.star-93 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -562px;
+  left: 793px; }
+
+.star-94 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -629.5px;
+  left: 730.5px; }
+
+.star-95 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -196px;
+  left: 106px; }
+
+.star-96 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -523.5px;
+  left: 147.5px; }
+
+.star-97 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -717px;
+  left: 153.5px; }
+
+.star-98 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -992.5px;
+  left: 120.5px; }
+
+.star-99 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -25.5px;
+  left: 898px; }
+
+.star-100 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -169.5px;
+  left: 670.5px; }
+
+.star-101 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -280.5px;
+  left: 745px; }
+
+.star-102 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -778.5px;
+  left: 501px; }
+
+.star-103 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -404.5px;
+  left: 788px; }
+
+.star-104 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -802px;
+  left: 899px; }
+
+.star-105 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -456px;
+  left: 206.5px; }
+
+.star-106 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -348.5px;
+  left: 902px; }
+
+.star-107 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -178.5px;
+  left: 961.5px; }
+
+.star-108 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -56px;
+  left: 564.5px; }
+
+.star-109 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -383.5px;
+  left: 652.5px; }
+
+.star-110 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -949.5px;
+  left: 113.5px; }
+
+.star-111 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -274px;
+  left: 894px; }
+
+.star-112 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -575px;
+  left: 874px; }
+
+.star-113 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -316.5px;
+  left: 10px; }
+
+.star-114 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -312.5px;
+  left: 934.5px; }
+
+.star-115 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -210.5px;
+  left: 56px; }
+
+.star-116 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -225.5px;
+  left: 938.5px; }
+
+.star-117 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -266.5px;
+  left: 686.5px; }
+
+.star-118 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -7.5px;
+  left: 469px; }
+
+.star-119 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -177.5px;
+  left: 109px; }
+
+.star-120 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -921px;
+  left: 764px; }
+
+.star-121 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -966px;
+  left: 176.5px; }
+
+.star-122 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -832.5px;
+  left: 237.5px; }
+
+.star-123 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -902.5px;
+  left: 656.5px; }
+
+.star-124 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -256px;
+  left: 987px; }
+
+.star-125 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -192.5px;
+  left: 812px; }
+
+.star-126 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -801.5px;
+  left: 366px; }
+
+.star-127 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -384px;
+  left: 666px; }
+
+.star-128 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -439px;
+  left: 705px; }
+
+.star-129 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -467px;
+  left: 828px; }
+
+.star-130 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -385px;
+  left: 981.5px; }
+
+.star-131 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -715.5px;
+  left: 966px; }
+
+.star-132 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -206px;
+  left: 173.5px; }
+
+.star-133 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -233px;
+  left: 12.5px; }
+
+.star-134 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -159px;
+  left: 615.5px; }
+
+.star-135 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -966.5px;
+  left: 904.5px; }
+
+.star-136 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -48px;
+  left: 240.5px; }
+
+.star-137 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -144px;
+  left: 751px; }
+
+.star-138 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -406.5px;
+  left: 8.5px; }
+
+.star-139 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -400.5px;
+  left: 836.5px; }
+
+.star-140 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -411.5px;
+  left: 264px; }
+
+.star-141 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -678.5px;
+  left: 814.5px; }
+
+.star-142 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -957.5px;
+  left: 719.5px; }
+
+.star-143 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -323px;
+  left: 979.5px; }
+
+.star-144 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -441px;
+  left: 66.5px; }
+
+.star-145 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -580px;
+  left: 393px; }
+
+.star-146 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -843px;
+  left: 668.5px; }
+
+.star-147 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -480.5px;
+  left: 957.5px; }
+
+.star-148 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -559.5px;
+  left: 751.5px; }
+
+.star-149 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -897px;
+  left: 294.5px; }
+
+.star-150 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -309px;
+  left: 203px; }
+
+.star-151 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -888.5px;
+  left: 896.5px; }
+
+.star-152 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -366.5px;
+  left: 780.5px; }
+
+.star-153 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -790px;
+  left: 912.5px; }
+
+.star-154 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -240px;
+  left: 495px; }
+
+.star-155 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -802px;
+  left: 693px; }
+
+.star-156 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -564.5px;
+  left: 53px; }
+
+.star-157 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -549px;
+  left: 265.5px; }
+
+.star-158 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -430.5px;
+  left: 516px; }
+
+.star-159 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -161px;
+  left: 911px; }
+
+.star-160 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -795.5px;
+  left: 188.5px; }
+
+.star-161 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -935.5px;
+  left: 620px; }
+
+.star-162 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -801.5px;
+  left: 937.5px; }
+
+.star-163 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -780px;
+  left: 247.5px; }
+
+.star-164 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -378.5px;
+  left: 308px; }
+
+.star-165 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -701px;
+  left: 837px; }
+
+.star-166 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -945.5px;
+  left: 863px; }
+
+.star-167 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -407px;
+  left: 328px; }
+
+.star-168 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -128.5px;
+  left: 539px; }
+
+.star-169 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -601px;
+  left: 254.5px; }
+
+.star-170 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -422.5px;
+  left: 560.5px; }
+
+.star-171 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -966.5px;
+  left: 229px; }
+
+.star-172 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -309px;
+  left: 393.5px; }
+
+.star-173 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -892px;
+  left: 318.5px; }
+
+.star-174 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -611px;
+  left: 275px; }
+
+.star-175 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -278.5px;
+  left: 991px; }
+
+.star-176 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -519.5px;
+  left: 659.5px; }
+
+.star-177 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -410px;
+  left: 378px; }
+
+.star-178 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -102px;
+  left: 859.5px; }
+
+.star-179 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -634.5px;
+  left: 911.5px; }
+
+.star-180 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -760.5px;
+  left: 979px; }
+
+.star-181 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -426.5px;
+  left: 300px; }
+
+.star-182 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -241px;
+  left: 974.5px; }
+
+.star-183 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -102px;
+  left: 487px; }
+
+.star-184 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -873.5px;
+  left: 680.5px; }
+
+.star-185 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -575.5px;
+  left: 295.5px; }
+
+.star-186 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -178px;
+  left: 564px; }
+
+.star-187 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -719px;
+  left: 736.5px; }
+
+.star-188 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -799px;
+  left: 845.5px; }
+
+.star-189 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -134px;
+  left: 950.5px; }
+
+.star-190 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -586px;
+  left: 618.5px; }
+
+.star-191 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -19.5px;
+  left: 287.5px; }
+
+.star-192 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -883.5px;
+  left: 345px; }
+
+.star-193 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -22px;
+  left: 513.5px; }
+
+.star-194 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -893.5px;
+  left: 402px; }
+
+.star-195 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -999.5px;
+  left: 597.5px; }
+
+.star-196 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -178px;
+  left: 955.5px; }
+
+.star-197 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -869.5px;
+  left: 80.5px; }
+
+.star-198 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -940px;
+  left: 36px; }
+
+.star-199 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -241px;
+  left: 283px; }
+
+.star-200 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -400px;
+  left: 742px; }
+
+.star-201 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -641px;
+  left: 406.5px; }
+
+.star-202 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -670px;
+  left: 46px; }
+
+.star-203 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -77px;
+  left: 477px; }
+
+.star-204 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -702px;
+  left: 973.5px; }
+
+.star-205 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -798px;
+  left: 575.5px; }
+
+.star-206 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -963.5px;
+  left: 343.5px; }
+
+.star-207 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -950.5px;
+  left: 544px; }
+
+.star-208 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -871.5px;
+  left: 546.5px; }
+
+.star-209 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -854.5px;
+  left: 217.5px; }
+
+.star-210 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -728px;
+  left: 360px; }
+
+.star-211 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -300px;
+  left: 263.5px; }
+
+.star-212 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -81px;
+  left: 440.5px; }
+
+.star-213 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -260.5px;
+  left: 239.5px; }
+
+.star-214 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -37px;
+  left: 360.5px; }
+
+.star-215 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -422px;
+  left: 991px; }
+
+.star-216 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -117.5px;
+  left: 559px; }
+
+.star-217 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -439px;
+  left: 860.5px; }
+
+.star-218 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -13px;
+  left: 329.5px; }
+
+.star-219 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -970px;
+  left: 270.5px; }
+
+.star-220 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -579.5px;
+  left: 407px; }
+
+.star-221 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -997.5px;
+  left: 741px; }
+
+.star-222 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -671.5px;
+  left: 904.5px; }
+
+.star-223 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -244.5px;
+  left: 666.5px; }
+
+.star-224 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -713.5px;
+  left: 148px; }
+
+.star-225 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -238.5px;
+  left: 672px; }
+
+.star-226 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -246.5px;
+  left: 636px; }
+
+.star-227 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -722.5px;
+  left: 326px; }
+
+.star-228 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -628px;
+  left: 674.5px; }
+
+.star-229 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -926.5px;
+  left: 244px; }
+
+.star-230 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -36.5px;
+  left: 919px; }
+
+.star-231 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -115px;
+  left: 252px; }
+
+.star-232 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -774.5px;
+  left: 139.5px; }
+
+.star-233 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -871px;
+  left: 359px; }
+
+.star-234 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -297px;
+  left: 167px; }
+
+.star-235 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -624.5px;
+  left: 393.5px; }
+
+.star-236 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -245px;
+  left: 214.5px; }
+
+.star-237 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -97px;
+  left: 316.5px; }
+
+.star-238 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -475.5px;
+  left: 93px; }
+
+.star-239 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -543.5px;
+  left: 345px; }
+
+.star-240 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -383px;
+  left: 893.5px; }
+
+.star-241 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -482.5px;
+  left: 388.5px; }
+
+.star-242 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -269px;
+  left: 324px; }
+
+.star-243 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -889px;
+  left: 126px; }
+
+.star-244 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -98.5px;
+  left: 655.5px; }
+
+.star-245 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -470.5px;
+  left: 271.5px; }
+
+.star-246 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -473.5px;
+  left: 702px; }
+
+.star-247 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -325.5px;
+  left: 483.5px; }
+
+.star-248 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -113px;
+  left: 814px; }
+
+.star-249 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -272.5px;
+  left: 72.5px; }
+
+.star-250 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -634px;
+  left: 613.5px; }
+
+.star-251 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -606.5px;
+  left: 309.5px; }
+
+.star-252 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -216px;
+  left: 924.5px; }
+
+.star-253 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -864.5px;
+  left: 449px; }
+
+.star-254 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -769.5px;
+  left: 669px; }
+
+.star-255 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -641px;
+  left: 464.5px; }
+
+.star-256 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -60.5px;
+  left: 551px; }
+
+.star-257 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -539px;
+  left: 282px; }
+
+.star-258 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -841px;
+  left: 331px; }
+
+.star-259 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -798px;
+  left: 700.5px; }
+
+.star-260 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -477px;
+  left: 92.5px; }
+
+.star-261 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -590.5px;
+  left: 470.5px; }
+
+.star-262 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -117.5px;
+  left: 100.5px; }
+
+.star-263 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -422.5px;
+  left: 736.5px; }
+
+.star-264 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -564px;
+  left: 11px; }
+
+.star-265 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -814px;
+  left: 285.5px; }
+
+.star-266 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -621px;
+  left: 725.5px; }
+
+.star-267 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -972.5px;
+  left: 684.5px; }
+
+.star-268 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -617.5px;
+  left: 341.5px; }
+
+.star-269 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -187px;
+  left: 144px; }
+
+.star-270 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -314px;
+  left: 315.5px; }
+
+.star-271 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -977px;
+  left: 977.5px; }
+
+.star-272 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -594px;
+  left: 802.5px; }
+
+.star-273 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -815.5px;
+  left: 794px; }
+
+.star-274 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -433.5px;
+  left: 62px; }
+
+.star-275 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -741.5px;
+  left: 297px; }
+
+.star-276 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -746px;
+  left: 992px; }
+
+.star-277 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -23px;
+  left: 701.5px; }
+
+.star-278 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -380.5px;
+  left: 469px; }
+
+.star-279 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -267.5px;
+  left: 551px; }
+
+.star-280 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -192px;
+  left: 378.5px; }
+
+.star-281 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -957px;
+  left: 149.5px; }
+
+.star-282 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -674.5px;
+  left: 144px; }
+
+.star-283 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -329px;
+  left: 334px; }
+
+.star-284 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -146.5px;
+  left: 426.5px; }
+
+.star-285 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -967.5px;
+  left: 383px; }
+
+.star-286 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -629px;
+  left: 980px; }
+
+.star-287 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -518px;
+  left: 970px; }
+
+.star-288 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -418.5px;
+  left: 89px; }
+
+.star-289 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -378.5px;
+  left: 598px; }
+
+.star-290 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -830.5px;
+  left: 474.5px; }
+
+.star-291 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -470.5px;
+  left: 981px; }
+
+.star-292 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -716.5px;
+  left: 144px; }
+
+.star-293 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -809px;
+  left: 349px; }
+
+.star-294 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -543.5px;
+  left: 952px; }
+
+.star-295 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -928.5px;
+  left: 680.5px; }
+
+.star-296 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -540.5px;
+  left: 249.5px; }
+
+.star-297 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -845px;
+  left: 798.5px; }
+
+.star-298 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -192.5px;
+  left: 404px; }
+
+.star-299 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -473px;
+  left: 359px; }
+
+.star-300 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -612.5px;
+  left: 246.5px; }
+
+.star-301 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -216.5px;
+  left: 461px; }
+
+.star-302 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -744px;
+  left: 343.5px; }
+
+.star-303 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -505.5px;
+  left: 851px; }
+
+.star-304 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -186.5px;
+  left: 356px; }
+
+.star-305 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -196.5px;
+  left: 329px; }
+
+.star-306 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -552px;
+  left: 969.5px; }
+
+.star-307 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -293px;
+  left: 365.5px; }
+
+.star-308 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -16px;
+  left: 247.5px; }
+
+.star-309 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -63.5px;
+  left: 964px; }
+
+.star-310 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -804.5px;
+  left: 863.5px; }
+
+.star-311 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -703.5px;
+  left: 706.5px; }
+
+.star-312 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -274.5px;
+  left: 932px; }
+
+.star-313 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -1.5px;
+  left: 979.5px; }
+
+.star-314 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -442.5px;
+  left: 628px; }
+
+.star-315 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -617.5px;
+  left: 317.5px; }
+
+.star-316 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -788.5px;
+  left: 438px; }
+
+.star-317 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -732px;
+  left: 835px; }
+
+.star-318 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -525px;
+  left: 250px; }
+
+.star-319 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -570px;
+  left: 484.5px; }
+
+.star-320 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -915.5px;
+  left: 777.5px; }
+
+.star-321 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -107px;
+  left: 649.5px; }
+
+.star-322 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -807.5px;
+  left: 788.5px; }
+
+.star-323 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -162px;
+  left: 72px; }
+
+.star-324 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -821px;
+  left: 416.5px; }
+
+.star-325 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -294px;
+  left: 648.5px; }
+
+.star-326 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -720px;
+  left: 783.5px; }
+
+.star-327 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -821px;
+  left: 766.5px; }
+
+.star-328 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -927.5px;
+  left: 436px; }
+
+.star-329 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -97.5px;
+  left: 609.5px; }
+
+.star-330 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -409px;
+  left: 329.5px; }
+
+.star-331 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -359.5px;
+  left: 818.5px; }
+
+.star-332 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -66px;
+  left: 521px; }
+
+.star-333 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -805.5px;
+  left: 278px; }
+
+.star-334 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -527.5px;
+  left: 430px; }
+
+.star-335 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -68.5px;
+  left: 663px; }
+
+.star-336 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -562.5px;
+  left: 722px; }
+
+.star-337 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -361.5px;
+  left: 455.5px; }
+
+.star-338 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -31.5px;
+  left: 520.5px; }
+
+.star-339 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -59.5px;
+  left: 17.5px; }
+
+.star-340 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -371px;
+  left: 734.5px; }
+
+.star-341 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -741px;
+  left: 270.5px; }
+
+.star-342 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -392.5px;
+  left: 679.5px; }
+
+.star-343 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -423.5px;
+  left: 480px; }
+
+.star-344 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -742px;
+  left: 450px; }
+
+.star-345 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -386.5px;
+  left: 586.5px; }
+
+.star-346 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -791.5px;
+  left: 370px; }
+
+.star-347 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -497.5px;
+  left: 580px; }
+
+.star-348 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -769px;
+  left: 858px; }
+
+.star-349 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -674.5px;
+  left: 281px; }
+
+.star-350 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -488.5px;
+  left: 820.5px; }
+
+.star-351 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -124px;
+  left: 312.5px; }
+
+.star-352 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -305.5px;
+  left: 866.5px; }
+
+.star-353 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -611px;
+  left: 227.5px; }
+
+.star-354 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -671px;
+  left: 714.5px; }
+
+.star-355 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -228px;
+  left: 901px; }
+
+.star-356 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -488.5px;
+  left: 693px; }
+
+.star-357 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -900px;
+  left: 499.5px; }
+
+.star-358 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -713.5px;
+  left: 15px; }
+
+.star-359 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -378.5px;
+  left: 80.5px; }
+
+.star-360 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -101px;
+  left: 91.5px; }
+
+.star-361 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -772px;
+  left: 384px; }
+
+.star-362 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -996.5px;
+  left: 583.5px; }
+
+.star-363 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -932px;
+  left: 484px; }
+
+.star-364 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -105px;
+  left: 218px; }
+
+.star-365 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -728px;
+  left: 22.5px; }
+
+.star-366 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -272px;
+  left: 727.5px; }
+
+.star-367 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -139px;
+  left: 102px; }
+
+.star-368 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -183px;
+  left: 242.5px; }
+
+.star-369 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -923px;
+  left: 546.5px; }
+
+.star-370 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -748.5px;
+  left: 365px; }
+
+.star-371 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -635.5px;
+  left: 39px; }
+
+.star-372 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -825.5px;
+  left: 638px; }
+
+.star-373 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -211px;
+  left: 538px; }
+
+.star-374 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -29px;
+  left: 72.5px; }
+
+.star-375 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -443.5px;
+  left: 716px; }
+
+.star-376 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -454px;
+  left: 143px; }
+
+.star-377 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -104.5px;
+  left: 371.5px; }
+
+.star-378 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -549px;
+  left: 882.5px; }
+
+.star-379 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -592px;
+  left: 942.5px; }
+
+.star-380 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -991.5px;
+  left: 556px; }
+
+.star-381 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -809px;
+  left: 698.5px; }
+
+.star-382 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -638.5px;
+  left: 160px; }
+
+.star-383 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -234px;
+  left: 229px; }
+
+.star-384 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -816px;
+  left: 803.5px; }
+
+.star-385 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -577.5px;
+  left: 661px; }
+
+.star-386 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -508px;
+  left: 94px; }
+
+.star-387 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -521px;
+  left: 948.5px; }
+
+.star-388 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -921.5px;
+  left: 740px; }
+
+.star-389 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -341px;
+  left: 923px; }
+
+.star-390 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -778px;
+  left: 122.5px; }
+
+.star-391 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -38px;
+  left: 528px; }
+
+.star-392 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -91px;
+  left: 935px; }
+
+.star-393 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -591.5px;
+  left: 816.5px; }
+
+.star-394 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -949px;
+  left: 59.5px; }
+
+.star-395 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -219.5px;
+  left: 230px; }
+
+.star-396 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -414px;
+  left: 846.5px; }
+
+.star-397 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -247px;
+  left: 552px; }
+
+.star-398 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -688px;
+  left: 701.5px; }
+
+.star-399 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -868.5px;
+  left: 265px; }
+
+.star-400 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -826px;
+  left: 173.5px; }
+
+.star-401 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -984.5px;
+  left: 819px; }
+
+.star-402 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -938px;
+  left: 748.5px; }
+
+.star-403 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -242.5px;
+  left: 832px; }
+
+.star-404 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -77.5px;
+  left: 146.5px; }
+
+.star-405 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -211px;
+  left: 927.5px; }
+
+.star-406 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -237.5px;
+  left: 795px; }
+
+.star-407 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -857.5px;
+  left: 173px; }
+
+.star-408 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -214px;
+  left: 788px; }
+
+.star-409 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -477px;
+  left: 807.5px; }
+
+.star-410 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -141.5px;
+  left: 675.5px; }
+
+.star-411 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -974.5px;
+  left: 146.5px; }
+
+.star-412 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -532px;
+  left: 68px; }
+
+.star-413 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -387.5px;
+  left: 759.5px; }
+
+.star-414 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -954px;
+  left: 597.5px; }
+
+.star-415 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -289px;
+  left: 78.5px; }
+
+.star-416 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -425.5px;
+  left: 510.5px; }
+
+.star-417 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -329px;
+  left: 107.5px; }
+
+.star-418 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -281.5px;
+  left: 877px; }
+
+.star-419 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -270.5px;
+  left: 500.5px; }
+
+.star-420 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -31.5px;
+  left: 411px; }
+
+.star-421 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -541.5px;
+  left: 735px; }
+
+.star-422 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -384.5px;
+  left: 704.5px; }
+
+.star-423 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -842.5px;
+  left: 654px; }
+
+.star-424 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -505px;
+  left: 628px; }
+
+.star-425 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -547px;
+  left: 18.5px; }
+
+.star-426 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -919px;
+  left: 858px; }
+
+.star-427 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -361px;
+  left: 406px; }
+
+.star-428 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -301.5px;
+  left: 986.5px; }
+
+.star-429 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -552px;
+  left: 822px; }
+
+.star-430 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -278px;
+  left: 652px; }
+
+.star-431 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -646.5px;
+  left: 730.5px; }
+
+.star-432 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -17px;
+  left: 983px; }
+
+.star-433 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -748.5px;
+  left: 832.5px; }
+
+.star-434 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -662.5px;
+  left: 701px; }
+
+.star-435 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -79.5px;
+  left: 272.5px; }
+
+.star-436 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -375px;
+  left: 24.5px; }
+
+.star-437 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -440.5px;
+  left: 624px; }
+
+.star-438 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -264px;
+  left: 44.5px; }
+
+.star-439 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -394px;
+  left: 737.5px; }
+
+.star-440 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -403px;
+  left: 255.5px; }
+
+.star-441 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -571px;
+  left: 304.5px; }
+
+.star-442 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -694.5px;
+  left: 767px; }
+
+.star-443 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -969px;
+  left: 420px; }
+
+.star-444 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -313.5px;
+  left: 760px; }
+
+.star-445 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -719.5px;
+  left: 993px; }
+
+.star-446 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -809.5px;
+  left: 246.5px; }
+
+.star-447 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -979px;
+  left: 836px; }
+
+.star-448 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -530.5px;
+  left: 701.5px; }
+
+.star-449 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -877px;
+  left: 171px; }
+
+.star-450 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -193px;
+  left: 666.5px; }
+
+.star-451 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -151.5px;
+  left: 497px; }
+
+.star-452 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -90.5px;
+  left: 401.5px; }
+
+.star-453 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -500.5px;
+  left: 93px; }
+
+.star-454 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -636px;
+  left: 908px; }
+
+.star-455 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -976px;
+  left: 275px; }
+
+.star-456 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -312.5px;
+  left: 328.5px; }
+
+.star-457 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -561px;
+  left: 451px; }
+
+.star-458 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -114.5px;
+  left: 791.5px; }
+
+.star-459 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -51.5px;
+  left: 799px; }
+
+.star-460 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -490px;
+  left: 338px; }
+
+.star-461 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -556.5px;
+  left: 987.5px; }
+
+.star-462 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -449.5px;
+  left: 822.5px; }
+
+.star-463 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -663px;
+  left: 203px; }
+
+.star-464 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -410.5px;
+  left: 915px; }
+
+.star-465 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -237px;
+  left: 523.5px; }
+
+.star-466 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -589px;
+  left: 48px; }
+
+.star-467 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -293.5px;
+  left: 374px; }
+
+.star-468 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -322px;
+  left: 176.5px; }
+
+.star-469 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -395.5px;
+  left: 129.5px; }
+
+.star-470 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -541.5px;
+  left: 64px; }
+
+.star-471 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -681.5px;
+  left: 933px; }
+
+.star-472 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -868px;
+  left: 477px; }
+
+.star-473 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -879px;
+  left: 63px; }
+
+.star-474 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -638.5px;
+  left: 593px; }
+
+.star-475 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -563px;
+  left: 825px; }
+
+.star-476 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -254px;
+  left: 470px; }
+
+.star-477 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -206.5px;
+  left: 0.5px; }
+
+.star-478 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -907px;
+  left: 69.5px; }
+
+.star-479 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -104px;
+  left: 813px; }
+
+.star-480 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -731px;
+  left: 208px; }
+
+.star-481 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -296px;
+  left: 586.5px; }
+
+.star-482 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -915px;
+  left: 991.5px; }
+
+.star-483 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -950.5px;
+  left: 386.5px; }
+
+.star-484 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -635.5px;
+  left: 470px; }
+
+.star-485 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -211.5px;
+  left: 155.5px; }
+
+.star-486 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -91px;
+  left: 603px; }
+
+.star-487 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -824.5px;
+  left: 621.5px; }
+
+.star-488 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -827px;
+  left: 954px; }
+
+.star-489 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -141.5px;
+  left: 504.5px; }
+
+.star-490 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -3.5px;
+  left: 100px; }
+
+.star-491 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -434px;
+  left: 114px; }
+
+.star-492 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -535px;
+  left: 336px; }
+
+.star-493 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -299px;
+  left: 704px; }
+
+.star-494 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -673px;
+  left: 338.5px; }
+
+.star-495 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -924.5px;
+  left: 487px; }
+
+.star-496 {
+  background: url("../images/snow185.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -864px;
+  left: 176px; }
+
+.star-497 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -935px;
+  left: 816.5px; }
+
+.star-498 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -340px;
+  left: 953px; }
+
+.star-499 {
+  background: url("../images/snow144.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -395px;
+  left: 513.5px; }
+
+.star-500 {
+  background: url("../images/snow15.svg") no-repeat center center;
+  animation: animStar 45s linear infinite;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: block;
+  top: -787.5px;
+  left: 385.5px; }
+
+.snow-wrap-2 div[class^="star-"] {
+  animation: animStar 60s linear infinite;
+  height: 20px;
+  width: 20px; }
+
+.snow-wrap-3 div[class^="star-"] {
+  animation: animStar 120s linear infinite;
+  height: 13px;
+  width: 13px; }
+
+@-webkit-keyframes animStar {
+  0% {
+    transform: translateY(0px); }
+  100% {
+    transform: translateY(2000px); } }
+@-moz-keyframes animStar {
+  0% {
+    transform: translateY(0px); }
+  100% {
+    transform: translateY(2000px); } }
+@keyframes animStar {
+  0% {
+    transform: translateY(0px); }
+  100% {
+    transform: translateY(2000px); } }
+
+/*# sourceMappingURL=styles.css.map */
