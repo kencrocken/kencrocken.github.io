@@ -17,7 +17,7 @@
     <div ng-if="treehouse.loaded">
         <p >A member since {{ treehouse.membershipDates.joinDate | date:longDate }}, that's {{ treehouse.membershipDates.memberLength | number:1 }} days - how time flies.</p>
         <h2>Total Points: {{ treehouse.points[0].points}}</h2>
-        <p ng-init="totalClasses = treehouse.points.length - 1">I have taken courses in {{ totalClasses }} areas including {{ treehouse.points[treehouse.random()].category}}</p>
+        <p ng-init="totalClasses = treehouse.points.length - 1">I have taken {{ treehouse.badges.length }} courses in {{ totalClasses }} areas including {{ treehouse.points[treehouse.random()].category}}</p>
     </div>
 </section>
 <section class="container timeline-wrap">

@@ -2,19 +2,19 @@ var mySite = angular.module('mySite', ['ui.router', 'ngResource','headroom','duS
 
 mySite.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-        .state('treehouse', {
-            url: '/treehouse',
-            templateUrl: '/index.html',
+        .state('treehouseData', {
+            url: '/data',
+            templateUrl: '_includes/treehouse-data.html',
             controller: 'treehouseCtrl as treehouse',
             onEnter: function(){
-                console.log("Entered Treehouse.");
+                console.log("Entered Treehouse Data.");
             }
         })
-        .state('treehouse.badges', {
-            url: '/treehouse/badges',
-            templateUrl: '_includes/treehouse.html',
+        .state('treehouseData.badges', {
+            url: '/badges',
+            templateUrl: '_includes/badges.html',
             onEnter: function(){
-                console.log("Entered Treehouse.");
+                console.log("Entered Treehouse Data Badges.");
             }
         });
 

@@ -27,4 +27,12 @@
         "in_prog"
 ;
 
-
+.snowflake {
+        height: 100px;
+        width: 100px;
+        margin: 10vh auto;
+        display: block;
+        &:hover {
+                @include animation--reverse_spin(2.6);
+        }
+}
