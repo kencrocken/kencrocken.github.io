@@ -57,13 +57,16 @@ body {
         position: absolute;
         display: block;
         top: random(2000)/2*-1+px; // maybe we don't need such big numbers for vertical position
-        left: random(2000)/2+px; 
+        left: random(2000)/2+px;
+        @include media(768px){
+            left: random(2000)+px;
+        }
     }
 }
 
 .snow-wrap-2 {
     div[class^="star-"] {
-        animation: animStar 60s linear infinite;
+        animation: animStar 70s linear infinite;
         height: 20px;
         width: 20px;
     }
