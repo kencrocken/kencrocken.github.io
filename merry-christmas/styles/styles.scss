@@ -12,6 +12,7 @@ $images: "../images/snow15.svg", "../images/snow144.svg", "../images/snow185.svg
 html, body {
   height: 100%; width: 100%;
   overflow: hidden;
+  position: fixed;
 }
 
 body {
@@ -20,7 +21,7 @@ body {
 
 .title {
     h1 {
-        font-size: 48px;
+        font-size: 38px;
         height: 80px;
         font-family: $pacifico;
         text-align: center;
