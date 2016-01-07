@@ -1,5 +1,5 @@
 Ken:
-    holiday: false
+    holiday: 'false'
     name: Kenneth E. Crocken
     nickname: Ken Crocken
     image: 
