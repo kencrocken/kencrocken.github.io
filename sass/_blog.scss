@@ -1,3 +1,9 @@
+section.blog{
+    .container {
+        max-width: $medium-screen;
+    }
+}
+
 .blog {
     #posts {
         li {
