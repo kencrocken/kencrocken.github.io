@@ -14,6 +14,7 @@
 		<p class="accent">{{ about.accent }}</p>
 		<p itemprop="description">{{ about.content }}</p>
 		<ul class="skills-list" itemscope itemtype="http://schema.org/ItemList">
+			 <meta itemprop="name" content="Skills" />
 			{% for skill in about.skills %}
 				<li class="skills-list-item" itemprop="itemListElement">{{ skill }}
 					<span class="background-animation"></span>
