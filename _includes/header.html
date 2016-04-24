@@ -99,8 +99,8 @@
         </div> <!-- logo -->
         <div class ="brand">
             <h4>Hello, my name is</h4>
-            <h1>{{ my.nickname | replace: 'o','O' }}</h1>
-            <h4>{{ my.description }}</h4>
+            <h1 itemprop="name">{{ my.nickname | replace: 'o','O' }}</h1>
+            <h4 itemprop="jobTitle">{{ my.description }}</h4>
         </div>
     </section>
     <ul class="social">

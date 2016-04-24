@@ -6,16 +6,16 @@
   <section class="about">
 	<div class = "about-icon">
 		<h3>AbOut</h3>
-		<img src="{{ image.link }}{% if image.size %}?s={{ image.large }}{% endif %}" />
+		<img itemprop="image" alt="Ken Crocken" src="{{ image.link }}{% if image.size %}?s={{ image.large }}{% endif %}" />
 	</div>
 	<div class="about-text">
 
 		<h4>{{ about.tag }}</h4>
 		<p class="accent">{{ about.accent }}</p>
-		<p>{{ about.content }}</p>
-		<ul class="skills-list">
+		<p itemprop="description">{{ about.content }}</p>
+		<ul class="skills-list" itemscope itemtype="http://schema.org/ItemList">
 			{% for skill in about.skills %}
-				<li class="skills-list-item">{{ skill }}
+				<li class="skills-list-item" itemprop="itemListElement">{{ skill }}
 					<span class="background-animation"></span>
 				</li>
 			{% endfor %}

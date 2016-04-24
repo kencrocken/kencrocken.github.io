@@ -3,12 +3,12 @@
 
 <article id="contact">
     <section class = "contact-wrap" >
-        <div class = "contact-info">
+        <div class = "contact-info" >
             <h3>Contact</h3>
             <ul class="contact">
-                <li class="contact-info-item">{{ contact.email.icon }} <a href="mailto:{{ contact.email.address }}">{{ contact.email.address }}</a><span class="contact-info-item-background"></span></li>
-                <li class="contact-info-item"> {{ contact.telephone.icon }}</i> <a href="tel: {{contact.telephone.number}}">{{contact.telephone.number}}</a><span class="contact-info-item-background"></span></li>
-                <li class="contact-info-item">{{ contact.location.icon }} <a href="{{ contact.location.link}}">{{ contact.location.place }}</a><span class="contact-info-item-background"></span></li>
+                <li class="contact-info-item">{{ contact.email.icon }} <a href="mailto:{{ contact.email.address }}" itemprop="email">{{ contact.email.address }}</a><span class="contact-info-item-background"></span></li>
+                <li class="contact-info-item"> {{ contact.telephone.icon }}</i> <a href="tel: {{contact.telephone.number}}" itemprop="telephone">{{contact.telephone.number}}</a><span class="contact-info-item-background"></span></li>
+                <li class="contact-info-item" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">{{ contact.location.icon }} <a href="{{ contact.location.link}}" itemprop="addressLocality">{{ contact.location.place }}</a><span class="contact-info-item-background"></span></li>
 
             </ul>
         </div>
@@ -24,7 +24,7 @@
                 <textarea type="text" class = "formmsg" name="text" rows="3" placeholder = "What ya want to know?" ng-model="message.text"></textarea>
                 <button type="submit" class="button">SUbmit</button>
                 <div ng-show="contactMe.name.$invalid && submitted" class="help-block invalid">
-                    <p>Can I at least get your name?</p>
+                    <p><i class = "fa fa-bug fa-lg fa-fw"></i>Can I at least get your name?</p>
                 </div>
             </form>
 

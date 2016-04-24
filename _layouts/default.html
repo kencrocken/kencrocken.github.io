@@ -5,7 +5,7 @@
 
   <body ng-app="mySite">
     {% include svg-symbols.svg %}
-    <div class = "wrapper" ng-controller="pageCtrl">
+    <div class = "wrapper" ng-controller="pageCtrl" itemscope itemtype="http://schema.org/Person">
       {% include header.html %}
 
         {{ content }}
