@@ -1,11 +1,11 @@
 {% assign my = site.data.me['Ken'] %}
 
-<article id="resume">
+<article id="resume" itemscope itemtype="http://schema.org/ItemList">
     <section class = "resume-headings">
-        <h3>Résumé</h3>
+        <h3 itemprop="name">Résumé</h3>
     </section>
     <section class="resume-description">
-        <ul class="resume-description-item" itemprop="alumniOf" itemscope itemtype="http://schema.org/ItemList">
+        <ul class="resume-description-item">
             {% for job in my.resume %}
             <li class="item" itemprop="itemListElement">
                 <ul class="skills-list" itemscope itemtype="http://schema.org/Organization">
