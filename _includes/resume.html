@@ -5,13 +5,13 @@
         <h3>Résumé</h3>
     </section>
     <section class="resume-description">
-        <ul class="resume-description-item" itemscope itemtype="http://schema.org/ItemList">
+        <ul class="resume-description-item" itemprop="alumniOf" itemscope itemtype="http://schema.org/ItemList">
             {% for job in my.resume %}
             <li class="item" itemprop="itemListElement">
                 <ul class="skills-list" itemscope itemtype="http://schema.org/Organization">
                     <li><h4 itemprop="name">{{ job.name }}</h4>
                         <h6>{{ job.date }}</h6></li>
-                    <li class="skills-list-item" itemprop="jobTitle">{{ job.description }}<span class="background-animation"></span></li>
+                    <li class="skills-list-item" itemprop="department">{{ job.description }}<span class="background-animation"></span></li>
                 </ul>
             </li>
             {% endfor %}
