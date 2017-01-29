@@ -9,8 +9,14 @@ layout: blog
     <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
   </div>
 
+  {% if page.description %}
+    <section class="description">
+        <h2>{{ page.description }}</h2>
+    </section>
+  {% endif %}
+
   <article class="post-content">
-    {{ content }}
+    {{ page.content }}
   </article>
 
 </div>

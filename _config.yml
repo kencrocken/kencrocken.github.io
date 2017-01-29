@@ -12,6 +12,10 @@ permalink: pretty
 
 # destination: dest
 
+gems:
+ - jekyll-coffeescript
+ - jekyll-seo-tag
+
 exclude: [
   "node_modules",
   "bower_components",
@@ -21,7 +25,7 @@ exclude: [
   "env.rb",
   "bower.json",
   "reporter.js",
-  "images",
+  "img",
   "sass"
   ]
 

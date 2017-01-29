@@ -21,14 +21,14 @@ var format = ['./img/**/*.png','./img/**/*.jpg','./img/**/*.gif','./img/**/*.jpe
     jekyllFiles = ['./_includes/**.*','./_layouts/**.*','./_posts/**.*', './_data/**.*'],
     reload = browserSync.reload;
 
-gulp.task('bourbon', function() {
-    gulp.src('./bower_components/fontawesome/scss/**/*.scss') 
-        .pipe(gulp.dest('./sass/fontawesome'))
-    gulp.src('./bower_components/bourbon/dist/**/*.scss') 
-        .pipe(gulp.dest('./sass/bourbon'))
-    gulp.src('./bower_components/neat/app/assets/stylesheets/**/*.scss') 
-        .pipe(gulp.dest('./sass/neat'));
-});
+// gulp.task('bourbon', function() {
+//     gulp.src('./bower_components/fontawesome/scss/**/*.scss') 
+//         .pipe(gulp.dest('./sass/fontawesome'))
+//     gulp.src('./bower_components/bourbon/dist/**/*.scss') 
+//         .pipe(gulp.dest('./sass/bourbon'))
+//     gulp.src('./bower_components/neat/app/assets/stylesheets/**/*.scss') 
+//         .pipe(gulp.dest('./sass/neat'));
+// });
 
 //  Compile sass
 gulp.task('sass', function () {
@@ -128,29 +128,29 @@ gulp.task('sprites', function () {
 // JEKYLL
 // Start a `jekyll build` task
 // From: http://stackoverflow.com/questions/21293999/use-jekyll-with-gulp
-gulp.task('jekyll-build',function() {
-    require('child_process').spawn('jekyll', ['build', '--config=_config.yml'], {stdio: 'inherit'});
-});
+// gulp.task('jekyll-build',function() {
+//     require('child_process').spawn('jekyll', ['build', '--config=_config.yml'], {stdio: 'inherit'});
+// });
 
-// Start a `jekyll build --watch` task
-gulp.task('jekyll-watch', function() {
-    require('child_process').spawn('jekyll', ['build', '--watch', '--config=_config.yml'], {stdio: 'inherit'});
-});
+// // Start a `jekyll build --watch` task
+// gulp.task('jekyll-watch', function() {
+//     require('child_process').spawn('jekyll', ['build', '--watch', '--config=_config.yml'], {stdio: 'inherit'});
+// });
 
-// Start a `jekyll serve` task
-gulp.task('jekyll-serve', function() {
-    require('child_process').spawn('jekyll', ['serve', '--config=_config.yml'], {stdio: 'inherit'});
-});
+// // Start a `jekyll serve` task
+// gulp.task('jekyll-serve', function() {
+//     require('child_process').spawn('jekyll', ['serve', '--config=_config.yml'], {stdio: 'inherit'});
+// });
 
 // BROWSERSYNC
 gulp.task('browser-sync', function(){
     browserSync({
-        server: {
-            baseDir: "./_site"
-        },
+        // server: {
+        //     baseDir: "./_site"
+        // },
         port: 3000,
         //proxy the jekyll server
-        //proxy: "http://localhost:4000"
+        proxy: "http://localhost:4000",
         //long delay needed to allow jekyll-build to complete
         reloadDelay: 1500,
         ghostMode: true,
@@ -158,9 +158,7 @@ gulp.task('browser-sync', function(){
 });
 
 // BUILD
-gulp.task('build', ['sass', 'js', 'icons', 'images'], function(){
-    gulp.start('jekyll-build');
-});
+gulp.task('build', ['sass', 'js', 'icons', 'images']);
 
 // CLEAN
 // gulp.task('clean', function(cb) {
@@ -168,7 +166,7 @@ gulp.task('build', ['sass', 'js', 'icons', 'images'], function(){
 // });
 
 // RELOAD
-gulp.task('site-reload', ['jekyll-build'], function(){
+gulp.task('site-reload', function(){
     gulp.start(reload);
 });
 
@@ -177,18 +175,18 @@ gulp.task('watch', function() {
 
     // Watch Sass files
     gulp.watch('./sass/**/*',['sass']);
-    gulp.watch('./css/**/*', ['jekyll-build'], reload);
+    // gulp.watch('./css/**/*', reload);
     // Watch JS files
     gulp.watch('./scripts/**/*', ['js']);
-    gulp.watch('./scripts/**/*.coffee', ['jekyll-build'], reload);
+    // gulp.watch('./scripts/**/*.coffee', ['jekyll-build'], reload);
     // Watch _site files
-    gulp.watch(jekyllFiles, ['site-reload']);
+    // gulp.watch(jekyllFiles, ['site-reload']);
     // gulp.watch('./_site/**/*', ['site-reload']);
 
 });
 
 // DEFAULT
-gulp.task('default', ['browser-sync','build'], function() {
+gulp.task('default', ['build'], function() {
     gulp.start('watch');
 });
 

@@ -14,7 +14,7 @@ I added the env.rb file to ```.gitignore```, no need for my keys and tokens to b
 
 Here is the rake command:
 
-{% highlight ruby linenos %}
+{% highlight ruby%}
 require 'rubygems'
 require 'rake'
 require 'yaml'

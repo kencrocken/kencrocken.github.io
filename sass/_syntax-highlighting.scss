@@ -8,7 +8,17 @@
 
 code {
   font-family: $inconsolata, 'Bitstream Vera Sans Mono','Courier', monospace;
-  .lineno { color: #ccc; display:inline-block; padding: 0 5px; border-right:1px solid #ccc; }
+    .lineno { 
+        color: #ccc; 
+        display:inline-block; 
+        padding: 0 5px; 
+        border-right:1px solid #ccc;
+         
+    }
+}
+
+td.gutter.gl {
+    text-align: left !important;
 }
 
 .highlight .hll { background-color: #a39e9b }
