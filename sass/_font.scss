@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 @font-face {
 font-family: 'Baron Neue Black';
@@ -39,19 +40,19 @@ src: url('./font/baron_neue_bold.woff') format('woff');
 }
 
 // @font-face {
-//     font-family: 'quicksandbold';
+//     font-family: 'quicksand';
 //     src: url('./font/quicksand-bold-webfont.eot');
 //     src: url('./font/quicksand-bold-webfont.eot?#iefix') format('embedded-opentype'),
 //          url('./font/quicksand-bold-webfont.woff2') format('woff2'),
 //          url('./font/quicksand-bold-webfont.woff') format('woff'),
 //          url('./font/quicksand-bold-webfont.ttf') format('truetype'),
 //          url('./font/./font/quicksand-bold-webfont.svg#quicksandbold') format('svg');
-//     font-weight: normal;
+//     font-weight: 700;
 //     font-style: normal;
 
 // }
 // @font-face {
-//     font-family: 'quicksanditalic';
+//     font-family: 'quicksand';
 //     src: url('./font/quicksand-italic-webfont.eot');
 //     src: url('./font/quicksand-italic-webfont.eot?#iefix') format('embedded-opentype'),
 //          url('./font/quicksand-italic-webfont.woff2') format('woff2'),
@@ -59,30 +60,30 @@ src: url('./font/baron_neue_bold.woff') format('woff');
 //          url('./font/quicksand-italic-webfont.ttf') format('truetype'),
 //          url('./font/quicksand-italic-webfont.svg#quicksanditalic') format('svg');
 //     font-weight: normal;
-//     font-style: normal;
+//     font-style: italic;
 
 // }
 // @font-face {
-//     font-family: 'quicksandlight';
+//     font-family: 'quicksand';
 //     src: url('./font/quicksand-light-webfont.eot');
 //     src: url('./font/quicksand-light-webfont.eot?#iefix') format('embedded-opentype'),
 //          url('./font/quicksand-light-webfont.woff2') format('woff2'),
 //          url('./font/quicksand-light-webfont.woff') format('woff'),
 //          url('./font/quicksand-light-webfont.ttf') format('truetype'),
 //          url('./font/quicksand-light-webfont.svg#quicksandlight') format('svg');
-//     font-weight: normal;
+//     font-weight: 300;
 //     font-style: normal;
 
 // }
 // @font-face {
-//     font-family: 'quicksandregular';
+//     font-family: 'quicksand';
 //     src: url('./font/quicksand-regular-webfont.eot');
 //     src: url('./font/quicksand-regular-webfont.eot?#iefix') format('embedded-opentype'),
 //          url('./font/quicksand-regular-webfont.woff2') format('woff2'),
 //          url('./font/quicksand-regular-webfont.woff') format('woff'),
 //          url('./font/quicksand-regular-webfont.ttf') format('truetype'),
 //          url('./font/quicksand-regular-webfont.svg#quicksandregular') format('svg');
-//     font-weight: normal;
+//     font-weight: 400;
 //     font-style: normal;
 // }
 
@@ -111,27 +112,27 @@ src: url('./font/baron_neue_bold.woff') format('woff');
 // }
 
 @font-face {
-    font-family: 'eurofurence_lightregular';
+    font-family: 'eurofurence';
     src: url('./font/eurof35-webfont.eot');
     src: url('./font/eurof35-webfont.eot?#iefix') format('embedded-opentype'),
          url('./font/eurof35-webfont.woff2') format('woff2'),
          url('./font/eurof35-webfont.woff') format('woff'),
          url('./font/eurof35-webfont.ttf') format('truetype'),
          url('./font/eurof35-webfont.svg#eurofurence_lightregular') format('svg');
-    font-weight: normal;
+    font-weight: 300;
     font-style: normal;
 
 }
 
 @font-face {
-    font-family: 'eurofurence_regular';
+    font-family: 'eurofurence';
     src: url('./font/eurof55-webfont.eot');
     src: url('./font/eurof55-webfont.eot?#iefix') format('embedded-opentype'),
          url('./font/eurof55-webfont.woff2') format('woff2'),
          url('./font/eurof55-webfont.woff') format('woff'),
          url('./font/eurof55-webfont.ttf') format('truetype'),
          url('./font/eurof55-webfont.svg#eurofurence_regular') format('svg');
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
 
 }

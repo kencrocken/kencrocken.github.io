@@ -1,12 +1,13 @@
 // $merriweather: 'merriweatherlight';
-// $quicksand: 'quicksandregular';
+$quicksand: 'quicksand',sans-serif;
 $inconsolata: 'Inconsolata';
 $pacifico: 'Pacifico';
 $baron: 'Baron Neue Bold';
+$lato: 'Lato', sans-serif;
 // $roboto: 'Roboto Slab', serif;
 // $pica: 'IM Fell DW Pica SC', serif;
 // $arimo: 'Arimo';
-$euro: 'eurofurence_regular';
+$euro: 'eurofurence';
 // Typography
 $base-font-family: $euro;
 $heading-font-family: $baron;
@@ -38,6 +39,7 @@ $tomato: tomato;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
+$gray: #657b83;
 
 // Font Colors
 $base-background-color: #fff;
