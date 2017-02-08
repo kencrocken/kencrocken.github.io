@@ -14,8 +14,9 @@
                     <li class="skills-list-item" itemprop="department">{{ job.description }}<span class="background-animation"></span>
                     </li>
                 </ul>
+                <meta itemprop="position" content="{{ forloop.index }}" />
             </li>
-            <meta itemprop="position" content="{{ forloop.index }}" />
+
             {% endfor %}
         </ul>
     </section>
