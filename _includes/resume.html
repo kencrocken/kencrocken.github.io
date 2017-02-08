@@ -7,14 +7,13 @@
     <section class="resume-description">
         <ul class="resume-description-item">
             {% for job in my.resume %}
-            <li class="item" itemprop="itemListElement">
+            <li class="item">
                 <ul class="skills-list" itemscope itemtype="http://schema.org/Organization">
                     <li><h4 itemprop="name">{{ job.name }}</h4>
                         <h6>{{ job.date }}</h6></li>
                     <li class="skills-list-item" itemprop="department">{{ job.description }}<span class="background-animation"></span>
                     </li>
                 </ul>
-                <meta itemprop="position" content="{{ forloop.index }}" />
             </li>
 
             {% endfor %}

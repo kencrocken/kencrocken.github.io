@@ -13,11 +13,10 @@
 		<h4>{{ about.tag }}</h4>
 		<p class="accent">{{ about.accent }}</p>
 		<p itemprop="description">{{ about.content }}</p>
-		<ul class="skills-list" itemscope itemtype="http://schema.org/ItemList">
+		<ul class="skills-list">
 			 <meta itemprop="name" content="Skills" />
 			{% for skill in about.skills %}
-				<li class="skills-list-item" itemprop="itemListElement">{{ skill }}
-					<meta itemprop="position" content="{{ forloop.index }}" />
+				<li class="skills-list-item">{{ skill }}
 					<span class="background-animation"></span>
 				</li>
 			{% endfor %}
