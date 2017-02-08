@@ -6,13 +6,13 @@
   <section class="about">
 	<div class = "about-icon">
 		<h3>AbOut</h3>
-		<img itemprop="image" alt="Ken Crocken" src="{{ image.link }}{% if image.size %}?s={{ image.large }}{% endif %}" />
+		<img alt="Ken Crocken" src="{{ image.link }}{% if image.size %}?s={{ image.large }}{% endif %}" />
 	</div>
 	<div class="about-text">
 
 		<h4>{{ about.tag }}</h4>
 		<p class="accent">{{ about.accent }}</p>
-		<p itemprop="description">{{ about.content }}</p>
+		<p>{{ about.content }}</p>
 		<ul class="skills-list">
 			 <meta itemprop="name" content="Skills" />
 			{% for skill in about.skills %}
