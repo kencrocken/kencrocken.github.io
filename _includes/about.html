@@ -17,6 +17,7 @@
 			 <meta itemprop="name" content="Skills" />
 			{% for skill in about.skills %}
 				<li class="skills-list-item" itemprop="itemListElement">{{ skill }}
+					<meta itemprop="position" content="{{ forloop.index }}" />
 					<span class="background-animation"></span>
 				</li>
 			{% endfor %}

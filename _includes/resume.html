@@ -11,9 +11,11 @@
                 <ul class="skills-list" itemscope itemtype="http://schema.org/Organization">
                     <li><h4 itemprop="name">{{ job.name }}</h4>
                         <h6>{{ job.date }}</h6></li>
-                    <li class="skills-list-item" itemprop="department">{{ job.description }}<span class="background-animation"></span></li>
+                    <li class="skills-list-item" itemprop="department">{{ job.description }}<span class="background-animation"></span>
+                    </li>
                 </ul>
             </li>
+            <meta itemprop="position" content="{{ forloop.index }}" />
             {% endfor %}
         </ul>
     </section>
