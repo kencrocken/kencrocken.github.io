@@ -1,4 +1,76 @@
 ---
 title: json
 ---
-{"homepage":"{{ site.url }}","name":"{{ site.title }}","description":"{{ site.tagline }}","author":"{{ site.author.name }}","posts":[{% for post in site.posts %}{"url":"{{ site.url }}{{ post.url }}","title":"{{ post.title }}","id": "{{ post.id }}","published_on":"{{ post.date | date: "%-d %B %Y" }}"}{% if forloop.rindex0 > 0 %},{% endif %}{% endfor %}]}
+{% assign my = site.data.me['Ken'] %}
+{% assign image = my.image %}
+{% assign about = my.about%}
+{% assign contact = my.contact %}
+
+{
+    "homepage"    : "{{ site.url }}",
+    "name"        : "{{ site.title }}",
+    "description" : "{{ site.description }}",
+    "author"      : "{{ my.nickname }}",
+    "image"       : {
+
+        "link_large" : "{{ my.image.link }}?s={{ my.image.large}}",
+        "link_small" : "{{ my.image.link }}?s={{ my.image.small}}"
+
+    },
+    "social"      : {
+
+        "linkedin" : "{{ my.linkedin }}",
+        "twitter"  : "{{ my.twitter }}",
+        "github"   : "{{ my.github }}"
+
+    },
+    "about"       : {
+
+        "who"    : "{{ about.tag }}",
+        "invite" : "{{ about.accent }}",
+        "what"   : "{{ about.content }}",
+        "skills" : "{{ about.skills }}"
+
+    },
+    "resume"      : [
+
+    {% for job in my.resume %}
+        {
+            "name"        : "{{ job.name }}",
+            "date"        : "{{ job.date }}",
+            "description" : "{{ job.description }}"
+        }{% if forloop.rindex0 > 0 %},{% endif %}
+    {% endfor %}
+
+    ],
+
+    "projects"    : [
+
+    {% for project in my.projects %}
+        {
+            "name" : "{{ project.name }}",
+            "link" : "{{ project.link }}"
+        }{% if forloop.rindex0 > 0 %},{% endif %}
+    {% endfor %}
+
+    ],
+    "contact"     : {
+
+        "email"     : "{{ contact.email.address }}",
+        "telephone" : "{{ contact.telephone.number }}",
+        "location"  : "{{ contact.location.place }}"
+
+    },
+    "posts"       : [
+
+    {% for post in site.posts %}
+        {
+            "url"          : "{{ site.url }}{{ post.url }}",
+            "title"        : "{{ post.title }}",
+            "id"           : "{{ post.id }}",
+            "published_on" : "{{ post.date | date: "%-d %B %Y" }}"
+        }{% if forloop.rindex0 > 0 %},{% endif %}
+    {% endfor %}
+
+    ]
+}

@@ -2,7 +2,7 @@ Ken:
     holiday: 'false'
     name: Kenneth E. Crocken
     nickname: Ken Crocken
-    image: 
+    image:
         link: http://www.gravatar.com/avatar/83fb4a35e52381397d9c07d9e25b4c05
         large: 300
         small: 55
@@ -17,15 +17,15 @@ Ken:
         accent: "But we can talk more about that over coffee."
         content: "A full-stack web developer with a passion for creating websites and apps from the ground up. With additional interests in design, user experience and accessibility."
         skills:
-            - "HTML - CSS - JavaScript"
-            - "WordPress - DjangoCMS - Drupal"
-            - "Ruby - Python - PHP"
+            - "Angular - SASS - React"
+            - "Rails - Django - WordPress - Drupal"
+            - "Javascript - Ruby - Python - PHP"
 
     resume:
         -   name: "RepEquity"
             date: "September 2015 to Present"
             description: "Web Developer"
-            
+
         -   name: "Freelancer"
             date: "July 2015 to August 2015"
             description: "Web Developer"
@@ -34,7 +34,7 @@ Ken:
             date: "November 2014 to July 2015"
             description: "Front End Developer"
 
-    projects: 
+    projects:
 
         -   name: "DCMetro"
             link: https://kencrocken.github.io/dcmetro
@@ -52,7 +52,7 @@ Ken:
 
         email:
             address: kcrocken@gmail.com
-            icon: <i class = "fa fa-envelope fa-lg fa-fw"></i> 
+            icon: <i class = "fa fa-envelope fa-lg fa-fw"></i>
 
         telephone:
             number: (443) 802-7145

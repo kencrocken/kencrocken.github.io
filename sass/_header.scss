@@ -3,7 +3,7 @@
 @mixin animation--Header($length){
     @include animation(headerFadeIn #{$length}s cubic-bezier(0.18, 0.89, 0.32, 1.28));
     @include animation-iteration-count(1);
-    @include animation-fill-mode(forwards);  
+    @include animation-fill-mode(forwards);
 }
 
 @include keyframes(headerFadeIn){
@@ -23,7 +23,7 @@
 @mixin animation--social($length, $delay){
     @include animation(socialFadeIn #{$length}s ease-in-out);
     @include animation-iteration-count(1);
-    @include animation-fill-mode(forwards);  
+    @include animation-fill-mode(forwards);
     @include animation-delay(#{$delay}s);
 }
 
@@ -127,7 +127,7 @@ header {
     .line-behind-text {
         display: block;
         min-height: 100vh;
-        img { 
+        img {
             // top: 75px;
             // display: none;
             @include animation--Header(2);
@@ -206,10 +206,10 @@ header {
     .green {
         fill: green;
     }
-    .blue { 
-        fill: blue; 
+    .blue {
+        fill: blue;
     }
-    .red { 
+    .red {
         fill: red;
     }
 
@@ -233,7 +233,7 @@ header {
             @include animation--spin(4);
         }
         > path:last-child {
-            @include animation--lightning(4); 
+            @include animation--lightning(4);
         }
     }
 
@@ -252,12 +252,12 @@ header {
     @include media(max-width $break-small){
         padding: 20px 0 10px;
     }
-    p {      
+    p {
         color: #cb4b16;
         text-transform: uppercase;
         font-family: $primary-font;
         margin: 0;
-        font-size: em(12); 
+        font-size: em(12);
     }
 
     .brand {
@@ -300,21 +300,18 @@ header {
 
 /*--Social Icon Styles--*/
 .social {
-    padding-bottom: 25px;
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-    // @include transform(translateX(-25%));
+    @include outer-container(660px);
+    // padding-bottom: 25px;
+    // display: inline-block;
+    // text-align: center;
     li {
+        @include span-columns(4);
         display: inline-block;
         opacity: 0;
         font-size: 28px;
         text-align: center;
         i {
-            
+
         }
         & {
 
@@ -328,10 +325,10 @@ header {
         }
         &:first-child {
             a { margin-left: 0; }
-        } 
+        }
         &:last-child {
             a { margin-right: 0; }
-        }   
+        }
     }
     a {
         @include transition_all_ease(0.7s);
@@ -356,8 +353,8 @@ header {
             height: 100%;
             border-radius: 50%;
             content: '';
-            -webkit-box-sizing: content-box; 
-            -moz-box-sizing: content-box; 
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
             box-sizing: content-box;
             top: 0;
             left: 0;
@@ -378,16 +375,10 @@ header {
             transform: scale(0.85);
             opacity: 0.5;
         }
-        // &:first-child {
-        //     margin-left: 0;
-        // }
-        // &:last-child {
-        //     margin-right: 0;
-        // }
     }
     @include media (max-width $break-small) {
         li {
-            margin: 0 5px;
+            margin: 0;
         }
         a {
             margin-left: 0;
@@ -396,7 +387,7 @@ header {
     }
 }
 
-.linkedin { 
+.linkedin {
     a{
         color: rgba(0,123,182,.4);
         // color: darken(#e3fdf6, 15%);
@@ -416,7 +407,7 @@ header {
             color: rgba(211,72,54,1);
         }
     }
-} 
+}
 
 .twitter {
     a{
@@ -430,19 +421,19 @@ header {
     }
 }
 
-.github { 
+.github {
     a{
         color: rgba(100,100,100,.4);
         // color: darken(#ede3fd, 10%);
-        &:hover { 
+        &:hover {
             text-shadow: none;
-            color: rgba(100,100,100,1); 
+            color: rgba(100,100,100,1);
             // color: darken(#ede3fd, 25%);
         }
     }
 }
 
-.linkedin, .googleplus, .twitter, .github{ 
+.linkedin, .googleplus, .twitter, .github{
     a {
         // background-color: rgba(0,0,0,0.1);
         &:hover {
@@ -503,8 +494,8 @@ header {
     }
     .sub-mast {
         @include span-columns(5);
-        h1 { 
-            font-weight: 600; 
+        h1 {
+            font-weight: 600;
             line-height: 50px;
         }
         @include media(max-width $break-small) {
@@ -561,7 +552,7 @@ header {
     &.blog {
         opacity: 1;
         transition: box-shadow 0.2s;
-    } 
+    }
     @include media(max-width $break-small){
         padding-left: 7px;
     }

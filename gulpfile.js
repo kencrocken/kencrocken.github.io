@@ -15,11 +15,11 @@ var gulp         = require('gulp'),
     concat       = require('gulp-concat'),
     notify       = require('gulp-notify'),
     del          = require('del'),
-    browserSync  = require('browser-sync');
+    browserSync  = require('browser-sync').create();
 
-var format = ['./img/**/*.png','./img/**/*.jpg','./img/**/*.gif','./img/**/*.jpeg'],
+var format      = ['./img/**/*.png','./img/**/*.jpg','./img/**/*.gif','./img/**/*.jpeg'],
     jekyllFiles = ['./_includes/**.*','./_layouts/**.*','./_posts/**.*', './_data/**.*'],
-    reload = browserSync.reload;
+    reload      = browserSync.reload;
 
 // gulp.task('bourbon', function() {
 //     gulp.src('./bower_components/fontawesome/scss/**/*.scss') 
@@ -66,11 +66,11 @@ gulp.task('js', function() {
   // create 1 vendor.js file from all vendor plugin code
     gulp.src([
 
-        './bower_components/jquery/dist/jquery.js',  
+        './bower_components/jquery/dist/jquery.js',
         './bower_components/scrollReveal.js/dist/*.js',
         './bower_components/underscore/underscore.js',
         './bower_components/headroom.js/dist/headroom.js',
-        './bower_components/onepage-scroll/jquery.onepage-scroll.js',    
+        './bower_components/onepage-scroll/jquery.onepage-scroll.js',
         './bower_components/angular/angular.min.js',
         './bower_components/angular-ui-router/release/angular-ui-router.min.js',
         './bower_components/angular-resource/angular-resource.min.js',
@@ -143,8 +143,8 @@ gulp.task('sprites', function () {
 // });
 
 // BROWSERSYNC
-gulp.task('browser-sync', function(){
-    browserSync({
+gulp.task('browser-sync', ['build'], function(){
+    browserSync.init({
         // server: {
         //     baseDir: "./_site"
         // },
@@ -152,7 +152,7 @@ gulp.task('browser-sync', function(){
         //proxy the jekyll server
         proxy: "http://localhost:4000",
         //long delay needed to allow jekyll-build to complete
-        reloadDelay: 1500,
+        // reloadDelay: 1500,
         ghostMode: true,
     });
 });
@@ -186,7 +186,7 @@ gulp.task('watch', function() {
 });
 
 // DEFAULT
-gulp.task('default', ['build'], function() {
+gulp.task('default', ['browser-sync'], function() {
     gulp.start('watch');
 });
 
