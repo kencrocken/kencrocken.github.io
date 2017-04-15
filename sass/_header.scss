@@ -240,17 +240,11 @@ header {
 }
 
 .masthead {
-    @include outer-container;
+    @include outer-container(659px);
     @include animation--Header(1);
-    padding: 65px 0 50px;
-    // position: absolute;
-    // top: 10%;
-    // left: 50%;
-    // right: 50%;
-    // transform: translateX(-50%);
-    max-width: 659px;
+    padding: 0;
     @include media(max-width $break-small){
-        padding: 20px 0 10px;
+        padding: 0;
     }
     p {
         color: #cb4b16;
@@ -261,39 +255,42 @@ header {
     }
 
     .brand {
-        padding: 0 5px;
+        padding: 7% 5px;
         text-align: center;
         @include span-columns(12);
         h1 {
-            font-size: 72px;
-            color: #335a9a;
-            padding: 15px 0 0 10px ;
-            font-family: "Baron Neue Black";
+            font-size   : 72px;
+            color       : #335a9a;
+            padding     : 15px 0 0 10px ;
+            font-family : "Baron Neue Black";
         }
         h4 {
-            background-color: tomato;
-            color: white;
-            font-family: $pacifico;
-            margin: 0;
-            font-size: 25px;
-            line-height: 50px;
-            letter-spacing: 1.5px;
-            padding: 0 0 0 10px
+            // background-color : tomato;
+            color            : tomato;
+            font-family      : $pacifico;
+            margin           : 0;
+            font-size        : 25px;
+            line-height      : 50px;
+            letter-spacing   : 1.5px;
+            padding          : 0 0 0 10px;
         }
         @include media (max-width $break-small){
             @include span-columns(12);
-            text-align: center;
+            padding-top: 7%;
+            padding-bottom: 11%;
+            text-align : center;
             h1 {
-                font-size: 2.2em;
-                padding-top: 10px;
+                font-size   : 2.2em;
+                padding-top : 10px;
             }
         }
     }
     .logo {
-        @include span-columns(12);
-        padding-bottom: 25px;
+        // @include span-columns(12);
+        padding: 7% 0 0;
         @include media (max-width $break-small){
-            @include span-columns(12);
+            // @include span-columns(12);
+            padding: 11% 0 0;
         }
     }
 }
@@ -301,20 +298,13 @@ header {
 /*--Social Icon Styles--*/
 .social {
     @include outer-container(660px);
-    // padding-bottom: 25px;
-    // display: inline-block;
-    // text-align: center;
     li {
         @include span-columns(4);
-        display: inline-block;
-        opacity: 0;
-        font-size: 28px;
-        text-align: center;
-        i {
-
-        }
+        display    : inline-block;
+        opacity    : 0;
+        font-size  : 28px;
+        text-align : center;
         & {
-
 
                 @for $i from 1 through 5 {
                     &:nth-child(#{$i}) {
@@ -324,56 +314,57 @@ header {
 
         }
         &:first-child {
-            a { margin-left: 0; }
+            a { margin-left : 0; }
         }
         &:last-child {
-            a { margin-right: 0; }
+            a { margin-right : 0; }
         }
     }
     a {
         @include transition_all_ease(0.7s);
-        display: inline-block;
-        cursor: pointer;
-        margin: 15px 0;
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        text-align: center;
-        position: relative;
-        z-index: 1;
-        color: #fff;
-        line-height: 83px;
-        -webkit-transition: box-shadow 0.2s;
-        -moz-transition: box-shadow 0.2s;
-        transition: box-shadow 0.2s;
+        display            : inline-block;
+        cursor             : pointer;
+        margin             : 15px 0;
+        width              : 90px;
+        height             : 90px;
+        border-radius      : 50%;
+        text-align         : center;
+        position           : relative;
+        z-index            : 1;
+        color              : #fff;
+        line-height        : 83px;
+        transition         : box-shadow 0.2s;
         &:after {
-            pointer-events: none;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            content: '';
-            -webkit-box-sizing: content-box;
-            -moz-box-sizing: content-box;
-            box-sizing: content-box;
-            top: 0;
-            left: 0;
-            padding: 0;
-            // box-shadow: 0 0 0 3px beige;
-            -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
-            -moz-transition: -moz-transform 0.2s, opacity 0.2s;
-            transition: transform 0.2s, opacity 0.2s;
+            pointer-events     : none;
+            position           : absolute;
+            width              : 100%;
+            height             : 100%;
+            border-radius      : 50%;
+            content            : '';
+            box-sizing         : content-box;
+            top                : 0;
+            left               : 0;
+            padding            : 0;
+            transition         : transform 0.4s, opacity 0.3s, scale 0.3s;
+            transform: scale(0.5);
         }
         &:hover {
-            box-shadow: 0 0 0 10px rgba(255,255,255,1);
-            color: #fff;
+            box-shadow : 0 0 0 10px rgba(255,255,255,1);
+            color      : #fff;
+            i.fa {
+                transform: translate(-50%,-50%), scale(1.2);
+            }
         }
         &:hover:after {
-            -webkit-transform: scale(0.85);
-            -moz-transform: scale(0.85);
-            -ms-transform: scale(0.85);
-            transform: scale(0.85);
-            opacity: 0.5;
+            transform         : scale(1);
+            opacity           : 0.5;
+            background: rgba(0,0,0,0.3);
+        }
+        i.fa {
+            position  : absolute;
+            left      : 50%;
+            top       : 50%;
+            transform : translate(-50%,-50%);
         }
     }
     @include media (max-width $break-small) {
