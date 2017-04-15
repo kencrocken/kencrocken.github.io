@@ -286,7 +286,6 @@ header {
         }
     }
     .logo {
-        // @include span-columns(12);
         padding: 7% 0 0;
         @include media (max-width $break-small){
             // @include span-columns(12);
