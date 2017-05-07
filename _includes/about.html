@@ -9,15 +9,16 @@
 		<img alt="Ken Crocken" src="{{ image.link }}{% if image.size %}?s={{ image.large }}{% endif %}" />
 	</div>
 	<div class="about-text">
-
-		<h4>{{ about.tag }}</h4>
-		<p class="accent">{{ about.accent }}</p>
-		<p>{{ about.content }}</p>
+    <div class="about-text-header">
+  		<h4>{{ about.tag }}</h4>
+  		<p class="accent">{{ about.accent }}</p>
+  		<p>{{ about.content }}</p>
+    </div>
 		<ul class="skills-list">
 			 <meta itemprop="name" content="Skills" />
 			{% for skill in about.skills %}
 				<li class="skills-list-item">{{ skill }}
-					<span class="background-animation"></span>
+					<!-- <span class="background-animation"></span> -->
 				</li>
 			{% endfor %}
 		</ul>

@@ -23,9 +23,9 @@
     }
     .resume-description {
         @include span-columns(12);
-        padding: 0 0 0 15px;
+        // padding: 0 0 0 15px;
         border-left: 3px solid $tomato;
-        ul { 
+        ul {
             li{
                 // &:first-child {
                 //     margin-top: 50px;

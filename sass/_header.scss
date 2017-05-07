@@ -40,7 +40,7 @@
 
 /*--Floating Menu Animation Mixin--*/
 @mixin animation--bounce($length) {
-    @include animation(bounce #{$length}s ease-in-out);
+    @include animation(bounce #{$length}s linear);
     @include animation-iteration-count(infinite);
     @include animation-fill-mode(forwards);
 }
@@ -445,7 +445,10 @@ header {
         color: white;
         font-size: 37px;
         cursor: pointer;
-        @include animation--bounce(2);
+        // @include animation--bounce(2);
+        &:hover, &:focus {
+          @include animation--bounce(2);
+        }
         a {
             color: white;
             opacity: 0.7;

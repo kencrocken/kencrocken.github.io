@@ -1,7 +1,7 @@
 @mixin animation--skills($length){
     @include animation(skillsList #{$length}s ease-in-out);
     @include animation-iteration-count(1);
-    @include animation-fill-mode(forwards);  
+    @include animation-fill-mode(forwards);
     @include animation-delay(0.7s);
 }
 
@@ -33,7 +33,7 @@
             font-size: 175px;
             line-height: 125px;
             h3 {
-                
+
                 font-size: 48px;
                 line-height: 48px;
                 color: #335a9a;
@@ -49,7 +49,7 @@
             }
             @include media (min-width $break-small){
                 @include span-columns(4);
-                h3 { 
+                h3 {
                     text-align: right;
                     font-size: 40px;
                     line-height: 40px;
@@ -62,8 +62,10 @@
         .about-text{
             @include span-columns(12);
             border-left: 3px solid tomato;
-            padding-left: 15px;
             min-height: 300px;
+            &-header {
+              padding-left: 15px;
+            }
             h4 {
                 font-weight: 600;
                 font-size: em(19);
@@ -71,7 +73,7 @@
                 color: #335a9a;
                 text-align: left;
             }
-            
+
             @include media (min-width $break-small){
                 @include span-columns(8);
                 border-left: 2px solid tomato;
@@ -106,6 +108,9 @@
 .skills-list {
     padding-top: 15px;
     h4 { margin-bottom: 0; }
+    &-header {
+      padding-left: 15px;
+    }
     &-item {
         position: relative;
         width: 100%;
@@ -114,15 +119,25 @@
         line-height: 28px;
         font-weight: 600;
         color: white;
-        .background-animation {
+        padding-left: 15px;
+        &:after {
             position: absolute;
             top: 0;
             left: 0;
             background: tomato;
             right: 0;
             bottom: 0;
-            margin-left: -15px;
             z-index: -1;
+            content: '';
         }
+        // .background-animation {
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     background: tomato;
+        //     right: 0;
+        //     bottom: 0;
+        //     z-index: -1;
+        // }
     }
 }
