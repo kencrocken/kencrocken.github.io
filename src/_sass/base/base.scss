@@ -1,0 +1,31 @@
+@import "fonts";
+
+// Customization
+
+// You can easily customize Bulma with your own variables.
+// Just uncomment the following block to see the result.
+
+
+// 1. Import the initial variables
+@import "../../node_modules/bulma/sass/utilities/initial-variables";
+// 2. Set your own initial variables
+@import "variables";
+// ^^ Three is in there
+// 4. Import the rest of Bulma
+@import "../../node_modules/bulma/bulma";
+
+h1,h2,h3,h4,h5,h6{
+    font-family: $display;
+}
+// Headers
+h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.accent {
+    font-family: $pacifico;
+}

@@ -1,5 +1,5 @@
 _site
 .sass-cache
-bower_components
-env.rb
-node_modules/
+.jekyll-metadata
+src/assets/bundle.js
+node_modules

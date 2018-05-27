@@ -1,0 +1,22 @@
+#navComponent {
+    a.navbar-item {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    h1 a {
+        color: $primary;
+        font-family: "Baron Neue Bold";
+        // font-size: 18px;
+        &:hover{
+            color: inherit;
+        }
+    }
+}
+.navbar-image-override {
+
+    img {
+        max-height: 100%;
+        border-radius: 10%;
+    }
+
+}

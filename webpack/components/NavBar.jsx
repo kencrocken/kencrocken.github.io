@@ -1,0 +1,123 @@
+import React, { Component } from 'react';
+import { WithJekyll } from './JekyllHOC';
+import AnchorLink from './AnchorLinks';
+
+class Brand extends Component {
+
+    constructor( props ) {
+        super( props );
+        console.log( props );
+    }
+
+    render() {
+        const image = `${this.props.image.link}s=${this.props.image.small}`
+        return (<div className="navbar-brand">
+            <div className="navbar-item image navbar-image-override">
+                <img alt="Ken Crocken" src={ image } />
+            </div>
+            <h1 className="navbar-item" >
+                <a className="is-size-4" href={ this.props.url }>
+                    { this.props.title }
+                </a>
+            </h1>
+
+            <a role="button" className={ this.props.menuOpen ?  "navbar-burger is-active" : "navbar-burger" } aria-label="menu" aria-expanded="false" onClick={this.props.burgerClick}>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>);
+    }
+}
+
+class Menu extends Component {
+    constructor( props ) {
+        super( props );
+    }
+
+    componentWillMount() {
+
+        const links = [ 'about', 'resume', 'projects', 'contact' ];
+        this.links = links.map( link => {
+            return {
+                "title" : link,
+                "url" : `#${link}`
+            }
+        });
+    }
+
+    render() {
+        const data = this.props.data;
+        const socialLinks = data.social;
+        console.log(socialLinks);
+        const anchorLinks = this.links;
+        return (
+            <div className={ this.props.menuOpen ? "navbar-menu is-active" : "navbar-menu" }>
+                <div className="navbar-start">
+                    {anchorLinks.length && anchorLinks.map( ( link, index ) => {
+
+                            return <AnchorLink className="navbar-item is-size-6" key={ index } href={link.url}>
+                                { link.title }
+                                </AnchorLink>;
+                        })
+                    }
+                </div>
+                <div className="navbar-end">
+                    <div className="navbar-item">
+                        <div className="field is-grouped">
+                            { socialLinks.length && socialLinks.map( ( link, index ) => {
+                                return <p key={ index } className="control">
+                                    <a className="button" href={ link.link }>
+                                        <span className="icon">
+                                            <i className={ link.icon }></i>
+                                        </span>
+                                    </a>
+                                </p>
+                            })}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+class NavBar extends Component {
+
+    constructor( props ) {
+        super( props );
+        console.log( props );
+        this.site  = this.props.data.site;
+        this.state = {
+            open : false
+        };
+        this.handleBurgerClick = this.handleBurgerClick.bind( this );
+
+    }
+
+    componentWillMount(){
+        console.log( this.props );
+    }
+
+    handleBurgerClick() {
+
+        this.setState( prevState => ({
+            open: !prevState.open
+        }));
+
+    };
+
+    render() {
+        const site = this.site;
+        return (<nav className="navbar is-dark" role="navigation" aria-label="main navigation">
+            <div className="container">
+                <Brand title={ site.data.nickname } url={ site.url } image={ site.data.image } menuOpen={ this.state.open } burgerClick={ this.handleBurgerClick } />
+                <Menu menuOpen={ this.state.open } data={ site.data } />
+            </div>
+        </nav>
+        );
+    }
+}
+
+
+export default WithJekyll( NavBar );
