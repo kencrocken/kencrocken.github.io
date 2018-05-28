@@ -37,7 +37,7 @@ class Menu extends Component {
 
     componentWillMount() {
 
-        const links = [ 'about', 'resume', 'projects', 'contact' ];
+        const links = [ 'about', 'projects', 'contact' ];
         this.links = links.map( link => {
             return {
                 "title" : link,

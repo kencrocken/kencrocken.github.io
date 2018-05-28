@@ -1,39 +1,22 @@
-{% assign my = site.data.me['Ken'] %}
-{% assign contact = my.contact %}
+{% assign my = site.data.me['Ken'] %} {% assign contact = my.contact %}
 
-<article id="contact">
-    <section class = "contact-wrap" >
-        <div class = "contact-info" >
-            <h3>Contact</h3>
-            <ul class="contact">
-                <li class="contact-info-item">{{ contact.email.icon }} <a href="mailto:{{ contact.email.address }}" itemprop="email">{{ contact.email.address }}</a><span class="contact-info-item-background"></span></li>
-                <li class="contact-info-item"> {{ contact.telephone.icon }}</i> <a href="tel: {{contact.telephone.number}}" itemprop="telephone">{{contact.telephone.number}}</a><span class="contact-info-item-background"></span></li>
-                <li class="contact-info-item" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">{{ contact.location.icon }} <a href="{{ contact.location.link}}" itemprop="addressLocality">{{ contact.location.place }}</a><span class="contact-info-item-background"></span></li>
+<section class="section" id="contact">
+    <div class="contact-info">
+        <h2 class="title has-text-centered">Contact</h2>
+        <ul class="level contact">
+            <li class="level-item contact-info-item">{{ contact.email.icon }}
+                <a href="mailto:{{ contact.email.address }}">{{ contact.email.address }}</a>
+            </li>
+            <li class="level-item contact-info-item"> {{ contact.telephone.icon }}
+                <a href="tel: {{contact.telephone.number}}">{{contact.telephone.number}}</a>
+            </li>
+            <li class="level-item contact-info-item">{{ contact.location.icon }}
+                <a href="{{ contact.location.link}}">{{ contact.location.place }}</a>
+            </li>
 
-            </ul>
-        </div>
-        <div class = "contact-form" class="ng-cloak" id="contacts" ng-controller="contactCtrl" >
-            <p class="accent">Let's get that coffee.</p>
-            <form name="contactMe" ng-submit="submitForm(contactMe.$valid, message)" ng-show="!submittedValid" novalidate>
-                <div ng-class="{ 'has-error' : contactMe.name.$invalid && submitted }" class="form-group">
-                    <input type="text" class = "formname" name="name" placeholder = "Your name." ng-model="message.name" required>
-                </div>
-                <input type="email" class = "formemail" name="_replyto" placeholder = "Your email." ng-model="message._replyto">
-                <input type="hidden" name="_next" ng-model="message._next" value="" />
-                <input type="text" name="_gotcha" ng-model="message._gotcha" style="display:none" />
-                <textarea type="text" class = "formmsg" name="text" rows="3" placeholder = "What ya want to know?" ng-model="message.text"></textarea>
-                <button type="submit" class="button">SUbmit</button>
-                <div ng-show="contactMe.name.$invalid && submitted" class="help-block invalid">
-                    <p><i class = "fa fa-bug fa-lg fa-fw"></i>Can I at least get your name?</p>
-                </div>
-            </form>
+        </ul>
+    </div>
+    <p class="accent">Let's get that coffee.</p>
+    <div id="contactFormComponent"></div>
+</section>
 
-            <div ng-show="submittedValid" class="help-block valid">
-                <img src="http://fillmurray.com/g/300/300" alt="Murray">
-                <h3>You're Awesome!</h3>
-                <h4>Get back to you soon.</h4>
-            </div>
-        </div>
-
-    </section>
-</article>

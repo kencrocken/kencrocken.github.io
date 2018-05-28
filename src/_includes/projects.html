@@ -1,19 +1,22 @@
 {% assign my = site.data.me['Ken'] %}
 
-<article id="projects">
-    <section class = "project-heading">
-        <h3>PrOjects</h3>
-    </section>
-    <section class="project-descriptions">
-        <ul class="projects-list">
+<section class="section" id="projects">
+    <header class = "project-content">
+        <div class="project-text">
+            <h3 class="title has-text-centered">PrOjects</h3>
+        </div>
+    </header>
+    <div class="project-descriptions">
+        <ul class="columns is-multiline is-centered projects-list">
             {% for project in my.projects %}
-                <li class="projects-list-item">
+                <li class="column is-3 projects-list-item">
                     <a href = "{{ project.link }}" target="_blank">
-                    {{ project.icon }}
+                            {{ project.icon }}
                     </a>
-                    <h4><a href = {{ project.link }}  target="_blank">{{ project.name }}</a></h4>
+                    <h4 class="has-text-centered"><a href ="{{ project.link }}"  target="_blank">{{ project.name }}</a></h4>
                 </li>
             {% endfor %}
         </ul>
-    </section>
-</article>
+    </div>
+
+</section>

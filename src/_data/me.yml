@@ -1,6 +1,6 @@
 Ken:
     name: Kenneth E. Crocken
-    nickname: Ken Crocken
+    nickname: Ken CrOcken
     image:
         link: http://www.gravatar.com/avatar/83fb4a35e52381397d9c07d9e25b4c05
         large: 300
@@ -21,13 +21,40 @@ Ken:
         tag: "Lawyer by training - Web Developer by profession"
         accent: "But we can talk more about that over coffee."
         content: "A full-stack web developer with a passion for creating websites and apps from the ground up. With additional interests in design, user experience and accessibility."
+        # skills:
+        #     - "Angular - SASS - React"
+        #     - "Rails - Django - WordPress - Drupal"
+        #     - "Javascript - Ruby - Python - PHP"
         skills:
-            - "Angular - SASS - React"
-            - "Rails - Django - WordPress - Drupal"
-            - "Javascript - Ruby - Python - PHP"
+            -   skill: Angular
+                image: https://angular.io/assets/images/logos/angular/angular.png
+            -   skill: SASS
+                image: https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg
+            -   skill: React
+                image: https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg
+            -   skill: Rails
+                image: https://upload.wikimedia.org/wikipedia/commons/1/16/Ruby_on_Rails-logo.png
+            # -   skill: Django
+            -   skill: WordPress
+                image: https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg
+            -   skill: Drupal
+                image: https://drupal.org/sites/all/themes/bluecheese/images/icon-w-drupal.svg
+            -   skill: Javascript
+                image: https://static.memrise.com/img/400sqf/from/uploads/course_photos/3146044000171223183557.png
+            -   skill: Ruby
+                image: https://visualpharm.com/assets/468/Ruby%20Programming%20Language-595b40b85ba036ed117da9b2.svg
+            -   skill: Python
+                image: https://www.python.org/static/img/python-logo-large.png
+            # -   skill: PHP
+            #     image: https://cdn0.froala.com/assets/editor/docs/server/meta-social/php-e8c6425acd65e1cbc012639ad25598c7.png
+        current_role:
+            since: "September 2015"
+            position: "Sr. Frontend Developer"
+            location: "REQ"
+            link: https://req.co/about/team/ken-crocken
 
     resume:
-        -   name: "RepEquity"
+        -   name: "REQ"
             date: "September 2015 to Present"
             description: "Sr. Front End Developer"
 
@@ -43,27 +70,27 @@ Ken:
 
         -   name: "DCMetro"
             link: https://kencrocken.github.io/dcmetro
-            icon: <i class="fa fa-train train"></i>
+            icon: <div class="train"><i class="fas fa-train"></i></div>
 
         -   name: "Beer Search"
             link: https://tranquil-ridge-7616.herokuapp.com/
-            icon: <span class="beer-icon icon-uniE600"></span>
+            icon: <div class="beer-icon icon-uniE600"></div>
 
         -   name: "Lunar Phase"
             link: https://kencrocken.github.io/lunar_phase
-            icon: <i class="fa fa-moon-o moon"></i>
+            icon: <div class="moon"><i class="far fa-moon"></i></div>
 
     contact:
 
         email:
             address: kcrocken@gmail.com
-            icon: <i class = "fa fa-envelope fa-lg fa-fw"></i>
+            icon: <i class="fa fa-envelope fa-lg fa-fw"></i>
 
         telephone:
             number: (443) 802-7145
-            icon: <i class = "fa fa-phone fa-lg fa-fw"></i>
+            icon: <i class="fa fa-phone fa-lg fa-fw"></i>
 
         location:
             place: "Laurel, Maryland"
-            icon: <i class = "fa fa-map-marker fa-lg fa-fw"></i>
+            icon: <i class="fa fa-map-marker fa-lg fa-fw"></i>
             link: http://goo.gl/maps/hM6yB

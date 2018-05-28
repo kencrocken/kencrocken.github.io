@@ -5,9 +5,6 @@
 layout: default
 ---
 
-<div class="container">
-    {% include about.html %}
-    {% include resume.html %}
-    {% include projects.html %}
-    {% include contact.html %}
-</div>
+{% include about.html %}
+{% include projects.html %}
+{% include contact.html %}

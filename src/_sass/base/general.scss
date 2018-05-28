@@ -1,0 +1,36 @@
+body {
+    background: lightgray;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: $display;
+    font-weight: 700;
+}
+// Headers
+h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.accent {
+    color: tomato;
+    font-family: $pacifico;
+    padding: 0.5rem 0;
+}
+
+button.is-tomato {
+    background-color: tomato;
+    color:white;
+    font-weight: 600;
+}
+
+.page-content {
+    padding: 0.5rem 0.75rem;
+    max-width: 768px;
+    margin: 0 auto;
+    & >article {
+        padding: 0.5rem 0.75rem;
+    }
+}
