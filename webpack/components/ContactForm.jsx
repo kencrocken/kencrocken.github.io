@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios';
 
 class ContactForm extends Component {
 
@@ -14,7 +15,8 @@ class ContactForm extends Component {
             // messageValid: true,
             formValid: false,
             submitted: false,
-            success: false
+            success: false,
+            error: null
         }
         this.handleUserInput = this.handleUserInput.bind( this );
         this.handleSubmit = this.handleSubmit.bind( this );
@@ -68,16 +70,22 @@ class ContactForm extends Component {
     handleSubmit( event ) {
 
         event.preventDefault();
-        let data = {
-            name: this.state.name,
-            email: this.state.email,
-            message: this.state.message
-        }
-        console.log( data );
-        this.setState({
-            submitted: true,
-            success: true
-        })
+
+        const { name, email, message } = this.state;
+        axios.post('http://localhost:4567', { name, email, message })
+            .then( result => {
+                console.log( result );
+                this.setState({
+                    submitted: true,
+                    success: true
+                })
+            })
+            .catch( error => {
+                console.log( error );
+                this.setState( error );
+            });
+
+
     }
 
     render() {
