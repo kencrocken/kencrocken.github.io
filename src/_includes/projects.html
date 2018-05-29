@@ -1,19 +1,29 @@
-{% assign my = site.data.me['Ken'] %}
-
+{% assign projects = site.data.me['Ken'].projects %}
+{% assign techs = site.data.me['Ken'].tech %}
 <section class="section" id="projects">
     <header class = "project-content">
         <div class="project-text">
             <h3 class="title has-text-centered">PrOjects</h3>
         </div>
     </header>
+    <ul class="columns is-multiline is-mobile is-centered tech-list">
+        {% for tech in techs %}
+            <li class="column is-narrow tech-list-item">
+                <div class="tech-image-wrap">
+                    <!-- <h3>{{ skill.skill }}</h3> -->
+                    <img alt="{{ tech.skill }}" class="image is-16x16" src="{{ tech.image }}" />
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
     <div class="project-descriptions">
         <ul class="columns is-multiline is-centered projects-list">
-            {% for project in my.projects %}
+            {% for project in projects %}
                 <li class="column is-3 projects-list-item">
                     <a href = "{{ project.link }}" target="_blank">
                             {{ project.icon }}
                     </a>
-                    <h4 class="has-text-centered"><a href ="{{ project.link }}"  target="_blank">{{ project.name }}</a></h4>
+                    <h4 class="has-text-centered project-title"><a href ="{{ project.link }}"  target="_blank">{{ project.name }}</a></h4>
                 </li>
             {% endfor %}
         </ul>

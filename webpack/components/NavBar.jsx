@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Headroom from 'react-headroom';
 import { WithJekyll } from './JekyllHOC';
 import AnchorLink from './AnchorLinks';
 
@@ -16,12 +17,12 @@ class Brand extends Component {
                 <img alt="Ken Crocken" src={ image } />
             </div>
             <h1 className="navbar-item" >
-                <a className="is-size-4" href={ this.props.url }>
+                <a className="is-size-5-mobile is-size-4-tablet" href={ this.props.url }>
                     { this.props.title }
                 </a>
             </h1>
 
-            <a role="button" className={ this.props.menuOpen ?  "navbar-burger is-active" : "navbar-burger" } aria-label="menu" aria-expanded="false" onClick={this.props.burgerClick}>
+            <a role="button" className={ this.props.menuOpen ?  "navbar-burger burger is-active" : "navbar-burger burger" } aria-label="menu" aria-expanded="false" onClick={this.props.burgerClick}>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -109,12 +110,14 @@ class NavBar extends Component {
 
     render() {
         const site = this.site;
-        return (<nav className="navbar is-dark" role="navigation" aria-label="main navigation">
-            <div className="container">
-                <Brand title={ site.data.nickname } url={ site.url } image={ site.data.image } menuOpen={ this.state.open } burgerClick={ this.handleBurgerClick } />
-                <Menu menuOpen={ this.state.open } data={ site.data } />
-            </div>
-        </nav>
+        return (<Headroom disableInlineStyles>
+            <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
+                <div className="container">
+                    <Brand title={ site.data.nickname } url={ site.url } image={ site.data.image } menuOpen={ this.state.open } burgerClick={ this.handleBurgerClick } />
+                    <Menu menuOpen={ this.state.open } data={ site.data } />
+                </div>
+            </nav>
+        </Headroom>
         );
     }
 }

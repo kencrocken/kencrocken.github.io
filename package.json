@@ -25,6 +25,7 @@
     "react": "^16.4.0",
     "react-addons-update": "^15.6.2",
     "react-dom": "^16.4.0",
+    "react-headroom": "^2.2.2",
     "smoothscroll-polyfill": "^0.4.3",
     "webpack": "^4.9.1",
     "webpack-cli": "^2.1.4"

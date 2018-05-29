@@ -1,6 +1,27 @@
+html {
+    background-color: initial;
+    font-size: 16px;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    min-width: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+}
+
 body {
     background: lightgray;
 }
+
+a{
+    color: #363636;
+    transition: color 0.1s linear;
+    &:hover {
+        color: tomato;
+    }
+}
+
 h1,h2,h3,h4,h5,h6{
     font-family: $display;
     font-weight: 700;
@@ -14,10 +35,19 @@ h4 {
     font-size: 1rem;
     font-weight: 600;
 }
+.navbar-burger {
+    height: auto;
+    color: white;
+    font-weight: 600;
+    transition: color 0.1s linear;
+    &:hover {
+        color: darken(white, 35%)
+    }
+}
 .accent {
     color: tomato;
     font-family: $pacifico;
-    padding: 0.5rem 0;
+    padding: 0.6rem 0;
 }
 
 button.is-tomato {
@@ -26,11 +56,18 @@ button.is-tomato {
     font-weight: 600;
 }
 
+p.is-tomato {
+    color: tomato;
+}
+
+.has-text-tomato {
+    color: tomato;
+}
 .page-content {
-    padding: 0.5rem 0.75rem;
+    padding: 0.6rem 0.67rem;
     max-width: 768px;
     margin: 0 auto;
     & >article {
-        padding: 0.5rem 0.75rem;
+        padding: 0.6rem 0.67rem;
     }
 }

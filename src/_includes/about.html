@@ -12,16 +12,6 @@
 
 
     <p class="accent">{{ about.accent }}</p>
-    <ul class="columns is-multiline is-mobile is-centered skills-list">
-        {% for skill in about.skills %}
-            <li class="column is-narrow skills-list-item">
-                <div class="skill-image-wrap">
-                    <!-- <h3>{{ skill.skill }}</h3> -->
-                    <img alt="{{ skill.skill }}" class="image is-16x16" src="{{ skill.image }}" />
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
 
 </section>
 

@@ -2,16 +2,26 @@
 
 <section class="section" id="contact">
     <div class="contact-info">
-        <h2 class="title has-text-centered">Contact</h2>
+        <h2 class="title has-text-centered">COntact</h2>
         <ul class="level contact">
-            <li class="level-item contact-info-item">{{ contact.email.icon }}
-                <a href="mailto:{{ contact.email.address }}">{{ contact.email.address }}</a>
+            <li class="level-item contact-info-item">
+                <a href="mailto:{{ contact.email.address }}">
+                    {{ contact.email.icon }}
+                    {{ contact.email.address }}
+                </a>
             </li>
-            <li class="level-item contact-info-item"> {{ contact.telephone.icon }}
-                <a href="tel: {{contact.telephone.number}}">{{contact.telephone.number}}</a>
+            <li class="level-item contact-info-item">
+
+                <a href="tel: {{contact.telephone.number}}">
+                    {{ contact.telephone.icon }}
+                    {{contact.telephone.number}}
+                </a>
             </li>
-            <li class="level-item contact-info-item">{{ contact.location.icon }}
-                <a href="{{ contact.location.link}}">{{ contact.location.place }}</a>
+            <li class="level-item contact-info-item">
+                <a href="{{ contact.location.link}}">
+                    {{ contact.location.icon }}
+                    {{ contact.location.place }}
+                </a>
             </li>
 
         </ul>
