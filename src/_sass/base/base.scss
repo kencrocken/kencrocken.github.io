@@ -9,10 +9,14 @@
 // 1. Import the initial variables
 @import "../../node_modules/bulma/sass/utilities/initial-variables";
 // 2. Set your own initial variables
-@import "variables";
+@import "bulma_variables";
 // ^^ Three is in there
 // 4. Import the rest of Bulma
 @import "../../node_modules/bulma/bulma";
 
+// 5. Your variables
+@import "variables";
+
+//General site styles
 @import "general";
 

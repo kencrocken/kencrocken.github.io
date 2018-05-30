@@ -1,15 +1,5 @@
-// Breakpoints
-$gap: 32px;
-$tablet: 568px;
-$desktop: 896px + (2 * $gap);
-//$widescreen:	1152px + (2 * $gap);
-//$fullhd:	1344px + (2 * $gap);
-
-// Update colors
-$tan: #eee8d5;
-// Update the sans-serif font family
-$family-sans-serif: $jose, "Helvetica", "Arial", sans-serif;
-
-// 3. Set the derived variables
-// Use the new pink as the primary color
-$primary: $tan;
+$socialLinks: (
+    twitter: #00aced,
+    linkedin: #4875B4,
+    github: #333
+);

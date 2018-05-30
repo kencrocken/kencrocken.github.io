@@ -72,7 +72,7 @@ class ContactForm extends Component {
         event.preventDefault();
 
         const { name, email, message } = this.state;
-        axios.post('http://localhost:4567', { name, email, message })
+        axios.post('https://blooming-plateau-13052.herokuapp.com/', { name, email, message })
             .then( result => {
                 console.log( result );
                 this.setState({

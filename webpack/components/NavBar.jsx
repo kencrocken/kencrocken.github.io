@@ -68,7 +68,7 @@ class Menu extends Component {
                         <div className="field is-grouped">
                             { socialLinks.length && socialLinks.map( ( link, index ) => {
                                 return <p key={ index } className="control">
-                                    <a className="button" href={ link.link }>
+                                    <a className={`button is-circle ${link.site}`} href={ link.link }>
                                         <span className="icon">
                                             <i className={ link.icon }></i>
                                         </span>
