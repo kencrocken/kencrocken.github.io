@@ -2,20 +2,21 @@
 {% assign techs = site.data.me['Ken'].tech %}
 <section class="section" id="projects">
     <header class = "project-content">
-        <div class="project-text">
+        <!-- <div class="project-text">
             <h3 class="title has-text-centered">PrOjects</h3>
-        </div>
+        </div> -->
+        <ul class="columns is-multiline is-mobile is-centered tech-list">
+            {% for tech in techs %}
+                <li class="column is-narrow tech-list-item">
+                    <div class="tech-image-wrap">
+                        <!-- <h3>{{ skill.skill }}</h3> -->
+                        <img alt="{{ tech.skill }}" class="image is-16x16" src="{{ tech.image }}" />
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
     </header>
-    <ul class="columns is-multiline is-mobile is-centered tech-list">
-        {% for tech in techs %}
-            <li class="column is-narrow tech-list-item">
-                <div class="tech-image-wrap">
-                    <!-- <h3>{{ skill.skill }}</h3> -->
-                    <img alt="{{ tech.skill }}" class="image is-16x16" src="{{ tech.image }}" />
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
+
     <div class="project-descriptions">
         <ul class="columns is-multiline is-centered projects-list">
             {% for project in projects %}

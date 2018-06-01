@@ -4,7 +4,8 @@
   "description": "my website",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=development"
+    "build": "webpack --mode=development",
+    "serve": "browser-sync start --config 'browserSync.js'"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "browser-sync": "^2.24.4",
     "bulma": "^0.7.1",
     "react": "^16.4.0",
     "react-addons-update": "^15.6.2",
@@ -29,7 +31,8 @@
     "react-headroom": "^2.2.2",
     "smoothscroll-polyfill": "^0.4.3",
     "webpack": "^4.9.1",
-    "webpack-cli": "^2.1.4"
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {}
 }

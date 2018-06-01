@@ -12,7 +12,6 @@ class ContactForm extends Component {
             formErrors: { name: null, email: null, message: null },
             nameValid: false,
             emailValid: false,
-            // messageValid: true,
             formValid: false,
             submitted: false,
             success: false,
@@ -81,7 +80,7 @@ class ContactForm extends Component {
                 })
             })
             .catch( error => {
-                console.log( error );
+                // console.log( error );
                 this.setState( error );
             });
 
@@ -131,9 +130,6 @@ class ContactForm extends Component {
                 <div className="field">
                     <div className="control has-icons-left has-icons-right">
                         <textarea onChange={ this.handleUserInput } className="textarea is-large" placeholder="What would you like to know?" name="message" value={this.state.message}></textarea>
-                        {/* { this.state.messageValid && <span className="icon is-small is-right has-text-success">
-                            <i className="fas fa-check is-success"></i>
-                        </span> } */}
                     </div>
                 </div>
                 <div className="field">
