@@ -24,6 +24,8 @@ group :jekyll_plugins do
   gem "jekyll-assets"
   gem "jekyll-sitemap"
   gem "autoprefixer-rails"
+  gem "rouge"
+  # gem "jekyll-minifier"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

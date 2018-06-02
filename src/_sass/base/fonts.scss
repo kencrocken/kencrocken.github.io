@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css?family=Croissant+One|Josefin+Slab:400,600|Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Josefin+Slab:400,600|Pacifico');
 @font-face {
     font-family: 'Baron Neue';
     font-style: normal;
@@ -50,4 +50,7 @@
 
 $pacifico: 'Pacifico';
 $jose: 'Josefin Slab';
-$display: 'Baron Neue';
+$baron: 'Baron Neue';
+$opensans: 'Open Sans';
+
+$display: $baron;

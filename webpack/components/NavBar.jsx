@@ -13,8 +13,8 @@ class Brand extends Component {
     render() {
         const image = `${this.props.image.link}s=${this.props.image.small}`
         return (<div className="navbar-brand">
-            <div className="navbar-item image navbar-image-override">
-                <img alt="Ken Crocken" src={ image } />
+            <div className="navbar-item image is-96x96 navbar-image-override">
+                <img alt="Ken Crocken" src="/assets/images/gear.png" />
             </div>
             <h1 className="navbar-item" >
                 <a className="is-size-5-mobile is-size-4-tablet" href={ this.props.url }>
@@ -38,7 +38,7 @@ class Menu extends Component {
 
     componentWillMount() {
 
-        const links = [ 'about', 'projects', 'contact' ];
+        const links = [  ];
         this.links = links.map( link => {
             return {
                 "title" : link,

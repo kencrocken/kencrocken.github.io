@@ -2,16 +2,23 @@
 
 <section class="section" id="about">
     <header class="about-content">
-        <h2>{{ about.tag }}</h2>
-        <p>{{ about.content }}</p>
-        {% assign current_role = about.current_role %}
-        <p class="about-current-role">
-            Since {{ current_role.since }}, I have been a {{ current_role.position }} at <a href="{{ current_role.link }}">{{ current_role.location }}</a>.
-        </p>
+        <div class="columns">
+
+            <div class="column">
+                <h2>{{ about.tag }}</h2>
+                <p>{{ about.content }}</p>
+                {% assign current_role = about.current_role %}
+                <p class="about-current-role">
+                    Since {{ current_role.since }}, I have been a {{ current_role.position }} at <a href="{{ current_role.link }}">{{ current_role.location }}</a>.
+                </p>
+
+                <p class="accent">{{ about.accent }}</p>
+            </div>
+        </div>
+
     </header>
 
 
-    <p class="accent">{{ about.accent }}</p>
 
 </section>
 

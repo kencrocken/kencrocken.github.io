@@ -4,25 +4,23 @@
     <div class="columns contact-info">
         <ul class="column is-4 contact">
             <li class="contact-info-item">
-                <a href="mailto:{{ contact.email.address }}">
-                    {{ contact.email.icon }}
-                    {{ contact.email.address }}
+                <a href="mailto:{{ contact.email.address }}" class="button is-text">
+                    <span class="icon">{{ contact.email.icon }}</span>
+                    <span>{{ contact.email.address }}</span>
                 </a>
             </li>
             <li class="contact-info-item">
-
-                <a href="tel: {{contact.telephone.number}}">
-                    {{ contact.telephone.icon }}
-                    {{contact.telephone.number}}
+                <a href="tel: {{contact.telephone.number}}" class="button is-text">
+                    <span class="icon">{{ contact.telephone.icon }}</span>
+                    <span>{{contact.telephone.number}}</span>
                 </a>
             </li>
             <li class="contact-info-item">
-                <a href="{{ contact.location.link}}">
-                    {{ contact.location.icon }}
-                    {{ contact.location.place }}
+                <a href="{{ contact.location.link}}" class="button is-text">
+                    <span class="icon">{{ contact.location.icon }}</span>
+                    <span>{{ contact.location.place }}</span>
                 </a>
             </li>
-
         </ul>
         <div class="column contact-form-content">
             <p class="accent">Let's get that coffee.</p>

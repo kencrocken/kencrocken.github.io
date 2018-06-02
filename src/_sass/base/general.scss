@@ -21,7 +21,9 @@ a{
         color: tomato;
     }
 }
-
+p {
+    padding-bottom: 0.6rem;
+}
 h1,h2,h3,h4,h5,h6{
     font-family: $display;
     font-weight: 700;
@@ -50,6 +52,16 @@ h4 {
     padding: 0.1rem 0;
 }
 
+.button.is-text:hover, .button.is-text.is-hovered, .button.is-text:focus, .button.is-text.is-focused {
+    background-color: #fdf6e3;
+    color: #363636;
+}
+
+.button.is-text:active, .button.is-text.is-active {
+    background-color: $primary;
+    color: #363636;
+}
+
 .button.is-circle {
     border-radius: 50%;
 }
@@ -67,9 +79,9 @@ p.is-tomato {
     color: tomato;
 }
 .page-content {
-    padding: 0.6rem 0.67rem;
-    max-width: 768px;
-    margin: 0 auto;
+    // padding: 0.6rem 0.67rem;
+    // max-width: 768px;
+    // margin: 0 auto;
     & >article {
         padding: 0.6rem 0.67rem;
     }

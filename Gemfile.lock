@@ -111,6 +111,7 @@ DEPENDENCIES
   jekyll-feed (~> 0.6)
   jekyll-seo-tag
   jekyll-sitemap
+  rouge
   tzinfo-data
 
 BUNDLED WITH

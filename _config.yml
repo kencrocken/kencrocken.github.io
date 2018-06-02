@@ -24,7 +24,8 @@ excerpt_separator: "<!--more-->"
 # Build settings
 source: src
 markdown: kramdown
-permalink: pretty
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
 
 plugins:
   - jekyll-feed
@@ -32,6 +33,7 @@ plugins:
   - jekyll-assets
   - jekyll-sitemap
   - autoprefixer-rails
+  # - jekyll-minifier
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
