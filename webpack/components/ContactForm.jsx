@@ -15,7 +15,8 @@ class ContactForm extends Component {
             formValid: false,
             submitted: false,
             success: false,
-            error: null
+            error: null,
+            submitting: false
         }
         this.handleUserInput = this.handleUserInput.bind( this );
         this.handleSubmit = this.handleSubmit.bind( this );
@@ -70,6 +71,9 @@ class ContactForm extends Component {
 
         event.preventDefault();
 
+        this.setState({
+            submitting: true
+        });
         const url = 'https://kencrocken.herokuapp.com/';
         const { name, email, message } = this.state;
 
@@ -77,13 +81,17 @@ class ContactForm extends Component {
             .then( result => {
                 console.log( result );
                 this.setState({
+                    submitting: false,
                     submitted: true,
                     success: true
                 });
             })
             .catch( error => {
                 console.log( error );
-                this.setState({ error : error });
+                this.setState({
+                    submitting: false,
+                    error : error
+                });
             });
 
     }
@@ -91,11 +99,20 @@ class ContactForm extends Component {
     render() {
 
         return (<div className="contact-form">
+            { this.state.submitting && <div className="loading">
+            <div className="color-wrap is-clearfix">
+                { Array.from({ length: 50 }, ( val, index ) => index ).map( ( value ) => {
+                        return <div key={ value } className={`box-${ value }`}></div>;
+                    })
+                }
+            </div>
+            <h2 className="has-text-centered">Loading ... </h2>
+            </div> }
             { this.state.error && <div className="notification is-tomato-outline">
                 <button className="delete" onClick={ () => { this.setState({ error: null }) } }></button>
                 <strong>Sorry, there seems to have been an error.  Please try again.</strong>
             </div> }
-            { !this.state.success && <form name="contactMe">
+            { !this.state.submitting && !this.state.success && <form name="contactMe">
                 <div className="field">
                     <div className={`control has-icons-left has-icons-right ${this.errorClass(this.state.formErrors.name)}`}>
                         <input onChange={ this.handleUserInput } type="text" className="input is-large has-icons-right" name="name" placeholder="Your name." value={this.state.name} required>
