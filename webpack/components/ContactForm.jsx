@@ -70,8 +70,10 @@ class ContactForm extends Component {
 
         event.preventDefault();
 
+        const url = 'https://kencrocken.herokuapp.com/';
         const { name, email, message } = this.state;
-        axios.post('https://blooming-plateau-13052.herokuapp.com/', { name, email, message })
+
+        axios.post( url, { name, email, message })
             .then( result => {
                 console.log( result );
                 this.setState({
