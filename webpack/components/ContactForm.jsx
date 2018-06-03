@@ -102,7 +102,7 @@ class ContactForm extends Component {
             { this.state.submitting && <div className="loading">
             <div className="color-wrap is-clearfix">
                 { Array.from({ length: 50 }, ( val, index ) => index ).map( ( value ) => {
-                        return <div key={ value } className={`box-${ value }`}></div>;
+                        return <div key={ value } className={ `box-${ value }` }></div>;
                     })
                 }
             </div>
