@@ -92,7 +92,7 @@ class ContactForm extends Component {
 
         return (<div className="contact-form">
             { this.state.error && <div className="notification is-tomato-outline">
-                <button class="delete" onClick={ () => { this.setState({ error: null }) } }></button>
+                <button className="delete" onClick={ () => { this.setState({ error: null }) } }></button>
                 <strong>Sorry, there seems to have been an error.  Please try again.</strong>
             </div> }
             { !this.state.success && <form name="contactMe">
