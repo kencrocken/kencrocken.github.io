@@ -77,19 +77,22 @@ class ContactForm extends Component {
                 this.setState({
                     submitted: true,
                     success: true
-                })
+                });
             })
             .catch( error => {
-                // console.log( error );
-                this.setState( error );
+                console.log( error );
+                this.setState({ error : error });
             });
-
 
     }
 
     render() {
 
         return (<div className="contact-form">
+            { this.state.error && <div className="notification is-tomato-outline">
+                <button class="delete" onClick={ () => { this.setState({ error: null }) } }></button>
+                <strong>Sorry, there seems to have been an error.  Please try again.</strong>
+            </div> }
             { !this.state.success && <form name="contactMe">
                 <div className="field">
                     <div className={`control has-icons-left has-icons-right ${this.errorClass(this.state.formErrors.name)}`}>
