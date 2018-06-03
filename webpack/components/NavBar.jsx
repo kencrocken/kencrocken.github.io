@@ -27,6 +27,7 @@ class Brand extends Component {
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
+            <span className="is-clearfix"></span>
         </div>);
     }
 }
