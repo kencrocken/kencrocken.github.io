@@ -10,4 +10,7 @@ import ContactForm from './components/ContactForm';
 // }
 
 render( <NavBar /> , document.getElementById('navComponent'));
-render( <ContactForm />, document.getElementById('contactFormComponent'))
+if( document.body.contains(document.getElementById('contactFormComponent') )){
+    render( <ContactForm />, document.getElementById('contactFormComponent'));
+}
+

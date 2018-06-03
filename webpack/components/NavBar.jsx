@@ -38,30 +38,30 @@ class Menu extends Component {
 
     componentWillMount() {
 
-        const links = [  ];
-        this.links = links.map( link => {
-            return {
-                "title" : link,
-                "url" : `#${link}`
-            }
-        });
+        // const links = [ 'about', 'projects', 'contact' ];
+        // this.anchorLinks = links.map( link => {
+        //     return {
+        //         "title" : link,
+        //         "url" : `#${link}`
+        //     }
+        // });
     }
 
     render() {
         const data = this.props.data;
         const socialLinks = data.social;
         console.log(socialLinks);
-        const anchorLinks = this.links;
+        // const anchorLinks = this.anchorLinks;
         return (
             <div className={ this.props.menuOpen ? "navbar-menu is-active" : "navbar-menu" }>
                 <div className="navbar-start">
-                    {anchorLinks.length && anchorLinks.map( ( link, index ) => {
+                    {/* {anchorLinks.length && anchorLinks.map( ( link, index ) => {
 
                             return <AnchorLink className="navbar-item is-size-6" key={ index } href={link.url}>
                                 { link.title }
                                 </AnchorLink>;
                         })
-                    }
+                    } */}
                 </div>
                 <div className="navbar-end">
                     <div className="navbar-item">

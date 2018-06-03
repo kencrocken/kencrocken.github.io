@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Just another test post"
+author: Ken
 description: "Here we are again - wanting to use some fake text as a place filler.  Nothing really needs to be real.  Usually its excerpts from some literary work - even the Lorem Ipsum is actually real.  But, sometimes it's just nonsense."
 category: 
 tags: []
