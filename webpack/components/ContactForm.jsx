@@ -162,7 +162,7 @@ class ContactForm extends Component {
             </form>}
 
             { this.state.success && <div className="help-block valid has-text-centered">
-                <img src="http://fillmurray.com/g/300/300" alt="Murray"></img>
+                <img src="https://fillmurray.com/g/300/300" alt="Murray"></img>
                 <h3>You're Awesome!</h3>
                 <h4>Get back to you soon.</h4>
             </div> }
