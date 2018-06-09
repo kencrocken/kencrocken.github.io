@@ -15,7 +15,8 @@
             site: {
                 title: {{ site.title | jsonify }},
                 url: "{{ "/ " | relative_url }}",
-                data: {{ site.data.me.Ken | jsonify }}
+                data: {{ site.data.me.Ken | jsonify }},
+                env: {{ jekyll.environment | jsonify }}
             }
         };
 

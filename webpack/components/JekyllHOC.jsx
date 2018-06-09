@@ -6,11 +6,11 @@ export function WithJekyll( WrappedComponent ) {
         constructor( props ) {
 
             super( props );
-            this.data = window.siteData;
+            const data = window.siteData;
             this.state = {
-                data : this.data
+                data : data
             };
-            console.log(this.state);
+            console.debug( "WithJekyll() data: ", this.state.data);
 
         }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-
+import { WithJekyll } from './JekyllHOC';
 class ContactForm extends Component {
 
     constructor( props ) {
@@ -18,6 +18,7 @@ class ContactForm extends Component {
             error: null,
             submitting: false
         }
+        this.env = this.props.data.site.env
         this.handleUserInput = this.handleUserInput.bind( this );
         this.handleSubmit = this.handleSubmit.bind( this );
     }
@@ -74,12 +75,14 @@ class ContactForm extends Component {
         this.setState({
             submitting: true
         });
-        const url = 'https://kencrocken.herokuapp.com/';
+
+        console.debug( this.env );
+        const url = this.env === 'development' ? 'http://localhost:5000' : 'https://kencrocken.herokuapp.com';
         const { name, email, message } = this.state;
 
         axios.post( url, { name, email, message })
             .then( result => {
-                console.log( result );
+                console.debug( result );
                 this.setState({
                     submitting: false,
                     submitted: true,
@@ -87,7 +90,7 @@ class ContactForm extends Component {
                 });
             })
             .catch( error => {
-                console.log( error );
+                console.error( error );
                 this.setState({
                     submitting: false,
                     error : error
@@ -108,14 +111,14 @@ class ContactForm extends Component {
             </div>
             <h2 className="has-text-centered">Loading ... </h2>
             </div> }
-            { this.state.error && <div className="notification is-tomato-outline">
+            { this.state.error && <div className="notification is-danger">
                 <button className="delete" onClick={ () => { this.setState({ error: null }) } }></button>
                 <strong>Sorry, there seems to have been an error.  Please try again.</strong>
             </div> }
             { !this.state.submitting && !this.state.success && <form name="contactMe">
                 <div className="field">
                     <div className={`control has-icons-left has-icons-right ${this.errorClass(this.state.formErrors.name)}`}>
-                        <input onChange={ this.handleUserInput } type="text" className="input is-large has-icons-right" name="name" placeholder="Your name." value={this.state.name} required>
+                        <input onChange={ this.handleUserInput } type="text" className="input is-large has-icons-right" name="name" autoComplete="name" placeholder="Your name." value={this.state.name} required>
                         </input>
                         <span className="icon is-small is-left">
                             <i className="fas fa-user-circle"></i>
@@ -133,7 +136,7 @@ class ContactForm extends Component {
                 </div>
                 <div className="field">
                     <div className={`control has-icons-left has-icons-right ${this.errorClass(this.state.formErrors.email)}`}>
-                        <input onChange={ this.handleUserInput } className="input is-large" type="email" name="email" placeholder="Your email." value={this.state.email} required></input>
+                        <input onChange={ this.handleUserInput } className="input is-large" type="email" name="email" autoComplete="email" placeholder="Your email." value={this.state.email} required></input>
                         <span className="icon is-small is-left">
                             <i className="fas fa-envelope"></i>
                         </span>
@@ -172,4 +175,4 @@ class ContactForm extends Component {
     }
 }
 
-export default ContactForm;
+export default WithJekyll(ContactForm);

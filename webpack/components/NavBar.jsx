@@ -7,7 +7,7 @@ class Brand extends Component {
 
     constructor( props ) {
         super( props );
-        console.log( props );
+        console.debug( "NAVBAR BRAND PROPS: ", props );
     }
 
     render() {
@@ -50,7 +50,7 @@ class Menu extends Component {
     render() {
         const data = this.props.data;
         const socialLinks = data.social;
-        console.log(socialLinks);
+        console.debug("SOCIALINKS: ", socialLinks);
         // const anchorLinks = this.anchorLinks;
         return (
             <div className={ this.props.menuOpen ? "navbar-menu is-active" : "navbar-menu" }>
@@ -88,7 +88,6 @@ class NavBar extends Component {
     constructor( props ) {
 
         super( props );
-        console.log( props );
         this.site  = this.props.data.site;
         this.state = {
             open : false
@@ -98,8 +97,7 @@ class NavBar extends Component {
     }
 
     componentWillMount(){
-
-        console.log( this.props );
+        console.debug( "NAVBAR PROPS: ", this.props );
     }
 
     handleBurgerClick() {
