@@ -1,5 +1,7 @@
 _site
-.sass-cache
-bower_components
+.sass-cache/
+.jekyll-cache/
+bower_components/
 env.rb
 node_modules/
+backend/
