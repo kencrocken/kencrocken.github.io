@@ -1,10 +1,6 @@
-deploy:
-  script: bundle exec rake site:deploy --quiet
-  local-dir: _site
-  target-branch: master
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  keep-history: true
-  on:
-    branch: develop
+language: ruby
+
+install:
+  - bundle install
+
+script: bundle exec rake site:deploy --quiet
