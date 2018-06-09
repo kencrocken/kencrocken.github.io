@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang=" en  has-navbar-fixed-top"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Color Up 256 Colors In The Terminal | kencrocken.github.io</title>
+<meta name="generator" content="Jekyll v3.8.2" />
+<meta property="og:title" content="Color Up 256 Colors In The Terminal" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="For the BEWD, we had to write a terminal program - I wrote a little script that makes calls to the WMATA api for next train times. Pretty cool. It was looking a bit dull - so I decided to add some color. Unfortunately, there was no orange for the Orange line. It took some googling, but eventually - I found it … Using ANSI Color Codes to Colorize Your Bash Prompt on Linux. Dude even provides some useful info and a bit of code to generate a reference table. It is also possible (in these newfangled modern times) to use a full 256 colors in most consoles. The color table below can be used to determine the code for each color by adding the column and row number. In order to make use of these codes, we use the syntax \033[38;5;#m for the foreground (text) and \033[48;5;#m for the background, or in a single statement like \033[38;5;#;48;5;#m to set both at once, where # is an 8-bit (0-255) color code. The best way to understand is to try it out. Run the command: echo -e &quot;testing \033[38;5;196;48;5;21mCOLOR1\033[38;5;208;48;5;159mCOLOR2\033[m&quot; Here is the script for the reference table: #!/bin/bash # # generates an 8 bit color table (256 colors) for reference, # using the ANSI CSI+SGR \033[48;5;${val}m for background and # \033[38;5;${val}m for text (see &quot;ANSI Code&quot; on Wikipedia) # echo -en &quot;\n + &quot; for i in {0..35}; do printf &quot;%2b &quot; $i done printf &quot;\n\n %3b &quot; 0 for i in {0..15}; do echo -en &quot;\033[48;5;${i}m \033[m &quot; done for i in {0..6}; do let &quot;i = i*36 +16&quot; printf &quot;\n\n %3b &quot; $i for j in {0..35}; do let &quot;val = i+j&quot; echo -en &quot;\033[48;5;${val}m \033[m &quot; done done echo -e &quot;\n&quot;" />
+<meta property="og:description" content="For the BEWD, we had to write a terminal program - I wrote a little script that makes calls to the WMATA api for next train times. Pretty cool. It was looking a bit dull - so I decided to add some color. Unfortunately, there was no orange for the Orange line. It took some googling, but eventually - I found it … Using ANSI Color Codes to Colorize Your Bash Prompt on Linux. Dude even provides some useful info and a bit of code to generate a reference table. It is also possible (in these newfangled modern times) to use a full 256 colors in most consoles. The color table below can be used to determine the code for each color by adding the column and row number. In order to make use of these codes, we use the syntax \033[38;5;#m for the foreground (text) and \033[48;5;#m for the background, or in a single statement like \033[38;5;#;48;5;#m to set both at once, where # is an 8-bit (0-255) color code. The best way to understand is to try it out. Run the command: echo -e &quot;testing \033[38;5;196;48;5;21mCOLOR1\033[38;5;208;48;5;159mCOLOR2\033[m&quot; Here is the script for the reference table: #!/bin/bash # # generates an 8 bit color table (256 colors) for reference, # using the ANSI CSI+SGR \033[48;5;${val}m for background and # \033[38;5;${val}m for text (see &quot;ANSI Code&quot; on Wikipedia) # echo -en &quot;\n + &quot; for i in {0..35}; do printf &quot;%2b &quot; $i done printf &quot;\n\n %3b &quot; 0 for i in {0..15}; do echo -en &quot;\033[48;5;${i}m \033[m &quot; done for i in {0..6}; do let &quot;i = i*36 +16&quot; printf &quot;\n\n %3b &quot; $i for j in {0..35}; do let &quot;val = i+j&quot; echo -en &quot;\033[48;5;${val}m \033[m &quot; done done echo -e &quot;\n&quot;" />
+<link rel="canonical" href="http://kencrocken.github.io/blog/2014/06/09/color-up-256-colors-in-the-terminal/" />
+<meta property="og:url" content="http://kencrocken.github.io/blog/2014/06/09/color-up-256-colors-in-the-terminal/" />
+<meta property="og:site_name" content="kencrocken.github.io" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-06-09T00:00:00-04:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Color Up 256 Colors In The Terminal","dateModified":"2014-06-09T00:00:00-04:00","datePublished":"2014-06-09T00:00:00-04:00","url":"http://kencrocken.github.io/blog/2014/06/09/color-up-256-colors-in-the-terminal/","mainEntityOfPage":{"@type":"WebPage","@id":"http://kencrocken.github.io/blog/2014/06/09/color-up-256-colors-in-the-terminal/"},"description":"For the BEWD, we had to write a terminal program - I wrote a little script that makes calls to the WMATA api for next train times. Pretty cool. It was looking a bit dull - so I decided to add some color. Unfortunately, there was no orange for the Orange line. It took some googling, but eventually - I found it … Using ANSI Color Codes to Colorize Your Bash Prompt on Linux. Dude even provides some useful info and a bit of code to generate a reference table. It is also possible (in these newfangled modern times) to use a full 256 colors in most consoles. The color table below can be used to determine the code for each color by adding the column and row number. In order to make use of these codes, we use the syntax \\033[38;5;#m for the foreground (text) and \\033[48;5;#m for the background, or in a single statement like \\033[38;5;#;48;5;#m to set both at once, where # is an 8-bit (0-255) color code. The best way to understand is to try it out. Run the command: echo -e &quot;testing \\033[38;5;196;48;5;21mCOLOR1\\033[38;5;208;48;5;159mCOLOR2\\033[m&quot; Here is the script for the reference table: #!/bin/bash # # generates an 8 bit color table (256 colors) for reference, # using the ANSI CSI+SGR \\033[48;5;${val}m for background and # \\033[38;5;${val}m for text (see &quot;ANSI Code&quot; on Wikipedia) # echo -en &quot;\\n + &quot; for i in {0..35}; do printf &quot;%2b &quot; $i done printf &quot;\\n\\n %3b &quot; 0 for i in {0..15}; do echo -en &quot;\\033[48;5;${i}m \\033[m &quot; done for i in {0..6}; do let &quot;i = i*36 +16&quot; printf &quot;\\n\\n %3b &quot; $i for j in {0..35}; do let &quot;val = i+j&quot; echo -en &quot;\\033[48;5;${val}m \\033[m &quot; done done echo -e &quot;\\n&quot;","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://kencrocken.github.io/feed.xml" title="kencrocken.github.io" /><script>
+
+        window.siteData = {
+            site: {
+                title: "kencrocken.github.io",
+                url: "/",
+                data: {"name":"Kenneth E. Crocken","nickname":"Ken CrOcken","image":{"link":"http://www.gravatar.com/avatar/83fb4a35e52381397d9c07d9e25b4c05","large":300,"small":55},"description":"I am a web developer.","social":[{"site":"linkedin","link":"https://linkedin.com/kenneth-crocken/17/914/aaa","icon":"fab fa-linkedin"},{"site":"twitter","link":"https://twitter.com/kencrocken","icon":"fab fa-twitter"},{"site":"github","link":"https://github.com/kencrocken","icon":"fab fa-github-square"}],"about":{"tag":"Lawyer by training - Web Developer by profession","accent":"But we can talk more about that over coffee.","content":"A full-stack web developer with a passion for creating websites and apps from the ground up. With additional interests in design, user experience and accessibility.","current_role":{"since":"September 2015","position":"Sr. Frontend Developer","location":"REQ","link":"https://req.co/about/team/ken-crocken"}},"resume":[{"name":"REQ","date":"September 2015 to Present","description":"Sr. Front End Developer"},{"name":"Freelancer","date":"July 2015 to August 2015","description":"Web Developer"},{"name":"BTS Software Solutions","date":"November 2014 to July 2015","description":"Front End Developer"}],"projects":[{"name":"DCMetro","link":"https://kencrocken.github.io/dcmetro","icon":"<div class=\"train\"><i class=\"fas fa-train\"></i></div>"},{"name":"Beer Search","link":"https://tranquil-ridge-7616.herokuapp.com/","icon":"<div class=\"beer-icon icon-uniE600\"></div>"},{"name":"Lunar Phase","link":"https://kencrocken.github.io/lunar_phase","icon":"<div class=\"moon\"><i class=\"far fa-moon\"></i></div>"}],"tech":[{"skill":"Angular","image":"https://angular.io/assets/images/logos/angular/angular.png"},{"skill":"SASS","image":"https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg"},{"skill":"React","image":"https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"},{"skill":"Rails","image":"https://upload.wikimedia.org/wikipedia/commons/1/16/Ruby_on_Rails-logo.png"},{"skill":"WordPress","image":"https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg"},{"skill":"Drupal","image":"https://drupal.org/sites/all/themes/bluecheese/images/icon-w-drupal.svg"},{"skill":"Javascript","image":"https://static.memrise.com/img/400sqf/from/uploads/course_photos/3146044000171223183557.png"},{"skill":"Ruby","image":"https://visualpharm.com/assets/468/Ruby%20Programming%20Language-595b40b85ba036ed117da9b2.svg"},{"skill":"Python","image":"https://camo.githubusercontent.com/dbba02c903f5ae4f4c5114848a8be1a562804ac8/687474703a2f2f636869616e74692e756373642e6564752f2537456b6f6e6f2f696d616765732f507974686f6e5f6c6f676f2e706e67"}],"contact":{"email":{"address":"kcrocken@gmail.com","icon":"<i class=\"fas fa-envelope\"></i>"},"telephone":{"number":"(443) 802-7145","icon":"<i class=\"fas fa-phone\"></i>"},"location":{"place":"Laurel, Maryland","icon":"<i class=\"fas fa-compass\"></i>","link":"http://goo.gl/maps/hM6yB"}}},
+                env: "production"
+            }
+        };
+
+    </script>
+</head>
+<body><header class="site-header" role="banner">
+
+    <div id="navComponent"></div>
+
+</header>
+<main class="container" aria-label="Content">
+        <div class="page">
+            <article class="section post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="hero post-header">
+        <div class="hero-body">
+            <p class="post-meta">
+                <time class="dt-published" datetime="2014-06-09T00:00:00-04:00" itemprop="datePublished">Jun 9, 2014
+                </time></p>
+            <h1 class="title post-title p-name" itemprop="name headline">Color Up 256 Colors In The Terminal</h1></div>
+    </header>
+
+    <div class="post-content e-content" itemprop="articleBody">
+        <p>For the BEWD, we had to write a terminal program - I wrote a little script that makes calls to the WMATA api for next train times.  Pretty cool.</p>
+
+<p>It was looking a bit dull - so I decided to add some color.</p>
+
+<p><img src="http://kencrocken.github.io/images/metrocommand.png" alt="metrocommand screenshot" class="img-responsive" /></p>
+
+<p>Unfortunately, there was no orange for the Orange line.  It took some googling, but eventually - I found it …  <a href="http://bitmote.com/index.php?post/2012/11/19/Using-ANSI-Color-Codes-to-Colorize-Your-Bash-Prompt-on-Linux">Using ANSI Color Codes to Colorize Your Bash Prompt on Linux</a>.</p>
+
+<p>Dude even provides some useful info and a bit of code to generate a reference table.</p>
+
+<blockquote>
+  <p>It is also possible (in these newfangled modern times) to use a full 256 colors in most consoles. The color table below can be used to determine the code for each color by adding the column and row number. In order to make use of these codes, we use the syntax <code class="highlighter-rouge">\033[38;5;#m</code> for the foreground (text) and <code class="highlighter-rouge">\033[48;5;#m</code> for the background, or in a single statement like <code class="highlighter-rouge">\033[38;5;#;48;5;#m</code> to set both at once, where # is an 8-bit (0-255) color code.</p>
+</blockquote>
+
+<blockquote>
+  <p>The best way to understand is to try it out. Run the command:</p>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"testing </span><span class="se">\0</span><span class="s2">33[38;5;196;48;5;21mCOLOR1</span><span class="se">\0</span><span class="s2">33[38;5;208;48;5;159mCOLOR2</span><span class="se">\0</span><span class="s2">33[m"</span></code></pre></figure>
+
+<p>Here is the script for the reference table:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/bash</span>
+<span class="c">#</span>
+<span class="c"># generates an 8 bit color table (256 colors) for reference,</span>
+<span class="c"># using the ANSI CSI+SGR \033[48;5;${val}m for background and</span>
+<span class="c"># \033[38;5;${val}m for text (see "ANSI Code" on Wikipedia)</span>
+<span class="c">#</span>
+<span class="nb">echo</span> <span class="nt">-en</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">   +  "</span>
+<span class="k">for </span>i <span class="k">in</span> <span class="o">{</span>0..35<span class="o">}</span><span class="p">;</span> <span class="k">do
+  </span><span class="nb">printf</span> <span class="s2">"%2b "</span> <span class="nv">$i</span>
+<span class="k">done
+
+</span><span class="nb">printf</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2"> %3b  "</span> 0
+<span class="k">for </span>i <span class="k">in</span> <span class="o">{</span>0..15<span class="o">}</span><span class="p">;</span> <span class="k">do
+  </span><span class="nb">echo</span> <span class="nt">-en</span> <span class="s2">"</span><span class="se">\0</span><span class="s2">33[48;5;</span><span class="k">${</span><span class="nv">i</span><span class="k">}</span><span class="s2">m  </span><span class="se">\0</span><span class="s2">33[m "</span>
+<span class="k">done
+
+for </span>i <span class="k">in</span> <span class="o">{</span>0..6<span class="o">}</span><span class="p">;</span> <span class="k">do
+  </span><span class="nb">let</span> <span class="s2">"i = i*36 +16"</span>
+  <span class="nb">printf</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2"> %3b  "</span> <span class="nv">$i</span>
+  
+  <span class="k">for </span>j <span class="k">in</span> <span class="o">{</span>0..35<span class="o">}</span><span class="p">;</span> <span class="k">do
+    </span><span class="nb">let</span> <span class="s2">"val = i+j"</span>
+    <span class="nb">echo</span> <span class="nt">-en</span> <span class="s2">"</span><span class="se">\0</span><span class="s2">33[48;5;</span><span class="k">${</span><span class="nv">val</span><span class="k">}</span><span class="s2">m  </span><span class="se">\0</span><span class="s2">33[m "</span>
+  <span class="k">done
+done
+
+</span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span></code></pre></figure>
+
+    </div><a class="u-url" href="/blog/2014/06/09/color-up-256-colors-in-the-terminal/" hidden></a>
+</article>
+
+        </div>
+    </main><footer class="site-footer h-card">
+    <!-- <div class="container"> -->
+        <!-- <div class="columns"> -->
+            <div class="has-text-centered">
+                <i class="fas fa-umbrella umbrella"></i>
+            </div>
+        <!-- </div> -->
+    <!-- </div> -->
+</footer>
+<script type="text/javascript" src="/assets/bundle-40d276599132a6ba0e0698d332231bf3d11f258f90782608483c0ad16c6dc279.js" integrity="sha256-QNJ2WZEyproOBpjTMiMb89EfJY+QeCYISDwK0Wxtwnk=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
