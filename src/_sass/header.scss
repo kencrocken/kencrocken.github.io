@@ -18,22 +18,55 @@
     position: fixed;
     transform: translateY(-100%);
 }
-
+.frozen {
+    .headroom--unpinned {
+        transform: translateY(0%);
+    }
+}
 .headroom--pinned {
     position: fixed;
     transform: translateY(0%);
 }
 
 #navComponent {
+
+    .field.is-grouped > .control:not(:last-child) {
+        @include tablet {
+            margin-right: 1.67rem;
+        }
+        margin-bottom: 0;
+        margin-right: 0.75rem;
+    }
+
     a.navbar-item {
         text-transform: uppercase;
         letter-spacing: 1px;
     }
-    h1 a {
-        color: $primary;
-        // font-size: 18px;
-        &:hover{
-            color: inherit;
+    h1 {
+        padding-left: .5rem;
+
+        a {
+            color: $primary;
+            // font-size: 18px;
+            &:hover{
+                color: inherit;
+            }
+        }
+    }
+
+    .navbar-menu {
+        background-color: transparent;
+        .link {
+            padding: 0;
+        }
+        &.is-active {
+
+            display: flex;
+            justify-content: center;
+        }
+        @include mobile {
+            flex-grow: 1;
+            flex-shrink: 0;
         }
     }
 }
@@ -43,7 +76,9 @@
         max-height: 100%;
         border-radius: 10%;
     }
-
+    @include mobile {
+        padding-right: .5rem;
+    }
 }
 
 .burger {
@@ -52,6 +87,8 @@
         display: none;
     }
 }
+
+
 
 @each $name, $value in $socialLinks {
     .#{$name} {

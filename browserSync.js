@@ -6,12 +6,13 @@ const ROOT = __dirname;
 browserSync({
     server: ROOT + "/_site",
     watchOptions: {
-        ignoreInitial: true,
+        ignoreInitial: true
     },
     awaitWriteFinish: {
         stabilityThreshold: 3000,
         pollInterval: 100
     },
     files: [ ROOT + "/_site/assets/main.css", ROOT + "/_site/assets/javascripts/*.js"],
-    port: 8080
+    port: 8080,
+    reloadDebounce: 2000,
 });

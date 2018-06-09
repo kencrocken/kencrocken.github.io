@@ -4,7 +4,8 @@
   "description": "my website",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=development",
+    "build:dev": "webpack --config webpack.dev.config.js",
+    "build:prod": "webpack --config webpack.prod.config.js",
     "serve": "browser-sync start --config 'browserSync.js'"
   },
   "repository": {
