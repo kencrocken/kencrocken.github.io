@@ -18,7 +18,9 @@ email: kcrocken@gmail.com
 description: "Father, Husband, Friend, Web Developer — A forty year old frood, who hasn't forgotten his towel."
 baseurl: ""
 url: "http://kencrocken.github.io"
-
+username: kencrocken
+repo: kencrocken.github.io
+branch: source
 excerpt_separator: "<!--more-->"
 
 # Build settings
