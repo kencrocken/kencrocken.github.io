@@ -18,6 +18,35 @@ $color-box: (
     11: #FF71A0
 );
 
+@for $i from 0 through 13 {
+    .title-letter-#{$i} {
+        animation: title_animation_#{$i} 5s linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        font-size: 28px;
+        @include mobile {
+            font-size: 42px;
+        }
+    }
+    @include keyframes(title_animation_#{$i}) {
+        0% {
+            color: map-get($color-box, $i);
+        }
+        @for $x from 1 through 11 {
+            @if (100/11)*$x < 92 {
+                #{(100/11)*$x}% {
+                    color: map-get($color-box, random(11)-1);
+                }
+            }
+            @else {
+                100% {
+                    color: map-get($color-box, random(11)-1);
+                }
+            }
+        }
+    }
+}
+
 @for $i from 1 through 100 {
     .box-#{$i} {
         animation: color_change_#{$i} 5s linear;

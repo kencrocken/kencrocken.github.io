@@ -6,7 +6,7 @@
   "scripts": {
     "build:dev": "webpack --config webpack.dev.config.js",
     "build:prod": "webpack --config webpack.prod.config.js",
-    "serve": "browser-sync start --config 'browserSync.js'"
+    "serve": "webpack-dev-server --open --config webpack.dev.config.js"
   },
   "repository": {
     "type": "git",
@@ -34,7 +34,7 @@
     "smoothscroll-polyfill": "^0.4.3",
     "webpack": "^4.9.1",
     "webpack-cli": "^2.1.4",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "3.1.4"
   },
   "dependencies": {}
 }

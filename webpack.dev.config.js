@@ -1,3 +1,4 @@
+const path = require('path');
 const ROOT = __dirname;
 
 module.exports = {

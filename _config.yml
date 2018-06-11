@@ -59,6 +59,8 @@ exclude:
   - Rakefile
   - webpack.dev.config.js
   - webpack.prod.config.js
+  - about.md
+  - blog.md
 
 assets:
   autoprefixer:
