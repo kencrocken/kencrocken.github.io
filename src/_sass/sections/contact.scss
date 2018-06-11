@@ -10,8 +10,14 @@
     .contact-form {
         padding: 0 0 1.6rem;
         max-width: 420px;
-        margin: 0 auto
+        margin: 0 auto;
+
+        input.phone {
+            display: none;
+            visibility: hidden;
+        }
     }
+
 }
 
 #contactFormComponent {

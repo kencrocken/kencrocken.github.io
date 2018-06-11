@@ -11,7 +11,7 @@ class HoneyPot extends Component {
     render() {
         return (<div className="field">
             <div className="control has-icons-left has-icons-right">
-                <input onChange={ this.props.handleUserInput } className="input is-large" type="text" name="phone" value={this.props.value} ></input>
+                <input onChange={ this.props.handleUserInput } className="input is-large phone" type="text" name="phone" value={this.props.value} ></input>
             </div>
         </div>);
     }
@@ -86,6 +86,15 @@ class ContactForm extends Component {
         this.setState({ formValid: this.state.nameValid && this.state.emailValid });
     }
 
+    honeypot() {
+        const { honeypot, phone } = this.state;
+        this.setState({
+            honeypot: !honeypot,
+
+        }, () => { console.log( this.state ); });
+        console.log( "PHONE! ", this.state );
+    }
+
     handleSubmit( event ) {
 
         event.preventDefault();
@@ -100,30 +109,25 @@ class ContactForm extends Component {
 
         if ( !!this.state.phone ) {
 
-            this.setState({
-                honeypot: !honeypot,
-                    submitting: false,
-                    submitted: true,
-                    success: false
-            }, () => { console.log( this.state ); });
-            console.log( "PHONE! ", this.state );
+            this.honeypot();
+        } else {
+            axios.post( url, { name, email, message })
+                .then( result => {
+                    console.debug( result );
+                    this.setState({
+                        submitting: false,
+                        submitted: true,
+                        success: true
+                    });
+                })
+                .catch( error => {
+                    console.error( error );
+                    this.setState({
+                        submitting: false,
+                        error : error
+                    });
+                });
         }
-        // axios.post( url, { name, email, message })
-        //     .then( result => {
-        //         console.debug( result );
-        //         this.setState({
-        //             submitting: false,
-        //             submitted: true,
-        //             success: true
-        //         });
-        //     })
-        //     .catch( error => {
-        //         console.error( error );
-        //         this.setState({
-        //             submitting: false,
-        //             error : error
-        //         });
-        //     });
 
     }
 
