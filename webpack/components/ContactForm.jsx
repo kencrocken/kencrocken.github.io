@@ -1,6 +1,22 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { WithJekyll } from './JekyllHOC';
+
+class HoneyPot extends Component {
+
+    constructor( props ) {
+        super( props );
+    }
+
+    render() {
+        return (<div className="field">
+            <div className="control has-icons-left has-icons-right">
+                <input onChange={ this.props.handleUserInput } className="input is-large" type="text" name="phone" value={this.props.value} ></input>
+            </div>
+        </div>);
+    }
+}
+
 class ContactForm extends Component {
 
     constructor( props ) {
@@ -9,13 +25,15 @@ class ContactForm extends Component {
             name: '',
             email: 'hello@',
             message: '',
-            formErrors: { name: null, email: null, message: null },
+            phone: '',
+            formErrors: { name: null, email: null, message: null, phone: null },
             nameValid: false,
             emailValid: false,
             formValid: false,
             submitted: false,
             success: false,
             error: null,
+            honeypot: false,
             submitting: false
         }
         this.env = this.props.data.site.env
@@ -157,6 +175,7 @@ class ContactForm extends Component {
                         <textarea onChange={ this.handleUserInput } className="textarea is-large" placeholder="What would you like to know?" name="message" value={this.state.message}></textarea>
                     </div>
                 </div>
+                <HoneyPot handleUserInput={ this.handleUserInput } value={ this.state.phone }/>
                 <div className="field">
                     <div className="control">
                         <button className="button is-tomato" disabled={!this.state.formValid} onClick={this.handleSubmit}>SUbmit</button>
