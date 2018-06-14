@@ -4,9 +4,6 @@ rvm:
 install:
   - bundle install
 
-script:
-  - ci-scripts/build.sh
-
 deploy:
   provider: pages
   skip_cleanup: true
