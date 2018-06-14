@@ -105,7 +105,7 @@ class ContactForm extends Component {
 
         const url = this.env === 'development' ? 'http://localhost:5000' : 'https://kencrocken.herokuapp.com';
         const { name, email, message, phone, honeypot } = this.state;
-        console.log(honeypot);
+        console.log(this.env, url);
 
         if ( !!this.state.phone ) {
 
