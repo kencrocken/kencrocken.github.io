@@ -1,6 +1,30 @@
 language: ruby
+<<<<<<< HEAD
 
 install:
   - bundle install
 
 script: bundle exec rake site:deploy --quiet
+=======
+rvm:
+  - 2.5.1
+
+install:
+  - npm install
+  - bundle install
+
+cache: bundler
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: _site
+  target_branch: master
+  on:
+    branch: source
+
+env:
+  matrix:
+    secure: bPwEtxXwBvt8tipZl7e/UWOvHvPEpYJJ1qyTNWqmi/JAKQxVgYfS8Qhc0XeSrwU8EXY+OCbQcxvCOfeuyUxVX0LtDJ3vrMZgtBYtuGj4LaNbRtwXZudh5W05ie9GWfIJCfl000inroRT7VsNp90zrPN7FsVIjijIquU10l3LHPD/sUjLxwXKSR1TfEwD0FK3gEZbM88fz0aalEsThk05d4Yq0NGpH12XFMtenJCWE414or11Oy6pUznPXlIpQI0j3bTPmoWSjvWNqPxE+GEX8819/0ZbPMKdoMQqOacQ0qrCVzZin8WUZo/Xh2JQnZkdOuqOQY2axoxikZkQqajvXVr0Ab5D78EMCm5kyYDHAsWGOOZ2DqZ7u+68QGJ9JpCpw+wiedPxqPxbObh/ZW8ERM68ZAlb1XH8EjQGTviaPxvle501rm6i0NapiBP4Ario8Fh0w+jbwLPMf28NioWuOrWisIe7W9r1ZcJBwvNPvuBb9vsUSyzIccd3quVEqOUCWlC99wtDUJ2J3waX1KaXNNRtazGAVMngRK4cczzjIo4ijm+JaeobB9IstzFDR6Vf2qRmdlB95P6Hse3zqzZEdaZ6zdC5AnbSjo8rk2lKwiomjYvtyi/sCRsRe+pmmQ0aJoShsr/nHEsRkX1NVFHqaA7pq/bnDpruivBxFEnrEcM=
+>>>>>>> develop

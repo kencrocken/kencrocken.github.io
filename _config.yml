@@ -50,6 +50,18 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 exclude:
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - Procfile.dev
+  - Procfile.prod
+  - Rakefile
+  - webpack.dev.config.js
+  - webpack.prod.config.js
+  - about.md
+  - blog.md
+  - ci-scripts
 
 assets:
   autoprefixer:

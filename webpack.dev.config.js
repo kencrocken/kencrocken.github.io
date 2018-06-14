@@ -1,3 +1,4 @@
+const path = require('path');
 const ROOT = __dirname;
 
 module.exports = {
@@ -39,5 +40,10 @@ module.exports = {
                 extensions: ['.js', '.jsx']
             }
         }]
+    },
+
+    devServer: {
+        contentBase: path.join(__dirname, '_site'),
+        port: 9000
     }
 };

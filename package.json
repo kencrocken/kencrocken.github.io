@@ -6,7 +6,7 @@
   "scripts": {
     "build:dev": "webpack --config webpack.dev.config.js",
     "build:prod": "webpack --config webpack.prod.config.js",
-    "serve": "browser-sync start --config 'browserSync.js'"
+    "serve": "webpack-dev-server --open --config webpack.dev.config.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/kencrocken/kencrocken.github.io/issues"
   },
-  "homepage": "https://github.com/kencrocken/kencrocken.github.io#readme",
+  "homepage": "https://kencrocken.github.io",
   "devDependencies": {
     "axios": "^0.18.0",
     "babel-core": "^6.26.3",
@@ -34,7 +34,7 @@
     "smoothscroll-polyfill": "^0.4.3",
     "webpack": "^4.9.1",
     "webpack-cli": "^2.1.4",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "3.1.4"
   },
   "dependencies": {}
 }

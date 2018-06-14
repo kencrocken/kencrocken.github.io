@@ -5,12 +5,19 @@
     }
     .accent {
         text-align: center;
+        padding-bottom: 1.6rem;
     }
     .contact-form {
-        padding: 1.6rem 0;
+        padding: 0 0 1.6rem;
         max-width: 420px;
-        margin: 0 auto
+        margin: 0 auto;
+
+        input.phone {
+            display: none;
+            visibility: hidden;
+        }
     }
+
 }
 
 #contactFormComponent {
