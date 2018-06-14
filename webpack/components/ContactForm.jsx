@@ -92,7 +92,6 @@ class ContactForm extends Component {
             honeypot: !honeypot,
 
         }, () => { console.log( this.state ); });
-        console.log( "PHONE! ", this.state );
     }
 
     handleSubmit( event ) {
@@ -105,10 +104,9 @@ class ContactForm extends Component {
 
         const url = this.env === 'development' ? 'http://localhost:5000' : 'https://kencrocken.herokuapp.com';
         const { name, email, message, phone, honeypot } = this.state;
-        console.log(this.env, url);
+        console.debug(this.env, url);
 
         if ( !!this.state.phone ) {
-
             this.honeypot();
         } else {
             axios.post( url, { name, email, message })
