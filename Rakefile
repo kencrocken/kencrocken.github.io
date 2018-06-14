@@ -9,5 +9,5 @@ end
 # rake build
 desc 'Build the site'
 task :build do
-  execute('jekyll build')
+  execute('npm run build:prod && jekyll build')
 end
