@@ -6,6 +6,8 @@ install:
   - npm install
   - bundle install
 
+cache: bundler
+
 deploy:
   provider: pages
   skip_cleanup: true
