@@ -61,6 +61,7 @@ exclude:
   - webpack.prod.config.js
   - about.md
   - blog.md
+  - ci-scripts
 
 assets:
   autoprefixer:
