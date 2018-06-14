@@ -1,17 +1,19 @@
 language: ruby
 rvm:
   - 2.5.1
+
 install:
+  - npm install
   - bundle install
 
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: S$GITHUB_TOKEN
+  github_token: $GITHUB_TOKEN
   local_dir: _site
   target_branch: master
   on:
-    branch: source
+    branch: develop
 
 env:
   matrix:
