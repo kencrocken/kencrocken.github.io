@@ -26,14 +26,18 @@ Ken:
         #     - "Rails - Django - WordPress - Drupal"
         #     - "Javascript - Ruby - Python - PHP"
         current_role:
-            since: "September 2015"
-            position: "Sr. Frontend Developer"
-            location: "REQ"
-            link: https://req.co/about/team/ken-crocken
+            since: "September 2018"
+            position: "UI Developer"
+            location: "Dragos, Icn."
+            link: https://dragos.com/
 
     resume:
+        -   name: "Dragos, Inc."
+            date: "September 2018 to Present"
+            description: "UI Engineer"
+
         -   name: "REQ"
-            date: "September 2015 to Present"
+            date: "September 2015 to August 2018"
             description: "Sr. Front End Developer"
 
         -   name: "Freelancer"
