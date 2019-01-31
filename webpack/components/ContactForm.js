@@ -20,21 +20,23 @@ const HoneyPot = (props) => {
 }
 
 class ContactForm extends Component {
-    state = {
-        name: '',
-        email: 'hello@',
-        message: '',
-        phone: '',
-        formErrors: { name: null, email: null, message: null, phone: null },
-        nameValid: false,
-        emailValid: false,
-        formValid: false,
-        submitted: false,
-        success: false,
-        error: null,
-        honeypot: false,
-        submitting: false
-    };
+    constructor() {
+        this.state = {
+            name: '',
+            email: 'hello@',
+            message: '',
+            phone: '',
+            formErrors: { name: null, email: null, message: null, phone: null },
+            nameValid: false,
+            emailValid: false,
+            formValid: false,
+            submitted: false,
+            success: false,
+            error: null,
+            honeypot: false,
+            submitting: false
+        };
+    }
 
     env = this.props.data.site.env;
 
