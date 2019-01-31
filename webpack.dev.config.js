@@ -1,5 +1,6 @@
 const path = require('path');
 const ROOT = __dirname;
+const WebpackShellPlugin = require('webpack-shell-plugin');
 
 module.exports = {
 
@@ -30,20 +31,22 @@ module.exports = {
 
     module: {
         rules: [{
-            test: /\.jsx?$/,
+            test:  /\.(js|jsx)$/,
             exclude: /(node_modules)/,
             loader: "babel-loader", // "babel-loader" is also a legal name to reference
             query: {
-                presets: ["react", "es2015"]
+                presets: ["react", "es2015"],
+                plugins: ['transform-class-properties']
             },
             resolve: {
                 extensions: ['.js', '.jsx']
             }
         }]
     },
-
     devServer: {
         contentBase: path.join(__dirname, '_site'),
-        port: 9000
+        port: 9000,
+        hot: true,
+        inline: true,
     }
 };

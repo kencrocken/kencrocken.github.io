@@ -4,12 +4,6 @@ import { WithJekyll } from './JekyllHOC';
 import AnchorLink from './AnchorLinks';
 
 class Brand extends Component {
-
-    constructor( props ) {
-        super( props );
-        console.debug( "NAVBAR BRAND PROPS: ", props );
-    }
-
     render() {
         const image = `${this.props.image.link}s=${this.props.image.small}`;
         return (<div className="navbar-brand">
@@ -37,7 +31,9 @@ class Menu extends Component {
     }
 
     componentWillMount() {
-
+        //
+        // Keep Anchor link stuff
+        //
         // const links = [ 'about', 'projects', 'contact' ];
         // this.anchorLinks = links.map( link => {
         //     return {
@@ -55,7 +51,7 @@ class Menu extends Component {
         return (
             <div className={ this.props.menuOpen ? "navbar-menu is-active" : "navbar-menu" }>
                 {/* <div className="navbar-start">
-                     {anchorLinks.length && anchorLinks.map( ( link, index ) => {
+                    {anchorLinks.length && anchorLinks.map( ( link, index ) => {
 
                             return <AnchorLink className="navbar-item is-size-6" key={ index } href={link.url}>
                                 { link.title }

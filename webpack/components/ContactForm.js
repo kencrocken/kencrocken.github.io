@@ -2,50 +2,49 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import { WithJekyll } from './JekyllHOC';
 
-class HoneyPot extends Component {
-
-    constructor( props ) {
-        super( props );
-    }
-
-    render() {
-        return (<div className="field">
+const HoneyPot = (props) => {
+    return (
+        <div className="field">
             <div className="control has-icons-left has-icons-right">
-                <input onChange={ this.props.handleUserInput } className="input is-large phone" type="text" name="phone" value={this.props.value} ></input>
+                <input 
+                    onChange={ props.handleUserInput } 
+                    className="input is-large phone" 
+                    type="text" 
+                    name="phone" 
+                    value={props.value} 
+                    >
+                </input>
             </div>
-        </div>);
-    }
+        </div>
+    );
 }
 
 class ContactForm extends Component {
+    state = {
+        name: '',
+        email: 'hello@',
+        message: '',
+        phone: '',
+        formErrors: { name: null, email: null, message: null, phone: null },
+        nameValid: false,
+        emailValid: false,
+        formValid: false,
+        submitted: false,
+        success: false,
+        error: null,
+        honeypot: false,
+        submitting: false
+    };
 
-    constructor( props ) {
-        super( props );
-        this.state ={
-            name: '',
-            email: 'hello@',
-            message: '',
-            phone: '',
-            formErrors: { name: null, email: null, message: null, phone: null },
-            nameValid: false,
-            emailValid: false,
-            formValid: false,
-            submitted: false,
-            success: false,
-            error: null,
-            honeypot: false,
-            submitting: false
-        }
-        this.env = this.props.data.site.env
-        this.handleUserInput = this.handleUserInput.bind( this );
-        this.handleSubmit = this.handleSubmit.bind( this );
-    }
+    env = this.props.data.site.env;
 
-    handleUserInput (e) {
+    handleUserInput = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        this.setState({[name]: value},
-            () => { this.validateField(name, value) });
+        this.setState({
+            [name]: value
+        },
+            () => this.validateField(name, value));
     }
 
     errorClass(error) {
@@ -56,7 +55,6 @@ class ContactForm extends Component {
         let fieldValidationErrors = this.state.formErrors;
         let nameValid = this.state.nameValid;
         let emailValid = this.state.emailValid;
-        // let messageValid = this.state.passwordValid;
 
         switch (fieldName) {
             case 'name':
@@ -67,18 +65,13 @@ class ContactForm extends Component {
                 emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
                 fieldValidationErrors.email = emailValid ? null : ' is invalid';
                 break;
-            // case 'message':
-            //     messageValid = true;
-            //     fieldValidationErrors.message = messageValid ? null : ' is invalid';
-            //     break;
             default:
                 break;
         }
         this.setState({
             formErrors: fieldValidationErrors,
             nameValid: nameValid,
-            emailValid: emailValid,
-            // messageValid: messageValid
+            emailValid: emailValid
         }, this.validateForm);
     }
 
@@ -87,17 +80,14 @@ class ContactForm extends Component {
     }
 
     honeypot() {
-        const { honeypot, phone } = this.state;
-        this.setState({
-            honeypot: !honeypot,
-
-        }, () => { console.log( this.state ); });
+        const { honeypot } = this.state;
+        this.setState((prevState) => {
+            return ({ honeypot: !prevState.honeypot });
+        });
     }
 
-    handleSubmit( event ) {
-
+    handleSubmit = ( event ) => {
         event.preventDefault();
-
         this.setState({
             submitting: true
         });
@@ -111,7 +101,6 @@ class ContactForm extends Component {
         } else {
             axios.post( url, { name, email, message })
                 .then( result => {
-                    console.debug( result );
                     this.setState({
                         submitting: false,
                         submitted: true,
@@ -119,7 +108,6 @@ class ContactForm extends Component {
                     });
                 })
                 .catch( error => {
-                    console.error( error );
                     this.setState({
                         submitting: false,
                         error : error

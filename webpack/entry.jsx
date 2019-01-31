@@ -5,6 +5,5 @@ import ContactForm from './components/ContactForm';
 
 render( <NavBar /> , document.getElementById('navComponent'));
 if( document.body.contains(document.getElementById('contactFormComponent') )){
-    render( <ContactForm />, document.getElementById('contactFormComponent'));
-}
-
+    render( <ContactForm />, document.getElementById('contactFormComponent'))
+};
