@@ -20,7 +20,7 @@ const HoneyPot = (props) => {
 }
 
 class ContactForm extends Component {
-    constructor() {
+    constructor(props) {
         this.state = {
             name: '',
             email: 'hello@',
@@ -36,9 +36,8 @@ class ContactForm extends Component {
             honeypot: false,
             submitting: false
         };
+        this.env = props.data.site.env;
     }
-
-    env = this.props.data.site.env;
 
     handleUserInput = (e) => {
         const name = e.target.name;
