@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<section id="baking">
+{%- assign recipe = page -%}
+    <article itemscope itemtype="http://schema.org/Recipe">
+        <header>
+            <h2 itemprop="name">{{ recipe.title }}</h2>
+            <img itemprop="image" src="{{ recipe.image | asset_url }}" alt="{{ recipe.title }}">
+            {% comment  %} <p>By <span itemprop="author">{{ recipe.author }}</span></p> {% endcomment %}
+        </header>
+        <p itemprop="description">{{ recipe.description }}</p>
+
+                <p class="recipe-meta">Yield: <span itemprop="recipeYield">{{ recipe.yield }}</span></p>
+                <p class="recipe-meta">Prep Time: <time itemprop="prepTime" content="{{ recipe.prepTime }}">{{ recipe.prepTime }}</time></p>
+                <p class="recipe-meta">Cook Time: <time itemprop="cookTime" content="{{ recipe.cookTime }}">{{ recipe.cookTime }}</time></p>
+                <p class="recipe-meta">Total Time: <time itemprop="totalTime" content="{{ recipe.totalTime }}">{{ recipe.totalTime }}</time></p>
+                <section itemprop="recipeIngredient">
+                    <h2>Ingredients</h2>
+                    <ul class="ingredients-list">
+                        {% for ingredient in recipe.ingredients %}
+                        <li class="ingredient-item" itemprop="ingredients">{{ ingredient }}</li>
+                        {% endfor %}
+                    </ul>
+                </section>
+                <section itemprop="recipeInstructions">
+                    <h2>Instructions</h2>
+                    <ol class="instructions">
+                        {% for step in recipe.instructions %}
+                            <li class="instruction-item" itemprop="recipeInstructions">{{ step }}</li>
+                        {% endfor %}
+                    </ol>
+                </section>
+                <p class="nutrition">Nutrition Information: <span itemprop="nutrition" content="{{ recipe.nutrition.calories }}">Calories: {{ recipe.nutrition.calories }}</span>, Serving Size: {{ page.nutrition.servingSize }}</p>
+
+    </article>
+</section>

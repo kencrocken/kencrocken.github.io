@@ -47,7 +47,8 @@
 
         a {
             color: $primary;
-            // font-size: 18px;
+            font-size: 1.85rem;
+            font-weight: 300;
             &:hover{
                 color: inherit;
             }
@@ -70,11 +71,22 @@
         }
     }
 }
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .navbar-image-override {
 
     img {
         max-height: 100%;
         border-radius: 10%;
+        animation: spin 21s infinite linear;
     }
     @include mobile {
         padding-right: .5rem;

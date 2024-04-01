@@ -1,3 +1,2 @@
-build: npm run build:dev
-jekyll: bundle exec jekyll build -w
+build: npm run build:dev && bundle exec jekyll build -w
 server: npm run serve

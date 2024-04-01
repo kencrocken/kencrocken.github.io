@@ -1,19 +1,10 @@
 {% assign projects = site.data.me['Ken'].projects %}
 {% assign techs = site.data.me['Ken'].tech %}
-<section class="section" id="projects">
-    <header class = "project-content">
-        <ul class="columns is-multiline is-flex-mobile is-centered tech-list">
-            {% for tech in techs %}
-                <li class="column is-narrow tech-list-item">
-                    <div class="tech-image-wrap">
-                        <img alt="{{ tech.skill }}" class="image is-16x16" src="{{ tech.image }}" />
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
-    </header>
+<section id="projects">
 
     <div class="project-descriptions">
+        <h2>Looks like I'll have some time to fix up these projects</h2>
+        <p>APIs changing or going private, Heroku sunsetting servers, package updates, etc ... time to get back to maintain some of these projects.  This site itself needs some TLC too, learn more about the tech stack for this site - Ruby, Node, Jekyll, React - Stay tuned in!</p>
         <ul class="columns is-multiline is-centered is-flex-mobile projects-list">
             {% for project in projects %}
                 <li class="column is-half-mobile is-narrow-mobile is-3-tablet projects-list-item">

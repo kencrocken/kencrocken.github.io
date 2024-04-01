@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: kencrocken.github.io
 email: kcrocken@gmail.com
-description: "Father, Husband, Friend, Web Developer — A forty year old frood, who hasn't forgotten his towel."
+description: "It's easier to put on a pair of shoes than to wrap the earth in leather."
 baseurl: ""
 url: "http://kencrocken.github.io"
 username: kencrocken
@@ -71,3 +71,12 @@ assets:
   sources:
     - assets/javascripts
     - asset/font
+
+collections_dir: _collections
+collections:
+  recipes:
+    output: true
+    permalink: /:collection/:name
+  projects:
+    output: true
+    permalink: /:collection/:path

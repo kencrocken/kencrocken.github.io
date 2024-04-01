@@ -11,24 +11,38 @@ html {
 }
 
 body {
-    background: lightgray;
+    background: $dark;
+    color: $primary;
 }
 
 a{
-    color: #363636;
+    color: $primary;
     transition: color 0.1s linear;
     &:hover {
         color: tomato;
     }
 }
+
 p {
     padding-bottom: 0.6rem;
+    font-size: 1.15rem;
 }
+
 h1,h2,h3,h4,h5,h6{
     font-family: $display;
     font-weight: 700;
 }
+
 // Headers
+h1 { 
+    font-size: 1.75rem;
+    font-weight: 400;
+}
+h2 {
+    font-size: 1.21rem;
+    font-weight: 300;
+    padding: 0.6rem 0;
+}
 h3 {
     font-size: 1rem;
     font-weight: 600;
@@ -49,7 +63,11 @@ h4 {
 .accent {
     color: tomato;
     font-family: $pacifico;
-    padding: 0.1rem 0;
+    font-size: 1.34rem;
+    letter-spacing: 1.4px;
+    padding: 0.21rem 0;
+    text-shadow: 1px 1px 2px $black;
+
 }
 
 .button.is-text:hover, .button.is-text.is-hovered, .button.is-text:focus, .button.is-text.is-focused {

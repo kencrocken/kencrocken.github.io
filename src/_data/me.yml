@@ -1,6 +1,6 @@
 Ken:
-    name: Kenneth E. Crocken
-    nickname: Ken CrOcken
+    name: Kenneth Crocken
+    nickname: Ken Crocken
     image:
         link: http://www.gravatar.com/avatar/83fb4a35e52381397d9c07d9e25b4c05
         large: 300
@@ -8,32 +8,29 @@ Ken:
     description: "I am a web developer."
     social:
         -   site: linkedin
-            link: https://linkedin.com/kenneth-crocken/17/914/aaa
+            link: https://linkedin.com/in/kenneth-crocken
             icon: fab fa-linkedin
-        -   site: twitter
-            link: https://twitter.com/kencrocken
-            icon: fab fa-twitter
         -   site: github
             link: https://github.com/kencrocken
             icon: fab fa-github-square
 
     about:
-        tag: "Lawyer by training - Web Developer by profession"
+        tag: "Front End Engineer"
         accent: "But we can talk more about that over coffee."
-        content: "A full-stack web developer with a passion for creating websites and apps from the ground up. With additional interests in design, user experience and accessibility."
+        content: "I've been making web apps in Node, TypeScript, React, Ruby, Rails, for the second act of my career. I firmly believe that it is easier to wrap your feet in leather than it is to wrap leather around the world.  Recently, I was part of the re-organization at Dragos, Inc.  I'm gonna miss that team, great group of people."
         # skills:
         #     - "Angular - SASS - React"
         #     - "Rails - Django - WordPress - Drupal"
         #     - "Javascript - Ruby - Python - PHP"
-        current_role:
-            since: "September 2018"
-            position: "UI Developer"
-            location: "Dragos, Inc."
-            link: https://dragos.com/
+        # current_role:
+        #     since: "September 2018"
+        #     position: "UI Developer"
+        #     location: "Dragos, Inc."
+        #     link: https://dragos.com/
 
     resume:
         -   name: "Dragos, Inc."
-            date: "September 2018 to Present"
+            date: "September 2018 to March 2024"
             description: "UI Engineer"
 
         -   name: "REQ"

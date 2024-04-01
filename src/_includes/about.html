@@ -1,6 +1,6 @@
 {% assign my = site.data.me['Ken'] %} {% assign image = my.image %} {% assign about = my.about %}
 
-<section class="section" id="about">
+<section id="about">
     <header class="about-content">
         <div class="columns">
 
@@ -8,9 +8,11 @@
                 <h2>{{ about.tag }}</h2>
                 <p>{{ about.content }}</p>
                 {% assign current_role = about.current_role %}
-                <p class="about-current-role">
-                    Since {{ current_role.since }}, I have been a {{ current_role.position }} at <a href="{{ current_role.link }}">{{ current_role.location }}</a>.
-                </p>
+                {% if current_role %}
+                    <p class="about-current-role">
+                        Since {{ current_role.since }}, I have been a {{ current_role.position }} at <a href="{{ current_role.link }}">{{ current_role.location }}</a>.
+                    </p>
+                {% endif %}
 
                 <p class="accent">{{ about.accent }}</p>
             </div>

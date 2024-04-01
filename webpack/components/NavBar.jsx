@@ -1,82 +1,54 @@
 import React, { Component } from 'react';
 import Headroom from 'react-headroom';
 import { WithJekyll } from './JekyllHOC';
-import AnchorLink from './AnchorLinks';
 
-class Brand extends Component {
-    render() {
-        const image = `${this.props.image.link}s=${this.props.image.small}`;
-        return (<div className="navbar-brand">
-            <div className="navbar-item image is-64x64 navbar-image-override">
+const Brand = (props) => {
+    const image = `${props.image.link}s=${props.image.small}`;
+
+    return (
+        <div className="navbar-brand">
+            <div className="navbar-item image navbar-image-override">
                 <img alt="Ken Crocken" src="/assets/images/gear.png" />
             </div>
             <h1 className="navbar-item" >
-                <a className="is-size-5-mobile is-size-4-tablet" href={ this.props.url }>
-                    { this.props.title }
+                <a href={ props.url }>
+                    { props.title }
                 </a>
             </h1>
-            <a role="button" className={ this.props.menuOpen ?  "navbar-burger burger is-active" : "navbar-burger burger" } aria-label="menu" aria-expanded="false" onClick={this.props.burgerClick}>
+            <a role="button" className={ props.menuOpen ?  "navbar-burger burger is-active" : "navbar-burger burger" } aria-label="menu" aria-expanded="false" onClick={props.burgerClick}>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
             <span className="is-clearfix"></span>
-        </div>);
-    }
+        </div>
+    );
 }
 
-class Menu extends Component {
-    constructor( props ) {
-        super( props );
-    }
+const Menu = (props) => {
 
-    componentWillMount() {
-        //
-        // Keep Anchor link stuff
-        //
-        // const links = [ 'about', 'projects', 'contact' ];
-        // this.anchorLinks = links.map( link => {
-        //     return {
-        //         "title" : link,
-        //         "url" : `#${link}`
-        //     }
-        // });
-    }
+    const data = props.data;
+    const socialLinks = data.social;
 
-    render() {
-        const data = this.props.data;
-        const socialLinks = data.social;
-        console.debug("SOCIALINKS: ", socialLinks);
-        // const anchorLinks = this.anchorLinks;
-        return (
-            <div className={ this.props.menuOpen ? "navbar-menu is-active" : "navbar-menu" }>
-                {/* <div className="navbar-start">
-                    {anchorLinks.length && anchorLinks.map( ( link, index ) => {
-
-                            return <AnchorLink className="navbar-item is-size-6" key={ index } href={link.url}>
-                                { link.title }
-                                </AnchorLink>;
-                        })
-                    }
-                </div> */}
-                <div className="navbar-end">
-                    <div className="navbar-item social-links">
-                        <div className="field is-grouped">
-                            { socialLinks.length && socialLinks.map( ( link, index ) => {
-                                return <p key={ index } className="control link">
-                                    <a className={`button is-circle ${link.site}`} href={ link.link }>
-                                        <span className="icon">
-                                            <i className={ link.icon }></i>
-                                        </span>
-                                    </a>
-                                </p>
-                            })}
-                        </div>
+    return (
+        <div className={ props.menuOpen ? "navbar-menu is-active" : "navbar-menu" }>
+            <div className="navbar-end">
+                <div className="navbar-item social-links">
+                    <div className="field is-grouped">
+                        { socialLinks.length && socialLinks.map( ( link, index ) => {
+                            return <p key={ index } className="control link">
+                                <a className={`button is-circle ${link.site}`} href={ link.link }>
+                                    <span className="icon">
+                                        <i className={ link.icon }></i>
+                                    </span>
+                                </a>
+                            </p>
+                        })}
                     </div>
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 class NavBar extends Component {
@@ -92,8 +64,12 @@ class NavBar extends Component {
 
     }
 
-    componentWillMount(){
-        console.debug( "NAVBAR PROPS: ", this.props );
+    componentDidMount() {
+        console.log("MOUNT");
+    }
+
+    componentDidUpdate() {
+        console.log('update');
     }
 
     handleBurgerClick() {
@@ -106,8 +82,10 @@ class NavBar extends Component {
 
     render() {
         const site = this.site;
-        return (<Headroom
+        return (
+            <Headroom
                 disableInlineStyles
+                style={{height: "100px"}}
                 className={ this.state.open ? 'frozen' : ''}
             >
             <nav className="navbar is-dark" role="navigation" aria-label="main navigation">

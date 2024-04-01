@@ -11,3 +11,9 @@ desc 'Build the site'
 task :build do
   execute('npm run build:prod && JEKYLL_ENV=production jekyll build')
 end
+
+#rake start
+desc 'Start development'
+task :start do
+  execute('foreman start -f ./Procfile.dev')
+end
