@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.5.1
+  - 3.2.3
 
 install:
   - npm install
@@ -9,11 +9,11 @@ install:
 cache: bundler
 
 deploy:
-  provider: pages
+  provider: pages:git
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: _site
-  target_branch: master
+  target_branch: gh-pages
   on:
     branch: source
 
