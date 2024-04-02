@@ -7,7 +7,10 @@ install:
   - bundle install
 
 cache: bundler
+script:
+  - npm run build:prod
 
+before_deploy: "jekyll build"
 deploy:
   provider: pages
   skip_cleanup: true
