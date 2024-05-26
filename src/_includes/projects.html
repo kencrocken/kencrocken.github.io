@@ -3,16 +3,18 @@
 <section id="projects">
 
     <div class="project-descriptions">
-        <h2>Looks like I'll have some time to fix up these projects</h2>
-        <p>APIs changing or going private, Heroku sunsetting servers, package updates, etc ... time to get back to maintain some of these projects.  This site itself needs some TLC too, learn more about the tech stack for this site - Ruby, Node, Jekyll, React - Stay tuned in!</p>
+        <h2>Time to dust off some old projects ... </h2>
+        <p>First up - the moon!</p>
         <ul class="columns is-multiline is-centered is-flex-mobile projects-list">
             {% for project in projects %}
+            {% if project.name == 'Lunar Phase' %}
                 <li class="column is-half-mobile is-narrow-mobile is-3-tablet projects-list-item">
                     <a href = "{{ project.link }}" target="_blank">
                             {{ project.icon }}
                     </a>
                     <h4 class="has-text-centered project-title"><a href ="{{ project.link }}"  target="_blank">{{ project.name }}</a></h4>
                 </li>
+                {% endif %}
             {% endfor %}
         </ul>
     </div>

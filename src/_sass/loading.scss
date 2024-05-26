@@ -40,7 +40,7 @@ $color-box: (
                 }
             }
             @else {
-                100% {
+                #{'100%'} {
                     color: map-get($color-box, random(11)-1);
                 }
             }
@@ -75,8 +75,10 @@ $color-box: (
         }
     }
 }
+
 .color-wrap {
     max-width: $color-wrap;
+    height: 100px;
     margin: 0 auto;
     border-radius: 50%;
     div {

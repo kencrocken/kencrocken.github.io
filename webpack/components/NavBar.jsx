@@ -4,15 +4,15 @@ import { WithJekyll } from './JekyllHOC';
 
 const Brand = (props) => {
     const image = `${props.image.link}s=${props.image.small}`;
-
+    console.log(props);
     return (
         <div className="navbar-brand">
             <div className="navbar-item image navbar-image-override">
-                <img alt="Ken Crocken" src="/assets/images/gear.png" />
+                <img alt={props.title} src="/assets/images/gear.png" />
             </div>
             <h1 className="navbar-item" >
                 <a href={ props.url }>
-                    { props.title }
+                    { props.title } | { props.profession }
                 </a>
             </h1>
             <a role="button" className={ props.menuOpen ?  "navbar-burger burger is-active" : "navbar-burger burger" } aria-label="menu" aria-expanded="false" onClick={props.burgerClick}>
@@ -64,14 +64,6 @@ class NavBar extends Component {
 
     }
 
-    componentDidMount() {
-        console.log("MOUNT");
-    }
-
-    componentDidUpdate() {
-        console.log('update');
-    }
-
     handleBurgerClick() {
 
         this.setState( prevState => ({
@@ -82,6 +74,7 @@ class NavBar extends Component {
 
     render() {
         const site = this.site;
+        console.log(site)
         return (
             <Headroom
                 disableInlineStyles
@@ -90,7 +83,7 @@ class NavBar extends Component {
             >
             <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
                 <div className="container">
-                    <Brand title={ site.data.nickname } url={ site.url } data={ site.data } image={ site.data.image } menuOpen={ this.state.open } burgerClick={ this.handleBurgerClick } />
+                    <Brand title={ site.data.nickname } profession={ site.data.profession } url={ site.url } data={ site.data } image={ site.data.image } menuOpen={ this.state.open } burgerClick={ this.handleBurgerClick } />
                     <Menu menuOpen={ this.state.open } data={ site.data } />
                 </div>
             </nav>

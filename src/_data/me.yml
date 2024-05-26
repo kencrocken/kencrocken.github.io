@@ -1,6 +1,7 @@
 Ken:
     name: Kenneth Crocken
     nickname: Ken Crocken
+    profession: Front End Engineer
     image:
         link: http://www.gravatar.com/avatar/83fb4a35e52381397d9c07d9e25b4c05
         large: 300
@@ -17,7 +18,7 @@ Ken:
     about:
         tag: "Front End Engineer"
         accent: "But we can talk more about that over coffee."
-        content: "I've been making web apps in Node, TypeScript, React, Ruby, Rails, for the second act of my career. I firmly believe that it is easier to wrap your feet in leather than it is to wrap leather around the world.  Recently, I was part of the re-organization at Dragos, Inc.  I'm gonna miss that team, great group of people."
+        content: "I've been making web apps in Node, TypeScript, React, Ruby, Rails, for the second act of my career. I firmly believe that it is easier to wrap your feet in leather than it is to wrap leather around the world.  Recently, I was part of the re-organization at Dragos, Inc.  It was a great challenge, and now it is time for the next."
         # skills:
         #     - "Angular - SASS - React"
         #     - "Rails - Django - WordPress - Drupal"
