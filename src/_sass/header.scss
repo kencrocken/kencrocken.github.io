@@ -52,6 +52,12 @@
             &:hover{
                 color: inherit;
             }
+            span.profession {
+                display: none;
+                @include desktop {
+                    display: inline;
+                }
+            }
         }
     }
 
@@ -87,7 +93,12 @@
         max-height: 100%;
         border-radius: 10%;
         animation: spin 21s infinite linear;
+        max-height: 2.5rem;
+        @include desktop {
+            
+        }
     }
+
     @include mobile {
         padding-right: .5rem;
     }

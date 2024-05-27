@@ -12,7 +12,7 @@ const Brand = (props) => {
             </div>
             <h1 className="navbar-item" >
                 <a href={ props.url }>
-                    { props.title } | { props.profession }
+                    { props.title } <span className='profession'> | { props.profession }</span>
                 </a>
             </h1>
             <a role="button" className={ props.menuOpen ?  "navbar-burger burger is-active" : "navbar-burger burger" } aria-label="menu" aria-expanded="false" onClick={props.burgerClick}>
