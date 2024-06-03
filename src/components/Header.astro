@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+import Social from "../components/Social.astro";
+import GearImage from "../assets/images/gear.png";
+import "../styles/header.css";
+---
+
+<header>
+  <Image
+    src={GearImage}
+    alt="Ken Crocken Front End Engineer"
+    decoding="sync"
+    loading="eager"
+    height={GearImage.height}
+    width={GearImage.width}
+  />
+  <h1 class="page-title">
+    <span>Ken Crocken |</span>
+    <span>Front End Engineer</span>
+  </h1>
+  <span class="social-links">
+    <Social platform="linkedin" username="kenneth-crocken" />
+    <Social platform="github" username="kencrocken" />
+  </span>
+</header>
