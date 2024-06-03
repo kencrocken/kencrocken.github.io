@@ -5,18 +5,22 @@
 }
 
 html {
-  font-family: "Lato", sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 400;
   font-style: normal;
   background-color: var(--main-bg-color);
-  color:  var(--primary-text-color);
+  color: var(--primary-text-color);
 }
 
-a{
-  color:  var(--primary-text-color);
+section {
+  padding: 0 0.5rem;
+}
+
+a {
+  color: var(--primary-text-color);
   transition: color 0.1s linear;
   &:hover {
-      color: var(--accent-text-color);
+    color: var(--accent-text-color);
   }
 }
 
@@ -28,15 +32,14 @@ p {
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
-  letter-spacing: 1.5px;
 }
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 992px) {
   body {
     max-width: 992px;
-    margin: 0 auto; 
+    margin: 0 auto;
   }
-  p {
+  section {
     margin-left: 2rem;
   }
 }

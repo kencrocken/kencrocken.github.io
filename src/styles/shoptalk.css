@@ -1,0 +1,7 @@
+h2.shop-talk__title {
+  font-family: "Pacifico", cursive;
+  color: var(--accent-text-color);
+  font-size: 1.34rem;
+  letter-spacing: 1.4px;
+  text-shadow: 1px 1px 2px #0a0a0a;
+}

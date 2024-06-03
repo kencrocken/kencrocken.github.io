@@ -1,9 +1,9 @@
 @keyframes spin {
   from {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-      transform: rotate(360deg);
+    transform: rotate(359deg);
   }
 }
 
@@ -13,12 +13,18 @@ header {
   align-items: center;
 }
 
-header span {
+header .logo-title {
   display: flex;
+  align-items: center;
 }
 
+header .social-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
-header a {
+header .social-links a:not(:first-child) {
   margin-left: 1rem;
 }
 
@@ -30,7 +36,17 @@ header img {
 }
 
 .page-title {
-  margin: 1rem 1rem;
+  margin: 1rem;
   font-size: 1.4rem;
   font-weight: normal;
+}
+
+@media screen and (min-width: 680px) {
+  header .social-links {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    margin-left: auto;
+    margin-right: 3rem;
+  }
 }

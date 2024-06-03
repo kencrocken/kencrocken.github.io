@@ -6,20 +6,23 @@ import "../styles/header.css";
 ---
 
 <header>
-  <Image
-    src={GearImage}
-    alt="Ken Crocken Front End Engineer"
-    decoding="sync"
-    loading="eager"
-    height={GearImage.height}
-    width={GearImage.width}
-  />
-  <h1 class="page-title">
-    <span>Ken Crocken |</span>
-    <span>Front End Engineer</span>
-  </h1>
-  <span class="social-links">
+  <div class="logo-title">
+    <Image
+      src={GearImage}
+      alt="Ken Crocken Front End Engineer"
+      decoding="sync"
+      loading="eager"
+      height={GearImage.height}
+      width={GearImage.width}
+    />
+    <h1 class="page-title">
+      <span>Ken Crocken</span>
+      <span>|</span>
+      <span>Front End Engineer</span>
+    </h1>
+  </div>
+  <div class="social-links">
     <Social platform="linkedin" username="kenneth-crocken" />
     <Social platform="github" username="kencrocken" />
-  </span>
+  </div>
 </header>
