@@ -1,8 +1,9 @@
 ---
+import { Icon } from "astro-icon/components";
 type Props = {
   platform: string;
   username: string;
-}
+};
 const { platform, username } = Astro.props;
 ---
 
@@ -10,5 +11,5 @@ const { platform, username } = Astro.props;
   href={`https://${platform}.com/${username === "kencrocken" ? username : "in/" + username}`}
   title=`${platform} link`
 >
-  <i class=`fab fa-${platform}` title={platform} />
+  <Icon name=`fa6-brands:${platform}` aria-label=`${platform}` />
 </a>

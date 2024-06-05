@@ -12,7 +12,7 @@ html {
   color: var(--primary-text-color);
 }
 
-section {
+main {
   padding: 0 0.5rem;
 }
 
@@ -39,7 +39,7 @@ h1 {
     max-width: 992px;
     margin: 0 auto;
   }
-  section {
+  main {
     margin-left: 2rem;
   }
 }

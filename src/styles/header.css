@@ -18,6 +18,14 @@ header .logo-title {
   align-items: center;
 }
 
+
+header img {
+  border-radius: 10%;
+  animation: spin 21s infinite linear;
+  max-height: 3rem;
+  max-width: 3rem;
+}
+
 header .social-links {
   display: flex;
   justify-content: center;
@@ -28,17 +36,15 @@ header .social-links a:not(:first-child) {
   margin-left: 1rem;
 }
 
-header img {
-  border-radius: 10%;
-  animation: spin 21s infinite linear;
-  max-height: 3rem;
-  max-width: 3rem;
-}
 
 .page-title {
   margin: 1rem;
   font-size: 1.4rem;
-  font-weight: normal;
+  font-weight: bold;
+}
+
+.page-title a {
+  text-decoration: none;
 }
 
 @media screen and (min-width: 680px) {

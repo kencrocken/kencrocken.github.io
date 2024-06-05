@@ -14,14 +14,17 @@ import "../styles/header.css";
       loading="eager"
       height={GearImage.height}
       width={GearImage.width}
+      transition:persist
     />
     <h1 class="page-title">
-      <span>Ken Crocken</span>
-      <span>|</span>
-      <span>Front End Engineer</span>
+      <a href="/">
+        <span>Ken Crocken</span>
+        <span>|</span>
+        <span>Front End Engineer</span>
+      </a>
     </h1>
   </div>
-  <div class="social-links">
+  <div class="social-links" transition:persist>
     <Social platform="linkedin" username="kenneth-crocken" />
     <Social platform="github" username="kencrocken" />
   </div>

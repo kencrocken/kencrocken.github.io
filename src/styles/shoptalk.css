@@ -2,6 +2,43 @@ h2.shop-talk__title {
   font-family: "Pacifico", cursive;
   color: var(--accent-text-color);
   font-size: 1.34rem;
-  letter-spacing: 1.4px;
+  letter-spacing: 1.85px;
   text-shadow: 1px 1px 2px #0a0a0a;
+}
+.shop-talk__list {
+  list-style-type: none;
+  padding: 0;
+
+}
+.shop-talk__item {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.shop-talk__link {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.shop-talk__description {
+  margin: 2rem 3rem;
+  max-width: 50rem;
+}
+
+.shop-talk__description p {
+  margin: 0;
+}
+
+.quote {
+  margin: 1rem 0;
+  background: hsl(0, 0%, 35%);
+  padding: 0.1rem;
+  border-radius: 1rem;
+}
+.quote blockquote {
+  font-weight: 300;
+}
+.quote figcaption,
+.quote blockquote {
+  margin: 1em;
 }
