@@ -38,7 +38,11 @@ h2.shop-talk__title {
 .quote blockquote {
   font-weight: 300;
 }
-.quote figcaption,
+.quote figcaption {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
 .quote blockquote {
-  margin: 1em;
+  margin: 1rem 1rem 0;
 }

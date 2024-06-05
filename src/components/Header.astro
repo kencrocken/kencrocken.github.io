@@ -5,7 +5,7 @@ import GearImage from "../assets/images/gear.png";
 import "../styles/header.css";
 ---
 
-<header>
+<header transition:persist>
   <div class="logo-title">
     <Image
       src={GearImage}
@@ -14,7 +14,6 @@ import "../styles/header.css";
       loading="eager"
       height={GearImage.height}
       width={GearImage.width}
-      transition:persist
     />
     <h1 class="page-title">
       <a href="/">
