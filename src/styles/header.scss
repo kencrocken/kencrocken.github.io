@@ -1,0 +1,59 @@
+@import 'breakpoint.variable.scss';
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .logo-title {
+    display: flex;
+    align-items: center;
+
+    img {
+      border-radius: 10%;
+      animation: spin 21s infinite linear;
+      max-height: 3rem;
+      max-width: 3rem;
+    }
+  }
+
+  .page-title {
+    margin: 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    a:not(:first-child) {
+      margin-left: 1rem;
+    }
+  }
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+  header .social-links {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    margin-left: auto;
+    margin-right: 3rem;
+  }
+}

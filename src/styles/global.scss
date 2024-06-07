@@ -1,7 +1,9 @@
+@import 'breakpoint.variable.scss';
+
 :root {
   --main-bg-color: hsl(0, 0%, 21%);
-  --primary-text-color: #eee8d5;
-  --accent-text-color: tomato;
+  --primary-text-color: hsl(40, 33%, 91%);
+  --accent-text-color: hsl(9, 100%, 64%);
 }
 
 html {
@@ -10,6 +12,10 @@ html {
   font-style: normal;
   background-color: var(--main-bg-color);
   color: var(--primary-text-color);
+}
+
+body {
+  margin: 0.5rem;
 }
 
 main {
@@ -34,10 +40,10 @@ h1 {
   font-size: 2.5rem;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: $breakpoint-lg) {
   body {
-    max-width: 992px;
-    margin: 0 auto;
+    max-width: $breakpoint-lg;
+    margin: 1em auto;
   }
   main {
     margin-left: 2rem;
