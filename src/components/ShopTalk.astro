@@ -1,6 +1,16 @@
 ---
 import "../styles/shoptalk.scss";
-const talks = Object.values(await import.meta.glob('../pages/shop-talk/*.markdown', { eager: true }));
+interface Talk {
+  url: string;
+  frontmatter: {
+    title: string;
+    description: string;
+    repo?: string;
+    projectSite?: string;
+  };
+}
+
+const talks: Talk[] = Object.values(await import.meta.glob('../pages/shop-talk/*.markdown', { eager: true })) as Talk[];
 
 ---
 
