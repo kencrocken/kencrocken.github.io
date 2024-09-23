@@ -1,66 +1,37 @@
-@import 'breakpoint.variable.scss';
+@import "breakpoint.variable.scss";
 
 .shop-talk {
-  .title {
-    font-family: "Pacifico", cursive;
-    color: var(--accent-text-color);
-    font-size: 1.34rem;
-    letter-spacing: 1.85px;
-    text-shadow: 1px 1px 2px #0a0a0a;
+  h1 {
+    color: var(--heading-text-color);
   }
-
+  &-description {
+    font-size: 1rem;
+    color: var(--heading-text-color);
+  }
   .list {
     list-style-type: none;
     padding: 0;
   }
-  
+
   .item {
     font-size: 1.2rem;
     font-weight: 500;
+    &-name {
+      padding-right: 0.5rem;
+    }
   }
-  
+
   .link {
     font-size: 1rem;
     font-weight: normal;
   }
-  
-  .project-description {
-    margin: 2rem 2rem;
-
-    p {
-      margin: 0;
-    }
-
-    .quote {
-      margin: 1rem 0;
-      background: hsl(0, 0%, 35%);
-      padding: 0.1rem;
-      border-radius: 1rem;
-
-      blockquote {
-        margin: 1rem 1rem 0;
-        font-weight: 300;
-      }
-
-      figcaption {
-        margin-left: 2rem;
-        margin-bottom: 1rem;
-        font-size: 0.9rem;
-      }
-    }
-  }
 }
-
-
-
-
 
 @media screen and (min-width: $breakpoint-lg) {
   .shop-talk {
     .project-description {
       margin: 2rem 3rem;
       max-width: 50rem;
-    } 
+    }
   }
-
 }

@@ -1,31 +1,46 @@
 ---
 import "../styles/shoptalk.scss";
+const talks = Object.values(await import.meta.glob('../pages/shop-talk/*.markdown', { eager: true }));
+
 ---
 
 <section class="shop-talk">
-  <h2 class="title">Let's talk shop …</h2>
+  <h2 class="cursive-heading">Let's talk shop …</h2>
   <ul class="list">
-    <li class="item">
-      Colorful Loader
-
+    <!-- <li class="item">
+      <span class="item-name">Benefits of Custom Component Libraries</span>
+      <a class="link" href="https://github.com/kencrocken/colorful-loader"
+      >repo</a
+    >
+    <a class="link" href="https://kencrocken.github.io/colorful-loader"
+      >project site</a
+    >
       <div class="project-description">
         <p>
           ColorfulLoader is a visually appealing and customizable React loading
-          component designed for web applications. This project provides an
-          easy-to-integrate, lightweight solution for enhancing user experience
-          during data fetching or processing times.
+          component designed for web applications. Packaged up in Node and already in Storybook, it can be a quick starter template for your component library.
         </p>
-        <a class="link" href="https://github.com/kencrocken/colorful-loader"
-          >repo</a
+
+      </div>
+    </li> -->
+    {talks.map((talk) => (
+    <li class="item">
+      <a href={talk.url}><span class="item-name">{talk.frontmatter.title}</span></a>
+      {/* <a class="link" href={talk.frontmatter.repo}
+      >repo</a>
+    <a class="link" href={talk.frontmatter.projectSite}
+      >project site</a> */}
+      <div class="project-description">
+        <p>{talk.frontmatter.description}</p>
+      </div>
+    </li>))}
+    <!-- <li class="item">
+      <span class="item-name">Single Page App Layers & Architecture</span>
+      <a class="link" href="https://github.com/kencrocken/lunar_phase">repo</a
         >
-        <a class="link" href="https://kencrocken.github.io/colorful-loader"
+        <a class="link" href="https://kencrocken.github.io/lunar_phase"
           >project site</a
         >
-      </div>
-    </li>
-    <li class="item">
-      Lunar Phase
-
       <div class="project-description">
         <figure class="quote">
           <blockquote>
@@ -37,14 +52,10 @@ import "../styles/shoptalk.scss";
         </figure>
         <p>
           Lunar Phase is a small demo app in React that displays the current
-          phase of the moon by fetching data from the Naval Observatory API.
+          phase of the moon by fetching data from the Naval Observatory API. Demonstrates the use of React hooks, the fetch API and an architectural approach to keep your app organized.
         </p>
-        <a class="link" href="https://github.com/kencrocken/lunar_phase">repo</a
-        >
-        <a class="link" href="https://kencrocken.github.io/lunar_phase"
-          >project site</a
-        >
+
       </div>
-    </li>
+    </li> -->
   </ul>
 </section>

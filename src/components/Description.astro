@@ -1,13 +1,38 @@
 ---
-
+import { Image } from "astro:assets";
+import ProfileImage from "../assets/images/ken-crocken.jpeg";
+import '../styles/about.scss';
 ---
 
-<section class="description">
-  <p>
+<section class="about flex-row">
+    <Image
+      src={ProfileImage}
+      alt="Ken Crocken Front End Engineer"
+      decoding="sync"
+      loading="eager"
+      height={ProfileImage.height/8}
+      width={ProfileImage.width/8}
+      class="profile-image"
+    />
+  <!-- <p class="about-intro">
     I've been making web apps in Node, TypeScript, React, Ruby, Rails, for the
     second act of my career. I firmly believe that it is easier to wrap your
     feet in leather than it is to wrap leather around the world. Recently, I was
     part of the re-organization at Dragos, Inc. It was a great challenge, and
-    now it is time for the next.
-  </p>
+    now it is time for the next. 
+  </p> -->
+  <div class="about-list">
+    <ul>
+      <li>Single page and Full Stack NodeJS applications</li>
+      <li>React, Remix, Next, Angular</li>
+      <li>TypeScript, JavaScript, TailwindCSS, Express, NodeJS, Prisma, MongoDB, Postgres</li>
+      <li>Storybook, Jest, React Testing Library, Cypress, Vite, Babel</li>
+      <!-- <li>HTML5, CSS3, Responsive Design, Accessibility, Web Standards</li>
+      <li>Git, GitHub, GitLab, Bitbucket, Jira, Confluence, Slack, Zoom</li>
+      <li>Agile, Scrum, Kanban, Pair Programming, Code Reviews</li> -->
+      <!-- <li>VSCode, Chrome DevTools, Postman, Figma, Sketch</li>
+      <li>Continuous Integration, Continuous Deployment, Docker, Kubernetes</li> -->
+    </ul>
+    <a href="/resume" title="link to resume">Resume</a>
+  </div>
 </section>

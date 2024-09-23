@@ -9,7 +9,8 @@ const { platform, username } = Astro.props;
 
 <a
   href={`https://${platform}.com/${username === "kencrocken" ? username : "in/" + username}`}
-  title=`${platform} link`
+  title=`${platform}`
+  aria-label=`link to ${platform}`
 >
   <Icon name=`fa6-brands:${platform}` aria-label=`${platform}` />
 </a>

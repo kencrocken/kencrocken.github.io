@@ -38,7 +38,14 @@ const { pageTitle } = Astro.props;
   <body>
     <Header transition:persist />
     <main transition:animate="fade">
-      {pageTitle ? <h2>{pageTitle}</h2> : null}
+      {pageTitle ? (
+        <div class="page-title-container">
+          <a href="/" class="home-link">
+            Return home
+          </a>
+          <h2 class="page-title">{pageTitle}</h2>
+        </div>
+      ) : null}
       <slot />
     </main>
   </body>

@@ -1,0 +1,52 @@
+.about {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  &-intro {
+    margin-left: 2rem;
+  }
+  &-list {
+    align-self: flex-start;
+    ul {
+      li {
+        margin: 0.5rem 0;
+        font-size: 1.2rem;
+        font-weight: 300;
+      }
+    }
+    a {
+      margin-left: 1.67rem;
+      color: var(--primary-text-color);
+      transition: color 0.1s linear;
+      &:hover {
+        color: var(--accent-text-color);
+      }
+    }
+  }
+}
+
+.profile-image {
+  border-radius: 0.8rem;
+  border: 1px solid var(--accent-text-color);
+}
+
+.resume {
+  h2 {
+    font-size: 1.25rem;
+    color: var(--heading-text-color);
+    margin-bottom: 0;
+  }
+  h3 {
+    margin: 0;
+  }
+  hr {
+    margin-top: 0.6rem;
+    margin-bottom: 1.38rem;
+    color: var(--heading-text-color);
+  }
+  ul {
+    margin-bottom: 3rem;
+  }
+  p {
+    margin-top: 0;
+  }
+}
