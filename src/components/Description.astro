@@ -1,11 +1,13 @@
 ---
-import { Image } from "astro:assets";
+
 import ProfileImage from "../assets/images/ken-crocken.jpeg";
 import '../styles/about.scss';
 ---
 
 <section class="about flex-row">
-    <Image
+  <!-- <h2 class="cursive-heading">About</h2> -->
+  <div style={{ backgroundImage: `url(${ProfileImage.src})`, height: `${ProfileImage.height/12}px`, width: `${ProfileImage.width/8}px` }} class="profile-image"></div>
+    <!-- <Image
       src={ProfileImage}
       alt="Ken Crocken Front End Engineer"
       decoding="sync"
@@ -13,7 +15,7 @@ import '../styles/about.scss';
       height={ProfileImage.height/8}
       width={ProfileImage.width/8}
       class="profile-image"
-    />
+    /> -->
   <!-- <p class="about-intro">
     I've been making web apps in Node, TypeScript, React, Ruby, Rails, for the
     second act of my career. I firmly believe that it is easier to wrap your
@@ -23,10 +25,10 @@ import '../styles/about.scss';
   </p> -->
   <div class="about-list">
     <ul>
-      <li>Single page and Full Stack NodeJS applications</li>
-      <li>React, Remix, Next, Angular</li>
-      <li>TypeScript, JavaScript, TailwindCSS, Express, NodeJS, Prisma, MongoDB, Postgres</li>
-      <li>Storybook, Jest, React Testing Library, Cypress, Vite, Babel</li>
+      <li>Single page and Full Stack applications</li>
+      <li>React, Remix, Next, Angular, Django</li>
+      <li>TypeScript, JavaScript, NodeJS, Python, Prisma, MongoDB, Postgres</li>
+      <li>TailwindCSS, Express, Storybook, Jest, React Testing Library, Cypress, Vite</lsi>
       <!-- <li>HTML5, CSS3, Responsive Design, Accessibility, Web Standards</li>
       <li>Git, GitHub, GitLab, Bitbucket, Jira, Confluence, Slack, Zoom</li>
       <li>Agile, Scrum, Kanban, Pair Programming, Code Reviews</li> -->

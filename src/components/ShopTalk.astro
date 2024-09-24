@@ -10,7 +10,7 @@ interface Talk {
   };
 }
 
-const talks: Talk[] = Object.values(await import.meta.glob('../pages/shop-talk/*.markdown', { eager: true })) as Talk[];
+const talks: Talk[] = Object.values(import.meta.glob('../pages/shop-talk/*.markdown', { eager: true })) as Talk[];
 
 ---
 
