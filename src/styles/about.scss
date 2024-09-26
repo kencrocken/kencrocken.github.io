@@ -14,7 +14,7 @@
       li {
         margin: 0.5rem 0;
         font-size: 1.3rem;
-        font-weight: 400;
+        font-weight: bold;
         display: flex;
         align-items: center;
         .icon {
@@ -35,10 +35,12 @@
 }
 
 .profile-image {
-  border-radius: 49%;
-  display: none;
-  visibility: hidden;
-  // border: 1px solid var(--accent-text-color);
+  border-radius: 50%;
+  border: 1px solid var(--accent-text-color);
+  background-position-x: center;
+  background-position-y: 25%;
+  background-size: cover;
+  box-shadow: 1px 2px 2px #0a0a0a;
 }
 
 .resume {
@@ -68,16 +70,16 @@
     &-intro {
       margin-left: 3rem;
     }
-    &-list {
-      padding-left: 1.5rem;
-    }
+    // &-list {
+    //   padding-left: 1.5rem;
+    // }
   }
-  .profile-image {
-    display: block;
-    background-position-x: center;
-    background-position-y: 25%;
-    background-size: cover;
-    box-shadow: 1px 2px 2px #0a0a0a;
-    visibility: visible;
-  }
+  // .profile-image {
+  //   display: block;
+  //   background-position-x: center;
+  //   background-position-y: 25%;
+  //   background-size: cover;
+  //   box-shadow: 1px 2px 2px #0a0a0a;
+  //   visibility: visible;
+  // }
 }
