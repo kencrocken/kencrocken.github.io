@@ -92,12 +92,30 @@ h1 {
   align-self: start;
 }
 
-@media screen and (min-width: $breakpoint-lg) {
+.flex-column-sm-row {
+  @extend .flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: $breakpoint-sm) {
   body {
     max-width: $breakpoint-lg;
-    margin: 1em auto;
+    margin: 1rem auto;
   }
   main {
     margin-left: 2rem;
   }
+  .flex-column-sm-row {
+    flex-direction: row;
+  }
 }
+
+// @media screen and (min-width: $breakpoint-lg) {
+//   body {
+//     max-width: $breakpoint-lg;
+//     margin: 1rem auto;
+//   }
+//   main {
+//     margin-left: 2rem;
+//   }
+// }

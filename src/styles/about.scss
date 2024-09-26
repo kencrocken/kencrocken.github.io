@@ -11,8 +11,9 @@
     ul {
       list-style: none;
       padding: 0;
+      margin-top: 1.67rem;
       li {
-        margin: 0.5rem 0;
+        margin: 0 0 0.5rem 0;
         font-size: 1.3rem;
         font-weight: bold;
         display: flex;
@@ -70,9 +71,12 @@
     &-intro {
       margin-left: 3rem;
     }
-    // &-list {
-    //   padding-left: 1.5rem;
-    // }
+    &-list {
+      padding-left: 1.5rem;
+      ul {
+        margin-top: 0;
+      }
+    }
   }
   // .profile-image {
   //   display: block;
