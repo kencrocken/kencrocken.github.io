@@ -6,6 +6,7 @@ import "../styles/global.scss";
 
 type Props = {
   pageTitle?: string;
+  id?: string;
   children: any;
 };
 const { pageTitle } = Astro.props;
@@ -41,7 +42,7 @@ const { pageTitle } = Astro.props;
       {pageTitle ? (
         <div class="page-title-container">
           <a href="/" class="home-link">
-            Return home
+            Home
           </a>
           <h2 class="page-title">{pageTitle}</h2>
         </div>
