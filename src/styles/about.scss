@@ -37,11 +37,14 @@
 
 .profile-image {
   border-radius: 50%;
-  border: 1px solid var(--accent-text-color);
+  // border: 1px solid var(--accent-text-color);
   background-position-x: center;
   background-position-y: 25%;
+  background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 1px 2px 2px #0a0a0a;
+  // height: 96px;
+  // width: 96px;
+  // box-shadow: 1px 2px 2px #0a0a0a;
 }
 
 .resume {
@@ -67,6 +70,10 @@
 }
 
 @media screen and (min-width: $breakpoint-sm) {
+  .profile-image {
+    height: 128px;
+    width: 128px;
+  }
   .about {
     &-intro {
       margin-left: 3rem;
