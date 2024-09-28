@@ -2,7 +2,7 @@
 
 :root {
   --main-bg-color: hsl(0, 0%, 21%);
-  --heading-text-color: hsl(0, 0%, 78%);
+  --secondary-text-color: hsl(40, 33%, 65%); // hsl(0, 0%, 78%);
   --primary-text-color: hsl(40, 33%, 91%);
   --accent-text-color: hsl(9, 100%, 64%);
 }
@@ -68,9 +68,9 @@ h1 {
 .cursive-heading {
   font-family: "Pacifico", cursive;
   color: var(--accent-text-color);
-  font-size: 2rem;
+  font-size: 1.83rem;
   letter-spacing: 2px;
-  // text-shadow: 1px 1px 2px #0a0a0a;
+  text-shadow: 2px 2px 4px #0a0a0a;
 }
 
 .flex {

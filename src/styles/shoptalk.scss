@@ -1,13 +1,38 @@
 @import "breakpoint.variable.scss";
 
 .shop-talk {
-  h1 {
-    color: var(--heading-text-color);
+  h2 {
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    li {
+      margin: 0 0 0.8rem 0;
+      font-size: 1.2rem;
+      font-weight: 500;
+      align-items: center;
+      p {
+        margin: 0;
+      }
+      // .icon {
+      //   margin-right: 0.8rem;
+      //   color: var(--accent-text-color);
+      // }
+    }
   }
   &-description {
     font-size: 1rem;
-    color: var(--heading-text-color);
+    font-weight: 400;
+    color: var(--secondary-text-color);
   }
+}
+
+.lets-talk {
   .list {
     list-style-type: none;
     padding: 0;
@@ -26,9 +51,8 @@
     font-weight: normal;
   }
 }
-
 @media screen and (min-width: $breakpoint-lg) {
-  .shop-talk {
+  .lets-talk {
     .project-description {
       margin: 2rem 3rem;
       max-width: 50rem;
