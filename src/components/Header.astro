@@ -2,9 +2,9 @@
 import { Image } from "astro:assets";
 import Social from "../components/Social.astro";
 import GearImage from "../assets/images/gear.png";
+import ProfileImage from "../assets/images/ken-crocken.jpeg";
 import "../styles/header.scss";
 ---
-
 <header transition:persist>
   <div class="logo-title">
     <Image
@@ -22,6 +22,9 @@ import "../styles/header.scss";
         <span>Front End Engineer</span>
       </a>
     </h1>
+  </div>
+    <div style={{ backgroundImage: `url(${ProfileImage.src})`, height: `${ProfileImage.height/36}px`, width: `${ProfileImage.width/24}px` }} class="profile-image">
+    <!-- <div class="sr-only">Ken Crocken</div> -->
   </div>
   <div class="social-links" transition:persist>
     <Social platform="linkedin" username="kenneth-crocken" />
