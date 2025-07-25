@@ -2,7 +2,7 @@
 layout: ../../layouts/ShopTalkLayout.astro
 slug: "spa-layers-architecture"
 title: "Single Page Application Layers & Architecture"
-description: "Lunar Phase is a small demo app in React that displays the current phase of the moon by fetching data from the Naval Observatory API. Demonstrates the use of React hooks, the fetch API and an architectural approach to keep your app organized."
+description: "I built Lunar Phase to track moon cycles, but let’s be honest—it was mostly a convenient excuse to showcase the anatomy of a SPA: from React components orbiting the presentation layer, to services handling fetch calls like Apollo missions, state management waxing and waning, routing via React Router constellations, and business logic pulling it all together like gravity."
 repo: "https://github.com/kencrocken/lunar_phase"
 projectSite: "https://kencrocken.github.io/lunar_phase"
 ---
