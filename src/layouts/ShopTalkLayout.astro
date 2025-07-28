@@ -5,12 +5,12 @@ const { frontmatter } = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
   <section class="shop-talk">
-    <p class="shop-talk-description">{frontmatter.description}</p>
-    <a class="link" href={frontmatter.repo}>repo</a
-      >
-      <a class="link" href={frontmatter.projectSite}
-        >project site</a
-      >
+    <p class="shop-talk-description">{frontmatter.description}    </p>
+    <hr />
+    <div class="shop-talk-links">
+      <a class="link" href={frontmatter.repo}>repo</a>
+      <a class="link" href={frontmatter.projectSite}>project site</a>
+    </div>
     <slot />
     <a href={`#top`}>Scroll to top</a>
   </section>
