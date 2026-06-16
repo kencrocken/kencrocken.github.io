@@ -7,6 +7,7 @@ interface Talk {
     description: string;
     repo?: string;
     projectSite?: string;
+    headerImage?: string;
   };
 }
 
@@ -19,55 +20,25 @@ const talks: Talk[] = Object.values(import.meta.glob('../pages/shop-talk/*.markd
   <p>Modern applications are increasingly data-driven, and dashboards have become the go-to interface for making that data useful and actionable. In this space, React stands out as the preferred choice—its component model, hooks, and ecosystem make it ideal for building interactive, scalable UI.</p>
   <p>Lunar Phase is a small demo app in React that displays the current phase of the moon by fetching data from the Naval Observatory API. We can use it to demonstrate working in a UI with React.</p>
   <ul class="list">
-    <!-- <li class="item">
-      <span class="item-name">Benefits of Custom Component Libraries</span>
-      <a class="link" href="https://github.com/kencrocken/colorful-loader"
-      >repo</a
-    >
-    <a class="link" href="https://kencrocken.github.io/colorful-loader"
-      >project site</a
-    >
-      <div class="project-description">
-        <p>
-          ColorfulLoader is a visually appealing and customizable React loading
-          component designed for web applications. Packaged up in Node and already in Storybook, it can be a quick starter template for your component library.
-        </p>
-
-      </div>
-    </li> -->
     {talks.map((talk) => (
     <li class="item">
-      <a href={talk.url}><span class="item-name">{talk.frontmatter.title}</span></a>
-      {/* <a class="link" href={talk.frontmatter.repo}
-      >repo</a>
-    <a class="link" href={talk.frontmatter.projectSite}
-      >project site</a> */}
-      <div class="project-description">
-        <p>{talk.frontmatter.description}</p>
+      <div class="content">
+        <a href={talk.url}>
+          <span class="item-name">{talk.frontmatter.title}</span>
+        </a>
+        <div class="shop-talk-content">
+          {talk.frontmatter.headerImage && (
+            <img
+              src={talk.frontmatter.headerImage}
+              alt={talk.frontmatter.title}
+              class="list-image"
+            />
+          )}
+          <div class="project-description">
+            <p>{talk.frontmatter.description}</p>
+          </div>
+        </div>
       </div>
     </li>))}
-    <!-- <li class="item">
-      <span class="item-name">Single Page App Layers & Architecture</span>
-      <a class="link" href="https://github.com/kencrocken/lunar_phase">repo</a
-        >
-        <a class="link" href="https://kencrocken.github.io/lunar_phase"
-          >project site</a
-        >
-      <div class="project-description">
-        <figure class="quote">
-          <blockquote>
-            Darling, the moon is still the moon in all its phases.
-          </blockquote>
-          <figcaption>
-            &mdash; Isra Al-Thibeh, <cite>On Becoming</cite>
-          </figcaption>
-        </figure>
-        <p>
-          Lunar Phase is a small demo app in React that displays the current
-          phase of the moon by fetching data from the Naval Observatory API. Demonstrates the use of React hooks, the fetch API and an architectural approach to keep your app organized.
-        </p>
-
-      </div>
-    </li> -->
   </ul>
 </section>

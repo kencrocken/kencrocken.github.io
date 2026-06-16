@@ -6,10 +6,11 @@ import "../styles/global.scss";
 
 type Props = {
   pageTitle?: string;
+  hideHeaderTitle?: boolean;
   id?: string;
   children: any;
 };
-const { pageTitle } = Astro.props;
+const { pageTitle, hideHeaderTitle } = Astro.props;
 ---
 
 <html lang="en">
@@ -39,7 +40,7 @@ const { pageTitle } = Astro.props;
   <body>
     <Header transition:persist />
     <main transition:animate="fade">
-      {pageTitle ? (
+      {pageTitle && !hideHeaderTitle ? (
         <div class="page-title-container">
           <a href="/" class="home-link">
             Home

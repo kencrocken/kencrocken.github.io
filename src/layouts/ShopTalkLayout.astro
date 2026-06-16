@@ -3,14 +3,33 @@ import BaseLayout from "./BaseLayout.astro";
 import "../styles/shoptalk.scss";
 const { frontmatter } = Astro.props;
 ---
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout pageTitle={frontmatter.title} hideHeaderTitle={true}>
   <section class="shop-talk">
-    <p class="shop-talk-description">{frontmatter.description}    </p>
-    <hr />
-    <div class="shop-talk-links">
-      <a class="link" href={frontmatter.repo}>repo</a>
-      <a class="link" href={frontmatter.projectSite}>project site</a>
+    <div class="shop-talk-header">
+      <div class="page-title-container">
+        <a href="/" class="home-link"> Home </a>
+        <h2 class="page-title">{frontmatter.title}</h2>
+      </div>
+      <div class="shop-talk-content">
+        {
+          frontmatter.headerImage && (
+            <img
+              src={frontmatter.headerImage}
+              alt={frontmatter.title}
+              class="header-image"
+            />
+          )
+        }
+        <div>
+          <p class="shop-talk-description">{frontmatter.description}</p>
+          <span class="shop-talk-links">
+            <a class="link" href={frontmatter.repo}>repo</a>
+            <a class="link" href={frontmatter.projectSite}>project site</a>
+          </div>
+        </div>
+      </div>
     </div>
+    <hr />
     <slot />
     <a href={`#top`}>Scroll to top</a>
   </section>

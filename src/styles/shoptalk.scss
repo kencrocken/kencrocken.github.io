@@ -27,10 +27,6 @@
       p {
         margin: 0;
       }
-      // .icon {
-      //   margin-right: 0.8rem;
-      //   color: var(--accent-text-color);
-      // }
     }
   }
   &-description {
@@ -53,6 +49,7 @@
   .item {
     font-size: 1.2rem;
     font-weight: 500;
+    margin-bottom: 2rem;
     &-name {
       padding-right: 0.5rem;
     }
@@ -66,8 +63,83 @@
 @media screen and (min-width: $breakpoint-lg) {
   .lets-talk {
     .project-description {
-      margin: 2rem 3rem;
+      margin: 0;
       max-width: 50rem;
+      p {
+        margin: 0.5rem 0 0;
+      }
+    }
+  }
+}
+
+.shop-talk-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom:1.5rem;
+  .shop-talk-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    @media screen and (min-width: $breakpoint-sm) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+  
+  .header-image {
+    max-width: 100%;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    @media screen and (min-width: $breakpoint-sm) {
+      max-width: 300px;
+    }
+  }
+
+  .page-title-container {
+    margin-bottom: 0.5rem;
+  }
+    
+  .shop-talk-description {
+    margin: 0;
+    flex: 1;
+  }
+}
+
+.lets-talk {
+  .item {
+    .shop-talk-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      
+      @media screen and (min-width: $breakpoint-sm) {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+
+    .list-image {
+      margin: 0;
+      width: 100%;
+      border-radius: 6px;
+      object-fit: cover;
+      aspect-ratio: 16/9;
+
+      @media screen and (min-width: $breakpoint-sm) {
+        max-width: 250px;
+      }
+    }
+
+    .content {
+      flex: 1;
+    }
+    
+    .project-description {
+      flex: 1;
     }
   }
 }
